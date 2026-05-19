@@ -1,0 +1,29 @@
+name: pfp
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+  - bioconda
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - networkx
+  - tqdm
+  - click
+  - pyyaml
+  - biopython
+  - pytorch
+  - pytorch-cuda=12.1
+  - torchvision
+  - torchaudio
+  - diamond
+  - mmseqs2
+  - pip:
+      - ortools>=9.9
+      - fair-esm
+      - transformers
+      - dgl

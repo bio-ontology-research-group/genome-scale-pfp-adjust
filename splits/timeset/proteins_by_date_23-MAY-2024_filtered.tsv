@@ -1,0 +1,170 @@
+protein_id	protein_name	integration_date	taxon_id	taxon_id_matched
+AGRG1_DANRE	Adhesion G-protein coupled receptor G1 {ECO:0000305}	18-JUN-2025	7955	True
+AMPL2_SOLLC	Leucine aminopeptidase A2, chloroplastic {ECO:0000303|PubMed:10787049}	27-NOV-2024	4081	True
+AOIG_ASPOR	Non-reducing polyketide synthase aoiG {ECO:0000303|PubMed:22447538}	09-APR-2025	510516	True
+AOIH_ASPOR	Zn(2)-C6 fungal-type trascription factor aoiH {ECO:0000303|PubMed:22447538}	09-APR-2025	510516	True
+ASB11_DANRE	Ankyrin repeat and SOCS box protein 11 {ECO:0000305}	24-JUL-2024	7955	True
+BAHD1_SAPOF	BAHD acyltransferase 1 {ECO:0000303|PubMed:39043959}	18-JUN-2025	3572	True
+BAMS1_SAPOF	Beta-amyrin synthase 1 {ECO:0000303|PubMed:39043959}	18-JUN-2025	3572	True
+BEST2_BOVIN	Bestrophin-2 {ECO:0000303|PubMed:32251414}	29-MAY-2024	9913	True
+BFD_PSEAE	Bacterioferritin-associated ferredoxin {ECO:0000303|PubMed:19575528}	02-OCT-2024	208964	True
+BFRB_PSEAE	Bacterioferritin BfrB	02-OCT-2024	208964	True
+BILR_CLOS6	Bilirubin reductase {ECO:0000303|PubMed:38172624}	29-MAY-2024	742740	True
+BILR_MEDG5	Bilirubin reductase {ECO:0000303|PubMed:38172624}	29-MAY-2024	1073375	True
+BRAT1_DROME	Integrator complex assembly factor Brat1 {ECO:0000305}	09-APR-2025	7227	True
+C7168_SAPOF	Beta-amyrin 28-monooxygenase CYP716A378 {ECO:0000305}	18-JUN-2025	3572	True
+C7169_SAPOF	Beta-amyrin 28-monooxygenase CYP716A379 {ECO:0000305}	18-JUN-2025	3572	True
+C7284_SAPOF	Echinocystic acid 23-monooxygenase {ECO:0000305}	18-JUN-2025	3572	True
+C74M1_SELML	Divinyl ether synthase CYP74M1 {ECO:0000303|PubMed:26776054}	18-JUN-2025	88036	True
+C74M3_SELML	Divinyl ether synthase CYP74M3 {ECO:0000303|PubMed:26776054}	18-JUN-2025	88036	True
+CAHM1_ORYLA	Calcium homeostasis modulator 1	29-MAY-2024	8090	True
+CAS31_MEDTR	Dehydrin CAS31 {ECO:0000305}	29-MAY-2024	3880	True
+CDHB_PSEAE	Betainyl-CoA thioesterase {ECO:0000305}	02-OCT-2024	208964	True
+CHI_MONRR	chitinase-like effector {ECO:0000303|PubMed:30220500}	24-JUL-2024	221103	True
+CHS5_ASPFU	Chitin synthase E {ECO:0000303|PubMed:7854320}	02-OCT-2024	330879	True
+CHS5_EMENI	Chitin synthase csmA {ECO:0000303|PubMed:9223429}	02-OCT-2024	227321	True
+CHSB_ASPOR	Chitin synthase B {ECO:0000303|PubMed:12480906}	02-OCT-2024	510516	True
+CIROZ_XENTR	Ciliated left-right organizer protein containing ZP-N domains homolog	18-JUN-2025	8364	True
+CL12B_MYCTU	Probable cellulase Cel12b {ECO:0000305}	29-MAY-2024	83332	True
+CNGA3_RAT	Cyclic nucleotide-gated channel alpha-3	29-MAY-2024	10116	True
+CNGB1_RAT	Cyclic nucleotide-gated channel beta-1	29-MAY-2024	10116	True
+CO72L_DANRE	Cytochrome c oxidase subunit 7A2-like, mitochondrial {ECO:0000305}	27-NOV-2024	7955	True
+CPSKS_PHYPA	Ent-kaurene synthase CPS/KS, chloroplastic {ECO:0000303|PubMed:17064690}	02-OCT-2024	3218	True
+CSL1_SAPOF	Quillaic acid 3-O-glycosyltransferase CSL1 {ECO:0000305|PubMed:39043959}	18-JUN-2025	3572	True
+CX7A1_DANRE	Cytochrome c oxidase subunit 7A1, mitochondrial {ECO:0000303|PubMed:38701784}	27-NOV-2024	7955	True
+CYP2_SOYBN	Peptidyl-prolyl cis-trans isomerase 2 {ECO:0000250|UniProtKB:O49886}	09-APR-2025	3847	True
+DHB14_RAT	L-fucose dehydrogenase	09-APR-2025	10116	True
+DHCCE_PSEAE	3-dehydrocarnitine:acetyl-CoA trimethylamine transferase {ECO:0000305}	02-OCT-2024	208964	True
+DSCA_ASPFU	DSC E3 ubiquitin ligase complex subunit A {ECO:0000303|PubMed:23104569}	29-MAY-2024	330879	True
+DSCC_ASPFU	DSC E3 ubiquitin ligase complex subunit C {ECO:0000303|PubMed:23104569}	29-MAY-2024	330879	True
+E2AK3_BOVIN	Eukaryotic translation initiation factor 2-alpha kinase 3	27-NOV-2024	9913	True
+EF3_MYCMD	Elongation factor 3 {ECO:0000305}	05-FEB-2025	5270	True
+EMRE_TRICA	Essential MCU regulator, mitochondrial {ECO:0000305}	24-JUL-2024	7070	True
+ETFR1_DROME	Electron transfer flavoprotein regulatory factor 1 homolog {ECO:0000305}	09-APR-2025	7227	True
+FACD2_CHICK	Fanconi anemia group D2 protein {ECO:0000250|UniProtKB:Q9BXW9}	18-JUN-2025	9031	True
+FAH2A_BOVIN	Oxaloacetate tautomerase FAHD2A, mitochondrial {ECO:0000305}	24-JUL-2024	9913	True
+FANCI_CHICK	Fanconi anemia group I protein {ECO:0000250|UniProtKB:Q9NVI1}	18-JUN-2025	9031	True
+FAPA_PSEAE	Functional amyloid chaperone FapA	27-NOV-2024	208964	True
+FAPB_PSEAE	Functional amyloid subunit FapB {ECO:0000305}	27-NOV-2024	208964	True
+FAPC_PSEAE	Functional amyloid subunit FapC {ECO:0000305}	27-NOV-2024	208964	True
+FAPD_PSEAE	Probable functional amyloid protease FapD {ECO:0000305}	27-NOV-2024	208964	True
+FAPE_PSEAE	Functional amyloid sbunit FapE {ECO:0000305}	27-NOV-2024	208964	True
+FAPF_PSEAE	Functional amyloid transporter FapF {ECO:0000303|PubMed:23504942}	27-NOV-2024	208964	True
+FASR_MYCTU	HTH-type transcriptional activator FasR {ECO:0000305}	05-FEB-2025	83332	True
+FENR_PSEAE	Ferredoxin--NADP reductase {ECO:0000305}	02-OCT-2024	208964	True
+FIGL2_DANRE	Fidgetin-like protein 2	29-MAY-2024	7955	True
+FIGL2_RAT	Fidgetin-like protein 2	29-MAY-2024	10116	True
+FLC2A_DANRE	Choline/ethanolamine transporter flvcr2a {ECO:0000305}	02-OCT-2024	7955	True
+FLC2B_DANRE	Choline/ethanolamine transporter flvcr2b {ECO:0000305}	02-OCT-2024	7955	True
+FLII_DANRE	Protein flightless-1 homolog {ECO:0000303|PubMed:21554867}	29-MAY-2024	7955	True
+FTTA_METMP	Transcription termination factor FttA {ECO:0000255|HAMAP-Rule:MF_00870}	29-MAY-2024	267377	True
+FTTA_METTH	Transcription termination factor FttA {ECO:0000255|HAMAP-Rule:MF_00870}	29-MAY-2024	187420	True
+FTTA_PYRAB	Transcription termination factor FttA {ECO:0000255|HAMAP-Rule:MF_00870}	29-MAY-2024	272844	True
+FTTA_PYRHO	Transcription termination factor FttA {ECO:0000255|HAMAP-Rule:MF_00870}	29-MAY-2024	70601	True
+FTTA_THEKO	Transcription termination factor FttA {ECO:0000255|HAMAP-Rule:MF_00870, ECO:0000303|PubMed:32094586}	29-MAY-2024	69014	True
+FZD5_DANRE	Frizzled-5	24-JUL-2024	7955	True
+GH1_SAPOF	Glycosyl hydrolase-like protein 1 {ECO:0000303|PubMed:39043959}	18-JUN-2025	3572	True
+GLB11_MEDTR	Anaerobic nitrite reductase Glb1-1 {ECO:0000250|UniProtKB:O04986}	29-MAY-2024	3880	True
+GLB12_MEDTR	Anaerobic nitrite reductase Glb1-2 {ECO:0000250|UniProtKB:O04986}	29-MAY-2024	3880	True
+GLB13_MEDTR	Anaerobic nitrite reductase Glb1-3 {ECO:0000250|UniProtKB:O04986}	29-MAY-2024	3880	True
+GLB31_MEDTR	Group 2 truncated hemoglobin 3-1 {ECO:0000305|PubMed:32003030}	29-MAY-2024	3880	True
+GLB32_MEDTR	Group 2 truncated hemoglobin 3-2 {ECO:0000305|PubMed:32003030}	29-MAY-2024	3880	True
+GPR4_CALMI	G-protein coupled receptor 4 {ECO:0000305}	18-JUN-2025	7868	True
+GPR4_DANRE	G-protein coupled receptor 4 {ECO:0000303|PubMed:39799123}	18-JUN-2025	7955	True
+GPR4_XENTR	G-protein coupled receptor 4	18-JUN-2025	8364	True
+GT731_SAPOF	UDP-glucosyl transferase 73DL1 {ECO:0000303|PubMed:39043959}	18-JUN-2025	3572	True
+GT732_SAPOF	UDP-glucosyl transferase 73M2 {ECO:0000303|PubMed:39043959}	18-JUN-2025	3572	True
+GT736_SAPOF	UDP-glucosyl transferase 73CC6 {ECO:0000303|PubMed:39043959}	18-JUN-2025	3572	True
+GT741_SAPOF	UDP-glucosyl transferase 74CD1 {ECO:0000303|PubMed:39043959}	18-JUN-2025	3572	True
+GT791_SAPOF	UDP-glucosyl transferase 79T1 {ECO:0000303|PubMed:39043959}	18-JUN-2025	3572	True
+GT793_SAPOF	UDP-glucosyl transferase 79L3 {ECO:0000303|PubMed:39043959}	18-JUN-2025	3572	True
+HAK5_MANES	Potassium transporter 5 {ECO:0000305}	24-JUL-2024	3983	True
+HAL3A_SOYBN	Phosphopantothenoylcysteine decarboxylase HAL3a {ECO:0000305}	09-APR-2025	3847	True
+HAL3B_SOYBN	Phosphopantothenoylcysteine decarboxylase HAL3b {ECO:0000305}	09-APR-2025	3847	True
+HAL3_MALDO	Phosphopantothenoylcysteine decarboxylase HAL3 {ECO:0000305}	09-APR-2025	3750	True
+HOBA_HELPY	DNA replication regulator protein HobA {ECO:0000305}	05-FEB-2025	85962	True
+HPO27_CAEEL	Maestro heat-like repeat-containing protein family member 1 homolog {ECO:0000305}	18-JUN-2025	6239	True
+IDH2_MYCTU	Isocitrate dehydrogenase [NADP] 2 {ECO:0000303|PubMed:16194279}	02-OCT-2024	83332	True
+INT15_DROME	Integrator complex subunit 15 {ECO:0000305}	09-APR-2025	7227	True
+IZUM1_DANRE	Izumo sperm-egg fusion protein 1	05-FEB-2025	7955	True
+JUNO_RAT	Sperm-egg fusion protein Juno	05-FEB-2025	10116	True
+KCNF1_RAT	Voltage-gated potassium channel regulatory subunit KCNF1 {ECO:0000305}	02-OCT-2024	10116	True
+KCNK6_RAT	Potassium channel subfamily K member 6	27-NOV-2024	10116	True
+KCNKD_DANRE	Potassium channel, subfamily K, member 13	27-NOV-2024	7955	True
+KCNU1_RAT	Potassium channel subfamily U member 1	24-JUL-2024	10116	True
+KDSR_DANRE	3-dehydrosphinganine reductase {ECO:0000305}	29-MAY-2024	7955	True
+KTHY_DROME	Thymidylate kinase {ECO:0000303|PubMed:38518117}	09-APR-2025	7227	True
+LGB5_SOYBN	Leghemoglobin 5 {ECO:0000303|PubMed:32297921}	29-MAY-2024	3847	True
+LGB8_MEDTR	Leghemoglobin 8 {ECO:0000303|PubMed:32442331}	29-MAY-2024	3880	True
+LYSM1_ZYMTI	Secreted LysM effector Mg1LysM {ECO:0000303|PubMed:21467214}	24-JUL-2024	336722	True
+LYSM3_ZYMTI	Secreted LysM effector Mg3LysM {ECO:0000303|PubMed:21467214}	24-JUL-2024	336722	True
+M1476_MYCTU	Membrane protein Rv1476 {ECO:0000305}	27-NOV-2024	83332	True
+MA7D2_RAT	MAP7 domain-containing protein 2	09-APR-2025	10116	True
+MBDR2_DROME	Protein MBD-R2 {ECO:0000305}	29-MAY-2024	7227	True
+MCU_CYPE1	Calcium uniporter protein, mitochondrial {ECO:0000305}	24-JUL-2024	1220924	True
+MCU_GIBZE	Calcium uniporter protein, mitochondrial {ECO:0000305}	24-JUL-2024	229533	True
+MCU_METAQ	Calcium uniporter protein, mitochondrial {ECO:0000305}	24-JUL-2024	655827	True
+MCU_NEOFI	Calcium uniporter protein, mitochondrial {ECO:0000305}	24-JUL-2024	331117	True
+MCU_NEUCR	Calcium uniporter protein, mitochondrial {ECO:0000305}	24-JUL-2024	367110	True
+MCU_TRICA	Calcium uniporter protein, mitochondrial {ECO:0000305}	24-JUL-2024	7070	True
+MGM1_CHATD	Dynamin-like GTPase MGM1, mitochondrial {ECO:0000305}	29-MAY-2024	759272	True
+MICU3_RAT	Calcium uptake protein 3, mitochondrial {ECO:0000305}	24-JUL-2024	10116	True
+MK1_CAPAN	Mitogen-activated protein kinase 1 {ECO:0000303|PubMed:11266120}	29-MAY-2024	4072	True
+MK2_CAPAN	Mitogen-activated protein kinase 2 {ECO:0000303|PubMed:11266120}	29-MAY-2024	4072	True
+MNT1_ASPFU	Alpha-1,2-mannosyltransferase 1 {ECO:0000303|PubMed:18708564}	29-MAY-2024	330879	True
+MRE11_CHATD	Double-strand break repair protein MRE11 {ECO:0000305}	29-MAY-2024	759272	True
+MRE11_THEMA	DNA double-strand break repair protein Mre11 {ECO:0000305}	29-MAY-2024	243274	True
+MSL2_CHICK	E3 ubiquitin-protein ligase MSL2	29-MAY-2024	9031	True
+NBN_XENLA	Nibrin	29-MAY-2024	8355	True
+NBS1_CHATD	DNA repair and telomere maintenance protein NBS1 {ECO:0000305}	29-MAY-2024	759272	True
+NEC1A_DANRE	Nectin 1a {ECO:0000303|PubMed:19097185}	27-NOV-2024	7955	True
+NIPS1_DANRE	Protein NipSnap homolog 1	24-JUL-2024	7955	True
+NR5A2_DANRE	Nuclear receptor subfamily 5 group A member 2 {ECO:0000305}	09-APR-2025	7955	True
+NSHB1_SOYBN	Anaerobic nitrite reductase Hb1 {ECO:0000305}	29-MAY-2024	3847	True
+NSHB2_SOYBN	Anaerobic nitrite reductase Hb2 {ECO:0000305}	29-MAY-2024	3847	True
+NUC_CULQU	Salivary endonuclease {ECO:0000303|PubMed:16809456}	05-FEB-2025	7176	True
+ODD23_SOYBN	Homoarginine-6-hydroxylase 2-ODD-C23 {ECO:0000303|PubMed:38619227}	27-NOV-2024	3847	True
+P2X4A_DANRE	P2X purinoceptor 4a	29-MAY-2024	7955	True
+PADRL_MYCTU	Probable transcriptional regulator Rv1176c {ECO:0000305}	27-NOV-2024	83332	True
+PGMP1_MARPO	Phosphoglucomutase 1, chloroplastic {ECO:0000303|PubMed:31851335}	29-MAY-2024	3197	True
+PHOH2_MYCTU	Protein PhoH2 {ECO:0000303|PubMed:25999286}	02-OCT-2024	83332	True
+PKS10_ORYSJ	Type III polyketide synthase 10 {ECO:0000303|PubMed:27878652}	09-APR-2025	39947	True
+PKS21_ORYSJ	Type III polyketide synthase 21 {ECO:0000303|PubMed:27878652}	09-APR-2025	39947	True
+PLLP_DANRE	Plasmolipin	05-FEB-2025	7955	True
+PLST_DANRE	Plastin-3	29-MAY-2024	7955	True
+PRAF_MARPO	RAF-like serine/threonine-protein kinase PRAF {ECO:0000303|PubMed:31851335}	29-MAY-2024	3197	True
+RA50L_XENLA	DNA repair protein RAD50.L	29-MAY-2024	8355	True
+RA50S_XENLA	DNA repair protein RAD50.S	29-MAY-2024	8355	True
+RAD50_CHATD	DNA repair protein RAD50 {ECO:0000305}	29-MAY-2024	759272	True
+RASB_ASPFU	Ras-like protein B {ECO:0000303|PubMed:14732259}	24-JUL-2024	330879	True
+RAX2_CANAL	Polarized growth protein RAX2 {ECO:0000303|PubMed:23608319}	27-NOV-2024	237561	True
+RHBA_ASPFU	Small monomeric GTPase RhbA {ECO:0000303|PubMed:12704156}	29-MAY-2024	330879	True
+ROW1_MYCMD	Appressorium protein ROW1 {ECO:0000305}	09-APR-2025	5270	True
+ROW2_MYCMD	Appressorium protein ROW2	09-APR-2025	5270	True
+RT4I1_DROME	NAD(P)H oxidoreductase RTN4IP1, mitochondrial {ECO:0000305}	09-APR-2025	7227	True
+SAYS1_DROME	SAYSvFN domain-containing protein 1 {ECO:0000305}	24-JUL-2024	7227	True
+SDR1_SAPOF	Short-chain dehydrogenase/reductase 1 {ECO:0000303|PubMed:39043959}	18-JUN-2025	3572	True
+SDSL_RAT	Serine dehydratase-like	24-JUL-2024	10116	True
+SPOUT_DROME	28S rRNA (uridine-N(3))-methyltransferase	18-JUN-2025	7227	True
+SRBA_ASPFU	Transcription regulator srbA precursor {ECO:0000303|PubMed:18989462}	29-MAY-2024	330879	True
+SRBB_ASPFU	Transcription factor srbB {ECO:0000303|PubMed:25375670}	29-MAY-2024	330879	True
+STS1_ORYSJ	Transmembrane and coiled-coil domain-containing protein STS1 {ECO:0000305}	09-APR-2025	39947	True
+TA365_PETMA	Trace amine-associated receptor 365 {ECO:0000305}	27-NOV-2024	7757	True
+TEKT5_RAT	Tektin-5 {ECO:0000303|PubMed:17924527}	02-OCT-2024	10116	True
+TF65_RAT	Transcription factor p65	18-JUN-2025	10116	True
+THUM2_BOVIN	U6 snRNA (guanine-N(2))-methyltransferase THUMPD2 {ECO:0000305|PubMed:37283053}	09-APR-2025	9913	True
+TLA3_PSEAE	Type VI lipase adapter protein Tla3 {ECO:0000303|PubMed:31231326}	02-OCT-2024	208964	True
+TM63B_CHICK	Mechanosensitive cation channel TMEM63B {ECO:0000305}	18-JUN-2025	9031	True
+TM63_DROME	Mechanosensitive cation channel Tmem63 {ECO:0000305}	18-JUN-2025	7227	True
+TMCA_THEKO	tRNA(Met) cytidine acetyltransferase TmcA {ECO:0000255|HAMAP-Rule:MF_01886}	05-FEB-2025	69014	True
+TMM81_DANRE	Transmembrane protein 81	05-FEB-2025	7955	True
+TRPM5_DANRE	Transient receptor potential cation channel subfamily M member 5	02-OCT-2024	7955	True
+TTHAT_LUPAN	Tetrahydroanabasine acetyltransferase {ECO:0000303|PubMed:37540741}	29-MAY-2024	3871	True
+UGT83_ORYSJ	Malvidin galactosylase UGT88C3 {ECO:0000303|PubMed:38475543}	24-JUL-2024	39947	True
+UNR_DROME	RNA-binding protein Unr {ECO:0000305}	29-MAY-2024	7227	True
+VDAC1_SHEEP	Non-selective voltage-gated ion channel VDAC1 {ECO:0000250|UniProtKB:P21796}	24-JUL-2024	9940	True
+VIRR_MYCTU	Vesiculogenesis and immune response regulator {ECO:0000303|PubMed:24248369}	18-JUN-2025	83332	True
+WDR54_RAT	WD repeat domain 54	05-FEB-2025	10116	True
+WSS1_ORYSJ	Receptor protein kinase WSS1 {ECO:0000305}	05-FEB-2025	39947	True
+WZY_PSEAE	O-antigen polymerase {ECO:0000303|PubMed:8939432}	02-OCT-2024	208964	True
+ZDHC9_ORYSJ	Protein S-acyltransferase DHHC9 {ECO:0000305}	24-JUL-2024	39947	True
