@@ -58,6 +58,23 @@ except Exception:
     pass
 
 
+import random
+
+
+def set_seed(seed: int = 42):
+    """Seed all RNGs (Python, NumPy, PyTorch CPU/CUDA) for reproducible training.
+
+    Added 2026-06 so the reported MLP-ESM2 numbers can be reproduced from a fixed
+    seed; CP-SAT downstream is already deterministic given its input. See the paper
+    Methods (Baseline predictors).
+    """
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+
+
 class MLPModel(nn.Module):
     """
     Baseline MLP model with two fully connected layers with residual connection.
@@ -690,12 +707,15 @@ def generate_propagate_write_parallel(model: nn.Module, esm2_embeddings_dir: str
            help='Directory containing annots_taxon_<taxon_id>.tsv files; used with --no-save-predictions to evaluate on annotated test proteins.',
            default="${DATA_DIR}/swissprot_proteomes_folds/annotations-go-basic")
 @ck.option('--fold-id', type=int, default=1, help='Fold ID for output filenames (predictions_fold_XX_taxon_YYYY.tsv). Compatible with run_adjustment_pipeline.py.')
+@ck.option('--seed', type=int, default=42, help='Random seed for reproducible training (Python/NumPy/PyTorch).')
 def main(subontology, train_file, val_file, test_organisms_file, esm2_embeddings_dir,
          output_dir, go_obo, device, vec_dim, epochs, batch_size, lr,
-         sparsity_threshold, num_workers, no_save_predictions, annotations_go_basic_dir, fold_id):
+         sparsity_threshold, num_workers, no_save_predictions, annotations_go_basic_dir, fold_id, seed):
     """
     Train MLP using a fixed train/val/test split and generate predictions for test organisms.
     """
+    set_seed(seed)
+    print(f"[INFO] RNG seed set to {seed} for reproducible training")
     # Resolve absolute paths
     train_file = os.path.abspath(train_file)
     val_file = os.path.abspath(val_file)
