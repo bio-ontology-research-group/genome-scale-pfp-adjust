@@ -1,0 +1,7 @@
+deepgo-se_cc_margin	tau=0.3	organisms=564	preds_above_tau=76316352	flips=136078	flip_rate_pct=0.1783
+deepgo-se_cc_uniform	tau=0.3	organisms=564	preds_above_tau=76316352	flips=136078	flip_rate_pct=0.1783
+deepgo-se_cc_ic	tau=0.3	organisms=564	preds_above_tau=76316352	flips=136078	flip_rate_pct=0.1783
+=== pairwise flip-set agreement (Jaccard over demoted (protein,term)) ===
+margin vs uniform: |A|=136078 |B|=136078 Jaccard=1.0000
+margin vs ic: |A|=136078 |B|=136078 Jaccard=1.0000
+uniform vs ic: |A|=136078 |B|=136078 Jaccard=1.0000

@@ -1,0 +1,88 @@
+{
+  "label": "sprof-go",
+  "n_organism_pairs": 50,
+  "threshold": 0.001,
+  "promotions": {
+    "total": 76079,
+    "with_curated_reference": 0,
+    "coverage_pct": 0.0,
+    "precision_pct_on_covered": null,
+    "true_subunit_promotions": 0
+  },
+  "demotions": {
+    "total": 3326946,
+    "with_curated_reference": 2528,
+    "coverage_pct": 0.08,
+    "good_demotion_pct_on_covered": 99.56,
+    "harmful_demotions_curated_subunit_removed": 11
+  },
+  "promotion_examples": [],
+  "harmful_demotion_examples": [
+    [
+      "7227",
+      "GO:0030867",
+      "Q9VL49",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0005849",
+      "Q9VE52",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0030867",
+      "Q9VS57",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0000307",
+      "Q24216",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0000307",
+      "O76513",
+      "curated_subunit_removed"
+    ],
+    [
+      "6239",
+      "GO:0016514",
+      "Q9BL39",
+      "curated_subunit_removed"
+    ],
+    [
+      "6239",
+      "GO:0016514",
+      "Q9N4N4",
+      "curated_subunit_removed"
+    ],
+    [
+      "6239",
+      "GO:0016514",
+      "H8ESF3",
+      "curated_subunit_removed"
+    ],
+    [
+      "6239",
+      "GO:0016514",
+      "Q21831",
+      "curated_subunit_removed"
+    ],
+    [
+      "6239",
+      "GO:0016514",
+      "Q2A950",
+      "curated_subunit_removed"
+    ],
+    [
+      "6239",
+      "GO:0016514",
+      "Q17581",
+      "curated_subunit_removed"
+    ]
+  ]
+}

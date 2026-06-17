@@ -1,0 +1,65 @@
+{
+  "label": "deepgo-se",
+  "n_organism_pairs": 4,
+  "threshold": 0.3,
+  "promotions": {
+    "total": 150,
+    "with_curated_reference": 22,
+    "coverage_pct": 14.67,
+    "precision_pct_on_covered": 13.64,
+    "true_subunit_promotions": 3
+  },
+  "demotions": {
+    "total": 138,
+    "with_curated_reference": 19,
+    "coverage_pct": 13.77,
+    "good_demotion_pct_on_covered": 78.95,
+    "harmful_demotions_curated_subunit_removed": 4
+  },
+  "promotion_examples": [
+    [
+      "7227",
+      "GO:0030893",
+      "Q9VCD8",
+      "subunit"
+    ],
+    [
+      "7227",
+      "GO:0031391",
+      "Q9VKW3",
+      "subunit"
+    ],
+    [
+      "7227",
+      "GO:0045254",
+      "Q9VVL7",
+      "subunit"
+    ]
+  ],
+  "harmful_demotion_examples": [
+    [
+      "7227",
+      "GO:0070578",
+      "Q32KD4",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0000172",
+      "Q9VVE0",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0072546",
+      "Q9VNQ3",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0033565",
+      "Q9XTL2",
+      "curated_subunit_removed"
+    ]
+  ]
+}

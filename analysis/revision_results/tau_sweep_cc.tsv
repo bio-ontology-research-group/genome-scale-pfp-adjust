@@ -1,0 +1,15 @@
+deepgo-se_cc	tau=0.1	organisms=564	preds_above_tau=133934245	flips=979780	flip_rate_pct=0.7315
+deepgo-se_cc	tau=0.2	organisms=564	preds_above_tau=94438988	flips=311638	flip_rate_pct=0.3300
+deepgo-se_cc	tau=0.3	organisms=564	preds_above_tau=76316352	flips=136078	flip_rate_pct=0.1783
+deepgo-se_cc	tau=0.4	organisms=564	preds_above_tau=64495016	flips=67148	flip_rate_pct=0.1041
+deepgo-se_cc	tau=0.5	organisms=564	preds_above_tau=55317819	flips=34282	flip_rate_pct=0.0620
+seq_sim_timeset_cc	tau=0.1	organisms=50	preds_above_tau=13604577	flips=249323	flip_rate_pct=1.8326
+seq_sim_timeset_cc	tau=0.2	organisms=50	preds_above_tau=9786393	flips=72965	flip_rate_pct=0.7456
+seq_sim_timeset_cc	tau=0.3	organisms=50	preds_above_tau=7705215	flips=32099	flip_rate_pct=0.4166
+seq_sim_timeset_cc	tau=0.4	organisms=50	preds_above_tau=6245883	flips=16498	flip_rate_pct=0.2641
+seq_sim_timeset_cc	tau=0.5	organisms=50	preds_above_tau=4912138	flips=9673	flip_rate_pct=0.1969
+sprof-go_cc	tau=0.1	organisms=564	preds_above_tau=104918251	flips=1028812	flip_rate_pct=0.9806
+sprof-go_cc	tau=0.2	organisms=564	preds_above_tau=70178050	flips=229205	flip_rate_pct=0.3266
+sprof-go_cc	tau=0.3	organisms=564	preds_above_tau=54136932	flips=69606	flip_rate_pct=0.1286
+sprof-go_cc	tau=0.4	organisms=564	preds_above_tau=43987365	flips=24584	flip_rate_pct=0.0559
+sprof-go_cc	tau=0.5	organisms=564	preds_above_tau=36328843	flips=10641	flip_rate_pct=0.0293

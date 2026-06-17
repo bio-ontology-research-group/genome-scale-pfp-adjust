@@ -14,12 +14,34 @@ This version uses Google OR-Tools CP-SAT for 10-50x speedup over Z3.
 """
 
 import csv
+import os
 from collections import defaultdict
 import itertools
 from typing import Dict, List, Set, Tuple
 from ortools.sat.python import cp_model
 import time
 import argparse
+
+
+_IC_CACHE = None
+
+
+def _load_ic_map():
+    """Lazy-load a GO-term information-content map from PFP_IC_FILE (GO\\tIC)."""
+    global _IC_CACHE
+    if _IC_CACHE is None:
+        _IC_CACHE = {}
+        p = os.environ.get('PFP_IC_FILE', '')
+        if p and os.path.exists(p):
+            with open(p) as fh:
+                for line in fh:
+                    parts = line.rstrip('\n').split('\t')
+                    if len(parts) >= 2:
+                        try:
+                            _IC_CACHE[parts[0]] = float(parts[1])
+                        except ValueError:
+                            pass
+    return _IC_CACHE
 
 
 def load_predictions(file_path):
@@ -115,15 +137,26 @@ def compute_demotion_flip_cost(predictions: Dict[str, Dict[str, float]],
     Compute demotion flip cost for the predictions.
     """
 
+    # Cost form selected by PFP_COST_MODE (cost-function ablation):
+    #   'margin' (default) -- above-threshold prediction mass, sum_i (score - tau)
+    #   'uniform'          -- 1 per above-threshold (term, protein)
+    #   'ic'               -- information content of the GO term (from PFP_IC_FILE)
+    mode = os.environ.get('PFP_COST_MODE', 'margin')
+    ic_map = _load_ic_map() if mode == 'ic' else None
     flip_cost_per_go_term = defaultdict(float)
     num_annotated_predictions = 0
     for protein in predictions:
         for go_term, score in predictions[protein].items():
             if score > fold_threshold:
-                flip_cost_per_go_term[go_term] += score - fold_threshold
                 num_annotated_predictions += 1
+                if mode == 'uniform':
+                    flip_cost_per_go_term[go_term] += 1.0
+                elif mode == 'ic':
+                    flip_cost_per_go_term[go_term] += ic_map.get(go_term, 1.0)
+                else:
+                    flip_cost_per_go_term[go_term] += score - fold_threshold
 
-    print(f"Computed {len(flip_cost_per_go_term)} flip costs for {num_annotated_predictions} annotated predictions")
+    print(f"Computed {len(flip_cost_per_go_term)} flip costs (mode={mode}) for {num_annotated_predictions} annotated predictions")
     return flip_cost_per_go_term, num_annotated_predictions
 
 

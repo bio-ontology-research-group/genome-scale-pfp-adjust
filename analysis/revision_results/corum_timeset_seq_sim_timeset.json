@@ -1,0 +1,172 @@
+{
+  "label": "seq_sim_timeset",
+  "n_organism_pairs": 50,
+  "threshold": 0.001,
+  "promotions": {
+    "total": 32589,
+    "with_curated_reference": 1,
+    "coverage_pct": 0.0,
+    "precision_pct_on_covered": 0.0,
+    "true_subunit_promotions": 0
+  },
+  "demotions": {
+    "total": 1064055,
+    "with_curated_reference": 1182,
+    "coverage_pct": 0.11,
+    "good_demotion_pct_on_covered": 95.35,
+    "harmful_demotions_curated_subunit_removed": 55
+  },
+  "promotion_examples": [],
+  "harmful_demotion_examples": [
+    [
+      "10116",
+      "GO:0097135",
+      "D3ZQ41",
+      "curated_subunit_removed"
+    ],
+    [
+      "6239",
+      "GO:0002944",
+      "O17869",
+      "curated_subunit_removed"
+    ],
+    [
+      "6239",
+      "GO:0035189",
+      "G5EF11",
+      "curated_subunit_removed"
+    ],
+    [
+      "6239",
+      "GO:0097149",
+      "Q8MQ03",
+      "curated_subunit_removed"
+    ],
+    [
+      "6239",
+      "GO:0097149",
+      "Q9XUS9",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0044284",
+      "Q9VY65",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0034271",
+      "Q9W1M7",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0031213",
+      "Q9VID9",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0032133",
+      "Q9VEM2",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0030121",
+      "O62531",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0045252",
+      "Q95T35",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:1990621",
+      "Q9Y162",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:1990429",
+      "Q9VPB8",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0005943",
+      "Q7KTZ2",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:1990072",
+      "Q9VSY8",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0030123",
+      "Q9W4K1",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0030121",
+      "B8A403",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0030121",
+      "O62530",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0033565",
+      "Q9XTL2",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0045254",
+      "Q9VVL7",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0160157",
+      "Q9VVL7",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0045252",
+      "Q9VVL7",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:1990529",
+      "Q9W2E4",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0160157",
+      "Q9VHB8",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:1990072",
+      "Q9VA95",
+      "curated_subunit_removed"
+    ]
+  ]
+}

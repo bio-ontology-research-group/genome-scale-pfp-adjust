@@ -1,0 +1,21 @@
+{
+  "label": "sprof-go",
+  "n_organism_pairs": 4,
+  "threshold": 0.001,
+  "promotions": {
+    "total": 0,
+    "with_curated_reference": 0,
+    "coverage_pct": null,
+    "precision_pct_on_covered": null,
+    "true_subunit_promotions": 0
+  },
+  "demotions": {
+    "total": 0,
+    "with_curated_reference": 0,
+    "coverage_pct": null,
+    "good_demotion_pct_on_covered": null,
+    "harmful_demotions_curated_subunit_removed": 0
+  },
+  "promotion_examples": [],
+  "harmful_demotion_examples": []
+}
