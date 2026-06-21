@@ -93,9 +93,65 @@ def test_stage2_complex_coherence():
             os.remove(out_path)
 
 
+def _run_stage2(optimized, top_k, out_path):
+    """Solve the Stage 2 fixture and return (total_flips, repaired predictions)."""
+    total_flips, _ = complex_main(
+        predictions_file=os.path.join(FIX, "mini_predictions_complex.tsv"),
+        complexes_file=os.path.join(FIX, "mini_complexes.tsv"),
+        go_hierarchy_file=os.path.join(FIX, "mini_go_hierarchy.tsv"),
+        output_file=out_path,
+        threshold=0.3,
+        optimized=optimized,
+        top_k=top_k,
+    )
+    return total_flips, load_predictions(out_path)
+
+
+def _singleton_count(adjusted, term="GO:0099001", tau=0.3):
+    return sum(
+        1
+        for p in ("protein1", "protein2", "protein3")
+        if adjusted.get(p, {}).get(term, 0.0) >= tau
+    )
+
+
+def test_stage2_optimized_path_quality():
+    """Exercise the non-optimized Stage 2 path (which the other tests skip) and
+    check that the optimized formulation used in the paper is at least as
+    economical as the full model. The optimized path adds promotion candidates
+    that the full enumeration does not, so on the singleton fixture it repairs by
+    promoting a partner (cheaper) instead of demoting (more expensive): the
+    optimized repair must be coherent and use no more flips than the full path."""
+    print("test_stage2_optimized_path_quality")
+    outs = []
+    try:
+        for suffix in ("_full.tsv", "_opt.tsv"):
+            with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as f:
+                outs.append(f.name)
+        flips_full, _ = _run_stage2(optimized=False, top_k=None, out_path=outs[0])
+        flips_opt, adj_opt = _run_stage2(optimized=True, top_k=5, out_path=outs[1])
+
+        # The optimized path (the one used in the paper) must yield a coherent
+        # repair: GO:0099001 ends up on 0 or >=2 proteins, never exactly one.
+        assert _singleton_count(adj_opt) != 1, "Optimized model left a singleton complex"
+        # A repair must actually have happened...
+        assert flips_opt >= 1, "Expected at least one flip in the optimized path"
+        # ...and the optimized formulation never does worse than the full model.
+        assert flips_opt <= flips_full, (
+            f"Optimized path used more flips than the full model: "
+            f"optimized={flips_opt}, full={flips_full}"
+        )
+        print(f"  Stage 2 optimization OK: optimized flips={flips_opt} <= full flips={flips_full}")
+    finally:
+        for p in outs:
+            if os.path.exists(p):
+                os.remove(p)
+
+
 def main():
     test_stage1_taxon_consistency()
     test_stage2_complex_coherence()
+    test_stage2_optimized_path_quality()
     print("All solver smoke tests passed.")
 
 

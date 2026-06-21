@@ -1,0 +1,74 @@
+{
+  "label": "deepgo-se_bp",
+  "subont": "bp",
+  "metrics": {
+    "fmax": {
+      "n": 430,
+      "n_changed": 20,
+      "median_before": 0.7871,
+      "median_after": 0.7871,
+      "mean_delta": -6e-05,
+      "median_delta": 0.0,
+      "n_improved": 9,
+      "n_worsened": 11,
+      "wilcoxon_W": 73.0,
+      "wilcoxon_p": 0.2322,
+      "rank_biserial": -0.1,
+      "boot95_mean_delta": [
+        -0.0002,
+        2e-05
+      ]
+    },
+    "aupr": {
+      "n": 430,
+      "n_changed": 142,
+      "median_before": 0.7779,
+      "median_after": 0.7779,
+      "mean_delta": 5e-05,
+      "median_delta": 0.0,
+      "n_improved": 55,
+      "n_worsened": 87,
+      "wilcoxon_W": 4091.0,
+      "wilcoxon_p": 0.04476,
+      "rank_biserial": -0.225,
+      "boot95_mean_delta": [
+        -3e-05,
+        0.00019
+      ]
+    },
+    "avg_auc": {
+      "n": 430,
+      "n_changed": 146,
+      "median_before": 0.7159,
+      "median_after": 0.7159,
+      "mean_delta": 7e-05,
+      "median_delta": 0.0,
+      "n_improved": 72,
+      "n_worsened": 74,
+      "wilcoxon_W": 4459.5,
+      "wilcoxon_p": 0.07606,
+      "rank_biserial": -0.014,
+      "boot95_mean_delta": [
+        -0.00011,
+        0.00037
+      ]
+    },
+    "smin": {
+      "n": 430,
+      "n_changed": 70,
+      "median_before": 20.6161,
+      "median_after": 20.6161,
+      "mean_delta": 0.01002,
+      "median_delta": 0.0,
+      "n_improved": 39,
+      "n_worsened": 31,
+      "wilcoxon_W": 1059.5,
+      "wilcoxon_p": 0.2817,
+      "rank_biserial": 0.114,
+      "boot95_mean_delta": [
+        0.00016,
+        0.02304
+      ]
+    }
+  }
+}

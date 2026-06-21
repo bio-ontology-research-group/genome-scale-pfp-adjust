@@ -21,7 +21,10 @@ under `analysis/revision_results/`.
 | §3.1 / Table S7 — top-20 curated taxon violations | `analysis/top_violated_pairs.py` → `revision_results/top20_violated_pairs.tsv` |
 | §3.4 / Table S9 — per-protein CAFA on modified subset | `pipeline/evaluate_directory.py` (modified-protein subset) |
 | §3.6 — Stage-2 biological validity vs Complex Portal | `analysis/complex_validation/` (`download_complex_dbs.sh` → `build_subunit_index.py` → `validate_stage2.py`); broadened run via `slurm/stage2_validation.slurm` → `revision_results/complex_validation/` |
-| §3.6 — scalability ablation (5,380× reduction, 12.9 s) | `complex_coherence/heuristic_ablation.py` (`slurm/ablation/heuristic.slurm`) |
+| §3.6 — scalability ablation (5,380× reduction, 12.9 s) | `complex_coherence/heuristic_ablation.py` (`slurm/ablation/heuristic.slurm`); variable/constraint counts materialized by `analysis/ablation_var_counts.py` (`slurm/ablation_var_counts.slurm`) → `revision_results/ablation_var_counts.csv` |
+| §2.1 — 1,982 obligate heteromeric complex terms | `data_prep/materialize_complex_list.py` → `data/constraints/heteromeric_complexes_2025_10.tsv` (SHA-256 `08bdc20fbeb5…`) |
+| Discussion / Table S10 — soft-regularizer baseline (soft vs hard taxon stage) | `analysis/soft_regularizer.py` → `revision_results/soft_regularizer_deepgo-se_cc.tsv` |
+| §2.2 — MLP-ESM2 deterministic split + seeded re-run | `data_prep/regen_heldout_proteins.py` (regenerate train/val TSVs) + `slurm/mlp_reproduce.slurm` (train cc/mf/bp under `--seed 42`) |
 
 ## Supplement
 
