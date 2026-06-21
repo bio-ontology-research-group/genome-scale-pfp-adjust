@@ -1,0 +1,7 @@
+# Minimal, exactly-pinned dependencies for the CPU-only smoke / golden tests.
+#
+# The solver stages (taxon_consistency, complex_coherence) and their data
+# loaders import only OR-Tools plus the Python standard library, so the test
+# suite needs nothing from the heavy GPU/ML stack in environment.yml. CI installs
+# from this file; see .github/workflows/ci.yml.
+ortools==9.15.6755

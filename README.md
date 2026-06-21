@@ -37,9 +37,12 @@ source config.env
 # 3. Fetch large constraint files
 ./data_prep/download_data.sh                    # go-basic.obo, ncbitaxon.obo
 
-# 4. Smoke test (offline, <30 s)
+# 4. Tests (offline, CPU-only, <30 s) — also run in GitHub Actions CI
+python data/constraints/verify_checksums.py   # pinned constraint files
 python tests/test_data_loaders.py
 python tests/test_solver_smoke.py
+python tests/test_golden_e2e.py               # 50-protein organism, diffs vs golden output
+# (these four need only `pip install -r requirements-test.txt`, not the full conda env)
 
 # 5. Full pipeline
 # 5a. Per-protein ESM2 mean embeddings (needed by MLP-ESM2 + DeepGO-SE)
