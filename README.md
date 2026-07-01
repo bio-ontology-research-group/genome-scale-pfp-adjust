@@ -137,7 +137,7 @@ The headline numbers in the paper come from these SLURM jobs (run in this order,
 | GAEF after adjustment (Table 3) | `slurm/eval/gaef_timeset_methods.slurm` |
 | Per-protein metrics (Table 4) | same as Table 3 |
 | Metagenomics (Figure 2) | `analysis/metagenomics_*.py` |
-| Heuristic ablation (Section 4.6) | `slurm/ablation/heuristic.slurm` |
+| Heuristic ablation (Supplementary Section S6) | `slurm/ablation/heuristic.slurm` |
 
 ## Citation
 
