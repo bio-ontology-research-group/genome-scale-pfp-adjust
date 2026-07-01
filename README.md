@@ -16,7 +16,7 @@ Both stages are encoded as integer programs and solved with OR-Tools CP-SAT. Sta
 
 ## Demo
 
-An executable Showboat demo is available in [`demos/non_model_genome/README.md`](demos/non_model_genome/README.md). It runs the full two-stage pipeline on a small non-model archaeal genome example, *Thermococcus kodakarensis* (`NCBITaxon_69014`), and verifies that taxon-incompatible annotations are removed while a singleton heteromeric-complex prediction is repaired.
+An executable Showboat demo is available in [`demos/empty_quarter_ibex/README.md`](demos/empty_quarter_ibex/README.md). It fetches a real Empty Quarter genome annotation from IBEX (`rh04` / `63_rh04`, *Bacillus spizizenii*, `NCBITaxon_96241`), converts PGAP GO annotations into the solver's prediction format, and verifies both taxon-consistency and complex-coherence repairs without committing the raw IBEX data to the repository.
 
 ## External dependencies
 
