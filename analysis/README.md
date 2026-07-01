@@ -18,7 +18,7 @@ under `analysis/revision_results/`.
 | §2.5 paired Wilcoxon / bootstrap (per-organism CAFA) | `slurm/eval_rerun.slurm` / `slurm/eval_all.slurm` → `analysis/paired_stats.py` → `revision_results/wilcoxon/` |
 | §2.4 cost-function ablation (margin / uniform / IC) | `analysis/compute_go_ic.py` + `slurm/cost_ablation.slurm` (driven by `PFP_COST_MODE`/`PFP_IC_FILE` in `taxon_consistency/adjust_ortools.py`) → `revision_results/cost_ablation/` |
 | §3.1 / Table S8 — GAEF on ground-truth proteomes (6.2%, IC depth) | `slurm/eval/gaef_annotations.slurm` → `genome_scores_evaluator` |
-| §3.1 / Table S7 — top-20 curated taxon violations | `analysis/top_violated_pairs.py` → `revision_results/top20_violated_pairs.tsv` |
+| §3.1 / Table S7 — top-20 closure-based curated taxon violations | `analysis/top_violated_pairs.py --gaef_reports_dir ...` → `revision_results/top20_violated_pairs.tsv` |
 | §3.4 / Table S9 — per-protein CAFA on modified subset | `pipeline/evaluate_directory.py` (modified-protein subset) |
 | §3.6 — Stage-2 biological validity vs Complex Portal | `analysis/complex_validation/` (`download_complex_dbs.sh` → `build_subunit_index.py` → `validate_stage2.py`); broadened run via `slurm/stage2_validation.slurm` → `revision_results/complex_validation/` |
 | §3.6 — scalability ablation (5,380× reduction, 12.9 s) | `complex_coherence/heuristic_ablation.py` (`slurm/ablation/heuristic.slurm`); variable/constraint counts materialized by `analysis/ablation_var_counts.py` (`slurm/ablation_var_counts.slurm`) → `revision_results/ablation_var_counts.csv` |
@@ -41,7 +41,7 @@ under `analysis/revision_results/`.
 - `analysis/flip_rate.py` — Stage-1 flip rate at a given τ.
 - `analysis/naive_filter.py` — naive taxon-filter baseline (± GO-hierarchy propagation).
 - `analysis/paired_stats.py` — paired Wilcoxon + organism-level bootstrap CIs.
-- `analysis/top_violated_pairs.py` — rank curated taxon-constraint violations.
+- `analysis/top_violated_pairs.py` — rank closure-based curated taxon-constraint violations.
 - `analysis/compute_go_ic.py` — GO-term information content for the IC-weighted cost.
 - `analysis/complex_validation/validate_stage2.py` — score Stage-2 repairs vs Complex Portal.
 - `slurm/{tau_sweep,tau_sweep_bpmf,eval_rerun,eval_all,cost_ablation,stage2_validation,mlp_retrain}.slurm`.

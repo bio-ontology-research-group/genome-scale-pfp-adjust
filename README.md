@@ -1,6 +1,6 @@
 # genome-scale-pfp-adjust
 
-Constraint-optimization post-processing for protein function predictions.
+Post-hoc CP-SAT constraint optimization for repairing genome-scale protein function predictions.
 
 Companion code for the paper *Genome-scale protein function adjustment using constraint optimization*. Implements a two-stage CP-SAT solver (taxon consistency, then complex coherence) that minimally adjusts genome-scale GO-term predictions to satisfy organism-level biological constraints.
 
@@ -13,6 +13,10 @@ Given per-protein GO predictions from any upstream method, the solver flips the 
 2. **Stage 2 — complex coherence.** No obligate heteromeric complex GO term is annotated to exactly one protein in the proteome. Singletons are either demoted from the lone protein or promoted onto a plausible partner.
 
 Both stages are encoded as integer programs and solved with OR-Tools CP-SAT. Stage 2 uses three reductions: incoherent-only filter, sparse variable set, and top-k participation.
+
+## Demo
+
+An executable Showboat demo is available in [`demos/non_model_genome/README.md`](demos/non_model_genome/README.md). It runs the full two-stage pipeline on a small non-model archaeal genome example, *Thermococcus kodakarensis* (`NCBITaxon_69014`), and verifies that taxon-incompatible annotations are removed while a singleton heteromeric-complex prediction is repaired.
 
 ## External dependencies
 

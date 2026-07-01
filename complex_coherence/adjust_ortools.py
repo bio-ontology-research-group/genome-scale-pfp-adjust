@@ -93,8 +93,6 @@ def load_homodimer_terms(file_path):
 #         all_children = get_all_children(heteromeric_complex, go_hierarchy)
 #         expanded_heteromeric_complexes.update(all_children)
 
-#     print(f"[DEBUG] difference between expanded and original heteromeric complexes: {expanded_heteromeric_complexes.difference(heteromeric_complexes)}")
-#     print(f"[DEBUG] children of heteromeric complexes: {expanded_heteromeric_complexes}")
 #     return expanded_heteromeric_complexes.union(heteromeric_complexes)
 
 def get_heteromeric_complexes(homodimer_terms: Set[str], annotated_go_terms: Set[str], go_hierarchy: Dict[str, Set[str]]) -> Set[str]:
@@ -105,7 +103,7 @@ def get_heteromeric_complexes(homodimer_terms: Set[str], annotated_go_terms: Set
     all_complex_terms = get_all_children(MACROMOLECULAR_COMPLEX, go_hierarchy)
     all_complex_terms.add(MACROMOLECULAR_COMPLEX)
 
-    print(f"[DEBUG] all_complex_terms: {len(all_complex_terms)}")
+    print(f"[INFO] all_complex_terms: {len(all_complex_terms)}")
 
     heteromeric_complexes = all_complex_terms.difference(homodimer_terms)
 
@@ -300,6 +298,8 @@ def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
     print("[INFO] Solving SAT problem...")
     
     solver = cp_model.CpSolver()
+    solver.parameters.num_search_workers = 1
+    solver.parameters.random_seed = 42
     status = solver.Solve(model)
     solve_time = time.time() - solve_start_time
 
@@ -319,13 +319,6 @@ def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
                 adjusted_predictions[protein][go_term] = go_term_result
         print(f"[INFO]   Total flips: {total_flips}")
 
-        # DEBUG
-        for protein in adjusted_predictions:
-            for go_term in adjusted_predictions[protein]:
-                if (go_term, protein) in flip_variables and solver.BooleanValue(flip_variables[(go_term, protein)]):
-                    print(f"[DEBUG] {protein}\t{go_term}\t{adjusted_predictions[protein][go_term]}\tflip_{go_term}_{protein}")
-
-        
         opt_cost = solver.ObjectiveValue() / cost_scale
         print(f"[INFO]   Optimal cost: {opt_cost}")
 
@@ -447,20 +440,16 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
 
 
     # Add heteromeric complex constraints
-    for heteromeric_complex in participating_proteins.keys():
-        # Add constraint: sum of proteins with this complex != 1
+    for heteromeric_complex in sorted(participating_proteins.keys()):
         complex_vars = [go_term_variables[(heteromeric_complex, protein)] 
                         for protein in participating_proteins[heteromeric_complex]
                         if (heteromeric_complex, protein) in go_term_variables]
-        if complex_vars:
-            # Sum != 1 means sum <= 0 OR sum >= 2
-            complex_sum = sum(complex_vars)
-            # Create a boolean for whether sum == 1
-            sum_is_one = model.NewBoolVar(f'sum_is_one_{heteromeric_complex}')
-            model.Add(complex_sum == 1).OnlyEnforceIf(sum_is_one)
-            model.Add(complex_sum != 1).OnlyEnforceIf(sum_is_one.Not())
-            # Enforce sum != 1
-            model.AddBoolAnd([sum_is_one.Not()])
+        if len(complex_vars) == 1:
+            model.Add(complex_vars[0] == 0)
+        elif complex_vars:
+            no_members = model.NewBoolVar(f'complex_{heteromeric_complex}_has_zero_members')
+            model.Add(sum(complex_vars) == 0).OnlyEnforceIf(no_members)
+            model.Add(sum(complex_vars) >= 2).OnlyEnforceIf(no_members.Not())
 
     print(f"[INFO] Added {len(participating_proteins)} heteromeric complex constraints")
 
@@ -516,6 +505,8 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
     print("[INFO] Solving SAT problem...")
     
     solver = cp_model.CpSolver()
+    solver.parameters.num_search_workers = 1
+    solver.parameters.random_seed = 42
     status = solver.Solve(model)
     solve_time = time.time() - solve_start_time
 
@@ -535,13 +526,6 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
                 adjusted_predictions[protein][go_term] = go_term_result
         print(f"[INFO]   Total flips: {total_flips}")
 
-        # DEBUG
-        for protein in adjusted_predictions:
-            for go_term in adjusted_predictions[protein]:
-                if (go_term, protein) in flip_variables and solver.BooleanValue(flip_variables[(go_term, protein)]):
-                    print(f"[DEBUG] {protein}\t{go_term}\t{adjusted_predictions[protein][go_term]}\tflip_{go_term}_{protein}")
-
-        
         opt_cost = solver.ObjectiveValue() / cost_scale
         print(f"[INFO]   Optimal cost: {opt_cost}")
 
@@ -725,4 +709,3 @@ if __name__ == '__main__':
         top_k=args.top_k,
         participating_threshold=args.participating_threshold
     )
-

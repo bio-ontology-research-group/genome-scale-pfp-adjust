@@ -1,22 +1,22 @@
-# organisms_scanned=568 inconsistent=49
+# organisms_scanned=514 closure_violating=49
 rank	GO_term	constraint	constraint_taxa	n_organisms	n_annotations
 1	GO:0032501	never_in_taxon	NCBITaxon_2	7	11
 2	GO:0051239	never_in_taxon	NCBITaxon_2	5	6
-3	GO:0001775	only_in_taxon	NCBITaxon_33208	5	5
+3	GO:0045087	never_in_taxon	NCBITaxon_2	5	5
 4	GO:0045088	never_in_taxon	NCBITaxon_2	5	5
-5	GO:0045087	never_in_taxon	NCBITaxon_2	5	5
+5	GO:0001775	only_in_taxon	NCBITaxon_33208	5	5
 6	GO:0031639	only_in_taxon	NCBITaxon_7742	4	8
-7	GO:0044003	never_in_taxon	NCBITaxon_7742	4	6
-8	GO:0044068	never_in_taxon	NCBITaxon_7742	4	6
-9	GO:0006915	only_in_taxon	NCBITaxon_33154	4	6
-10	GO:0051241	never_in_taxon	NCBITaxon_2	4	5
-11	GO:0007596	only_in_taxon	NCBITaxon_7742	4	5
+7	GO:0006915	only_in_taxon	NCBITaxon_33154	4	6
+8	GO:0044003	never_in_taxon	NCBITaxon_7742	4	6
+9	GO:0044068	never_in_taxon	NCBITaxon_7742	4	6
+10	GO:0007596	only_in_taxon	NCBITaxon_7742	4	5
+11	GO:0042730	only_in_taxon	NCBITaxon_7742	4	5
 12	GO:0030193	only_in_taxon	NCBITaxon_7742	4	5
 13	GO:0030195	only_in_taxon	NCBITaxon_7742	4	5
-14	GO:0042730	only_in_taxon	NCBITaxon_7742	4	5
-15	GO:0045321	only_in_taxon	NCBITaxon_7742	4	4
-16	GO:0002758	never_in_taxon	NCBITaxon_2	4	4
-17	GO:0002221	never_in_taxon	NCBITaxon_2	4	4
-18	GO:0045089	never_in_taxon	NCBITaxon_2	4	4
-19	GO:0062207	never_in_taxon	NCBITaxon_2	4	4
-20	GO:0002218	never_in_taxon	NCBITaxon_2	4	4
+14	GO:0051241	never_in_taxon	NCBITaxon_2	4	5
+15	GO:0002221	never_in_taxon	NCBITaxon_2	4	4
+16	GO:0045089	never_in_taxon	NCBITaxon_2	4	4
+17	GO:0002218	never_in_taxon	NCBITaxon_2	4	4
+18	GO:0062207	never_in_taxon	NCBITaxon_2	4	4
+19	GO:0002758	never_in_taxon	NCBITaxon_2	4	4
+20	GO:0045321	only_in_taxon	NCBITaxon_7742	4	4

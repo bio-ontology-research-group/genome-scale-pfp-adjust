@@ -45,6 +45,7 @@ eval_gaef_*_results/
 term-centric-analysis*/
 term-flip-ranking/
 adjustments_debug_/
+demos/non_model_genome/output/
 
 # Bundled-data exceptions: these large/binary file types are explicitly ALLOWED
 # under data/, splits/, accession_lists/, and complex_coherence/.

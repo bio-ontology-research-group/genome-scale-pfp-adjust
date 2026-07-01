@@ -1,0 +1,5 @@
+GO_ID	Constraint_Type	Taxon_ID
+GO:0032501	never_in_taxon	NCBITaxon_2157
+GO:0045087	never_in_taxon	NCBITaxon_2157
+GO:0006412	only_in_taxon	NCBITaxon_131567
+GO:0005737	only_in_taxon	NCBITaxon_131567

@@ -1,0 +1,3 @@
+Term	Relationship	Parent/Disjoint_From_Term
+NCBITaxon_69014	is_a	NCBITaxon_2157
+NCBITaxon_2157	is_a	NCBITaxon_131567

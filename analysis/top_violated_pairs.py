@@ -1,8 +1,13 @@
 """
 Scan the curated ground-truth proteome annotations for taxon-constraint
 violations and report the most frequently violated (constrained GO term,
-constraint) pairs across organisms --- the per-pair breakdown behind the
-aggregate 6.2% (32/514) figure.
+constraint) pairs across organisms.
+
+This is a closure-based audit using the same GO/taxon loaders as the solver.
+When restricted to the 514 taxa with GAEF ground-truth reports, it finds
+49/514 proteomes with at least one annotation whose GO closure violates a
+taxon constraint. This differs from the GAEF `satisfiable` aggregate
+(32/514), which is reported separately in the paper.
 
 A curated annotation violates a constraint when an annotated term's GO closure
 (the term or any ancestor) contains a constrained term h such that:
@@ -24,6 +29,7 @@ from taxon_consistency.adjust_ortools import (  # noqa: E402
 )
 
 FN = re.compile(r"annots_taxon_(\d+)\.tsv$")
+GAEF_FN = re.compile(r"gaef_(\d+)_report\.json$")
 
 
 def transitive(seed, adj):
@@ -36,6 +42,15 @@ def transitive(seed, adj):
     return out
 
 
+def taxa_from_gaef_reports(reports_dir):
+    taxa = set()
+    for f in glob.glob(os.path.join(reports_dir, "gaef_*_report.json")):
+        m = GAEF_FN.search(os.path.basename(f))
+        if m:
+            taxa.add(m.group(1))
+    return taxa
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--annotations_dir", required=True)
@@ -43,6 +58,9 @@ def main():
     ap.add_argument("--go_hierarchy_file", default="data/go_hierarchy.tsv")
     ap.add_argument("--taxon_hierarchy_file", default="data/taxon_hierarchy.tsv")
     ap.add_argument("--ncbitaxon_hierarchy_file", default="data/ncbitaxon_hierarchy.tsv")
+    ap.add_argument("--gaef_reports_dir", default=None,
+                    help="Optional directory of gaef_<taxon>_report.json files; "
+                         "when supplied, restrict the audit to this evaluated taxon set.")
     ap.add_argument("--top", type=int, default=20)
     ap.add_argument("--output_file", default=None)
     args = ap.parse_args()
@@ -50,6 +68,7 @@ def main():
     in_taxon, never_in = load_constraints(args.constraints_file)
     go_parents = load_go_hierarchy(args.go_hierarchy_file)
     tax_isa, _, _ = load_taxon_hierarchy(args.taxon_hierarchy_file, args.ncbitaxon_hierarchy_file)
+    include_taxa = taxa_from_gaef_reports(args.gaef_reports_dir) if args.gaef_reports_dir else None
 
     pair_orgs = defaultdict(set)      # (h, type, ctaxa) -> set(org taxon ids)
     pair_annots = defaultdict(int)    # (h, type, ctaxa) -> annotation count
@@ -60,6 +79,8 @@ def main():
         if not m:
             continue
         org = m.group(1)
+        if include_taxa is not None and org not in include_taxa:
+            continue
         taxon = f"NCBITaxon_{org}"
         lineage = transitive({taxon}, tax_isa)
         # constrained terms violated for this organism
@@ -94,7 +115,7 @@ def main():
             n_incons += 1
 
     ranked = sorted(pair_orgs, key=lambda k: (len(pair_orgs[k]), pair_annots[k]), reverse=True)
-    print(f"# organisms scanned: {n_orgs}; with >=1 curated violation: {n_incons} "
+    print(f"# organisms scanned: {n_orgs}; with >=1 closure-based curated violation: {n_incons} "
           f"({100.0*n_incons/n_orgs:.2f}%)")
     print(f"# distinct violated (GO term, constraint, taxon) pairs: {len(ranked)}")
     print("\nrank\tGO_term\tconstraint\tconstraint_taxa\tn_organisms\tn_annotations")
@@ -106,7 +127,7 @@ def main():
         lines.append(row)
     if args.output_file:
         with open(args.output_file, "w") as fh:
-            fh.write(f"# organisms_scanned={n_orgs} inconsistent={n_incons}\n")
+            fh.write(f"# organisms_scanned={n_orgs} closure_violating={n_incons}\n")
             fh.write("rank\tGO_term\tconstraint\tconstraint_taxa\tn_organisms\tn_annotations\n")
             fh.write("\n".join(lines) + "\n")
 
