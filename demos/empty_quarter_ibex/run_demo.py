@@ -1,23 +1,28 @@
 #!/usr/bin/env python3
-"""Run GenoAdjust on a real Empty Quarter genome annotation from IBEX.
+"""Run GenoAdjust on a real Empty Quarter genome annotation.
 
 The demo uses PGAP's GO-bearing CDS annotations for rh04 / 63_rh04 and converts
 them to the repository's tabular prediction format. PGAP does not emit
 probabilities in this GFF, so each observed GO annotation is encoded with the
-same high score and thresholded in the usual way by the optimizer.
+same high score and thresholded in the usual way by the optimizer. By default,
+inputs are fetched from the public bio2vec.net reproducibility bundle; use
+--source ibex to refresh from the original IBEX paths.
 """
 
 from __future__ import annotations
 
 import argparse
+import gzip
 import json
 import re
 import shlex
+import shutil
 import subprocess
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 from urllib.parse import unquote
+from urllib.request import urlopen
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -36,6 +41,13 @@ REMOTE_ROOT = (
 )
 REMOTE_GFF = f"{REMOTE_ROOT}/annot.gff"
 REMOTE_ANI_REPORT = f"{REMOTE_ROOT}/ani-tax-report.txt"
+
+PUBLIC_BASE_URL = (
+    "https://bio2vec.net/data/genoadjust/"
+    "rh04_63_rh04_bacillus_spizizenii_genoadjust_demo"
+)
+PUBLIC_GFF_URL = f"{PUBLIC_BASE_URL}/pgap_annot.gff.gz"
+PUBLIC_ANI_REPORT_URL = f"{PUBLIC_BASE_URL}/ani-tax-report.txt"
 
 BACILLUS_LINEAGE = [
     ("NCBITaxon_96241", "NCBITaxon_653685"),
@@ -63,6 +75,17 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=DEMO_ROOT / "output",
         help="Directory for fetched inputs, converted predictions, logs, and adjusted outputs.",
+    )
+    parser.add_argument(
+        "--source",
+        choices=("public", "ibex"),
+        default="public",
+        help="Fetch demo inputs from bio2vec.net/data by default, or refresh them from IBEX.",
+    )
+    parser.add_argument(
+        "--base-url",
+        default=PUBLIC_BASE_URL,
+        help="Public base URL for the reproducibility bundle when --source=public.",
     )
     parser.add_argument(
         "--remote-host",
@@ -93,7 +116,18 @@ def parse_gff_attributes(field: str) -> dict[str, str]:
     return attrs
 
 
-def fetch_inputs(output_dir: Path, remote_host: str, skip_fetch: bool) -> tuple[Path, Path]:
+def download_url(url: str, path: Path) -> None:
+    with urlopen(url, timeout=60) as response, path.open("wb") as handle:
+        shutil.copyfileobj(response, handle)
+
+
+def fetch_inputs(
+    output_dir: Path,
+    source: str,
+    base_url: str,
+    remote_host: str,
+    skip_fetch: bool,
+) -> tuple[Path, Path, str]:
     raw_dir = output_dir / "raw"
     raw_dir.mkdir(parents=True, exist_ok=True)
     gff_path = raw_dir / "annot.gff"
@@ -102,7 +136,16 @@ def fetch_inputs(output_dir: Path, remote_host: str, skip_fetch: bool) -> tuple[
         missing = [str(p) for p in (gff_path, ani_path) if not p.exists()]
         if missing:
             raise SystemExit(f"--skip-fetch requested but files are missing: {', '.join(missing)}")
-        return gff_path, ani_path
+        return gff_path, ani_path, "local cached files"
+
+    if source == "public":
+        base_url = base_url.rstrip("/")
+        gff_gz_path = raw_dir / "pgap_annot.gff.gz"
+        download_url(f"{base_url}/pgap_annot.gff.gz", gff_gz_path)
+        download_url(f"{base_url}/ani-tax-report.txt", ani_path)
+        with gzip.open(gff_gz_path, "rb") as src, gff_path.open("wb") as dst:
+            shutil.copyfileobj(src, dst)
+        return gff_path, ani_path, f"{base_url}/pgap_annot.gff.gz"
 
     for remote_path, local_path in (
         (REMOTE_GFF, gff_path),
@@ -112,7 +155,7 @@ def fetch_inputs(output_dir: Path, remote_host: str, skip_fetch: bool) -> tuple[
             ["scp", "-q", f"{remote_host}:{remote_path}", str(local_path)],
             check=True,
         )
-    return gff_path, ani_path
+    return gff_path, ani_path, REMOTE_GFF
 
 
 def convert_gff_to_predictions(
@@ -257,7 +300,13 @@ def format_term_counts(
 def main() -> None:
     args = parse_args()
     output_dir = args.output_dir.resolve()
-    raw_gff, ani_report = fetch_inputs(output_dir, args.remote_host, args.skip_fetch)
+    raw_gff, ani_report, source_gff = fetch_inputs(
+        output_dir,
+        source=args.source,
+        base_url=args.base_url,
+        remote_host=args.remote_host,
+        skip_fetch=args.skip_fetch,
+    )
 
     predictions_dir = output_dir / "predictions"
     optimized_dir = output_dir / "optimized"
@@ -329,7 +378,7 @@ def main() -> None:
 
     print("Source genome")
     print(f"  sample: {SAMPLE_ID} / {GENOME_ID}")
-    print(f"  IBEX GFF: {REMOTE_GFF}")
+    print(f"  GFF source: {source_gff}")
     print(f"  ANI best match: {ani.get('best_match', 'not reported')}")
     print(f"  ANI status: {ani.get('status', 'not reported')} ({ani.get('confidence', 'not reported')})")
     print()

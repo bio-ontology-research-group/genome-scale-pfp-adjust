@@ -1,11 +1,13 @@
-# Empty Quarter IBEX genome demo
+# Empty Quarter public genome demo
 
-*2026-07-01T05:37:34Z by Showboat 0.6.1*
-<!-- showboat-id: 3cc37504-24d0-43e9-9e08-2196ae8dadaf -->
+*2026-07-01T06:00:05Z by Showboat 0.6.1*
+<!-- showboat-id: 5d72d637-175c-427a-bbcb-6d9cb0716c2e -->
 
-This demo runs GenoAdjust on a real Empty Quarter genome annotation from IBEX: rh04 / 63_rh04, identified by ANI as Bacillus spizizenii (NCBITaxon_96241). It fetches the PGAP GFF and ANI report from IBEX, converts PGAP's GO-bearing CDS annotations into the repository prediction format, runs taxon consistency, then runs optimized complex coherence with top_k=2. Raw genome sequence is not stored in the repository; generated inputs, outputs, and solver logs are written under the ignored output/ directory.
+This demo runs GenoAdjust on a real Empty Quarter genome annotation: rh04 / 63_rh04, identified by ANI as Bacillus spizizenii (NCBITaxon_96241). The reproducibility bundle is public at https://bio2vec.net/data/genoadjust/rh04_63_rh04_bacillus_spizizenii_genoadjust_demo/. The runner downloads the PGAP GFF and ANI report from that bundle by default, converts PGAP's GO-bearing CDS annotations into the repository prediction format, runs taxon consistency, then runs optimized complex coherence with top_k=2.
 
-Requirements: an ssh/scp host alias named ibex with access to /ibex/scratch/projects/c2014/EmptyQuarter_Data, plus uvx so the pinned OR-Tools dependency can be provided without modifying the system Python.
+The public bundle also contains the genome assembly FASTA, PGAP protein FASTA, PGAP nucleotide feature FASTA, CheckM summary, manifest, and SHA-256 checksums. Use --source ibex to refresh from the original IBEX paths instead of the public copy.
+
+Requirements: network access to bio2vec.net and uvx so the pinned OR-Tools dependency can be provided without modifying the system Python.
 
 ```bash
 uvx --with ortools==9.15.6755 --with tqdm python demos/empty_quarter_ibex/run_demo.py
@@ -14,7 +16,7 @@ uvx --with ortools==9.15.6755 --with tqdm python demos/empty_quarter_ibex/run_de
 ```output
 Source genome
   sample: rh04 / 63_rh04
-  IBEX GFF: /ibex/scratch/projects/c2014/EmptyQuarter_Data/cultures/assemblies/assemblies_tiannyu_2025/pgap_annotations/63_rh04/annot.gff
+  GFF source: https://bio2vec.net/data/genoadjust/rh04_63_rh04_bacillus_spizizenii_genoadjust_demo/pgap_annot.gff.gz
   ANI best match: Bacillus spizizenii (taxid = 96241, rank = species, lineage = Bacteria; Bacillati; Bacillota; Bacilli; Bacillales; Bacillaceae; Bacillus)
   ANI status: CONFIRMED (HIGH)
 
@@ -55,4 +57,4 @@ Generated files
   raw solver logs: demos/empty_quarter_ibex/output/logs
 ```
 
-The fixed score of 0.9 is only a representation layer: PGAP's GFF records contain discrete GO annotations rather than probabilities, while GenoAdjust expects GO|score entries. The demo therefore tests the repair code on real genome-derived GO predictions without committing the underlying IBEX data.
+The fixed score of 0.9 is only a representation layer: PGAP's GFF records contain discrete GO annotations rather than probabilities, while GenoAdjust expects GO|score entries. The demo therefore tests the repair code on real genome-derived GO predictions using public, checksum-backed input data.

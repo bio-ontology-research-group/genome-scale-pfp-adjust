@@ -16,7 +16,7 @@ Both stages are encoded as integer programs and solved with OR-Tools CP-SAT. Sta
 
 ## Demo
 
-An executable Showboat demo is available in [`demos/empty_quarter_ibex/README.md`](demos/empty_quarter_ibex/README.md). It fetches a real Empty Quarter genome annotation from IBEX (`rh04` / `63_rh04`, *Bacillus spizizenii*, `NCBITaxon_96241`), converts PGAP GO annotations into the solver's prediction format, and verifies both taxon-consistency and complex-coherence repairs without committing the raw IBEX data to the repository.
+An executable Showboat demo is available in [`demos/empty_quarter_ibex/README.md`](demos/empty_quarter_ibex/README.md). It fetches a real Empty Quarter genome annotation from the public reproducibility bundle at `https://bio2vec.net/data/genoadjust/rh04_63_rh04_bacillus_spizizenii_genoadjust_demo/` (`rh04` / `63_rh04`, *Bacillus spizizenii*, `NCBITaxon_96241`), converts PGAP GO annotations into the solver's prediction format, and verifies both taxon-consistency and complex-coherence repairs.
 
 ## External dependencies
 
