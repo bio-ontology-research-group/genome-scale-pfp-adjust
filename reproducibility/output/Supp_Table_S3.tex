@@ -1,0 +1,27 @@
+\begin{table}[!h]
+\centering
+\caption{CP-SAT taxon-consistency stage runtimes across the three GO sub-ontologies, reported as per-organism mean $\pm$ standard deviation over the 50 timeset organisms.}
+\label{tab:solver-runtime-taxon}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llccc}
+\toprule
+Sub-ontology & Predictor & Setup (s) & Solve (s) & Total (s) \\
+\midrule
+\multirow{3}{*}{CC}
+ & Seq-Sim   & $0.13 \pm 0.05$ & $0.11 \pm 0.03$ & $0.24 \pm 0.08$ \\
+ & DeepGO-SE & $0.19 \pm 0.22$ & $0.12 \pm 0.04$ & $0.31 \pm 0.24$ \\
+ & SPROF-GO  & $0.09 \pm 0.04$ & $0.04 \pm 0.00$ & $0.13 \pm 0.04$ \\
+\midrule
+\multirow{3}{*}{MF}
+ & Seq-Sim   & $0.26 \pm 0.27$ & $0.13 \pm 0.04$ & $0.39 \pm 0.28$ \\
+ & DeepGO-SE & $0.29 \pm 0.20$ & $0.12 \pm 0.04$ & $0.41 \pm 0.22$ \\
+ & SPROF-GO  & $0.08 \pm 0.04$ & $0.02 \pm 0.00$ & $0.10 \pm 0.04$ \\
+\midrule
+\multirow{3}{*}{BP}
+ & Seq-Sim   & $1.00 \pm 0.55$ & $3.26 \pm 1.64$ & $4.26 \pm 2.08$ \\
+ & DeepGO-SE & $1.29 \pm 0.78$ & $1.39 \pm 1.04$ & $2.68 \pm 1.71$ \\
+ & SPROF-GO  & $0.71 \pm 0.35$ & $0.40 \pm 0.06$ & $1.11 \pm 0.39$ \\
+\bottomrule
+\end{tabular}
+\end{table}

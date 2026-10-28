@@ -1,0 +1,24 @@
+\begin{table}[!h]
+\centering
+\caption{Soft-regularizer sweep on DeepGO-SE cellular-component predictions (564 proteomes, 142{,}285 taxon-violating terms, $\tau=0.3$). A soft penalty $\lambda$ removes a violation only when its margin above threshold is below $\lambda$; the exact solver removes all violations. ``Residual'' = violations remaining; ``Removed'' = percentage of violations removed; ``Cost'' = summed margin of removed terms.}
+\label{tab:supp-soft}
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{0.95}
+\begin{tabular}{lrrr}
+\toprule
+Mode & Residual & Removed (\%) & Cost \\
+\midrule
+Hard (exact)        &      0 & 100.0 & 19{,}335 \\
+\addlinespace[2pt]
+Soft $\lambda=0.05$ & 94{,}724 &  33.4 &    963 \\
+Soft $\lambda=0.1$  & 67{,}148 &  52.8 & 2{,}988 \\
+Soft $\lambda=0.2$  & 34{,}282 &  75.9 & 7{,}730 \\
+Soft $\lambda=0.3$  & 17{,}915 &  87.4 & 11{,}735 \\
+Soft $\lambda=0.4$  &  9{,}125 &  93.6 & 14{,}764 \\
+Soft $\lambda=0.5$  &  4{,}170 &  97.1 & 16{,}973 \\
+Soft $\lambda=0.6$  &  1{,}041 &  99.3 & 18{,}682 \\
+Soft $\lambda=0.7$  &      0 & 100.0 & 19{,}335 \\
+\bottomrule
+\end{tabular}
+\end{table}

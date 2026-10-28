@@ -1,0 +1,21 @@
+{
+  "label": "seq_sim_timeset_standard_withtax",
+  "n_organism_pairs": 50,
+  "threshold": 0.001,
+  "promotions": {
+    "total": 4823,
+    "with_curated_reference": 21,
+    "coverage_pct": 0.44,
+    "precision_pct_on_covered": 0.0,
+    "true_subunit_promotions": 0
+  },
+  "demotions": {
+    "total": 0,
+    "with_curated_reference": 0,
+    "coverage_pct": null,
+    "good_demotion_pct_on_covered": null,
+    "harmful_demotions_curated_subunit_removed": 0
+  },
+  "promotion_examples": [],
+  "harmful_demotion_examples": []
+}

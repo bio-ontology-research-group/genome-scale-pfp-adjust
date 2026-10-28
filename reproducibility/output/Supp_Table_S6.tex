@@ -1,0 +1,21 @@
+\begin{table}[!h]
+\centering
+\caption{Heuristic ablation: solver runtime and status for taxon 272844 (450 proteins), taxon 759272 (4{,}597 proteins), and taxon 10116 (20{,}227 proteins), with a 600\,s timeout. ``--'' indicates that the configuration was not run because a previous configuration already timed out. OPT status indicates that the configuration reached optimality, T/O indicates timeout.}
+\label{tab:ablation-solve}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrl@{\hspace{8pt}}rrl@{\hspace{8pt}}rrl}
+\toprule
+ & \multicolumn{3}{c}{Taxon 272844} & \multicolumn{3}{c}{Taxon 759272} & \multicolumn{3}{c}{Taxon 10116} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+Config & setup & solve & status & setup & solve & status & setup & solve & status \\
+\midrule
++H1+H2+H3 & 0.1\,s & 1.3\,s & OPT & 0.9\,s & 11.0\,s & OPT & 1.2\,s & 6.7\,s & OPT \\
++H2+H3    & 4.8\,s & 40.0\,s & OPT & 6.4\,s & 88.1\,s & OPT & 8.7\,s & 69.7\,s & OPT \\
++H1+H2    & 1.4\,s & 17.9\,s & OPT & 60.1\,s & $>$600\,s & T/O & 238.9\,s & $>$600\,s & T/O \\
++H1+H3    & 88.1\,s & 71.1\,s & OPT & -- & -- & T/O & -- & -- & T/O \\
++H1       & 107.9\,s & 117.2\,s & OPT & -- & -- & T/O & -- & -- & T/O \\
+Naive     & 1058.0\,s & -- & T/O & -- & -- & T/O & -- & -- & T/O \\
+\bottomrule
+\end{tabular}
+\end{table}

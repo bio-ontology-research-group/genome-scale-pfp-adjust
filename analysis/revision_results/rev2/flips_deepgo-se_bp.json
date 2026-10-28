@@ -1,0 +1,52 @@
+[
+  {
+    "predictor": "deepgo-se",
+    "subontology": "bp",
+    "scope": "timeset_50",
+    "mode": "with_taxons",
+    "cost_mode": "margin",
+    "tau": 0.3,
+    "n_organisms": 50,
+    "n_cafa_organisms": 0,
+    "preds_above_tau": 25219446,
+    "grid_decisions": 1672277111,
+    "flips_above_tau": 3018,
+    "active_flip_rate_pct": 0.012,
+    "grid_flip_rate_pct": 0.0002,
+    "raw_entries_removed": 5202763,
+    "gaef_taxon_consistency_before": 0.12,
+    "gaef_taxon_consistency_after": 1.0,
+    "macro_cafa": {
+      "fmax": null,
+      "smin": null,
+      "avg_auc": null,
+      "aupr": null
+    },
+    "pooled_cafa": {}
+  },
+  {
+    "predictor": "deepgo-se",
+    "subontology": "bp",
+    "scope": "timeset_50",
+    "mode": "no_taxons",
+    "cost_mode": "margin",
+    "tau": 0.3,
+    "n_organisms": 50,
+    "n_cafa_organisms": 0,
+    "preds_above_tau": 25219446,
+    "grid_decisions": 1672277111,
+    "flips_above_tau": 2574,
+    "active_flip_rate_pct": 0.0102,
+    "grid_flip_rate_pct": 0.0002,
+    "raw_entries_removed": 4542568,
+    "gaef_taxon_consistency_before": 0.12,
+    "gaef_taxon_consistency_after": 1.0,
+    "macro_cafa": {
+      "fmax": null,
+      "smin": null,
+      "avg_auc": null,
+      "aupr": null
+    },
+    "pooled_cafa": {}
+  }
+]

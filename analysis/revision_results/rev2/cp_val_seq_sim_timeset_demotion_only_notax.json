@@ -1,0 +1,46 @@
+{
+  "label": "seq_sim_timeset_demotion_only_notax",
+  "n_organism_pairs": 50,
+  "threshold": 0.001,
+  "promotions": {
+    "total": 0,
+    "with_curated_reference": 0,
+    "coverage_pct": null,
+    "precision_pct_on_covered": null,
+    "true_subunit_promotions": 0
+  },
+  "demotions": {
+    "total": 4158,
+    "with_curated_reference": 14,
+    "coverage_pct": 0.34,
+    "good_demotion_pct_on_covered": 71.43,
+    "harmful_demotions_curated_subunit_removed": 4
+  },
+  "promotion_examples": [],
+  "harmful_demotion_examples": [
+    [
+      "6239",
+      "GO:1990728",
+      "Q9NGT3",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0005673",
+      "O96880",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:1990529",
+      "Q9W2E4",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0032936",
+      "Q9VW37",
+      "curated_subunit_removed"
+    ]
+  ]
+}

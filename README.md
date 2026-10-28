@@ -95,7 +95,8 @@ data_prep/                Dataset/split construction, OBO parsers, dataset build
 data/                     Bundled small constraint TSVs (large ones downloaded)
   constraints/            GAEF constraint files (vendored — see gaef_patches/)
 splits/{timeset,heldout}/ Train/test organism splits used in the paper
-analysis/                 Supplementary analyses (term-centric, metagenomics, flip ranking)
+analysis/                 Supplementary & revision analyses (term-centric, metagenomics, flip ranking, baselines)
+reproducibility/          Single-command reproduction of all paper & supplementary tables and figures
 slurm/{adjust,eval,train,ablation}/
                           Cluster job scripts, all templated via config.env
 tests/                    CPU-only smoke tests + fixtures
@@ -128,16 +129,28 @@ line).
 
 ## Reproducing the paper
 
-The headline numbers in the paper come from these SLURM jobs (run in this order, after `data_prep/download_data.sh` and dataset construction):
+All tables and figures in the main manuscript (Tables 1–2) and Supplementary Material (Tables S1–S15, Figures S1–S3) can be reproduced from [`reproducibility/`](reproducibility/README.md):
+
+```bash
+# Instant offline regeneration of all tables & figures from committed summary artifacts (< 5 s):
+uv run python reproducibility/reproduce_all_tables_and_figures.py
+
+# Full end-to-end cluster reproduction (SLURM):
+bash reproducibility/run_all_slurm.sh
+```
+
+See [`reproducibility/README.md`](reproducibility/README.md) for the complete table-by-table mapping:
 
 | Paper claim | Script |
 |---|---|
-| Flip rates (Table 2) | `slurm/adjust/{seq_sim_timeset,deepgo_se,sprof_go}.slurm` |
-| GAEF on ground truth (Table 1) | `slurm/eval/gaef_annotations.slurm` |
-| GAEF after adjustment (Table 3) | `slurm/eval/gaef_timeset_methods.slurm` |
-| Per-protein metrics (Table 4) | same as Table 3 |
-| Metagenomics (Figure 2) | `analysis/metagenomics_*.py` |
-| Heuristic ablation (Supplementary Section S6) | `slurm/ablation/heuristic.slurm` |
+| Stage 1 & Stage 2 flip rates (Table 1) | `analysis/rev2_tau_and_flips.py` (`slurm/rev2_table1_flips.slurm`) |
+| GAEF after adjustment (Table 2; Supp. Table S13) | `analysis/rev2_stage2_and_baselines.py` (`slurm/rev2_stage2_and_baselines.slurm`) |
+| Per-protein CAFA metrics (Supp. Tables S1, S2, S9, S13) | `pipeline/evaluate_directory.py` & `analysis/rev2_stage2_and_baselines.py` |
+| Metagenomics (Supp. Figures S1–S2) | `analysis/metagenomics_*.py` |
+| Heuristic ablation (Supp. Section S6, Tables S5–S6) | `slurm/ablation/heuristic.slurm` & `analysis/ablation_var_counts.py` |
+| Threshold sensitivity & cost ablation (Supp. Tables S10–S11) | `analysis/rev2_tau_and_flips.py` (`slurm/rev2_tau_sweep.slurm`) |
+| 7-rank taxonomic lineage inference (Supp. Table S12) | `analysis/evaluate_lineage_inference.py` (`slurm/rev2_lineage_and_funtaxis.slurm`) |
+| Baselines, FunTaxIS-lite, Soft SBR & Complex Portal (Supp. Tables S13–S15) | `analysis/rev2_stage2_and_baselines.py` & `analysis/funtaxis_lite_filter.py` |
 
 ## Citation
 

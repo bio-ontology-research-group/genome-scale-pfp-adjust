@@ -1,0 +1,11 @@
+# soft-regularizer vs hard taxon solver | deepgo-se_cc | tau=0.3 | organisms=564 | with-violation=564 | total_violating_terms=142285
+mode	residual_violations	pct_removed	removal_cost
+hard(exact)	0	100.0	19335.145
+soft(lambda=0.05)	94724	33.4	963.294
+soft(lambda=0.1)	67148	52.8	2988.359
+soft(lambda=0.2)	34282	75.9	7730.250
+soft(lambda=0.3)	17915	87.4	11735.275
+soft(lambda=0.4)	9125	93.6	14764.170
+soft(lambda=0.5)	4170	97.1	16973.020
+soft(lambda=0.6)	1041	99.3	18682.093
+soft(lambda=0.7)	0	100.0	19335.145

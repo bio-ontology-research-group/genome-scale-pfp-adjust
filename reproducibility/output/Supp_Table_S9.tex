@@ -1,0 +1,34 @@
+\begin{table}[!h]
+\centering
+\caption{Before-vs-after micro-averaged CAFA metrics on the heldout split (219 organisms), restricted to proteins whose annotations were modified by the solver. Ont.\ = GO sub-ontology; \#prot = proteins modified; \#tax = distinct taxa.}
+\label{tab:supp-modified}
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0.92}
+\begin{tabular}{lll*{6}c}
+\toprule
+Ont. & Model & Setting & \#prot & \#tax & $F_{\max}$ & $S_{\min}$ & AUC & AUPR \\
+\midrule
+\textbf{CC} & Seq-Sim   & preds      & 3{,}841 & 152 & .5853 & 66.12 & .7643 & .5816 \\
+            &           & taxons     & 3{,}841 & 152 & .5864 & 65.78 & .7655 & .5848 \\
+            & MLP-ESM2  & preds      & 2{,}774 & 149 & .5972 & 64.79 & .7311 & .6090 \\
+            &           & taxons     & 2{,}774 & 149 & .5979 & 64.68 & .7319 & .6109 \\
+            & MLP-ESM2  & preds      & 2{,}628 & 142 & .5965 & 67.37 & .7319 & .6087 \\
+            &           & no taxons  & 2{,}628 & 142 & .5968 & 67.32 & .7302 & .6097 \\
+\addlinespace[2pt]
+\textbf{MF} & Seq-Sim   & preds      &    189 &  48 & .6565 & 33.94 & .8871 & .6749 \\
+            &           & taxons     &    189 &  48 & .6565 & 33.94 & .8872 & .6750 \\
+            & MLP-ESM2  & preds      &     94 &  29 & .6895 & 17.30 & .9088 & .7320 \\
+            &           & taxons     &     94 &  29 & .6895 & 17.30 & .9088 & .7320 \\
+            & MLP-ESM2  & preds      &     69 &  22 & .7183 & 18.01 & .8911 & .7719 \\
+            &           & no taxons  &     69 &  22 & .7119 & 18.33 & .8869 & .7633 \\
+\addlinespace[2pt]
+\textbf{BP} & Seq-Sim   & preds      & 5{,}300 & 156 & .4431 & 365.3 & .6820 & .3756 \\
+            &           & taxons     & 5{,}300 & 156 & .4431 & 365.1 & .6824 & .3763 \\
+            & MLP-ESM2  & preds      & 3{,}301 & 154 & .4077 & 335.5 & .6587 & .3456 \\
+            &           & taxons     & 3{,}301 & 154 & .4077 & 335.5 & .6588 & .3457 \\
+            & MLP-ESM2  & preds      & 2{,}813 & 147 & .4114 & 354.5 & .6612 & .3523 \\
+            &           & no taxons  & 2{,}813 & 147 & .4112 & 354.6 & .6606 & .3520 \\
+\bottomrule
+\end{tabular}
+\end{table}

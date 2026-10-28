@@ -1,0 +1,42 @@
+{
+  "predictor": "sprof-go",
+  "solver_tau": 0.001,
+  "subontologies": {
+    "bp": {
+      "funtaxis_lite_prop": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 46,
+        "gaef_all50": {
+          "taxon_consistency": 0.26,
+          "complex_coherence": null
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 0.2826,
+          "complex_coherence": null
+        },
+        "pooled_cafa": {
+          "fmax": 0.4949,
+          "smin": 283.83,
+          "avg_auc": 0.6171,
+          "aupr": 0.4741,
+          "wfmax": 0.46,
+          "tmax": 0.2
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": null
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": null
+        }
+      }
+    }
+  }
+}

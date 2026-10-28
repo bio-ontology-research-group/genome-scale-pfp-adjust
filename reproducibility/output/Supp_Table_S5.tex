@@ -1,0 +1,23 @@
+\begin{table}[!h]
+\centering
+\caption{Reduction and heuristic ablation. Variable and constraint counts for the complex-coherence stage on three organisms of increasing size. H1 (incoherent-only filter) and H2 (sparse variable set) are exact preprocessing reductions that provably preserve the optimum; H3 (top-$k$ participation, $k=50$) is a heuristic.}
+\label{tab:ablation-dry-run}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l*{6}{r}}
+\toprule
+ & \multicolumn{2}{c}{Taxon 272844 (450\,p)} & \multicolumn{2}{c}{Taxon 759272 (4{,}597\,p)} & \multicolumn{2}{c}{Taxon 10116 (20{,}227\,p)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Config & \#vars & \#constr & \#vars & \#constr & \#vars & \#constr \\
+\midrule
++H1+H2+H3 &     6{,}658 &     7{,}381 &    29{,}580 &    31{,}494 &    30{,}506 &    29{,}990 \\
++H2+H3    &   201{,}766 &   226{,}284 &   225{,}930 &   244{,}212 &   274{,}178 &   284{,}015 \\
++H1+H2    &    56{,}924 &    62{,}138 & 2{,}343{,}008 & 2{,}558{,}239 & 8{,}788{,}064 & 9{,}398{,}828 \\
++H2       & 1{,}788{,}300 & 1{,}971{,}996 & 18{,}268{,}506 & 20{,}090{,}268 & 80{,}382{,}176 & 88{,}377{,}805 \\
++H1+H3    & 3{,}652{,}200 & 3{,}921{,}050 & 37{,}309{,}252 & 40{,}043{,}373 & 164{,}162{,}332 & 176{,}163{,}143 \\
++H3       & 3{,}652{,}200 & 4{,}018{,}150 & 37{,}309{,}252 & 40{,}134{,}373 & 164{,}162{,}332 & 176{,}256{,}043 \\
++H1       & 3{,}652{,}200 & 3{,}937{,}050 & 37{,}309{,}252 & 40{,}779{,}987 & 164{,}162{,}332 & 178{,}665{,}091 \\
+Naive     & 3{,}652{,}200 & 4{,}810{,}950 & 37{,}309{,}252 & 49{,}146{,}527 & 164{,}162{,}332 & 216{,}246{,}857 \\
+\bottomrule
+\end{tabular}
+\end{table}

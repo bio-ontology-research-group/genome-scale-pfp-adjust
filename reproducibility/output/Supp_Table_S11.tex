@@ -1,0 +1,29 @@
+\begin{table}[!h]
+\centering
+\caption{Reconciliation of Cellular Component (CC) Stage~1 flip counts and rates across thresholds ($\tau$), proteome scopes (50 timeset organisms vs.\ all 564 reference proteomes), taxon modes, and cost functions (margin $|\text{score}_{j,i}-\tau|$, uniform, and information content IC).}
+\label{tab:supp-reconcile}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{0.94}
+\begin{tabular}{llllc rrrr}
+\toprule
+Predictor & Scope ($n$) & Mode & Cost & $\tau$ & Preds $>\tau$ & Grid decisions & Flips & Act.\% / Grid\% \\
+\midrule
+DeepGO-SE & Timeset (50) & taxons    & margin  & 0.300 & 11{,}498{,}776 &   506{,}243{,}434 &    10{,}291 & 0.09\% / 0.0020\% \\
+DeepGO-SE & Timeset (50) & taxons    & uniform & 0.300 & 11{,}498{,}776 &   506{,}243{,}434 &    10{,}291 & 0.09\% / 0.0020\% \\
+DeepGO-SE & Timeset (50) & taxons    & IC      & 0.300 & 11{,}498{,}776 &   506{,}243{,}434 &    10{,}291 & 0.09\% / 0.0020\% \\
+DeepGO-SE & Timeset (50) & no taxons & margin  & 0.300 & 11{,}498{,}776 &   506{,}243{,}434 &     5{,}743 & 0.05\% / 0.0011\% \\
+DeepGO-SE & Timeset (50) & taxons    & margin  & 0.001 & 66{,}735{,}968 & 1{,}674{,}636{,}828 & 2{,}179{,}779 & 3.27\% / 0.1302\% \\
+DeepGO-SE & Timeset (50) & no taxons & margin  & 0.001 & 66{,}735{,}968 & 1{,}674{,}636{,}828 & 1{,}648{,}786 & 2.47\% / 0.0985\% \\
+DeepGO-SE & All (564)    & taxons    & margin  & 0.300 & 76{,}316{,}352 & 3{,}202{,}423{,}596 &   136{,}078 & 0.18\% / 0.0042\% \\
+DeepGO-SE & All (564)    & taxons    & uniform & 0.300 & 76{,}316{,}352 & 3{,}202{,}423{,}596 &   136{,}078 & 0.18\% / 0.0042\% \\
+DeepGO-SE & All (564)    & taxons    & IC      & 0.300 & 76{,}316{,}352 & 3{,}202{,}423{,}596 &   136{,}078 & 0.18\% / 0.0042\% \\
+\midrule
+Seq-Sim   & Timeset (50) & taxons    & margin  & 0.001 & 27{,}962{,}467 & 1{,}320{,}813{,}932 & 1{,}720{,}856 & 6.15\% / 0.1303\% \\
+Seq-Sim   & Timeset (50) & no taxons & margin  & 0.001 & 27{,}962{,}467 & 1{,}320{,}813{,}932 & 1{,}200{,}249 & 4.29\% / 0.0909\% \\
+SPROF-GO  & Timeset (50) & taxons    & margin  & 0.001 & 51{,}419{,}900 &   604{,}018{,}329 & 2{,}007{,}531 & 3.90\% / 0.3324\% \\
+SPROF-GO  & Timeset (50) & no taxons & margin  & 0.001 & 51{,}419{,}900 &   604{,}018{,}329 & 1{,}455{,}372 & 2.83\% / 0.2409\% \\
+SPROF-GO  & All (564)    & taxons    & margin  & 0.001 & 355{,}459{,}939 & 4{,}191{,}749{,}424 & 16{,}685{,}004 & 4.69\% / 0.3980\% \\
+\bottomrule
+\end{tabular}
+\end{table}

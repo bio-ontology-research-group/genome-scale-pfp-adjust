@@ -375,14 +375,16 @@ def get_go_protein_pairs(
     go_protein_pairs = set()
 
     for complex_go_term in participating_proteins:
+        desc_terms = get_descendants(complex_go_term, go_hierarchy)
+        anc_terms = get_ancestors(complex_go_term, go_hierarchy)
         for protein in participating_proteins[complex_go_term]:
             go_protein_pairs.add((complex_go_term, protein))
             if complex_go_term in annotated_predictions[protein]:
-                for descendant_go_term in get_descendants(complex_go_term, go_hierarchy):
+                for descendant_go_term in desc_terms:
                     if descendant_go_term in annotated_predictions[protein]:
                         go_protein_pairs.add((descendant_go_term, protein))
             else:
-                for parent_go_term in get_ancestors(complex_go_term, go_hierarchy):
+                for parent_go_term in anc_terms:
                     if parent_go_term not in annotated_predictions[protein]:
                         go_protein_pairs.add((parent_go_term, protein))
     return go_protein_pairs
@@ -393,6 +395,7 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
                 go_hierarchy: Dict[str, Set[str]],
                 flip_costs: Dict[str, Dict[str, float]],
                 participating_proteins: Dict[str, List[str]] = None,
+                demotion_only: bool = False,
                ) -> Dict[str, Dict[str, bool]]:
     """
     Solve the SAT problem using OR-Tools CP-SAT with optimized constraints.
@@ -467,6 +470,8 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
             model.Add(go_term_variables[(go_term, protein)] + flip_variables[(go_term, protein)] == 1)
         else:
             model.Add(go_term_variables[(go_term, protein)] == flip_variables[(go_term, protein)])
+            if demotion_only:
+                model.Add(go_term_variables[(go_term, protein)] == 0)
     
     # for protein in sorted(annotated_predictions.keys()):
     #     # For annotated GO terms: XOR must be True
@@ -492,10 +497,7 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
     cost_terms = []
     for go_term, protein in all_go_terms:
         if (go_term, protein) in flip_variables:
-            cost = int(flip_costs[protein][go_term] * cost_scale)
-            # Ensure minimum cost of 1 to prevent "free" flips
-            if cost == 0 and flip_costs[protein][go_term] > 0:
-                cost = 1
+            cost = max(1, int(flip_costs[protein][go_term] * cost_scale))
             cost_terms.append(flip_variables[(go_term, protein)] * cost)
     
     model.Minimize(sum(cost_terms))
@@ -505,7 +507,8 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
     print("[INFO] Solving SAT problem...")
     
     solver = cp_model.CpSolver()
-    solver.parameters.num_search_workers = 1
+    solver.parameters.num_search_workers = 4
+    solver.parameters.max_time_in_seconds = 30.0
     solver.parameters.random_seed = 42
     status = solver.Solve(model)
     solve_time = time.time() - solve_start_time
@@ -541,7 +544,7 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
         return result, 0
 
 
-def get_participating_proteins(annotated_predictions: Dict[str, Set[str]], complex_terms: Set[str], predictions: Dict[str, Dict[str, float]], top_k = None, participating_threshold = None) -> Dict[str, List[str]]:
+def get_participating_proteins(annotated_predictions: Dict[str, Set[str]], complex_terms: Set[str], predictions: Dict[str, Dict[str, float]], top_k = None, participating_threshold = None, demotion_only: bool = False) -> Dict[str, List[str]]:
     """
     Get the participating proteins for each heteromeric complex.
     If top_k value is provided, consider only incoherent complexes and return the top-k proteins for each complex.
@@ -549,7 +552,14 @@ def get_participating_proteins(annotated_predictions: Dict[str, Set[str]], compl
     If neither are provided, return all proteins for each complex.
     """
     participating_proteins = defaultdict(list)
-    if top_k is not None:
+    if demotion_only:
+        for complex_go_term in complex_terms:
+            proteins_with_complex = [p for p in annotated_predictions.keys()
+                                     if complex_go_term in annotated_predictions[p]]
+            if len(proteins_with_complex) != 1:
+                continue
+            participating_proteins[complex_go_term] = proteins_with_complex
+    elif top_k is not None:
         for complex_go_term in complex_terms:
             # count how many proteins have the complex term
             proteins_with_complex = [p for p in annotated_predictions.keys() 
@@ -584,19 +594,33 @@ def get_final_predictions(adjusted_predictions: Dict[str, Dict[str, bool]], pred
     Get the final predictions from the adjusted predictions.
     """
     final_predictions = defaultdict(dict)
-    for protein in predictions:
-        for go_term in annotated_go_terms:
-            if go_term not in predictions[protein]:
-                final_score = 0
-            else:
-                final_score = predictions[protein][go_term]
-            if go_term in adjusted_predictions[protein]:
-                if adjusted_predictions[protein][go_term]:
-                    final_score = max(final_score, fold_threshold + epsilon)
+    for protein, p_scores in predictions.items():
+        adj_p = adjusted_predictions.get(protein)
+        if not adj_p:
+            final_predictions[protein] = {
+                go_term: score
+                for go_term, score in p_scores.items()
+                if go_term in annotated_go_terms and score > 0
+            }
+        else:
+            out_p = {
+                go_term: score
+                for go_term, score in p_scores.items()
+                if go_term in annotated_go_terms and score > 0
+            }
+            for go_term, is_present in adj_p.items():
+                if go_term not in annotated_go_terms:
+                    continue
+                orig_score = p_scores.get(go_term, 0.0)
+                if is_present:
+                    final_score = max(orig_score, fold_threshold + epsilon)
                 else:
-                    final_score = min(final_score, fold_threshold)
-            if final_score > 0:
-                final_predictions[protein][go_term] = final_score
+                    final_score = min(orig_score, fold_threshold)
+                if final_score > 0:
+                    out_p[go_term] = final_score
+                else:
+                    out_p.pop(go_term, None)
+            final_predictions[protein] = out_p
 
     return final_predictions
 
@@ -622,7 +646,8 @@ def main(
     threshold: float = 0.5,
     optimized: bool = False,
     top_k: int = None,
-    participating_threshold: float = None
+    participating_threshold: float = None,
+    demotion_only: bool = False,
 ):
     """
     Main function to run the complex coherence adjustment script.
@@ -646,7 +671,7 @@ def main(
 
     print("Setting up SAT problem...")
     if optimized:
-        participating_proteins = get_participating_proteins(annotated_predictions, heteromeric_complexes, predictions, top_k=top_k, participating_threshold=participating_threshold)
+        participating_proteins = get_participating_proteins(annotated_predictions, heteromeric_complexes, predictions, top_k=top_k, participating_threshold=participating_threshold, demotion_only=demotion_only)
 
         print(f"[INFO] Number of Incoherent Complexes: {len(participating_proteins)}")
 
@@ -668,7 +693,8 @@ def main(
         go_protein_pairs,
         go_hierarchy, 
         flip_costs,
-        participating_proteins)
+        participating_proteins,
+        demotion_only=demotion_only)
     else:
         flip_costs, num_annotated_predictions = compute_flip_cost(predictions, threshold)
 
@@ -698,6 +724,7 @@ if __name__ == '__main__':
     parser.add_argument('--optimized', action='store_true', help='Use optimized constraints')
     parser.add_argument('--top_k', type=int, default=None, help='Top-k proteins to participate in each complex (default: None)')
     parser.add_argument('--participating_threshold', type=float, default=None, help='Participating threshold for proteins to participate in each complex (default: None)')
+    parser.add_argument('--demotion_only', action='store_true', help='Forbid 0->1 promotions; resolve incoherent complexes by demotion only')
     args = parser.parse_args()
     main(
         predictions_file=args.predictions,
@@ -707,5 +734,6 @@ if __name__ == '__main__':
         threshold=args.threshold,
         optimized=args.optimized,
         top_k=args.top_k,
-        participating_threshold=args.participating_threshold
+        participating_threshold=args.participating_threshold,
+        demotion_only=args.demotion_only,
     )

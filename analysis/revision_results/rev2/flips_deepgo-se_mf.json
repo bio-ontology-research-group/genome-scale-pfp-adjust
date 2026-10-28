@@ -1,0 +1,91 @@
+[
+  {
+    "predictor": "deepgo-se",
+    "subontology": "mf",
+    "scope": "timeset_50",
+    "mode": "with_taxons",
+    "cost_mode": "margin",
+    "tau": 0.3,
+    "n_organisms": 50,
+    "n_cafa_organisms": 46,
+    "preds_above_tau": 7800411,
+    "grid_decisions": 1475361328,
+    "flips_above_tau": 224,
+    "active_flip_rate_pct": 0.0029,
+    "grid_flip_rate_pct": 0.0,
+    "raw_entries_removed": 36390,
+    "gaef_taxon_consistency_before": 0.42,
+    "gaef_taxon_consistency_after": 1.0,
+    "macro_cafa": {
+      "fmax": 0.7759,
+      "smin": 16.45,
+      "avg_auc": 0.7467,
+      "aupr": 0.7188
+    },
+    "pooled_cafa": {
+      "fmax": 0.6217,
+      "smin": 43.53,
+      "avg_auc": 0.8525,
+      "aupr": 0.6213,
+      "wfmax": 0.581,
+      "tmax": 0.43
+    }
+  },
+  {
+    "predictor": "deepgo-se",
+    "subontology": "mf",
+    "scope": "timeset_50",
+    "mode": "no_taxons",
+    "cost_mode": "margin",
+    "tau": 0.3,
+    "n_organisms": 50,
+    "n_cafa_organisms": 46,
+    "preds_above_tau": 7800411,
+    "grid_decisions": 1475361328,
+    "flips_above_tau": 223,
+    "active_flip_rate_pct": 0.0029,
+    "grid_flip_rate_pct": 0.0,
+    "raw_entries_removed": 36332,
+    "gaef_taxon_consistency_before": 0.42,
+    "gaef_taxon_consistency_after": 1.0,
+    "macro_cafa": {
+      "fmax": 0.7759,
+      "smin": 16.45,
+      "avg_auc": 0.7467,
+      "aupr": 0.7188
+    },
+    "pooled_cafa": {
+      "fmax": 0.6217,
+      "smin": 43.53,
+      "avg_auc": 0.8525,
+      "aupr": 0.6213,
+      "wfmax": 0.581,
+      "tmax": 0.43
+    }
+  },
+  {
+    "predictor": "deepgo-se",
+    "subontology": "mf",
+    "scope": "all_564",
+    "mode": "with_taxons",
+    "cost_mode": "margin",
+    "tau": 0.3,
+    "n_organisms": 564,
+    "n_cafa_organisms": 0,
+    "preds_above_tau": 55017486,
+    "grid_decisions": 9355922414,
+    "flips_above_tau": 1565,
+    "active_flip_rate_pct": 0.0028,
+    "grid_flip_rate_pct": 0.0,
+    "raw_entries_removed": 183566,
+    "gaef_taxon_consistency_before": 0.7039,
+    "gaef_taxon_consistency_after": 1.0,
+    "macro_cafa": {
+      "fmax": null,
+      "smin": null,
+      "avg_auc": null,
+      "aupr": null
+    },
+    "pooled_cafa": {}
+  }
+]

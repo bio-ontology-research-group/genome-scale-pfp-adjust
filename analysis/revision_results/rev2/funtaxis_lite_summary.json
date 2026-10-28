@@ -1,0 +1,68 @@
+{
+  "cutoff": 500,
+  "mean_forbidden_terms_total": 15326.0,
+  "mean_forbidden_terms_go_consortium": 8939.0,
+  "mean_forbidden_terms_empirical_extra": 6387.1,
+  "runs": {
+    "seq_sim_timeset": {
+      "cc": {
+        "n_organisms": 50,
+        "preds_above_tau": 27962467,
+        "flips_above_tau": 3922452,
+        "flip_rate_pct": 14.0276
+      },
+      "mf": {
+        "n_organisms": 50,
+        "preds_above_tau": 17077615,
+        "flips_above_tau": 3942127,
+        "flip_rate_pct": 23.0836
+      },
+      "bp": {
+        "n_organisms": 50,
+        "preds_above_tau": 142645121,
+        "flips_above_tau": 32547413,
+        "flip_rate_pct": 22.8171
+      }
+    },
+    "deepgo-se": {
+      "cc": {
+        "n_organisms": 50,
+        "preds_above_tau": 11498776,
+        "flips_above_tau": 702036,
+        "flip_rate_pct": 6.1053
+      },
+      "mf": {
+        "n_organisms": 50,
+        "preds_above_tau": 7800411,
+        "flips_above_tau": 1240415,
+        "flip_rate_pct": 15.9019
+      },
+      "bp": {
+        "n_organisms": 50,
+        "preds_above_tau": 25219446,
+        "flips_above_tau": 2184070,
+        "flip_rate_pct": 8.6603
+      }
+    },
+    "sprof-go": {
+      "cc": {
+        "n_organisms": 50,
+        "preds_above_tau": 51419900,
+        "flips_above_tau": 6306555,
+        "flip_rate_pct": 12.2648
+      },
+      "mf": {
+        "n_organisms": 50,
+        "preds_above_tau": 49331525,
+        "flips_above_tau": 12603473,
+        "flip_rate_pct": 25.5485
+      },
+      "bp": {
+        "n_organisms": 50,
+        "preds_above_tau": 321139231,
+        "flips_above_tau": 64469384,
+        "flip_rate_pct": 20.0752
+      }
+    }
+  }
+}

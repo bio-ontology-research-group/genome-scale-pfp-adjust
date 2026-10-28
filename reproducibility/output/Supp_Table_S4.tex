@@ -1,0 +1,16 @@
+\begin{table}[!h]
+\centering
+\caption{CP-SAT complex-coherence stage runtimes on the CC sub-ontology, reported as per-instance mean $\pm$ standard deviation. Seq-Sim and DeepGO-SE solve one instance per organism (50 in total); SPROF-GO has 49 organisms with at least one heteromeric complex incoherent above threshold.}
+\label{tab:solver-runtime-cc}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccc}
+\toprule
+Predictor & $n$ & Setup (s) & Solve (s) & Total (s) & Max solve (s) \\
+\midrule
+Seq-Sim   & 50 & $2.73 \pm 1.63$ & $4.38 \pm 3.22$ & $7.11 \pm 4.61$ & 12.86 \\
+DeepGO-SE & 50 & $0.79 \pm 0.57$ & $0.85 \pm 0.62$ & $1.64 \pm 1.15$ &  2.36 \\
+SPROF-GO  & 49 & $0.05 \pm 0.04$ & $0.04 \pm 0.05$ & $0.08 \pm 0.09$ &  0.26 \\
+\bottomrule
+\end{tabular}
+\end{table}

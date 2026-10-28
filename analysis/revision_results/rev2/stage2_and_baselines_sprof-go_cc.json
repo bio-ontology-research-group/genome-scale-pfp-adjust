@@ -1,0 +1,584 @@
+{
+  "predictor": "sprof-go",
+  "solver_tau": 0.001,
+  "subontologies": {
+    "cc": {
+      "stage2_stats_demotion_only_withtax": {
+        "n_total_orgs": 50,
+        "n_active_incoherent_orgs": 0,
+        "total_flips": 0,
+        "total_annotated_predictions_in_active": 0
+      },
+      "stage2_stats_demotion_only_tau03_withtax": {
+        "n_total_orgs": 50,
+        "n_active_incoherent_orgs": 0,
+        "total_flips": 0,
+        "total_annotated_predictions_in_active": 0
+      },
+      "stage2_stats_standard_withtax": {
+        "n_total_orgs": 50,
+        "n_active_incoherent_orgs": 0,
+        "total_flips": 0,
+        "total_annotated_predictions_in_active": 0
+      },
+      "stage2_stats_demotion_only_notax": {
+        "n_total_orgs": 50,
+        "n_active_incoherent_orgs": 0,
+        "total_flips": 0,
+        "total_annotated_predictions_in_active": 0
+      },
+      "stage2_stats_demotion_only_tau03_notax": {
+        "n_total_orgs": 50,
+        "n_active_incoherent_orgs": 0,
+        "total_flips": 0,
+        "total_annotated_predictions_in_active": 0
+      },
+      "stage2_demotion_only_tau03_notax": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.9968
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.996
+        },
+        "pooled_cafa": {
+          "fmax": 0.6783,
+          "smin": 43.37,
+          "avg_auc": 0.6335,
+          "aupr": 0.7407,
+          "wfmax": 0.6309,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        }
+      },
+      "stage2_demotion_only_notax": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        },
+        "pooled_cafa": {
+          "fmax": 0.6783,
+          "smin": 43.36,
+          "avg_auc": 0.6546,
+          "aupr": 0.7425,
+          "wfmax": 0.631,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8698
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8723
+        }
+      },
+      "stage2_standard_withtax": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        },
+        "pooled_cafa": {
+          "fmax": 0.6784,
+          "smin": 43.35,
+          "avg_auc": 0.6564,
+          "aupr": 0.7432,
+          "wfmax": 0.6311,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8755
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8782
+        }
+      },
+      "stage2_demotion_only_tau03_withtax": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.9974
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.9968
+        },
+        "pooled_cafa": {
+          "fmax": 0.6783,
+          "smin": 43.36,
+          "avg_auc": 0.6347,
+          "aupr": 0.7412,
+          "wfmax": 0.631,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        }
+      },
+      "stage2_demotion_only_withtax": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        },
+        "pooled_cafa": {
+          "fmax": 0.6784,
+          "smin": 43.35,
+          "avg_auc": 0.6564,
+          "aupr": 0.7432,
+          "wfmax": 0.6311,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8755
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8782
+        }
+      },
+      "existing_stage2_standard_withtax": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 0.98,
+          "complex_coherence": 0.9968
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 0.9756,
+          "complex_coherence": 0.9961
+        },
+        "pooled_cafa": {
+          "fmax": 0.6783,
+          "smin": 43.36,
+          "avg_auc": 0.6347,
+          "aupr": 0.7412,
+          "wfmax": 0.631,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        }
+      },
+      "before": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 0.0,
+          "complex_coherence": 0.9649
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 0.0,
+          "complex_coherence": 0.9662
+        },
+        "pooled_cafa": {
+          "fmax": 0.6783,
+          "smin": 43.35,
+          "avg_auc": 0.6563,
+          "aupr": 0.7426,
+          "wfmax": 0.6311,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 0.06,
+          "complex_coherence": 0.8698
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 0.0244,
+          "complex_coherence": 0.8723
+        }
+      },
+      "naive_noprop": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 0.74,
+          "complex_coherence": 0.9702
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 0.7073,
+          "complex_coherence": 0.9704
+        },
+        "pooled_cafa": {
+          "fmax": 0.6784,
+          "smin": 43.35,
+          "avg_auc": 0.6564,
+          "aupr": 0.7432,
+          "wfmax": 0.6311,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8755
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8782
+        }
+      },
+      "naive_prop": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 0.74,
+          "complex_coherence": 0.9702
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 0.7073,
+          "complex_coherence": 0.9704
+        },
+        "pooled_cafa": {
+          "fmax": 0.6784,
+          "smin": 43.35,
+          "avg_auc": 0.6564,
+          "aupr": 0.7432,
+          "wfmax": 0.6311,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8755
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8782
+        }
+      },
+      "funtaxis_lite_prop": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 0.74,
+          "complex_coherence": 0.9728
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 0.7073,
+          "complex_coherence": 0.9735
+        },
+        "pooled_cafa": {
+          "fmax": 0.6713,
+          "smin": 44.15,
+          "avg_auc": 0.6458,
+          "aupr": 0.7312,
+          "wfmax": 0.6228,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8778
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8804
+        }
+      },
+      "stage1_with_taxons": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.9702
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.9704
+        },
+        "pooled_cafa": {
+          "fmax": 0.6784,
+          "smin": 43.35,
+          "avg_auc": 0.6564,
+          "aupr": 0.7432,
+          "wfmax": 0.6311,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8755
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8782
+        }
+      },
+      "stage1_no_taxons": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.9677
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.9687
+        },
+        "pooled_cafa": {
+          "fmax": 0.6783,
+          "smin": 43.36,
+          "avg_auc": 0.6546,
+          "aupr": 0.7425,
+          "wfmax": 0.631,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8698
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 0.8723
+        }
+      },
+      "existing_stage2_standard_notax": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 0.98,
+          "complex_coherence": 0.9968
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 0.9756,
+          "complex_coherence": 0.9961
+        },
+        "pooled_cafa": {
+          "fmax": 0.6783,
+          "smin": 43.36,
+          "avg_auc": 0.6343,
+          "aupr": 0.7411,
+          "wfmax": 0.631,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        },
+        "gaef_all50_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        },
+        "gaef_gt_subset_tau03": {
+          "taxon_consistency": 1.0,
+          "complex_coherence": 1.0
+        }
+      },
+      "soft_s1_lam0.2": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 0.0,
+          "complex_coherence": 0.9656
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 0.0,
+          "complex_coherence": 0.9664
+        },
+        "pooled_cafa": {
+          "fmax": 0.6784,
+          "smin": 43.35,
+          "avg_auc": 0.6564,
+          "aupr": 0.7432,
+          "wfmax": 0.6311,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        }
+      },
+      "soft_s2_lam0.2": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 0.0,
+          "complex_coherence": 0.9974
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 0.0,
+          "complex_coherence": 0.9975
+        },
+        "pooled_cafa": {
+          "fmax": 0.6784,
+          "smin": 43.35,
+          "avg_auc": 0.6564,
+          "aupr": 0.7432,
+          "wfmax": 0.6311,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        }
+      },
+      "soft_s1_lam0.5": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 0.2,
+          "complex_coherence": 0.9689
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 0.1951,
+          "complex_coherence": 0.9689
+        },
+        "pooled_cafa": {
+          "fmax": 0.6784,
+          "smin": 43.35,
+          "avg_auc": 0.6564,
+          "aupr": 0.7432,
+          "wfmax": 0.6311,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        }
+      },
+      "soft_s2_lam0.5": {
+        "n_total_organisms": 50,
+        "n_gt_organisms": 41,
+        "gaef_all50": {
+          "taxon_consistency": 0.2,
+          "complex_coherence": 1.0
+        },
+        "gaef_gt_subset": {
+          "taxon_consistency": 0.1951,
+          "complex_coherence": 1.0
+        },
+        "pooled_cafa": {
+          "fmax": 0.6784,
+          "smin": 43.35,
+          "avg_auc": 0.6564,
+          "aupr": 0.7432,
+          "wfmax": 0.6311,
+          "tmax": 0.34
+        },
+        "macro_cafa": {
+          "fmax": null,
+          "smin": null,
+          "avg_auc": null,
+          "aupr": null
+        }
+      }
+    }
+  }
+}

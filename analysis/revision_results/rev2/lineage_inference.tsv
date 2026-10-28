@@ -1,0 +1,451 @@
+predictor	subontology	taxon_id	taxon_name	max_reachable_rank	forced_deepest_correct	forced_first_divergence	forced_exact_prefix	solver_deepest_correct	solver_first_divergence	solver_exact_prefix
+seq_sim_timeset	cc	10116	Rattus norvegicus	order	class	none	True	class	none	True
+seq_sim_timeset	cc	1073375	Mediterraneibacter gnavus CC55_001C	domain	none	domain	False	none	domain	False
+seq_sim_timeset	cc	1220924	Cyphellophora europaea CBS 101466	phylum	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	187420	Methanothermobacter thermautotrophicus str. Delta H	domain	none	domain	False	none	domain	False
+seq_sim_timeset	cc	208964	Pseudomonas aeruginosa PAO1	domain	none	domain	False	none	domain	False
+seq_sim_timeset	cc	221103	Moniliophthora roreri	domain	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	227321	Aspergillus nidulans FGSC A4	phylum	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	229533	Fusarium graminearum PH-1	phylum	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	237561	Candida albicans SC5314	phylum	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	243274	Thermotoga maritima MSB8	domain	none	domain	False	none	domain	False
+seq_sim_timeset	cc	267377	Methanococcus maripaludis S2	domain	none	domain	False	none	domain	False
+seq_sim_timeset	cc	272844	Pyrococcus abyssi GE5	domain	none	domain	False	none	domain	False
+seq_sim_timeset	cc	3197	Marchantia polymorpha	phylum	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	3218	Physcomitrium patens	phylum	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	330879	Aspergillus fumigatus Af293	phylum	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	331117	Aspergillus fischeri NRRL 181	phylum	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	336722	Zymoseptoria tritici IPO323	phylum	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	3572	Saponaria officinalis	class	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	367110	Neurospora crassa OR74A	phylum	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	3750	Malus domestica	class	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	3847	Glycine max	class	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	3871	Lupinus angustifolius	class	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	3880	Medicago truncatula	class	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	3983	Manihot esculenta	class	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	39947	Oryza sativa Japonica Group	class	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	4072	Capsicum annuum	class	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	4081	Solanum lycopersicum	class	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	510516	Aspergillus oryzae RIB40	phylum	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	5270	Mycosarcoma maydis	domain	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	6239	Caenorhabditis elegans	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	cc	655827	Metarhizium acridum CQMa 102	phylum	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	69014	Thermococcus kodakarensis KOD1	domain	none	domain	False	none	domain	False
+seq_sim_timeset	cc	70601	Pyrococcus horikoshii OT3	domain	none	domain	False	none	domain	False
+seq_sim_timeset	cc	7070	Tribolium castaneum	class	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	cc	7176	Culex quinquefasciatus	order	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	cc	7227	Drosophila melanogaster	genus	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	cc	742740	[Clostridium] symbiosum WAL-14163	domain	none	domain	False	none	domain	False
+seq_sim_timeset	cc	759272	Thermochaetoides thermophila DSM 1495	phylum	domain	none	False	domain	phylum	False
+seq_sim_timeset	cc	7757	Petromyzon marinus	family	phylum	class	False	phylum	class	False
+seq_sim_timeset	cc	7868	Callorhinchus milii	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	cc	7955	Danio rerio	class	phylum	class	False	phylum	class	False
+seq_sim_timeset	cc	8090	Oryzias latipes	class	phylum	class	False	phylum	class	False
+seq_sim_timeset	cc	83332	Mycobacterium tuberculosis H37Rv	domain	none	domain	False	none	domain	False
+seq_sim_timeset	cc	8355	Xenopus laevis	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	cc	8364	Xenopus tropicalis	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	cc	85962	Helicobacter pylori 26695	domain	none	domain	False	none	domain	False
+seq_sim_timeset	cc	88036	Selaginella moellendorffii	phylum	domain	none	True	phylum	none	True
+seq_sim_timeset	cc	9031	Gallus gallus	class	phylum	class	False	phylum	class	False
+seq_sim_timeset	cc	9913	Bos taurus	class	class	none	True	class	none	True
+seq_sim_timeset	cc	9940	Ovis aries	class	class	none	True	class	none	True
+seq_sim_timeset	mf	10116	Rattus norvegicus	order	class	none	True	class	none	True
+seq_sim_timeset	mf	1073375	Mediterraneibacter gnavus CC55_001C	domain	none	domain	False	none	domain	False
+seq_sim_timeset	mf	1220924	Cyphellophora europaea CBS 101466	phylum	domain	none	False	domain	none	False
+seq_sim_timeset	mf	187420	Methanothermobacter thermautotrophicus str. Delta H	domain	none	domain	False	none	domain	False
+seq_sim_timeset	mf	208964	Pseudomonas aeruginosa PAO1	domain	domain	none	True	domain	none	True
+seq_sim_timeset	mf	221103	Moniliophthora roreri	domain	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	mf	227321	Aspergillus nidulans FGSC A4	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	mf	229533	Fusarium graminearum PH-1	phylum	domain	none	False	domain	none	False
+seq_sim_timeset	mf	237561	Candida albicans SC5314	phylum	domain	none	False	domain	none	False
+seq_sim_timeset	mf	243274	Thermotoga maritima MSB8	domain	none	domain	False	none	domain	False
+seq_sim_timeset	mf	267377	Methanococcus maripaludis S2	domain	none	domain	False	none	domain	False
+seq_sim_timeset	mf	272844	Pyrococcus abyssi GE5	domain	none	domain	False	none	domain	False
+seq_sim_timeset	mf	3197	Marchantia polymorpha	phylum	domain	none	True	domain	none	True
+seq_sim_timeset	mf	3218	Physcomitrium patens	phylum	domain	none	True	domain	none	True
+seq_sim_timeset	mf	330879	Aspergillus fumigatus Af293	phylum	domain	none	False	domain	none	False
+seq_sim_timeset	mf	331117	Aspergillus fischeri NRRL 181	phylum	domain	none	False	domain	none	False
+seq_sim_timeset	mf	336722	Zymoseptoria tritici IPO323	phylum	domain	none	False	domain	none	False
+seq_sim_timeset	mf	3572	Saponaria officinalis	class	domain	none	False	domain	none	False
+seq_sim_timeset	mf	367110	Neurospora crassa OR74A	phylum	domain	none	False	domain	none	False
+seq_sim_timeset	mf	3750	Malus domestica	class	domain	none	False	domain	none	False
+seq_sim_timeset	mf	3847	Glycine max	class	domain	none	True	domain	none	True
+seq_sim_timeset	mf	3871	Lupinus angustifolius	class	domain	none	True	domain	none	True
+seq_sim_timeset	mf	3880	Medicago truncatula	class	domain	none	True	domain	none	True
+seq_sim_timeset	mf	3983	Manihot esculenta	class	domain	none	True	domain	none	True
+seq_sim_timeset	mf	39947	Oryza sativa Japonica Group	class	domain	none	False	domain	none	False
+seq_sim_timeset	mf	4072	Capsicum annuum	class	domain	none	True	domain	none	True
+seq_sim_timeset	mf	4081	Solanum lycopersicum	class	domain	none	True	domain	none	True
+seq_sim_timeset	mf	510516	Aspergillus oryzae RIB40	phylum	domain	none	False	domain	none	False
+seq_sim_timeset	mf	5270	Mycosarcoma maydis	domain	domain	none	False	domain	none	False
+seq_sim_timeset	mf	6239	Caenorhabditis elegans	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	mf	655827	Metarhizium acridum CQMa 102	phylum	domain	none	False	domain	none	False
+seq_sim_timeset	mf	69014	Thermococcus kodakarensis KOD1	domain	none	domain	False	none	domain	False
+seq_sim_timeset	mf	70601	Pyrococcus horikoshii OT3	domain	none	domain	False	none	domain	False
+seq_sim_timeset	mf	7070	Tribolium castaneum	class	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	mf	7176	Culex quinquefasciatus	order	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	mf	7227	Drosophila melanogaster	genus	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	mf	742740	[Clostridium] symbiosum WAL-14163	domain	none	domain	False	none	domain	False
+seq_sim_timeset	mf	759272	Thermochaetoides thermophila DSM 1495	phylum	domain	none	False	domain	none	False
+seq_sim_timeset	mf	7757	Petromyzon marinus	family	phylum	class	False	phylum	class	False
+seq_sim_timeset	mf	7868	Callorhinchus milii	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	mf	7955	Danio rerio	class	phylum	class	False	phylum	class	False
+seq_sim_timeset	mf	8090	Oryzias latipes	class	phylum	class	False	phylum	class	False
+seq_sim_timeset	mf	83332	Mycobacterium tuberculosis H37Rv	domain	none	domain	False	none	domain	False
+seq_sim_timeset	mf	8355	Xenopus laevis	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	mf	8364	Xenopus tropicalis	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	mf	85962	Helicobacter pylori 26695	domain	none	domain	False	none	domain	False
+seq_sim_timeset	mf	88036	Selaginella moellendorffii	phylum	domain	none	True	domain	none	True
+seq_sim_timeset	mf	9031	Gallus gallus	class	phylum	class	False	phylum	class	False
+seq_sim_timeset	mf	9913	Bos taurus	class	class	none	True	class	none	True
+seq_sim_timeset	mf	9940	Ovis aries	class	class	none	True	class	none	True
+seq_sim_timeset	bp	10116	Rattus norvegicus	order	order	none	True	order	none	True
+seq_sim_timeset	bp	1073375	Mediterraneibacter gnavus CC55_001C	domain	none	domain	False	none	domain	False
+seq_sim_timeset	bp	1220924	Cyphellophora europaea CBS 101466	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	187420	Methanothermobacter thermautotrophicus str. Delta H	domain	none	domain	False	none	domain	False
+seq_sim_timeset	bp	208964	Pseudomonas aeruginosa PAO1	domain	none	domain	False	none	domain	False
+seq_sim_timeset	bp	221103	Moniliophthora roreri	domain	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	227321	Aspergillus nidulans FGSC A4	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	229533	Fusarium graminearum PH-1	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	237561	Candida albicans SC5314	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	243274	Thermotoga maritima MSB8	domain	none	domain	False	none	domain	False
+seq_sim_timeset	bp	267377	Methanococcus maripaludis S2	domain	none	domain	False	none	domain	False
+seq_sim_timeset	bp	272844	Pyrococcus abyssi GE5	domain	none	domain	False	none	domain	False
+seq_sim_timeset	bp	3197	Marchantia polymorpha	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	bp	3218	Physcomitrium patens	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	bp	330879	Aspergillus fumigatus Af293	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	331117	Aspergillus fischeri NRRL 181	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	336722	Zymoseptoria tritici IPO323	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	3572	Saponaria officinalis	class	class	none	True	class	none	True
+seq_sim_timeset	bp	367110	Neurospora crassa OR74A	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	3750	Malus domestica	class	class	none	True	class	none	True
+seq_sim_timeset	bp	3847	Glycine max	class	class	none	True	class	none	True
+seq_sim_timeset	bp	3871	Lupinus angustifolius	class	class	none	True	class	none	True
+seq_sim_timeset	bp	3880	Medicago truncatula	class	class	none	True	class	none	True
+seq_sim_timeset	bp	3983	Manihot esculenta	class	class	none	True	class	none	True
+seq_sim_timeset	bp	39947	Oryza sativa Japonica Group	class	class	none	True	class	none	True
+seq_sim_timeset	bp	4072	Capsicum annuum	class	class	none	True	class	none	True
+seq_sim_timeset	bp	4081	Solanum lycopersicum	class	class	none	True	class	none	True
+seq_sim_timeset	bp	510516	Aspergillus oryzae RIB40	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	5270	Mycosarcoma maydis	domain	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	6239	Caenorhabditis elegans	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	655827	Metarhizium acridum CQMa 102	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	69014	Thermococcus kodakarensis KOD1	domain	none	domain	False	none	domain	False
+seq_sim_timeset	bp	70601	Pyrococcus horikoshii OT3	domain	none	domain	False	none	domain	False
+seq_sim_timeset	bp	7070	Tribolium castaneum	class	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	7176	Culex quinquefasciatus	order	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	7227	Drosophila melanogaster	genus	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	742740	[Clostridium] symbiosum WAL-14163	domain	none	domain	False	none	domain	False
+seq_sim_timeset	bp	759272	Thermochaetoides thermophila DSM 1495	phylum	domain	phylum	False	domain	phylum	False
+seq_sim_timeset	bp	7757	Petromyzon marinus	family	phylum	class	False	phylum	class	False
+seq_sim_timeset	bp	7868	Callorhinchus milii	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	bp	7955	Danio rerio	class	phylum	class	False	phylum	class	False
+seq_sim_timeset	bp	8090	Oryzias latipes	class	phylum	class	False	phylum	class	False
+seq_sim_timeset	bp	83332	Mycobacterium tuberculosis H37Rv	domain	none	domain	False	none	domain	False
+seq_sim_timeset	bp	8355	Xenopus laevis	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	bp	8364	Xenopus tropicalis	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	bp	85962	Helicobacter pylori 26695	domain	none	domain	False	none	domain	False
+seq_sim_timeset	bp	88036	Selaginella moellendorffii	phylum	phylum	class	False	phylum	class	False
+seq_sim_timeset	bp	9031	Gallus gallus	class	phylum	class	False	phylum	class	False
+seq_sim_timeset	bp	9913	Bos taurus	class	class	order	False	class	order	False
+seq_sim_timeset	bp	9940	Ovis aries	class	class	order	False	class	order	False
+deepgo-se	cc	10116	Rattus norvegicus	order	domain	none	True	domain	none	True
+deepgo-se	cc	1073375	Mediterraneibacter gnavus CC55_001C	domain	none	domain	False	none	domain	False
+deepgo-se	cc	1220924	Cyphellophora europaea CBS 101466	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	187420	Methanothermobacter thermautotrophicus str. Delta H	domain	none	domain	False	none	domain	False
+deepgo-se	cc	208964	Pseudomonas aeruginosa PAO1	domain	domain	none	True	domain	none	True
+deepgo-se	cc	221103	Moniliophthora roreri	domain	domain	none	False	domain	phylum	False
+deepgo-se	cc	227321	Aspergillus nidulans FGSC A4	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	229533	Fusarium graminearum PH-1	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	237561	Candida albicans SC5314	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	243274	Thermotoga maritima MSB8	domain	none	domain	False	none	domain	False
+deepgo-se	cc	267377	Methanococcus maripaludis S2	domain	none	domain	False	none	domain	False
+deepgo-se	cc	272844	Pyrococcus abyssi GE5	domain	none	domain	False	none	domain	False
+deepgo-se	cc	3197	Marchantia polymorpha	phylum	domain	none	True	phylum	none	True
+deepgo-se	cc	3218	Physcomitrium patens	phylum	domain	none	True	phylum	none	True
+deepgo-se	cc	330879	Aspergillus fumigatus Af293	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	331117	Aspergillus fischeri NRRL 181	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	336722	Zymoseptoria tritici IPO323	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	3572	Saponaria officinalis	class	domain	none	True	phylum	none	True
+deepgo-se	cc	367110	Neurospora crassa OR74A	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	3750	Malus domestica	class	domain	none	True	phylum	none	True
+deepgo-se	cc	3847	Glycine max	class	domain	none	True	phylum	none	True
+deepgo-se	cc	3871	Lupinus angustifolius	class	domain	none	True	phylum	none	True
+deepgo-se	cc	3880	Medicago truncatula	class	domain	none	True	phylum	none	True
+deepgo-se	cc	3983	Manihot esculenta	class	domain	none	True	phylum	none	True
+deepgo-se	cc	39947	Oryza sativa Japonica Group	class	domain	none	True	phylum	none	True
+deepgo-se	cc	4072	Capsicum annuum	class	domain	none	True	phylum	none	True
+deepgo-se	cc	4081	Solanum lycopersicum	class	domain	none	True	phylum	none	True
+deepgo-se	cc	510516	Aspergillus oryzae RIB40	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	5270	Mycosarcoma maydis	domain	domain	none	True	domain	none	True
+deepgo-se	cc	6239	Caenorhabditis elegans	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	655827	Metarhizium acridum CQMa 102	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	69014	Thermococcus kodakarensis KOD1	domain	none	domain	False	none	domain	False
+deepgo-se	cc	70601	Pyrococcus horikoshii OT3	domain	none	domain	False	none	domain	False
+deepgo-se	cc	7070	Tribolium castaneum	class	phylum	none	True	phylum	none	True
+deepgo-se	cc	7176	Culex quinquefasciatus	order	phylum	none	True	phylum	none	True
+deepgo-se	cc	7227	Drosophila melanogaster	genus	domain	none	True	domain	none	True
+deepgo-se	cc	742740	[Clostridium] symbiosum WAL-14163	domain	none	domain	False	none	domain	False
+deepgo-se	cc	759272	Thermochaetoides thermophila DSM 1495	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	7757	Petromyzon marinus	family	domain	none	True	domain	none	True
+deepgo-se	cc	7868	Callorhinchus milii	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	7955	Danio rerio	class	domain	none	True	domain	none	True
+deepgo-se	cc	8090	Oryzias latipes	class	domain	none	True	domain	none	True
+deepgo-se	cc	83332	Mycobacterium tuberculosis H37Rv	domain	none	domain	False	none	domain	False
+deepgo-se	cc	8355	Xenopus laevis	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	8364	Xenopus tropicalis	phylum	domain	none	True	domain	none	True
+deepgo-se	cc	85962	Helicobacter pylori 26695	domain	domain	none	True	domain	none	True
+deepgo-se	cc	88036	Selaginella moellendorffii	phylum	domain	none	True	phylum	none	True
+deepgo-se	cc	9031	Gallus gallus	class	domain	none	True	domain	none	True
+deepgo-se	cc	9913	Bos taurus	class	domain	none	True	domain	none	True
+deepgo-se	cc	9940	Ovis aries	class	domain	none	True	domain	none	True
+deepgo-se	mf	10116	Rattus norvegicus	order	phylum	none	True	phylum	none	True
+deepgo-se	mf	1073375	Mediterraneibacter gnavus CC55_001C	domain	none	none	True	none	none	True
+deepgo-se	mf	1220924	Cyphellophora europaea CBS 101466	phylum	domain	none	True	phylum	none	True
+deepgo-se	mf	187420	Methanothermobacter thermautotrophicus str. Delta H	domain	none	none	False	none	none	True
+deepgo-se	mf	208964	Pseudomonas aeruginosa PAO1	domain	domain	none	True	domain	none	True
+deepgo-se	mf	221103	Moniliophthora roreri	domain	domain	none	True	domain	phylum	False
+deepgo-se	mf	227321	Aspergillus nidulans FGSC A4	phylum	domain	none	True	phylum	none	True
+deepgo-se	mf	229533	Fusarium graminearum PH-1	phylum	domain	none	True	phylum	none	True
+deepgo-se	mf	237561	Candida albicans SC5314	phylum	domain	none	True	domain	none	True
+deepgo-se	mf	243274	Thermotoga maritima MSB8	domain	none	none	False	none	none	True
+deepgo-se	mf	267377	Methanococcus maripaludis S2	domain	none	none	True	none	none	True
+deepgo-se	mf	272844	Pyrococcus abyssi GE5	domain	none	none	False	none	none	True
+deepgo-se	mf	3197	Marchantia polymorpha	phylum	domain	none	True	domain	none	True
+deepgo-se	mf	3218	Physcomitrium patens	phylum	domain	none	True	domain	none	True
+deepgo-se	mf	330879	Aspergillus fumigatus Af293	phylum	domain	none	True	phylum	none	True
+deepgo-se	mf	331117	Aspergillus fischeri NRRL 181	phylum	domain	none	True	phylum	none	True
+deepgo-se	mf	336722	Zymoseptoria tritici IPO323	phylum	domain	none	True	phylum	none	True
+deepgo-se	mf	3572	Saponaria officinalis	class	domain	none	True	domain	none	True
+deepgo-se	mf	367110	Neurospora crassa OR74A	phylum	domain	none	True	phylum	none	True
+deepgo-se	mf	3750	Malus domestica	class	domain	none	True	domain	none	True
+deepgo-se	mf	3847	Glycine max	class	domain	none	True	domain	none	True
+deepgo-se	mf	3871	Lupinus angustifolius	class	domain	none	True	domain	none	True
+deepgo-se	mf	3880	Medicago truncatula	class	domain	none	True	domain	none	True
+deepgo-se	mf	3983	Manihot esculenta	class	domain	none	True	domain	none	True
+deepgo-se	mf	39947	Oryza sativa Japonica Group	class	domain	none	True	domain	none	True
+deepgo-se	mf	4072	Capsicum annuum	class	domain	none	True	domain	none	True
+deepgo-se	mf	4081	Solanum lycopersicum	class	domain	none	True	domain	none	True
+deepgo-se	mf	510516	Aspergillus oryzae RIB40	phylum	domain	none	True	phylum	none	True
+deepgo-se	mf	5270	Mycosarcoma maydis	domain	domain	none	True	domain	phylum	False
+deepgo-se	mf	6239	Caenorhabditis elegans	phylum	phylum	none	True	phylum	none	True
+deepgo-se	mf	655827	Metarhizium acridum CQMa 102	phylum	domain	none	True	phylum	none	True
+deepgo-se	mf	69014	Thermococcus kodakarensis KOD1	domain	none	none	False	none	none	True
+deepgo-se	mf	70601	Pyrococcus horikoshii OT3	domain	none	none	False	none	none	True
+deepgo-se	mf	7070	Tribolium castaneum	class	phylum	none	True	phylum	none	True
+deepgo-se	mf	7176	Culex quinquefasciatus	order	phylum	none	True	phylum	none	True
+deepgo-se	mf	7227	Drosophila melanogaster	genus	phylum	none	True	phylum	none	True
+deepgo-se	mf	742740	[Clostridium] symbiosum WAL-14163	domain	none	none	True	none	none	True
+deepgo-se	mf	759272	Thermochaetoides thermophila DSM 1495	phylum	domain	none	True	phylum	none	True
+deepgo-se	mf	7757	Petromyzon marinus	family	phylum	none	True	phylum	none	True
+deepgo-se	mf	7868	Callorhinchus milii	phylum	phylum	none	True	phylum	none	True
+deepgo-se	mf	7955	Danio rerio	class	phylum	none	True	phylum	none	True
+deepgo-se	mf	8090	Oryzias latipes	class	phylum	none	True	phylum	none	True
+deepgo-se	mf	83332	Mycobacterium tuberculosis H37Rv	domain	domain	none	True	domain	none	True
+deepgo-se	mf	8355	Xenopus laevis	phylum	phylum	none	True	phylum	none	True
+deepgo-se	mf	8364	Xenopus tropicalis	phylum	phylum	none	True	phylum	none	True
+deepgo-se	mf	85962	Helicobacter pylori 26695	domain	none	none	True	none	domain	False
+deepgo-se	mf	88036	Selaginella moellendorffii	phylum	domain	none	True	domain	none	True
+deepgo-se	mf	9031	Gallus gallus	class	phylum	none	True	phylum	none	True
+deepgo-se	mf	9913	Bos taurus	class	phylum	none	True	phylum	none	True
+deepgo-se	mf	9940	Ovis aries	class	phylum	none	True	phylum	none	True
+deepgo-se	bp	10116	Rattus norvegicus	order	phylum	none	True	phylum	none	True
+deepgo-se	bp	1073375	Mediterraneibacter gnavus CC55_001C	domain	none	domain	False	none	domain	False
+deepgo-se	bp	1220924	Cyphellophora europaea CBS 101466	phylum	domain	phylum	False	domain	phylum	False
+deepgo-se	bp	187420	Methanothermobacter thermautotrophicus str. Delta H	domain	none	domain	False	none	domain	False
+deepgo-se	bp	208964	Pseudomonas aeruginosa PAO1	domain	domain	none	True	domain	none	True
+deepgo-se	bp	221103	Moniliophthora roreri	domain	domain	none	True	domain	none	True
+deepgo-se	bp	227321	Aspergillus nidulans FGSC A4	phylum	domain	none	True	domain	none	True
+deepgo-se	bp	229533	Fusarium graminearum PH-1	phylum	domain	none	True	domain	none	True
+deepgo-se	bp	237561	Candida albicans SC5314	phylum	domain	none	True	domain	none	True
+deepgo-se	bp	243274	Thermotoga maritima MSB8	domain	none	none	True	none	none	True
+deepgo-se	bp	267377	Methanococcus maripaludis S2	domain	none	domain	False	none	domain	False
+deepgo-se	bp	272844	Pyrococcus abyssi GE5	domain	none	domain	False	none	domain	False
+deepgo-se	bp	3197	Marchantia polymorpha	phylum	phylum	none	False	phylum	none	False
+deepgo-se	bp	3218	Physcomitrium patens	phylum	phylum	none	False	phylum	none	False
+deepgo-se	bp	330879	Aspergillus fumigatus Af293	phylum	domain	none	True	domain	none	True
+deepgo-se	bp	331117	Aspergillus fischeri NRRL 181	phylum	domain	none	True	domain	none	True
+deepgo-se	bp	336722	Zymoseptoria tritici IPO323	phylum	domain	phylum	False	domain	phylum	False
+deepgo-se	bp	3572	Saponaria officinalis	class	class	none	True	class	none	True
+deepgo-se	bp	367110	Neurospora crassa OR74A	phylum	domain	none	False	domain	none	False
+deepgo-se	bp	3750	Malus domestica	class	class	none	True	class	none	True
+deepgo-se	bp	3847	Glycine max	class	class	none	True	class	none	True
+deepgo-se	bp	3871	Lupinus angustifolius	class	class	none	True	class	none	True
+deepgo-se	bp	3880	Medicago truncatula	class	class	none	True	class	none	True
+deepgo-se	bp	3983	Manihot esculenta	class	class	none	True	class	none	True
+deepgo-se	bp	39947	Oryza sativa Japonica Group	class	class	none	True	class	none	True
+deepgo-se	bp	4072	Capsicum annuum	class	class	none	True	class	none	True
+deepgo-se	bp	4081	Solanum lycopersicum	class	class	none	True	class	none	True
+deepgo-se	bp	510516	Aspergillus oryzae RIB40	phylum	domain	none	True	domain	none	True
+deepgo-se	bp	5270	Mycosarcoma maydis	domain	domain	none	True	domain	none	True
+deepgo-se	bp	6239	Caenorhabditis elegans	phylum	phylum	none	True	phylum	none	True
+deepgo-se	bp	655827	Metarhizium acridum CQMa 102	phylum	domain	none	False	domain	none	False
+deepgo-se	bp	69014	Thermococcus kodakarensis KOD1	domain	none	domain	False	none	domain	False
+deepgo-se	bp	70601	Pyrococcus horikoshii OT3	domain	none	domain	False	none	domain	False
+deepgo-se	bp	7070	Tribolium castaneum	class	class	none	True	class	none	True
+deepgo-se	bp	7176	Culex quinquefasciatus	order	class	none	True	class	none	True
+deepgo-se	bp	7227	Drosophila melanogaster	genus	class	none	True	class	none	True
+deepgo-se	bp	742740	[Clostridium] symbiosum WAL-14163	domain	none	domain	False	none	domain	False
+deepgo-se	bp	759272	Thermochaetoides thermophila DSM 1495	phylum	domain	none	False	domain	none	False
+deepgo-se	bp	7757	Petromyzon marinus	family	phylum	none	True	phylum	none	True
+deepgo-se	bp	7868	Callorhinchus milii	phylum	phylum	none	True	phylum	none	True
+deepgo-se	bp	7955	Danio rerio	class	phylum	none	True	phylum	none	True
+deepgo-se	bp	8090	Oryzias latipes	class	phylum	none	True	phylum	none	True
+deepgo-se	bp	83332	Mycobacterium tuberculosis H37Rv	domain	domain	none	True	domain	none	True
+deepgo-se	bp	8355	Xenopus laevis	phylum	phylum	none	True	phylum	none	True
+deepgo-se	bp	8364	Xenopus tropicalis	phylum	phylum	none	True	phylum	none	True
+deepgo-se	bp	85962	Helicobacter pylori 26695	domain	none	domain	False	none	domain	False
+deepgo-se	bp	88036	Selaginella moellendorffii	phylum	phylum	none	False	phylum	none	False
+deepgo-se	bp	9031	Gallus gallus	class	phylum	none	True	phylum	none	True
+deepgo-se	bp	9913	Bos taurus	class	phylum	none	True	phylum	none	True
+deepgo-se	bp	9940	Ovis aries	class	phylum	none	True	phylum	none	True
+sprof-go	cc	10116	Rattus norvegicus	order	domain	phylum	False	domain	phylum	False
+sprof-go	cc	1073375	Mediterraneibacter gnavus CC55_001C	domain	none	domain	False	none	domain	False
+sprof-go	cc	1220924	Cyphellophora europaea CBS 101466	phylum	domain	none	False	domain	phylum	False
+sprof-go	cc	187420	Methanothermobacter thermautotrophicus str. Delta H	domain	none	domain	False	none	domain	False
+sprof-go	cc	208964	Pseudomonas aeruginosa PAO1	domain	domain	none	True	domain	none	True
+sprof-go	cc	221103	Moniliophthora roreri	domain	domain	none	False	domain	phylum	False
+sprof-go	cc	227321	Aspergillus nidulans FGSC A4	phylum	domain	none	False	domain	phylum	False
+sprof-go	cc	229533	Fusarium graminearum PH-1	phylum	domain	none	False	domain	phylum	False
+sprof-go	cc	237561	Candida albicans SC5314	phylum	domain	none	True	domain	none	True
+sprof-go	cc	243274	Thermotoga maritima MSB8	domain	none	domain	False	none	domain	False
+sprof-go	cc	267377	Methanococcus maripaludis S2	domain	none	domain	False	none	domain	False
+sprof-go	cc	272844	Pyrococcus abyssi GE5	domain	none	domain	False	none	domain	False
+sprof-go	cc	3197	Marchantia polymorpha	phylum	domain	none	True	phylum	none	True
+sprof-go	cc	3218	Physcomitrium patens	phylum	domain	none	True	phylum	none	True
+sprof-go	cc	330879	Aspergillus fumigatus Af293	phylum	domain	none	False	domain	phylum	False
+sprof-go	cc	331117	Aspergillus fischeri NRRL 181	phylum	domain	none	False	domain	phylum	False
+sprof-go	cc	336722	Zymoseptoria tritici IPO323	phylum	domain	none	False	domain	phylum	False
+sprof-go	cc	3572	Saponaria officinalis	class	domain	none	True	phylum	none	True
+sprof-go	cc	367110	Neurospora crassa OR74A	phylum	domain	none	False	domain	phylum	False
+sprof-go	cc	3750	Malus domestica	class	domain	none	True	phylum	none	True
+sprof-go	cc	3847	Glycine max	class	domain	none	True	phylum	none	True
+sprof-go	cc	3871	Lupinus angustifolius	class	domain	none	True	phylum	none	True
+sprof-go	cc	3880	Medicago truncatula	class	domain	none	True	phylum	none	True
+sprof-go	cc	3983	Manihot esculenta	class	domain	none	True	phylum	none	True
+sprof-go	cc	39947	Oryza sativa Japonica Group	class	domain	none	True	phylum	none	True
+sprof-go	cc	4072	Capsicum annuum	class	domain	none	True	phylum	none	True
+sprof-go	cc	4081	Solanum lycopersicum	class	domain	none	True	phylum	none	True
+sprof-go	cc	510516	Aspergillus oryzae RIB40	phylum	domain	none	False	domain	phylum	False
+sprof-go	cc	5270	Mycosarcoma maydis	domain	domain	none	False	domain	phylum	False
+sprof-go	cc	6239	Caenorhabditis elegans	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	cc	655827	Metarhizium acridum CQMa 102	phylum	domain	none	False	domain	phylum	False
+sprof-go	cc	69014	Thermococcus kodakarensis KOD1	domain	none	domain	False	none	domain	False
+sprof-go	cc	70601	Pyrococcus horikoshii OT3	domain	none	domain	False	none	domain	False
+sprof-go	cc	7070	Tribolium castaneum	class	class	none	True	class	none	True
+sprof-go	cc	7176	Culex quinquefasciatus	order	class	none	True	class	none	True
+sprof-go	cc	7227	Drosophila melanogaster	genus	class	none	True	class	none	True
+sprof-go	cc	742740	[Clostridium] symbiosum WAL-14163	domain	none	domain	False	none	domain	False
+sprof-go	cc	759272	Thermochaetoides thermophila DSM 1495	phylum	domain	none	False	domain	phylum	False
+sprof-go	cc	7757	Petromyzon marinus	family	domain	phylum	False	domain	phylum	False
+sprof-go	cc	7868	Callorhinchus milii	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	cc	7955	Danio rerio	class	domain	phylum	False	domain	phylum	False
+sprof-go	cc	8090	Oryzias latipes	class	domain	phylum	False	domain	phylum	False
+sprof-go	cc	83332	Mycobacterium tuberculosis H37Rv	domain	none	domain	False	none	domain	False
+sprof-go	cc	8355	Xenopus laevis	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	cc	8364	Xenopus tropicalis	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	cc	85962	Helicobacter pylori 26695	domain	none	domain	False	none	domain	False
+sprof-go	cc	88036	Selaginella moellendorffii	phylum	domain	none	True	phylum	none	True
+sprof-go	cc	9031	Gallus gallus	class	domain	phylum	False	domain	phylum	False
+sprof-go	cc	9913	Bos taurus	class	domain	phylum	False	domain	phylum	False
+sprof-go	cc	9940	Ovis aries	class	domain	phylum	False	domain	phylum	False
+sprof-go	mf	10116	Rattus norvegicus	order	domain	none	True	domain	none	True
+sprof-go	mf	1073375	Mediterraneibacter gnavus CC55_001C	domain	none	domain	False	none	domain	False
+sprof-go	mf	1220924	Cyphellophora europaea CBS 101466	phylum	domain	none	False	domain	none	False
+sprof-go	mf	187420	Methanothermobacter thermautotrophicus str. Delta H	domain	none	domain	False	none	domain	False
+sprof-go	mf	208964	Pseudomonas aeruginosa PAO1	domain	none	domain	False	none	domain	False
+sprof-go	mf	221103	Moniliophthora roreri	domain	domain	none	False	domain	none	False
+sprof-go	mf	227321	Aspergillus nidulans FGSC A4	phylum	domain	none	False	domain	none	False
+sprof-go	mf	229533	Fusarium graminearum PH-1	phylum	domain	none	False	domain	none	False
+sprof-go	mf	237561	Candida albicans SC5314	phylum	domain	none	False	domain	none	False
+sprof-go	mf	243274	Thermotoga maritima MSB8	domain	none	domain	False	none	domain	False
+sprof-go	mf	267377	Methanococcus maripaludis S2	domain	none	domain	False	none	domain	False
+sprof-go	mf	272844	Pyrococcus abyssi GE5	domain	none	domain	False	none	domain	False
+sprof-go	mf	3197	Marchantia polymorpha	phylum	domain	none	False	domain	none	False
+sprof-go	mf	3218	Physcomitrium patens	phylum	domain	none	False	domain	none	False
+sprof-go	mf	330879	Aspergillus fumigatus Af293	phylum	domain	none	False	domain	none	False
+sprof-go	mf	331117	Aspergillus fischeri NRRL 181	phylum	domain	none	False	domain	none	False
+sprof-go	mf	336722	Zymoseptoria tritici IPO323	phylum	domain	none	False	domain	none	False
+sprof-go	mf	3572	Saponaria officinalis	class	domain	none	False	domain	none	False
+sprof-go	mf	367110	Neurospora crassa OR74A	phylum	domain	none	False	domain	none	False
+sprof-go	mf	3750	Malus domestica	class	domain	none	False	domain	none	False
+sprof-go	mf	3847	Glycine max	class	domain	none	False	domain	none	False
+sprof-go	mf	3871	Lupinus angustifolius	class	domain	none	False	domain	none	False
+sprof-go	mf	3880	Medicago truncatula	class	domain	none	False	domain	none	False
+sprof-go	mf	3983	Manihot esculenta	class	domain	none	False	domain	none	False
+sprof-go	mf	39947	Oryza sativa Japonica Group	class	domain	none	False	domain	none	False
+sprof-go	mf	4072	Capsicum annuum	class	domain	none	False	domain	none	False
+sprof-go	mf	4081	Solanum lycopersicum	class	domain	none	False	domain	none	False
+sprof-go	mf	510516	Aspergillus oryzae RIB40	phylum	domain	none	False	domain	none	False
+sprof-go	mf	5270	Mycosarcoma maydis	domain	domain	none	False	domain	none	False
+sprof-go	mf	6239	Caenorhabditis elegans	phylum	domain	none	True	domain	none	True
+sprof-go	mf	655827	Metarhizium acridum CQMa 102	phylum	domain	none	False	domain	none	False
+sprof-go	mf	69014	Thermococcus kodakarensis KOD1	domain	none	domain	False	none	domain	False
+sprof-go	mf	70601	Pyrococcus horikoshii OT3	domain	none	domain	False	none	domain	False
+sprof-go	mf	7070	Tribolium castaneum	class	domain	none	True	domain	none	True
+sprof-go	mf	7176	Culex quinquefasciatus	order	domain	none	True	domain	none	True
+sprof-go	mf	7227	Drosophila melanogaster	genus	domain	none	True	domain	none	True
+sprof-go	mf	742740	[Clostridium] symbiosum WAL-14163	domain	none	domain	False	none	domain	False
+sprof-go	mf	759272	Thermochaetoides thermophila DSM 1495	phylum	domain	none	False	domain	none	False
+sprof-go	mf	7757	Petromyzon marinus	family	domain	none	True	domain	none	True
+sprof-go	mf	7868	Callorhinchus milii	phylum	domain	none	True	domain	none	True
+sprof-go	mf	7955	Danio rerio	class	domain	none	True	domain	none	True
+sprof-go	mf	8090	Oryzias latipes	class	domain	none	True	domain	none	True
+sprof-go	mf	83332	Mycobacterium tuberculosis H37Rv	domain	none	domain	False	none	domain	False
+sprof-go	mf	8355	Xenopus laevis	phylum	domain	none	True	domain	none	True
+sprof-go	mf	8364	Xenopus tropicalis	phylum	domain	none	True	domain	none	True
+sprof-go	mf	85962	Helicobacter pylori 26695	domain	none	domain	False	none	domain	False
+sprof-go	mf	88036	Selaginella moellendorffii	phylum	domain	none	False	domain	none	False
+sprof-go	mf	9031	Gallus gallus	class	domain	none	True	domain	none	True
+sprof-go	mf	9913	Bos taurus	class	domain	none	True	domain	none	True
+sprof-go	mf	9940	Ovis aries	class	domain	none	True	domain	none	True
+sprof-go	bp	10116	Rattus norvegicus	order	class	none	True	class	none	True
+sprof-go	bp	1073375	Mediterraneibacter gnavus CC55_001C	domain	none	domain	False	none	domain	False
+sprof-go	bp	1220924	Cyphellophora europaea CBS 101466	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	187420	Methanothermobacter thermautotrophicus str. Delta H	domain	none	domain	False	none	domain	False
+sprof-go	bp	208964	Pseudomonas aeruginosa PAO1	domain	none	domain	False	none	domain	False
+sprof-go	bp	221103	Moniliophthora roreri	domain	domain	phylum	False	domain	phylum	False
+sprof-go	bp	227321	Aspergillus nidulans FGSC A4	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	229533	Fusarium graminearum PH-1	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	237561	Candida albicans SC5314	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	243274	Thermotoga maritima MSB8	domain	none	domain	False	none	domain	False
+sprof-go	bp	267377	Methanococcus maripaludis S2	domain	none	domain	False	none	domain	False
+sprof-go	bp	272844	Pyrococcus abyssi GE5	domain	none	domain	False	none	domain	False
+sprof-go	bp	3197	Marchantia polymorpha	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	3218	Physcomitrium patens	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	330879	Aspergillus fumigatus Af293	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	331117	Aspergillus fischeri NRRL 181	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	336722	Zymoseptoria tritici IPO323	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	3572	Saponaria officinalis	class	class	none	True	class	none	True
+sprof-go	bp	367110	Neurospora crassa OR74A	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	3750	Malus domestica	class	class	none	True	class	none	True
+sprof-go	bp	3847	Glycine max	class	class	none	True	class	none	True
+sprof-go	bp	3871	Lupinus angustifolius	class	class	none	True	class	none	True
+sprof-go	bp	3880	Medicago truncatula	class	class	none	True	class	none	True
+sprof-go	bp	3983	Manihot esculenta	class	class	none	True	class	none	True
+sprof-go	bp	39947	Oryza sativa Japonica Group	class	class	none	True	class	none	True
+sprof-go	bp	4072	Capsicum annuum	class	class	none	True	class	none	True
+sprof-go	bp	4081	Solanum lycopersicum	class	class	none	True	class	none	True
+sprof-go	bp	510516	Aspergillus oryzae RIB40	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	5270	Mycosarcoma maydis	domain	domain	phylum	False	domain	phylum	False
+sprof-go	bp	6239	Caenorhabditis elegans	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	655827	Metarhizium acridum CQMa 102	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	69014	Thermococcus kodakarensis KOD1	domain	none	domain	False	none	domain	False
+sprof-go	bp	70601	Pyrococcus horikoshii OT3	domain	none	domain	False	none	domain	False
+sprof-go	bp	7070	Tribolium castaneum	class	domain	phylum	False	domain	phylum	False
+sprof-go	bp	7176	Culex quinquefasciatus	order	class	none	True	class	none	True
+sprof-go	bp	7227	Drosophila melanogaster	genus	class	none	True	class	none	True
+sprof-go	bp	742740	[Clostridium] symbiosum WAL-14163	domain	none	domain	False	none	domain	False
+sprof-go	bp	759272	Thermochaetoides thermophila DSM 1495	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	7757	Petromyzon marinus	family	phylum	class	False	phylum	class	False
+sprof-go	bp	7868	Callorhinchus milii	phylum	phylum	class	False	phylum	class	False
+sprof-go	bp	7955	Danio rerio	class	phylum	class	False	phylum	class	False
+sprof-go	bp	8090	Oryzias latipes	class	phylum	class	False	phylum	class	False
+sprof-go	bp	83332	Mycobacterium tuberculosis H37Rv	domain	none	domain	False	none	domain	False
+sprof-go	bp	8355	Xenopus laevis	phylum	phylum	class	False	phylum	class	False
+sprof-go	bp	8364	Xenopus tropicalis	phylum	phylum	class	False	phylum	class	False
+sprof-go	bp	85962	Helicobacter pylori 26695	domain	none	domain	False	none	domain	False
+sprof-go	bp	88036	Selaginella moellendorffii	phylum	domain	phylum	False	domain	phylum	False
+sprof-go	bp	9031	Gallus gallus	class	phylum	class	False	phylum	class	False
+sprof-go	bp	9913	Bos taurus	class	class	none	True	class	none	True
+sprof-go	bp	9940	Ovis aries	class	class	none	True	class	none	True

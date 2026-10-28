@@ -1,0 +1,57 @@
+\begin{table}[!h]
+\centering
+\caption{Comparison of GenoAdjust against naive taxon filtering, empirical corpus-absence filtering (FunTaxIS-lite), soft constraint regularization (SBR, $\lambda \in \{0.2, 0.5\}$), and Stage~2 operating modes (Standard vs.\ Demotion-Only) on Cellular Component (CC) predictions across the timeset split. GAEF Taxon Consistency (TC) and Complex Coherence (CCoh) are reported both over all 50 timeset proteomes ($n=50$) and over the 41 proteomes with experimental CC ground-truth annotations ($n=41$), evaluated at each solver's operating threshold $\tau$ (and in parentheses at $\tau=0.3$ for Seq-Sim and SPROF-GO). Pooled CAFA metrics ($F_{\max}$, $S_{\min}$, AUC, AUPR, $wF_{\max}$) are micro-averaged across all 511 evaluated CC proteins.}
+\label{tab:supp-baselines}
+\scriptsize
+\setlength{\tabcolsep}{2.0pt}
+\renewcommand{\arraystretch}{0.92}
+\begin{tabular}{ll cc cc ccccc}
+\toprule
+ & & \multicolumn{2}{c}{GAEF ($n=50$)} & \multicolumn{2}{c}{GAEF ($n=41$ GT)} & \multicolumn{5}{c}{Pooled CAFA ($n=41$, 511 proteins)} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-11}
+Predictor & Method / Mode & TC & CCoh (\%) & TC & CCoh (\%) & $F_{\max}$ & $S_{\min}$ & AUC & AUPR & $wF_{\max}$ \\
+\midrule
+\multirow{12}{*}{Seq-Sim}
+ & Raw (\texttt{preds})             & 0.00 & 87.16 (75.22) & 0.00 & 87.58 (75.21) & .5619 & 53.61 & .7336 & .4385 & .5137 \\
+ & Naive (no prop, taxons)          & 0.76 & 88.46 (76.30) & 0.78 & 88.80 (76.20) & .5622 & 53.53 & .7337 & .4403 & .5143 \\
+ & Naive (prop, taxons)             & 1.00 & 88.46 (76.30) & 1.00 & 88.80 (76.20) & .5622 & 53.53 & .7337 & .4403 & .5143 \\
+ & FunTaxIS-lite (prop, taxons)     & 1.00 & 88.63 (76.40) & 1.00 & 88.96 (76.31) & .5572 & 53.96 & .7133 & .4368 & .5078 \\
+ & Soft SBR Stage~1 ($\lambda=0.2$) & 0.00 & 87.59 & 0.00 & 87.93 & .5621 & 53.56 & .7340 & .4399 & .5141 \\
+ & Soft SBR Stage~2 ($\lambda=0.2$) & 0.00 & 95.39 & 0.00 & 95.59 & .5621 & 53.56 & .7340 & .4399 & .5141 \\
+ & Soft SBR Stage~1 ($\lambda=0.5$) & 0.00 & 88.13 & 0.00 & 88.50 & .5622 & 53.55 & .7337 & .4402 & .5142 \\
+ & Soft SBR Stage~2 ($\lambda=0.5$) & 0.00 & 98.08 & 0.00 & 98.12 & .5622 & 53.55 & .7337 & .4402 & .5142 \\
+ & Stage~1 (\texttt{no taxons})     & 1.00 & 87.46 (75.54) & 1.00 & 87.89 (75.56) & .5619 & 53.60 & .7303 & .4397 & .5137 \\
+ & Stage~1 (\texttt{taxons})        & 1.00 & 88.46 (76.30) & 1.00 & 88.80 (76.20) & .5622 & 53.53 & .7337 & .4403 & .5143 \\
+ & Stage~2 Std.\ (\texttt{taxons})  & 1.00 & 100.0 (100.0) & 1.00 & 100.0 (100.0) & .5622 & 53.53 & .7077 & .4403 & .5142 \\
+ & Stage~2 Dem.-Only (\texttt{taxons}) & 1.00 & 100.0 (100.0) & 1.00 & 100.0 (100.0) & .5621 & 53.54 & .7077 & .4403 & .5141 \\
+\midrule
+\multirow{12}{*}{DeepGO-SE}
+ & Raw (\texttt{preds})             & 0.00 & 79.19 & 0.00 & 78.67 & .6354 & 49.84 & .8068 & .6224 & .5820 \\
+ & Naive (no prop, taxons)          & 1.00 & 79.98 & 1.00 & 79.61 & .6354 & 49.83 & .8066 & .6227 & .5821 \\
+ & Naive (prop, taxons)             & 1.00 & 79.98 & 1.00 & 79.61 & .6354 & 49.83 & .8066 & .6227 & .5821 \\
+ & FunTaxIS-lite (prop, taxons)     & 1.00 & 79.97 & 1.00 & 79.46 & .6322 & 50.21 & .7858 & .6161 & .5782 \\
+ & Soft SBR Stage~1 ($\lambda=0.2$) & 0.02 & 79.20 & 0.02 & 78.74 & .6354 & 49.83 & .8066 & .6227 & .5820 \\
+ & Soft SBR Stage~2 ($\lambda=0.2$) & 0.02 & 99.06 & 0.02 & 98.92 & .6354 & 49.83 & .8066 & .6227 & .5821 \\
+ & Soft SBR Stage~1 ($\lambda=0.5$) & 0.52 & 79.91 & 0.54 & 79.51 & .6354 & 49.83 & .8066 & .6227 & .5821 \\
+ & Soft SBR Stage~2 ($\lambda=0.5$) & 0.52 & 99.95 & 0.54 & 99.95 & .6354 & 49.83 & .8066 & .6227 & .5821 \\
+ & Stage~1 (\texttt{no taxons})     & 1.00 & 79.54 & 1.00 & 79.08 & .6354 & 49.83 & .8063 & .6227 & .5821 \\
+ & Stage~1 (\texttt{taxons})        & 1.00 & 79.98 & 1.00 & 79.61 & .6354 & 49.83 & .8066 & .6227 & .5821 \\
+ & Stage~2 Std.\ (\texttt{taxons})  & 1.00 & 100.0 & 1.00 & 100.0 & .6354 & 49.83 & .6753 & .6205 & .5821 \\
+ & Stage~2 Dem.-Only (\texttt{taxons}) & 1.00 & 100.0 & 1.00 & 100.0 & .6354 & 49.85 & .6753 & .6204 & .5819 \\
+\midrule
+\multirow{12}{*}{SPROF-GO}
+ & Raw (\texttt{preds})             & 0.00 (0.06) & 96.49 (86.98) & 0.00 (0.02) & 96.62 (87.23) & .6783 & 43.35 & .6563 & .7426 & .6311 \\
+ & Naive (no prop, taxons)          & 0.74 (1.00) & 97.02 (87.55) & 0.71 (1.00) & 97.04 (87.82) & .6784 & 43.35 & .6564 & .7432 & .6311 \\
+ & Naive (prop, taxons)             & 0.74 (1.00) & 97.02 (87.55) & 0.71 (1.00) & 97.04 (87.82) & .6784 & 43.35 & .6564 & .7432 & .6311 \\
+ & FunTaxIS-lite (prop, taxons)     & 0.74 (1.00) & 97.28 (87.78) & 0.71 (1.00) & 97.35 (88.04) & .6713 & 44.15 & .6458 & .7312 & .6228 \\
+ & Soft SBR Stage~1 ($\lambda=0.2$) & 0.00 & 96.56 & 0.00 & 96.64 & .6784 & 43.35 & .6564 & .7432 & .6311 \\
+ & Soft SBR Stage~2 ($\lambda=0.2$) & 0.00 & 99.74 & 0.00 & 99.75 & .6784 & 43.35 & .6564 & .7432 & .6311 \\
+ & Soft SBR Stage~1 ($\lambda=0.5$) & 0.20 & 96.89 & 0.20 & 96.89 & .6784 & 43.35 & .6564 & .7432 & .6311 \\
+ & Soft SBR Stage~2 ($\lambda=0.5$) & 0.20 & 100.0 & 0.20 & 100.0 & .6784 & 43.35 & .6564 & .7432 & .6311 \\
+ & Stage~1 (\texttt{no taxons})     & 1.00 (1.00) & 96.77 (86.98) & 1.00 (1.00) & 96.87 (87.23) & .6783 & 43.36 & .6546 & .7425 & .6310 \\
+ & Stage~1 (\texttt{taxons})        & 1.00 (1.00) & 97.02 (87.55) & 1.00 (1.00) & 97.04 (87.82) & .6784 & 43.35 & .6564 & .7432 & .6311 \\
+ & Stage~2 Std.\ (\texttt{taxons})  & 1.00 (1.00) & 100.0 (100.0) & 1.00 (1.00) & 100.0 (100.0) & .6783 & 43.36 & .6347 & .7412 & .6310 \\
+ & Stage~2 Dem.-Only (\texttt{taxons}) & 1.00 (1.00) & 100.0 (100.0) & 1.00 (1.00) & 100.0 (100.0) & .6783 & 43.36 & .6347 & .7412 & .6310 \\
+\bottomrule
+\end{tabular}
+\end{table}

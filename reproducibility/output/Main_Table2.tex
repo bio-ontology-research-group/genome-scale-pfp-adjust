@@ -1,0 +1,32 @@
+\begin{table*}[!t]
+\centering
+\caption{GAEF metrics before and after adjustment across all 50 timeset proteomes ($n=50$; no-taxons setting; macro-average across genomes at $\tau_{\text{eval}}=0.3$). Sub-ontologies run across columns. Only metrics applicable to each sub-ontology are reported (complex coherence is CC-only; essential-term and pathway coherence are BP-only). $\dagger$ adds the Stage~2 complex-coherence objective in standard symmetric mode; \rev{$\ddagger$ adds Stage~2 in demotion-only mode (\texttt{--demotion-only})}. $\ast$ marks pretrained models run for inference only.}
+\label{tab:gaef_preds}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{ll ccc cc cccc}
+\toprule
+ & & \multicolumn{3}{c}{CC} & \multicolumn{2}{c}{MF} & \multicolumn{4}{c}{BP} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}\cmidrule(lr){8-11}
+Model & Setting & Process\% & Complex\% & Taxon\% & Process\% & Taxon\% & Essential\% & Process\% & Pathway\% & Taxon\% \\
+\midrule
+\multirow{4}{*}{\textbf{Seq-Sim}}
+   & preds              & 76.76 & 75.24          &   0.00         & 83.21 &  32.00         & 99.91 & 56.25 & 7.62 &   0.00 \\
+   & adjusted           & 76.94 & 75.55          & \textbf{100.0} & 83.24 & \textbf{100.0} & 99.91 & 55.30 & 7.75 & \textbf{100.0} \\
+   & adjusted$^\dagger$ & 75.24 & \textbf{100.0} & \textbf{100.0} & --   & --            & --   & --   & --  & -- \\
+   & \rev{adjusted$^\ddagger$} & \rev{75.24} & \rev{\textbf{100.0}} & \rev{\textbf{100.0}} & \rev{--} & \rev{--} & \rev{--} & \rev{--} & \rev{--} & \rev{--} \\
+\midrule
+\multirow{4}{*}{\textbf{DeepGO-SE}$^\ast$}
+   & preds              & 99.45 & 79.18          &   0.00         & 99.17 &  42.00         & 96.73 & 67.12 & 6.53 &  12.00 \\
+   & adjusted           & 99.42 & 79.39          & \textbf{100.0} & 99.17 & \textbf{100.0} & 96.73 & 66.31 & 6.53 & \textbf{100.0} \\
+   & adjusted$^\dagger$ & 99.36 & \textbf{100.0} & \textbf{100.0} & --   & --            & --   & --   & --  & -- \\
+   & \rev{adjusted$^\ddagger$} & \rev{99.34} & \rev{\textbf{100.0}} & \rev{\textbf{100.0}} & \rev{--} & \rev{--} & \rev{--} & \rev{--} & \rev{--} & \rev{--} \\
+\midrule
+\multirow{4}{*}{\textbf{SPROF-GO}$^\ast$}
+   & preds              & 59.17 & 86.98          &   6.00         & 74.09 & \textbf{100.0} & 89.36 & 54.53 & 1.62 &  26.00 \\
+   & adjusted           & 57.39 & 86.98          & \textbf{100.0} & 74.09 & \textbf{100.0} & 89.36 & 54.59 & 1.62 & \textbf{100.0} \\
+   & adjusted$^\dagger$ & 57.81 & \textbf{100.0} & \textbf{100.0} & --   & --            & --   & --   & --  & -- \\
+   & \rev{adjusted$^\ddagger$} & \rev{57.39} & \rev{\textbf{100.0}} & \rev{\textbf{100.0}} & \rev{--} & \rev{--} & \rev{--} & \rev{--} & \rev{--} & \rev{--} \\
+\bottomrule
+\end{tabular}
+\end{table*}

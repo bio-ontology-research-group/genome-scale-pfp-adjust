@@ -1,0 +1,27 @@
+\begin{table}[!h]
+\centering
+\caption{Micro-averaged CAFA per-protein metrics on the heldout split (219 organisms). Precision and recall are at the $F_{\max}$-maximizing threshold.}
+\label{tab:micro-avg-preds-opt-heldout}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lll*{6}c}
+\toprule
+Ontology & Model & Setting & $F_{\max}$ & $S_{\min}$ & AUC & AUPR & Prec & Rec \\
+\midrule
+\textbf{CC} & Seq-Sim   & preds & .5797 & 62.84 & .7526 & .5165 & .5986 & .5619 \\
+            &           & taxons & .5800 & 62.70 & .7531 & .5180 & .5994 & .5619 \\
+            & MLP-ESM2  & preds & .5779 & 64.37 & .7143 & .5917 & .6115 & .5478 \\
+            &           & taxons & .5781 & 64.32 & .7145 & .5925 & .6121 & .5478 \\
+\midrule
+\textbf{MF} & Seq-Sim   & preds & .6343 & 45.72 & .8483 & .5861 & .6314 & .6372 \\
+            &           & taxons & .6343 & 45.72 & .8483 & .5861 & .6314 & .6372 \\
+            & MLP-ESM2  & preds & .5964 & 50.37 & .7749 & .5764 & .6129 & .5808 \\
+            &           & taxons & .5964 & 50.38 & .7749 & .5764 & .6303 & .5660 \\
+\midrule
+\textbf{BP} & Seq-Sim   & preds & .4345 & 356.6 & .6714 & .3379 & .4476 & .4221 \\
+            &           & taxons & .4346 & 356.5 & .6717 & .3384 & .4478 & .4222 \\
+            & MLP-ESM2  & preds & .4007 & 359.8 & .6279 & .3442 & .4225 & .3810 \\
+            &           & taxons & .4007 & 359.8 & .6280 & .3443 & .4225 & .3811 \\
+\bottomrule
+\end{tabular}
+\end{table}

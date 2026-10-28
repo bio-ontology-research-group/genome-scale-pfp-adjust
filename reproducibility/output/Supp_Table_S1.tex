@@ -1,0 +1,39 @@
+\begin{table}[!h]
+\centering
+\caption{Micro-averaged CAFA per-protein metrics on the common 169-protein timeset benchmark (50 organisms; see Table~\ref{tab:supp-baselines} for pooled metrics across all 511 CC-annotated proteins). Precision and recall are at the $F_{\max}$-maximizing threshold. $\ast$ marks pretrained models.}
+\label{tab:micro-avg-preds-timeset}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lll*{6}c}
+\toprule
+Ontology & Model & Setting & $F_{\max}$ & $S_{\min}$ & AUC & AUPR & Prec & Rec \\
+\midrule
+\textbf{CC} & Seq-Sim                 & preds      & .6313 & 33.25 & .8187 & .4707 & .6726 & .5947 \\
+            &                         & no taxons  & .6313 & 33.25 & .8194 & .4707 & .6726 & .5947 \\
+            &                         & taxons     & .6313 & 33.25 & .8196 & .4708 & .6726 & .5947 \\
+            & DeepGO-SE$^\ast$         & preds      & .6541 & 38.74 & .8584 & .6375 & .6507 & .6575 \\
+            &                         & no taxons  & .6541 & 38.74 & .8540 & .7141 & .6507 & .6575 \\
+            &                         & taxons     & .6541 & 38.74 & .8586 & .7152 & .6507 & .6575 \\
+            & SPROF-GO$^\ast$          & preds      & .6406 & 36.42 & .8397 & .6813 & .6362 & .6450 \\
+            &                         & no taxons  & .6406 & 36.42 & .8351 & .6795 & .6362 & .6450 \\
+            &                         & taxons     & .6406 & 36.42 & .8399 & .6816 & .6362 & .6450 \\
+\midrule
+\textbf{MF} & Seq-Sim                 & preds      & .7706 & 24.39 & .9174 & .6616 & .7776 & .7636 \\
+            &                         & taxons     & .7706 & 24.39 & .9174 & .6615 & .7776 & .7636 \\
+            & DeepGO-SE$^\ast$         & preds      & .5783 & 40.11 & .8784 & .5531 & .5511 & .6084 \\
+            &                         & taxons     & .5783 & 40.11 & .8784 & .5530 & .5511 & .6084 \\
+            & SPROF-GO$^\ast$          & preds      & .6439 & 31.06 & .8154 & .6418 & .6651 & .6240 \\
+            &                         & taxons     & .6439 & 31.06 & .8154 & .6418 & .6651 & .6240 \\
+\midrule
+\textbf{BP} & Seq-Sim                 & preds      & .4734 & 139.5 & .7486 & .3397 & .5873 & .3966 \\
+            &                         & no taxons  & .4730 & 139.6 & .7481 & .3392 & .5871 & .3960 \\
+            &                         & taxons     & .4734 & 139.5 & .7499 & .3403 & .5873 & .3966 \\
+            & DeepGO-SE$^\ast$         & preds      & .3939 & 149.5 & .7802 & .3541 & .4472 & .3519 \\
+            &                         & no taxons  & .3960 & 149.5 & .7782 & .3534 & .4436 & .3576 \\
+            &                         & taxons     & .3960 & 149.5 & .7802 & .3540 & .4436 & .3576 \\
+            & SPROF-GO$^\ast$          & preds      & .4607 & 137.9 & .8109 & .4284 & .4883 & .4361 \\
+            &                         & no taxons  & .4599 & 137.9 & .8060 & .4249 & .4880 & .4348 \\
+            &                         & taxons     & .4607 & 137.9 & .8116 & .4288 & .4883 & .4361 \\
+\bottomrule
+\end{tabular}
+\end{table}

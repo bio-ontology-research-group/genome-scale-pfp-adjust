@@ -1,0 +1,416 @@
+{
+  "seq_sim_timeset": {
+    "cc": {
+      "n_organisms": 50,
+      "max_reachable_rank_counts": {
+        "order": 2,
+        "domain": 13,
+        "phylum": 18,
+        "class": 15,
+        "genus": 1,
+        "family": 1
+      },
+      "forced_deepest_correct_counts": {
+        "class": 3,
+        "none": 11,
+        "domain": 29,
+        "phylum": 7
+      },
+      "forced_first_divergence_counts": {
+        "none": 28,
+        "domain": 11,
+        "phylum": 4,
+        "class": 7
+      },
+      "forced_exact_prefix_count": 15,
+      "solver_deepest_correct_counts": {
+        "class": 3,
+        "none": 11,
+        "domain": 17,
+        "phylum": 19
+      },
+      "solver_first_divergence_counts": {
+        "none": 15,
+        "domain": 11,
+        "phylum": 17,
+        "class": 7
+      },
+      "solver_exact_prefix_count": 15
+    },
+    "mf": {
+      "n_organisms": 50,
+      "max_reachable_rank_counts": {
+        "order": 2,
+        "domain": 13,
+        "phylum": 18,
+        "class": 15,
+        "genus": 1,
+        "family": 1
+      },
+      "forced_deepest_correct_counts": {
+        "class": 3,
+        "none": 10,
+        "domain": 30,
+        "phylum": 7
+      },
+      "forced_first_divergence_counts": {
+        "none": 27,
+        "domain": 10,
+        "phylum": 6,
+        "class": 7
+      },
+      "forced_exact_prefix_count": 13,
+      "solver_deepest_correct_counts": {
+        "class": 3,
+        "none": 10,
+        "domain": 30,
+        "phylum": 7
+      },
+      "solver_first_divergence_counts": {
+        "none": 27,
+        "domain": 10,
+        "phylum": 6,
+        "class": 7
+      },
+      "solver_exact_prefix_count": 13
+    },
+    "bp": {
+      "n_organisms": 50,
+      "max_reachable_rank_counts": {
+        "order": 2,
+        "domain": 13,
+        "phylum": 18,
+        "class": 15,
+        "genus": 1,
+        "family": 1
+      },
+      "forced_deepest_correct_counts": {
+        "order": 1,
+        "none": 11,
+        "domain": 17,
+        "phylum": 10,
+        "class": 11
+      },
+      "forced_first_divergence_counts": {
+        "none": 10,
+        "domain": 11,
+        "phylum": 17,
+        "class": 10,
+        "order": 2
+      },
+      "forced_exact_prefix_count": 10,
+      "solver_deepest_correct_counts": {
+        "order": 1,
+        "none": 11,
+        "domain": 17,
+        "phylum": 10,
+        "class": 11
+      },
+      "solver_first_divergence_counts": {
+        "none": 10,
+        "domain": 11,
+        "phylum": 17,
+        "class": 10,
+        "order": 2
+      },
+      "solver_exact_prefix_count": 10
+    },
+    "joint_all_3": {
+      "n_organisms": 50,
+      "cross_aspect_compatible_forced": 49,
+      "cross_aspect_compatible_solver": 26,
+      "forced_deepest_correct_counts": {
+        "order": 1,
+        "none": 11,
+        "domain": 17,
+        "phylum": 10,
+        "class": 11
+      },
+      "forced_first_divergence_counts": {
+        "none": 10,
+        "domain": 11,
+        "phylum": 17,
+        "class": 10,
+        "order": 2
+      },
+      "forced_exact_prefix_count": 10,
+      "solver_deepest_correct_counts": {
+        "order": 1,
+        "none": 11,
+        "domain": 17,
+        "phylum": 10,
+        "class": 11
+      },
+      "solver_first_divergence_counts": {
+        "none": 10,
+        "domain": 11,
+        "phylum": 17,
+        "class": 10,
+        "order": 2
+      },
+      "solver_exact_prefix_count": 10
+    }
+  },
+  "deepgo-se": {
+    "cc": {
+      "n_organisms": 50,
+      "max_reachable_rank_counts": {
+        "order": 2,
+        "domain": 13,
+        "phylum": 18,
+        "class": 15,
+        "genus": 1,
+        "family": 1
+      },
+      "forced_deepest_correct_counts": {
+        "domain": 39,
+        "none": 9,
+        "phylum": 2
+      },
+      "forced_first_divergence_counts": {
+        "none": 41,
+        "domain": 9
+      },
+      "forced_exact_prefix_count": 40,
+      "solver_deepest_correct_counts": {
+        "domain": 27,
+        "none": 9,
+        "phylum": 14
+      },
+      "solver_first_divergence_counts": {
+        "none": 40,
+        "domain": 9,
+        "phylum": 1
+      },
+      "solver_exact_prefix_count": 40
+    },
+    "mf": {
+      "n_organisms": 50,
+      "max_reachable_rank_counts": {
+        "order": 2,
+        "domain": 13,
+        "phylum": 18,
+        "class": 15,
+        "genus": 1,
+        "family": 1
+      },
+      "forced_deepest_correct_counts": {
+        "phylum": 14,
+        "none": 9,
+        "domain": 27
+      },
+      "forced_first_divergence_counts": {
+        "none": 50
+      },
+      "forced_exact_prefix_count": 45,
+      "solver_deepest_correct_counts": {
+        "phylum": 24,
+        "none": 9,
+        "domain": 17
+      },
+      "solver_first_divergence_counts": {
+        "none": 47,
+        "phylum": 2,
+        "domain": 1
+      },
+      "solver_exact_prefix_count": 47
+    },
+    "bp": {
+      "n_organisms": 50,
+      "max_reachable_rank_counts": {
+        "order": 2,
+        "domain": 13,
+        "phylum": 18,
+        "class": 15,
+        "genus": 1,
+        "family": 1
+      },
+      "forced_deepest_correct_counts": {
+        "phylum": 14,
+        "none": 9,
+        "domain": 15,
+        "class": 12
+      },
+      "forced_first_divergence_counts": {
+        "none": 40,
+        "domain": 8,
+        "phylum": 2
+      },
+      "forced_exact_prefix_count": 34,
+      "solver_deepest_correct_counts": {
+        "phylum": 14,
+        "none": 9,
+        "domain": 15,
+        "class": 12
+      },
+      "solver_first_divergence_counts": {
+        "none": 40,
+        "domain": 8,
+        "phylum": 2
+      },
+      "solver_exact_prefix_count": 34
+    },
+    "joint_all_3": {
+      "n_organisms": 50,
+      "cross_aspect_compatible_forced": 48,
+      "cross_aspect_compatible_solver": 45,
+      "forced_deepest_correct_counts": {
+        "phylum": 12,
+        "none": 8,
+        "domain": 17,
+        "class": 13
+      },
+      "forced_first_divergence_counts": {
+        "none": 41,
+        "domain": 8,
+        "phylum": 1
+      },
+      "forced_exact_prefix_count": 38,
+      "solver_deepest_correct_counts": {
+        "phylum": 12,
+        "none": 8,
+        "domain": 17,
+        "class": 13
+      },
+      "solver_first_divergence_counts": {
+        "none": 41,
+        "domain": 8,
+        "phylum": 1
+      },
+      "solver_exact_prefix_count": 38
+    }
+  },
+  "sprof-go": {
+    "cc": {
+      "n_organisms": 50,
+      "max_reachable_rank_counts": {
+        "order": 2,
+        "domain": 13,
+        "phylum": 18,
+        "class": 15,
+        "genus": 1,
+        "family": 1
+      },
+      "forced_deepest_correct_counts": {
+        "domain": 37,
+        "none": 10,
+        "class": 3
+      },
+      "forced_first_divergence_counts": {
+        "phylum": 11,
+        "domain": 10,
+        "none": 29
+      },
+      "forced_exact_prefix_count": 17,
+      "solver_deepest_correct_counts": {
+        "domain": 25,
+        "none": 10,
+        "phylum": 12,
+        "class": 3
+      },
+      "solver_first_divergence_counts": {
+        "phylum": 23,
+        "domain": 10,
+        "none": 17
+      },
+      "solver_exact_prefix_count": 17
+    },
+    "mf": {
+      "n_organisms": 50,
+      "max_reachable_rank_counts": {
+        "order": 2,
+        "domain": 13,
+        "phylum": 18,
+        "class": 15,
+        "genus": 1,
+        "family": 1
+      },
+      "forced_deepest_correct_counts": {
+        "domain": 39,
+        "none": 11
+      },
+      "forced_first_divergence_counts": {
+        "none": 39,
+        "domain": 11
+      },
+      "forced_exact_prefix_count": 14,
+      "solver_deepest_correct_counts": {
+        "domain": 39,
+        "none": 11
+      },
+      "solver_first_divergence_counts": {
+        "none": 39,
+        "domain": 11
+      },
+      "solver_exact_prefix_count": 14
+    },
+    "bp": {
+      "n_organisms": 50,
+      "max_reachable_rank_counts": {
+        "order": 2,
+        "domain": 13,
+        "phylum": 18,
+        "class": 15,
+        "genus": 1,
+        "family": 1
+      },
+      "forced_deepest_correct_counts": {
+        "class": 14,
+        "none": 11,
+        "domain": 18,
+        "phylum": 7
+      },
+      "forced_first_divergence_counts": {
+        "none": 14,
+        "domain": 11,
+        "phylum": 18,
+        "class": 7
+      },
+      "forced_exact_prefix_count": 14,
+      "solver_deepest_correct_counts": {
+        "class": 14,
+        "none": 11,
+        "domain": 18,
+        "phylum": 7
+      },
+      "solver_first_divergence_counts": {
+        "none": 14,
+        "domain": 11,
+        "phylum": 18,
+        "class": 7
+      },
+      "solver_exact_prefix_count": 14
+    },
+    "joint_all_3": {
+      "n_organisms": 50,
+      "cross_aspect_compatible_forced": 37,
+      "cross_aspect_compatible_solver": 12,
+      "forced_deepest_correct_counts": {
+        "class": 14,
+        "none": 11,
+        "domain": 15,
+        "phylum": 10
+      },
+      "forced_first_divergence_counts": {
+        "none": 17,
+        "domain": 11,
+        "phylum": 15,
+        "class": 7
+      },
+      "forced_exact_prefix_count": 14,
+      "solver_deepest_correct_counts": {
+        "class": 14,
+        "none": 11,
+        "domain": 15,
+        "phylum": 10
+      },
+      "solver_first_divergence_counts": {
+        "none": 17,
+        "domain": 11,
+        "phylum": 15,
+        "class": 7
+      },
+      "solver_exact_prefix_count": 14
+    }
+  }
+}

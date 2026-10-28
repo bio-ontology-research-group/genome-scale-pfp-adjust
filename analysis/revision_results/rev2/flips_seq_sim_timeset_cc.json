@@ -1,0 +1,66 @@
+[
+  {
+    "predictor": "seq_sim_timeset",
+    "subontology": "cc",
+    "scope": "timeset_50",
+    "mode": "with_taxons",
+    "cost_mode": "margin",
+    "tau": 0.001,
+    "n_organisms": 50,
+    "n_cafa_organisms": 41,
+    "preds_above_tau": 27962467,
+    "grid_decisions": 1320813932,
+    "flips_above_tau": 1720856,
+    "active_flip_rate_pct": 6.1542,
+    "grid_flip_rate_pct": 0.1303,
+    "raw_entries_removed": 1720856,
+    "gaef_taxon_consistency_before": 0.0,
+    "gaef_taxon_consistency_after": 1.0,
+    "macro_cafa": {
+      "fmax": 0.7151,
+      "smin": 18.16,
+      "avg_auc": 0.5759,
+      "aupr": 0.5407
+    },
+    "pooled_cafa": {
+      "fmax": 0.5622,
+      "smin": 53.53,
+      "avg_auc": 0.7337,
+      "aupr": 0.4403,
+      "wfmax": 0.5143,
+      "tmax": 0.43
+    }
+  },
+  {
+    "predictor": "seq_sim_timeset",
+    "subontology": "cc",
+    "scope": "timeset_50",
+    "mode": "no_taxons",
+    "cost_mode": "margin",
+    "tau": 0.001,
+    "n_organisms": 50,
+    "n_cafa_organisms": 41,
+    "preds_above_tau": 27962467,
+    "grid_decisions": 1320813932,
+    "flips_above_tau": 1200249,
+    "active_flip_rate_pct": 4.2924,
+    "grid_flip_rate_pct": 0.0909,
+    "raw_entries_removed": 1200249,
+    "gaef_taxon_consistency_before": 0.0,
+    "gaef_taxon_consistency_after": 1.0,
+    "macro_cafa": {
+      "fmax": 0.7138,
+      "smin": 18.22,
+      "avg_auc": 0.5701,
+      "aupr": 0.5416
+    },
+    "pooled_cafa": {
+      "fmax": 0.5619,
+      "smin": 53.6,
+      "avg_auc": 0.7303,
+      "aupr": 0.4397,
+      "wfmax": 0.5137,
+      "tmax": 0.43
+    }
+  }
+]

@@ -74,6 +74,7 @@ def run_adjustment_pipeline(
     skip_existing: bool = False,
     provide_taxon_id: bool = False,
     taxon_ids_file: str = None,
+    demotion_only: bool = False,
 ):
     """
     Run the adjustment pipeline.
@@ -171,6 +172,7 @@ def run_adjustment_pipeline(
                 threshold=genome_threshold,
                 optimized=optimized,
                 top_k=top_k,
+                demotion_only=demotion_only,
             )
 
             complex_coherence_num_flips += genome_complex_coherence_total_flips
@@ -214,6 +216,7 @@ if __name__ == '__main__':
     parser.add_argument('--provide_taxon_id', action='store_true', help='Provide taxon_id to the solver (default: None)')
     parser.add_argument('--taxon_ids_file', default=None, help='Path to txt file with taxon IDs to process (one per line). Only taxons present in both this file and predictions_dir will be processed.')
     parser.add_argument('--default_threshold', type=float, default=0.5, help='Default threshold for fold thresholds')
+    parser.add_argument('--demotion_only', action='store_true', help='Forbid 0->1 promotions in Stage 2; resolve incoherent complexes by demotion only')
     args = parser.parse_args()
 
     if args.optimized_dir is None:
@@ -256,4 +259,5 @@ if __name__ == '__main__':
         skip_existing=args.skip_existing,
         provide_taxon_id=args.provide_taxon_id,
         taxon_ids_file=args.taxon_ids_file,
+        demotion_only=args.demotion_only,
     )

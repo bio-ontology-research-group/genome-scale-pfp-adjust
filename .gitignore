@@ -46,6 +46,10 @@ term-centric-analysis*/
 term-flip-ranking/
 adjustments_debug_/
 demos/*/output/
+analysis/revision_results/rev2/funtaxis_lite/
+analysis/revision_results/rev2/stage1/
+analysis/revision_results/rev2/cp6_*/
+analysis/revision_results/rev2/logs/
 
 # Bundled-data exceptions: these large/binary file types are explicitly ALLOWED
 # under data/, splits/, accession_lists/, and complex_coherence/.

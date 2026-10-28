@@ -85,15 +85,35 @@ def load_constraints(file_path):
 
 def load_go_hierarchy(file_path):
     """
-    Load the GO hierarchy from the file.
+    Load the GO hierarchy from the file, and augment with is_a/part_of edges
+    from go-basic.obo in the same directory when present so hierarchy edges
+    match the ontology used by GAEF evaluation.
     """
     hierarchy = defaultdict(set)
     with open(file_path, 'r') as file:
         reader = csv.reader(file, delimiter='\t')
         for row in reader:
+            if len(row) < 2:
+                continue
             child_go_term = row[0]
             parent_go_term = row[1]
             hierarchy[child_go_term].add(parent_go_term)
+    obo_candidate = os.path.join(os.path.dirname(os.path.abspath(file_path)), 'go-basic.obo')
+    if os.path.exists(obo_candidate):
+        cur_id = None
+        with open(obo_candidate, 'r', encoding='utf-8', errors='replace') as fh:
+            for raw in fh:
+                line = raw.strip()
+                if line == '[Term]':
+                    cur_id = None
+                elif line.startswith('id: GO:'):
+                    cur_id = line.split('id: ', 1)[1].strip()
+                elif cur_id and line.startswith('is_a: GO:'):
+                    parent = line.split('is_a: ', 1)[1].split()[0].strip()
+                    hierarchy[cur_id].add(parent)
+                elif cur_id and line.startswith('relationship: part_of GO:'):
+                    parent = line.split('relationship: part_of ', 1)[1].split()[0].strip()
+                    hierarchy[cur_id].add(parent)
     return hierarchy
 
 
@@ -261,6 +281,7 @@ def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
     # Assumes annotations are propagated, so they should contain their parents.
     for protein in annotated_predictions:
         all_go_terms.update(annotated_predictions[protein])
+    all_go_terms.update(get_all_ancestors_of_list(go_hierarchy, list(all_go_terms)))
 
     # Add GO term variables and flip variables
     flip_variables = {}
@@ -403,8 +424,9 @@ def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
     cost_scale = 1000000
 
     def compute_cost(go_term):
-        cost = int(flip_cost_per_go_term[go_term] * cost_scale)
-        return cost if cost > 0 else (1 if flip_cost_per_go_term[go_term] > 0 else 0)
+        val = flip_cost_per_go_term.get(go_term, 0.0)
+        cost = int(val * cost_scale)
+        return cost if cost > 0 else (1 if val > 0 else 0)
 
     cost_terms = [
         flip_variables[go_term] * compute_cost(go_term)
@@ -438,18 +460,16 @@ def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
             if solver.BooleanValue(flip_variables[go_term])
         }
         
-        # Build adjusted predictions using dictionary comprehension (faster than repeated dict assignments)
+        # Build adjusted predictions storing only flipped (False) terms;
+        # get_final_predictions defaults unflipped terms to True.
         total_flips = 0
         for protein, go_terms in annotated_predictions.items():
-            # Count flips for this protein and build the dict in one pass
             protein_flips = flipped_go_terms & go_terms
-            total_flips += len(protein_flips)
-            
-            # Dictionary comprehension: False only if in flipped set, True otherwise
-            adjusted_predictions[protein] = {
-                go_term: (go_term not in flipped_go_terms)
-                for go_term in go_terms
-            }
+            if protein_flips:
+                total_flips += len(protein_flips)
+                adjusted_predictions[protein] = {
+                    go_term: False for go_term in protein_flips
+                }
         
         print(f"[INFO]   Total flips: {total_flips}")
 
@@ -508,6 +528,7 @@ def solve_sat_ortools_taxon_assignment(annotated_predictions: Dict[str, Set[str]
     # Assumes annotations are propagated, so they should contain their parents.
     for protein in annotated_predictions:
         all_go_terms.update(annotated_predictions[protein])
+    all_go_terms.update(get_all_ancestors_of_list(go_hierarchy, list(all_go_terms)))
 
     # Add GO term variables and flip variables
     flip_variables = {}
@@ -633,8 +654,9 @@ def solve_sat_ortools_taxon_assignment(annotated_predictions: Dict[str, Set[str]
     cost_scale = 1000000
 
     def compute_cost(go_term):
-        cost = int(flip_cost_per_go_term[go_term] * cost_scale)
-        return cost if cost > 0 else (1 if flip_cost_per_go_term[go_term] > 0 else 0)
+        val = flip_cost_per_go_term.get(go_term, 0.0)
+        cost = int(val * cost_scale)
+        return cost if cost > 0 else (1 if val > 0 else 0)
 
     cost_terms = [
         flip_variables[go_term] * compute_cost(go_term)

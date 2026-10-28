@@ -1,0 +1,33 @@
+\begin{table}[!h]
+\centering
+\caption{Multi-rank taxonomic lineage inference across the 50 timeset proteomes over seven canonical NCBI Taxonomy ranks (Dom.\ = Domain, Phy.\ = Phylum, Cls.\ = Class, Ord.\ = Order, Fam.\ = Family, Gen.\ = Genus). Among the 50 organisms, the deepest rank theoretically reachable in the GO taxon-constraint hierarchy is Domain (13), Phylum (18), Class (15), Order (2), Family (1), and Genus (1). ``Exact Prefix'' counts organisms whose inferred lineage has zero false-branch selections; ``Cross-Aspect Compat.\ (F / S)'' counts organisms whose CC, MF, and BP inferred lineages lie on a single compatible evolutionary path under the forced (F) and solver-selected (S) lineages.}
+\label{tab:supp-lineage}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{0.94}
+\begin{tabular}{ll rrrrr rrrr cc}
+\toprule
+ & & \multicolumn{5}{c}{Solver Deepest Correct Rank} & \multicolumn{4}{c}{First Divergence Rank} & Exact & Cross-Aspect \\
+\cmidrule(lr){3-7}\cmidrule(lr){8-11}
+Predictor & Aspect & None & Dom. & Phy. & Cls. & Ord.+ & None & Dom. & Phy. & Cls.+ & Prefix & Compat.\ (F / S) \\
+\midrule
+\multirow{4}{*}{Seq-Sim}
+ & CC          & 11 & 17 & 19 &  3 & 0 & 15 & 11 & 17 &  7 & 15 / 50 & -- \\
+ & MF          & 10 & 30 &  7 &  3 & 0 & 27 & 10 &  6 &  7 & 13 / 50 & -- \\
+ & BP          & 11 & 17 & 10 & 11 & 1 & 10 & 11 & 17 & 12 & 10 / 50 & -- \\
+ & Joint (All) & 11 & 17 & 10 & 11 & 1 & 10 & 11 & 17 & 12 & 10 / 50 & 49 / 26 \\
+\midrule
+\multirow{4}{*}{DeepGO-SE}
+ & CC          &  9 & 27 & 14 &  0 & 0 & 40 &  9 &  1 &  0 & 40 / 50 & -- \\
+ & MF          &  9 & 17 & 24 &  0 & 0 & 47 &  1 &  2 &  0 & 47 / 50 & -- \\
+ & BP          &  9 & 15 & 14 & 12 & 0 & 40 &  8 &  2 &  0 & 34 / 50 & -- \\
+ & Joint (All) &  8 & 17 & 12 & 13 & 0 & 41 &  8 &  1 &  0 & 38 / 50 & 48 / 45 \\
+\midrule
+\multirow{4}{*}{SPROF-GO}
+ & CC          & 10 & 25 & 12 &  3 & 0 & 17 & 10 & 23 &  0 & 17 / 50 & -- \\
+ & MF          & 11 & 39 &  0 &  0 & 0 & 39 & 11 &  0 &  0 & 14 / 50 & -- \\
+ & BP          & 11 & 18 &  7 & 14 & 0 & 14 & 11 & 18 &  7 & 14 / 50 & -- \\
+ & Joint (All) & 11 & 15 & 10 & 14 & 0 & 17 & 11 & 15 &  7 & 14 / 50 & 37 / 12 \\
+\bottomrule
+\end{tabular}
+\end{table}

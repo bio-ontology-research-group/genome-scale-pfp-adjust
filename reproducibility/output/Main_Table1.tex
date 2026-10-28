@@ -1,0 +1,36 @@
+\begin{table}[!t]
+\centering
+\caption{\rev{Stage~1 annotation flips, active predictions above the solver threshold $\tau$, active-prediction flip rate ($\text{Act.}\%$), and grid-decision flip rate ($\text{Grid}\%$) across predictors, GO sub-ontologies, and evaluation splits (timeset: $n=50$ organisms; heldout: $n=219$ organisms), with and without the organism's taxon ID supplied.}}
+\label{tab:flips}
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{ll r rrr rrr}
+\toprule
+Model ($\tau$) & Sub & $\text{Preds}_{>\tau}$ & \multicolumn{3}{c}{With taxons} & \multicolumn{3}{c}{Without taxons} \\
+\cmidrule(lr){4-6}\cmidrule(lr){7-9}
+& & & Flips & Act.\% & Grid\% & Flips & Act.\% & Grid\% \\
+\midrule
+\multicolumn{9}{l}{\emph{Timeset split ($n=50$ organisms)}} \\
+Seq-Sim   & CC &  27{,}962{,}467 &  1{,}720{,}856 & 6.15 & 0.1303 & 1{,}200{,}249 & 4.29 & 0.0909 \\
+($0.001$) & MF &  17{,}077{,}615 &     31{,}957   & 0.19 & 0.0012 &     13{,}464  & 0.08 & 0.0005 \\
+          & BP & 142{,}645{,}121 &  9{,}113{,}465 & 6.39 & 0.1029 & 5{,}762{,}461 & 4.04 & 0.0651 \\
+\midrule
+DeepGO-SE & CC &  11{,}498{,}776 &     10{,}291   & 0.09 & 0.0020 &      5{,}743  & 0.05 & 0.0011 \\
+($0.3$)   & MF &   7{,}800{,}411 &          224   & 0.00 & 0.0000 &          223  & 0.00 & 0.0000 \\
+          & BP &  25{,}219{,}446 &      3{,}018   & 0.01 & 0.0002 &      2{,}574  & 0.01 & 0.0002 \\
+\midrule
+SPROF-GO  & CC &  51{,}419{,}900 &  2{,}007{,}531 & 3.90 & 0.3324 & 1{,}455{,}372 & 2.83 & 0.2409 \\
+($0.001$) & MF &  49{,}331{,}525 &     56{,}619   & 0.11 & 0.0079 &             0 & 0.00 & 0.0000 \\
+          & BP & 321{,}139{,}231 & 13{,}142{,}897 & 4.09 & 0.3045 & 9{,}528{,}733 & 2.97 & 0.2208 \\
+\midrule
+\multicolumn{9}{l}{\emph{Heldout split ($n=219$ organisms)}} \\
+Seq-Sim   & CC &  75{,}138{,}269 &  5{,}445{,}921 & 7.25 & 0.1493 &  3{,}407{,}694 & 4.54 & 0.0934 \\
+($0.001$) & MF &  46{,}701{,}462 &     81{,}906   & 0.18 & 0.0011 &     31{,}403   & 0.07 & 0.0004 \\
+          & BP & 416{,}699{,}083 & 34{,}606{,}703 & 8.31 & 0.1343 & 18{,}285{,}962 & 4.39 & 0.0710 \\
+\midrule
+MLP-ESM2  & CC & 129{,}313{,}331 &  3{,}877{,}583 & 3.00 & 0.1137 &  2{,}981{,}183 & 2.31 & 0.0874 \\
+($0.001$) & MF &  87{,}791{,}196 &     32{,}851   & 0.04 & 0.0004 &     20{,}262   & 0.02 & 0.0003 \\
+          & BP & 709{,}299{,}825 & 12{,}391{,}097 & 1.75 & 0.0674 &  8{,}166{,}083 & 1.15 & 0.0444 \\
+\bottomrule
+\end{tabular}
+\end{table}
