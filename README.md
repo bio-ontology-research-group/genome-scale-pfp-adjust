@@ -14,6 +14,14 @@ Given per-protein GO predictions from any upstream method, the solver seeks a lo
 
 Both stages are encoded as integer programs and solved with OR-Tools CP-SAT. Stage 2 closes a sparse repair domain over hierarchy and affected complex constraints. Top-k candidate restriction is a heuristic. Bounded runs distinguish feasible solutions from proven optima and record objective bounds.
 
+An optional conservative mode restricts edits to supplied evidence, preserves
+protected annotations, and reports unresolved singletons. Unknown-taxon solves
+can also report which ranked taxa are required across every optimal GO repair.
+The [extension protocol](reproducibility/EXTENSIONS.md) describes these options,
+the standalone repair command, and the controlled recovery evaluation.
+The [validated extension results](analysis/revision_results/extensions/README.md)
+report preservation, all-optimum lineage conclusions and the recovery controls.
+
 ## Demo
 
 An executable Showboat demo is available in [`demos/empty_quarter_ibex/README.md`](demos/empty_quarter_ibex/README.md). It fetches a real Empty Quarter genome annotation from the public reproducibility bundle at `https://bio2vec.net/data/genoadjust/rh04_63_rh04_bacillus_spizizenii_genoadjust_demo/` (`rh04` / `63_rh04`, *Bacillus spizizenii*, `NCBITaxon_96241`), converts PGAP GO annotations into the solver's prediction format, and verifies both taxon-consistency and complex-coherence repairs.

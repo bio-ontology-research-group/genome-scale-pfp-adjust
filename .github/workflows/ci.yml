@@ -44,3 +44,11 @@ jobs:
           python tests/test_table_generation.py
           python tests/test_baseline_inputs.py
           python tests/test_sequence_transfer.py
+
+      - name: Conservative repair and optimal-lineage contracts
+        run: |
+          mkdir -p "$RUNNER_TEMP/genoadjust-extension-tests"
+          export TMPDIR="$RUNNER_TEMP/genoadjust-extension-tests"
+          python tests/test_revision_extensions.py
+          python tests/test_extension_validation.py
+          python tests/test_conservative_cli.py

@@ -466,6 +466,10 @@ def solve_sat_ortools_taxon_assignment(annotated_predictions: Dict[str, Set[str]
                 taxon_disjoint_from_hierarchy: Dict[str, Set[str]],
                 taxon_union_of_hierarchy: Dict[str, Set[str]],
                 genome_taxon_id: str = None,
+                uncertainty: dict = None,
+                query_taxa: set = None,
+                time_limit: float = None,
+                near_optimal_units: int = 0,
                ) -> Tuple[Dict[str, Dict[str, bool]], List[str], int]:
     """
     Solve the SAT problem using OR-Tools CP-SAT and obtain the predicted taxon assignment.
@@ -486,6 +490,10 @@ def solve_sat_ortools_taxon_assignment(annotated_predictions: Dict[str, Set[str]
         List of strings, the predicted taxon assignment.
         int, the total number of flips.
     """
+    if not isinstance(near_optimal_units, int) or near_optimal_units < 0:
+        raise ValueError('near_optimal_units must be a nonnegative integer')
+    if uncertainty is not None:
+        uncertainty.clear()
     setup_start_time = time.time()
     model = cp_model.CpModel()
 
@@ -568,6 +576,8 @@ def solve_sat_ortools_taxon_assignment(annotated_predictions: Dict[str, Set[str]
     solver = cp_model.CpSolver()
     solver.parameters.num_search_workers = 1
     solver.parameters.random_seed = 42
+    if time_limit is not None:
+        solver.parameters.max_time_in_seconds = time_limit
     status = solver.Solve(model)
     solve_time = time.time() - solve_start_time
 
@@ -596,8 +606,43 @@ def solve_sat_ortools_taxon_assignment(annotated_predictions: Dict[str, Set[str]
         predicted_taxons = [taxon for taxon in taxon_variables if solver.BooleanValue(taxon_variables[taxon])]
         print(f"[INFO]   taxon assignments: {len(predicted_taxons)}")
         opt_cost = solver.ObjectiveValue() / cost_scale if cost_terms else 0.0
-        print(f"[INFO]   Optimal cost: {opt_cost}")
+        print(f"[INFO]   Best cost: {opt_cost}; status={solver.StatusName(status)}")
 
+        if uncertainty is not None:
+            requested = sorted(set(taxon_variables) if query_taxa is None
+                               else set(query_taxa) & set(taxon_variables))
+            uncertainty.update(status=solver.StatusName(status), cost_scale=cost_scale,
+                               near_optimal_units=near_optimal_units,
+                               required=[], possible=[], undetermined=[],
+                               outside_model=sorted((query_taxa or set()) - set(taxon_variables)))
+            if status != cp_model.OPTIMAL:
+                uncertainty['undetermined'] = requested
+            else:
+                # Use the exact integer objective, not a rounded floating report.
+                optimum = sum(compute_cost(g) for g in flipped_go_terms)
+                uncertainty['optimum_units'] = optimum
+                model.Add(sum(cost_terms) <= optimum + near_optimal_units)
+                model.ClearObjective()
+                witness = set(predicted_taxons)
+                checks = {}
+                for taxon in requested:
+                    variable = taxon_variables[taxon]
+                    model.ClearAssumptions()
+                    model.AddAssumption(variable.Not() if taxon in witness else variable)
+                    result = solver.Solve(model)
+                    checks[taxon] = solver.StatusName(result)
+                    if taxon in witness:
+                        uncertainty['possible'].append(taxon)
+                        if result == cp_model.INFEASIBLE:
+                            uncertainty['required'].append(taxon)
+                        elif result not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
+                            uncertainty['undetermined'].append(taxon)
+                    elif result in (cp_model.OPTIMAL, cp_model.FEASIBLE):
+                        uncertainty['possible'].append(taxon)
+                    elif result != cp_model.INFEASIBLE:
+                        uncertainty['undetermined'].append(taxon)
+                uncertainty['checks'] = checks
+                model.ClearAssumptions()
         return adjusted_predictions, predicted_taxons, total_flips
     else:
         raise RuntimeError(f"CP-SAT did not produce a valid repair: {solver.StatusName(status)}")

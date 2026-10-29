@@ -117,3 +117,8 @@ These tests cover the score contract, taxonomy unions, hierarchy and singleton c
 Stage 2 uses a 120-second search budget. A task that returns CP-SAT `UNKNOWN` without a feasible incumbent is retried once with 900 seconds for all its Stage 2 conditions. The accepted JSON records the actual budget; attempt logs are retained. Other errors, or a failed retry, stop the dependency chain.
 
 The revision runner maps alternative GO IDs to current primary IDs before every comparison, merges duplicate scores by maximum, propagates scores to ancestors by maximum before every comparison, and records added/raised ancestor scores separately from repair flips. It also records dropped obsolete/unknown and out-of-aspect pairs. The lower-level TSV-only adjustment APIs expect IDs already aligned to the supplied hierarchy; use the revision runner when starting from predictor files using older GO vocabularies.
+
+## Conservative repair and lineage uncertainty
+
+See [EXTENSIONS.md](EXTENSIONS.md) for the fixed extension protocol, evidence
+policies, targeted recovery controls, and independent export validation.

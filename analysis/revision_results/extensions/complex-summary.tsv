@@ -1,0 +1,13 @@
+predictor	mode	n	initial_singletons	unresolved	promotions	demotions	assessable	listed	listed_demotions	optimal	objective	bound
+deepgo-se	conservative	50	2017	22	4242	0	58	17	0	14	504.8321769999999	152.45689199999998
+deepgo-se	corroborated	50	2017	1580	790	0	7	2	0	50	1654.2874250000002	1654.2874250000002
+seq_sim_timeset	conservative	50	2904	2904	0	0	0	0	0	50	2904.0	2904.0
+seq_sim_timeset	corroborated	50	2904	2901	13	0	0	0	0	50	2901.013	2901.013
+sprof-go	conservative	50	143	143	0	0	0	0	0	50	143.0	143.0
+sprof-go	corroborated	50	143	143	0	0	0	0	0	50	143.0	143.0
+deepgo-se	hard_standard	50	2017	0	1024	1405	16	7	21	16	182.93547000000004	27.526066000000014
+deepgo-se	hard_demotion	50	2017	0	0	2035	0	0	30	50	228.45463399999997	228.45463399999997
+seq_sim_timeset	hard_standard	50	2904	0	5919	0	30	0	0	1	5.919000000000002	1.2559999999999998
+seq_sim_timeset	hard_demotion	50	2904	0	0	2949	0	0	8	50	581.9199839999999	581.9199839999999
+sprof-go	hard_standard	50	143	0	262	0	0	0	0	45	0.262	0.158
+sprof-go	hard_demotion	50	143	0	0	143	0	0	0	50	5.848973	5.848973

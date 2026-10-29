@@ -435,6 +435,9 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
                 violation_penalty: float = None,
                 time_limit: float = None,
                 solver_stats: dict = None,
+                allowed_promotions: set = None,
+                allowed_demotions: set = None,
+                protected_pairs: set = None,
                ) -> Dict[str, Dict[str, bool]]:
     """
     Solve the SAT problem using OR-Tools CP-SAT with optimized constraints.
@@ -448,6 +451,9 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
     Returns:
         Dict of dicts of booleans, where adjusted_predictions[protein][go_term] is True if go_term is flipped for protein.
     """
+    for term, protein in protected_pairs or ():
+        if term not in annotated_predictions.get(protein, set()):
+            raise ValueError('Protected pairs must be active in the input')
     setup_start_time = time.time()
     model = cp_model.CpModel()
     
@@ -521,6 +527,16 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
     for go_term, protein in all_go_terms:
         if demotion_only and go_term not in annotated_predictions[protein]:
             model.Add(go_term_variables[(go_term, protein)] == 0)
+        pair = (go_term, protein)
+        active = go_term in annotated_predictions[protein]
+        if not active and allowed_promotions is not None and pair not in allowed_promotions:
+            model.Add(go_term_variables[pair] == 0)
+        if active and allowed_demotions is not None and pair not in allowed_demotions:
+            model.Add(go_term_variables[pair] == 1)
+        if pair in (protected_pairs or ()):
+            if not active:
+                raise ValueError('Protected pairs must be active in the input')
+            model.Add(go_term_variables[pair] == 1)
 
     # Add cost constraints - scale to integers with high precision
     # Use 1000000 scale factor to preserve precision down to 0.000001
@@ -553,6 +569,10 @@ def solve_sat_ortools_optimized(annotated_predictions: Dict[str, Set[str]],
             if fixed_count + len(mutable_members) == 1 and mutable_members:
                 hinted[mutable_members[0]] = False
                 changed = True
+    if allowed_promotions is not None or allowed_demotions is not None:
+        # The ancestor-closed input is feasible for the abstaining formulation;
+        # the ordinary demotion hint may conflict with protected annotations.
+        hinted = {(g, p): g in annotated_predictions[p] for g, p in all_go_terms}
     for pair, present in hinted.items():
         model.AddHint(go_term_variables[pair], int(present))
     

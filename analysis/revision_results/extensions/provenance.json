@@ -1,0 +1,42 @@
+{
+  "all_aggregation_input_hashes_verified": 1060,
+  "completed_batch_tasks": 55,
+  "executed_archives": {
+    "code-r1": {
+      "files": 289,
+      "sha256": "1eca6ee8daad108796d87cd5e140ffc76170d5059aebf8ada4d7dc06945375f0"
+    },
+    "code-r2": {
+      "files": 289,
+      "sha256": "20cb4aa00f0be80c7fdb445652f685c5ae300134ac426afce881c7fcf9f3d23d"
+    },
+    "code-r3": {
+      "files": 292,
+      "sha256": "845fb070c1f4cc1ec06ab02d382c5e452a95800e0327d03964fe098323bbbce2"
+    },
+    "code-r4": {
+      "files": 296,
+      "sha256": "1d0b43a698779c0b0cfb0e83c0ec5fe306e5a0e403fdb5e04cf44b15a02fc1e9"
+    }
+  },
+  "final_guards": {
+    "complex_coherence/adjust_ortools.py": {
+      "executed_r2_sha256": "4207d9082082f4f565ba7c98351a7b985b415dafcf61c0cb34fadf2419fcbb62",
+      "final_sha256": "12a40781123207961996a63f6a9a87960738fb68166cd101b83bd9d76ca44167"
+    },
+    "complex_coherence/conservative.py": {
+      "executed_r2_sha256": "101c03f25cbbb38869020f605e45f6f4b40e5ef43542575827318641515a1a71",
+      "final_sha256": "9802fd4cb9df50d17b24ed3e853354d73a578a3c15caeeb6cab35c5f1f933c7f"
+    },
+    "taxon_consistency/adjust_ortools.py": {
+      "executed_r2_sha256": "2342c0fbc990e4e628f76220933fe861fe35d2f7ef7622fde442b10336d42da7",
+      "final_sha256": "02c15346be121f00daeb4fa3d2860e5b99263476bef1e8c76b854ec57428c8d6"
+    }
+  },
+  "post_execution_changes": "Final guards reject a penalty rounding to zero and inactive protected annotations outside the sparse domain. A reused uncertainty output is cleared and the solver log distinguishes feasible from optimal. These changes do not change valid experimental model construction, objective or constraints; the exact executed R1/R2 snapshots are retained.",
+  "result_counts": {
+    "complex": 450,
+    "lineage": 588
+  },
+  "status": "PASS"
+}
