@@ -6,10 +6,12 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --job-name=rev2_s2_base
 #SBATCH --array=0-2
-#SBATCH --output=/ibex/scratch/projects/c2014/hohndor/pfp-adjust-rh/out/rev2/logs/%x_%a.log
+#SBATCH --output=slurm-logs/%x_%A_%a.log
 
 set -euo pipefail
-cd /ibex/scratch/projects/c2014/hohndor/pfp-adjust-rh/code
+printf "This historical workflow is retired; use reproducibility/run_all_slurm.sh with revision.env.\n" >&2
+exit 2
+cd "${SLURM_SUBMIT_DIR:?Submit from the repository root}"
 source config.env
 source ${CONDA_BASE}/etc/profile.d/conda.sh
 conda activate ${CONDA_ENV}
@@ -20,8 +22,22 @@ PREDS=(seq_sim_timeset deepgo-se sprof-go)
 P="${PREDS[$SLURM_ARRAY_TASK_ID]}"
 TS_FILE="${OUT_DIR}/rev2/timeset_50_taxons.txt"
 
+echo "=== Running rev2_stage2_and_baselines.py for ${P} ==="
+python analysis/rev2_stage2_and_baselines.py \
+    --temporal-proteins "$PWD/splits/timeset/proteins_by_date_23-MAY-2024_filtered.tsv" \
+    --data_dir "${DATA_DIR}" \
+    --code_dir "$(pwd)" \
+    --gaef_dir "${GAEF_DIR}" \
+    --timeset_taxons_file "${TS_FILE}" \
+    --stage1_root "${OUT_DIR}/rev2/stage1" \
+    --funtaxis_root "${OUT_DIR}/rev2/funtaxis_lite" \
+    --naive_root "${OUT_DIR}/naive" \
+    --predictor "${P}" \
+    --output_json "${OUT_DIR}/rev2/stage2_and_baselines_${P}.json"
+
+
 # Run Complex Portal validation (validate_stage2.py) on both standard and demotion_only first
-IDX="/ibex/scratch/projects/c2014/hohndor/pfp-adjust-rh/refs/complex_validation/subunit_index.json"
+IDX="${CP_SUBUNIT_INDEX:?Set CP_SUBUNIT_INDEX in config.env}"
 TAU="0.001"
 if [ "${P}" = "deepgo-se" ]; then
     TAU="0.3"
@@ -39,9 +55,10 @@ for MODE in standard demotion_only; do
                 --stage1_dir "${S1D}" \
                 --stage2_dir "${S2D}" \
                 --subunit_index "${IDX}" \
+                --protein-id-map "${PROTEIN_ID_MAP:?Set PROTEIN_ID_MAP in config.env}" \
                 --threshold "${TAU}" \
                 --label "${P}_${MODE}_${S1L}" \
-                --output_file "${OUT_DIR}/rev2/cp_val_${P}_${MODE}_${S1L}.json" || true
+                --output_file "${OUT_DIR}/rev2/cp_val_${P}_${MODE}_${S1L}.json"
         fi
     done
 done
@@ -69,22 +86,12 @@ if [ "${P}" = "deepgo-se" ] || [ "${P}" = "sprof-go" ]; then
             --stage1_dir "${CP_S1}" \
             --stage2_dir "${CP_S2_DEM}" \
             --subunit_index "${IDX}" \
+                --protein-id-map "${PROTEIN_ID_MAP:?Set PROTEIN_ID_MAP in config.env}" \
             --threshold "${TAU}" \
             --label "${P}_cp6_demotion_only" \
-            --output_file "${OUT_DIR}/rev2/cp6_val_${P}_demotion_only.json" || true
+            --output_file "${OUT_DIR}/rev2/cp6_val_${P}_demotion_only.json"
     fi
 fi
 
-echo "=== Running rev2_stage2_and_baselines.py for ${P} ==="
-python analysis/rev2_stage2_and_baselines.py \
-    --data_dir "${DATA_DIR}" \
-    --code_dir "$(pwd)" \
-    --gaef_dir "${GAEF_DIR}" \
-    --timeset_taxons_file "${TS_FILE}" \
-    --stage1_root "${OUT_DIR}/rev2/stage1" \
-    --funtaxis_root "${OUT_DIR}/rev2/funtaxis_lite" \
-    --naive_root "${OUT_DIR}/naive" \
-    --predictor "${P}" \
-    --output_json "${OUT_DIR}/rev2/stage2_and_baselines_${P}.json"
 
 echo "DONE rev2_s2_base ${P}"

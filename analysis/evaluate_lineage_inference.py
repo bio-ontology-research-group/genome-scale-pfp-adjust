@@ -516,5 +516,5 @@ def main():
     print("Saved lineage inference evaluation to", args.output_json)
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    raise SystemExit('This historical evaluator is retired. Use the documented reproducibility/revision workflow.')

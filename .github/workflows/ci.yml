@@ -32,3 +32,15 @@ jobs:
 
       - name: Golden end-to-end test
         run: python tests/test_golden_e2e.py
+
+      - name: Reviewer regression contracts
+        run: |
+          mkdir -p "$RUNNER_TEMP/genoadjust-tests"
+          export TMPDIR="$RUNNER_TEMP/genoadjust-tests"
+          python tests/test_revision_contracts.py
+          python tests/test_evaluation_contracts.py
+          python tests/test_lineage_contracts.py
+          python tests/test_reproduction_workflow.py
+          python tests/test_table_generation.py
+          python tests/test_baseline_inputs.py
+          python tests/test_sequence_transfer.py

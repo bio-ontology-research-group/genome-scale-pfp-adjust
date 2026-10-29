@@ -6,10 +6,12 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --job-name=rev2_lin_ft
 #SBATCH --array=0-1
-#SBATCH --output=/ibex/scratch/projects/c2014/hohndor/pfp-adjust-rh/out/rev2/logs/%x_%a.log
+#SBATCH --output=slurm-logs/%x_%A_%a.log
 
 set -euo pipefail
-cd /ibex/scratch/projects/c2014/hohndor/pfp-adjust-rh/code
+printf "This historical workflow is retired; use reproducibility/run_all_slurm.sh with revision.env.\n" >&2
+exit 2
+cd "${SLURM_SUBMIT_DIR:?Submit from the repository root}"
 source config.env
 source ${CONDA_BASE}/etc/profile.d/conda.sh
 conda activate ${CONDA_ENV}

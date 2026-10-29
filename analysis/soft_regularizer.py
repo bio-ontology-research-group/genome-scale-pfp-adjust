@@ -1,29 +1,10 @@
 #!/usr/bin/env python3
-"""
-Soft-regularizer baseline: why a soft taxon penalty cannot match the hard solver.
+"""Historical greedy margin-threshold diagnostic.
 
-OCELOT-style methods enforce constraints with a soft, differentiable penalty
-that biases rather than guarantees satisfaction. For the taxon stage with the
-genome taxon supplied, softening the hard constraint reduces exactly to rewarding
-each violating demotion by a penalty lambda: the solver removes a violating term
-only when its score margin above threshold is below lambda, and keeps it
-otherwise. Hence a single global lambda removes a violation only if lambda exceeds
-its margin, so the soft regularizer reaches full consistency only when lambda is
-pushed high enough to coincide with the hard constraint, while at any smaller
-lambda high-confidence violations survive.
-
-This script quantifies that trade-off from the real predictions and the hard
-solver's own flip set: for each organism it finds the terms the hard (with-taxon)
-Stage-1 solve demoted (the taxon violations) and their margins above threshold,
-then reports, for a sweep of lambda, how many violations a soft penalty would
-leave in place (residual inconsistency) versus the hard solver's 100 percent.
-
-Usage:
-    python analysis/soft_regularizer.py \
-        --predictions_dir ${DATA_DIR}/.../deepgo-se_results/cc/predictions \
-        --adjusted_dir    ${DATA_DIR}/.../deepgo-se_results/cc/optimized \
-        --threshold 0.3 --label deepgo-se_cc \
-        --output analysis/revision_results/soft_regularizer_deepgo-se_cc.tsv
+This exploratory script is not an implementation of OCELOT, Semantic-Based
+Regularization, or the revised jointly optimized soft objective. Its old
+numerical conclusions are not accepted revision evidence. Use the controlled
+soft-constraint conditions in analysis/revision_audit_run.py instead.
 """
 
 import argparse
@@ -118,5 +99,5 @@ def main():
     print(f"wrote {args.output}")
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    raise SystemExit('This historical evaluator is retired. Use the documented reproducibility/revision workflow.')

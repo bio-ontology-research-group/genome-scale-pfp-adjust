@@ -1,6 +1,9 @@
 """
+HISTORICAL EXPLORATORY IMPLEMENTATION; NOT ACCEPTED REVISION EVIDENCE.
+The current workflow is analysis/revision_audit_run.py.
+
 Comprehensive evaluation of Stage 2 modes (standard vs demotion-only) and
-external baselines (FunTaxIS-lite, Naive filter, Soft Regularizer / SBR)
+historical approximations (corpus-absence filter, naive filter and greedy penalty heuristic)
 across the 50 timeset organisms (Reviewer 1 Comments 5, 6, 7).
 
 Reports:
@@ -35,6 +38,8 @@ from complex_coherence.adjust_ortools import (
     load_homodimer_terms,
     get_heteromeric_complexes,
 )
+from analysis.evaluation_scope import load_temporal_proteins, select_annotations
+
 from genome_scores_evaluator import (
     Ontology,
     load_annotations,
@@ -210,7 +215,7 @@ def _eval_single_organism_worker(task):
         forb = None
 
     ann_file = os.path.join(ann_dir, f"annots_taxon_{taxon}.tsv")
-    org_annots = load_annotations(ann_file) if os.path.exists(ann_file) else None
+    org_annots = select_annotations(load_annotations(ann_file), taxon, ctx["temporal_proteins"]) if os.path.exists(ann_file) else None
     gt_prot_ids = set(org_annots.keys()) if org_annots else None
 
     union_tau, comp_counts_tau, union_03, comp_counts_03, gt_raw_preds = stream_file_for_eval(
@@ -366,7 +371,7 @@ def _eval_soft_single_organism_worker(task):
     ann_dir = ctx["ann_dir"]
 
     ann_file = os.path.join(ann_dir, f"annots_taxon_{taxon}.tsv")
-    org_annots = load_annotations(ann_file) if os.path.exists(ann_file) else None
+    org_annots = select_annotations(load_annotations(ann_file), taxon, ctx["temporal_proteins"]) if os.path.exists(ann_file) else None
     gt_prot_ids = set(org_annots.keys()) if org_annots else None
     has_comp = bool(complex_anc_map)
 
@@ -510,7 +515,7 @@ def evaluate_soft_regularizer_on_timeset(
     pool=None,
 ):
     """
-    Evaluate Soft Regularizer (SBR) at penalty lambda for both Stage 1 (soft_s1)
+    Evaluate historical greedy penalty heuristic at penalty lambda for both Stage 1 (soft_s1)
     and (when sub == 'cc') Stage 2 (soft_s2) in parallel across organisms.
     """
     tc_s1_all, cc_s1_all, tc_s1_gt, cc_s1_gt = [], [], [], []
@@ -639,6 +644,7 @@ def main():
     ap.add_argument("--predictor", required=True, choices=["seq_sim_timeset", "deepgo-se", "sprof-go"])
     ap.add_argument("--sub", default="all", choices=["all", "cc", "mf", "bp"])
     ap.add_argument("--output_json", required=True)
+    ap.add_argument("--temporal-proteins", required=True, help="Exact entry-date test protein TSV")
     args = ap.parse_args()
 
     with open(args.timeset_taxons_file) as fh:
@@ -681,7 +687,7 @@ def main():
             if any(t in lineage for t in taxa):
                 violated.add(g)
         for g, taxa in in_taxon.items():
-            if taxa and not any(t in lineage for t in taxa):
+            if taxa and not all(t in lineage for t in taxa):
                 violated.add(g)
         naive_forb_noprop[tnum] = set(violated)
         naive_forb_prop[tnum] = transitive(violated, go_children)
@@ -701,8 +707,9 @@ def main():
     all_het_complexes = get_heteromeric_complexes(homodimer_terms_s2, set(go_hierarchy_cc.keys()), go_hierarchy_cc)
 
     import multiprocessing as mp
-    n_workers = min(16, os.cpu_count() or 16)
+    n_workers = int(os.environ.get("SLURM_CPUS_PER_TASK", "1"))
     worker_ctx = {
+        "temporal_proteins": load_temporal_proteins(args.temporal_proteins),
         "go": go,
         "taxa_constraints_file": taxa_constraints_file,
         "homodimer_terms_gaef": homodimer_terms_gaef,
@@ -816,7 +823,7 @@ def main():
                 with open(args.output_json, "w") as fh:
                     json.dump(out_summary, fh, indent=2)
 
-            # Evaluate Soft Regularizer (SBR) at lambda=0.2 and lambda=0.5 in-memory
+            # Evaluate historical greedy penalty heuristic at lambda=0.2 and lambda=0.5 in-memory
             for lam in [0.2, 0.5]:
                 if f"soft_s1_lam{lam}" in out_summary["subontologies"][sub] and (
                     sub != "cc" or f"soft_s2_lam{lam}" in out_summary["subontologies"][sub]
@@ -848,5 +855,5 @@ def main():
                     json.dump(out_summary, fh, indent=2)
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    raise SystemExit('This historical evaluator is retired. Use analysis/revision_audit_run.py and the documented revision workflow.')

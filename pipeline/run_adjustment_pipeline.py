@@ -79,6 +79,11 @@ def run_adjustment_pipeline(
     """
     Run the adjustment pipeline.
     """
+    if skip_existing:
+        raise ValueError('Unverified skip_existing is disabled; use a new output directory')
+    if start_index < 0 or (end_index is not None and end_index < start_index):
+        raise ValueError('Invalid task index range')
+    os.makedirs(optimized_dir, exist_ok=True)
     in_taxon_constraints, never_in_taxon_constraints = load_constraints(constraints_file)
     go_hierarchy = load_go_hierarchy(go_hierarchy_file)
     taxon_is_a_hierarchy, taxon_disjoint_from_hierarchy, taxon_union_of_hierarchy = load_taxon_hierarchy(taxon_hierarchy_file, ncbitaxon_hierarchy_file)
@@ -111,6 +116,11 @@ def run_adjustment_pipeline(
         end_index = len(taxons_str)
     taxons_str = taxons_str[start_index:end_index]
     folds_str = folds_str[start_index:end_index]
+    if not taxons_str:
+        raise ValueError('No prediction files match the requested taxa and index range')
+    for fold in folds_str:
+        if fold not in fold_thresholds or not 0 <= fold_thresholds[fold] < 1:
+            raise ValueError(f'Missing or invalid threshold for fold {fold}')
 
     print(f"Processing taxons {start_index} to {end_index} (out of {total_taxons} total)")
 
@@ -187,11 +197,13 @@ def run_adjustment_pipeline(
     print(f"Total folds: {len(folds_str)}")
     print(f"Total flips (taxon consistency): {num_flips}")
     print(f"Total annotated predictions (taxon consistency): {num_annotated_predictions}")
-    print(f"Percentage of flipped predictions (taxon consistency): {num_flips / num_annotated_predictions * 100:.2f}%")
+    rate = f'{num_flips / num_annotated_predictions * 100:.2f}%' if num_annotated_predictions else 'undefined (no active inputs)'
+    print(f"Percentage of flipped predictions (taxon consistency): {rate}")
     if complex_coherence:
         print(f"Total flips (complex coherence): {complex_coherence_num_flips}")
         print(f"Total annotated predictions (complex coherence): {complex_coherence_num_annotated_predictions}")
-        print(f"Percentage of flipped predictions (complex coherence): {complex_coherence_num_flips / complex_coherence_num_annotated_predictions * 100:.2f}%")
+        rate = f'{complex_coherence_num_flips / complex_coherence_num_annotated_predictions * 100:.2f}%' if complex_coherence_num_annotated_predictions else 'undefined (no active inputs)'
+        print(f"Percentage of flipped predictions (complex coherence): {rate}")
     print("--------------------------------")
     return True
 
@@ -212,11 +224,11 @@ if __name__ == '__main__':
     parser.add_argument('--top_k', type=int, default=None, help='Top-k proteins to participate in each complex (default: None)')
     parser.add_argument('--start_index', type=int, default=0, help='Starting index in taxon list (inclusive, for parallel processing)')
     parser.add_argument('--end_index', type=int, default=None, help='Ending index in taxon list (exclusive, for parallel processing)')
-    parser.add_argument('--skip_existing', action='store_true', help='Skip taxons whose output file already exists')
+    parser.add_argument('--skip_existing', action='store_true', help='Deprecated: unverified reuse is rejected; use a new output directory')
     parser.add_argument('--provide_taxon_id', action='store_true', help='Provide taxon_id to the solver (default: None)')
     parser.add_argument('--taxon_ids_file', default=None, help='Path to txt file with taxon IDs to process (one per line). Only taxons present in both this file and predictions_dir will be processed.')
     parser.add_argument('--default_threshold', type=float, default=0.5, help='Default threshold for fold thresholds')
-    parser.add_argument('--demotion_only', action='store_true', help='Forbid 0->1 promotions in Stage 2; resolve incoherent complexes by demotion only')
+    parser.add_argument('--demotion-only', '--demotion_only', dest='demotion_only', action='store_true', help='Forbid 0->1 promotions in Stage 2; resolve incoherent complexes by demotion only')
     args = parser.parse_args()
 
     if args.optimized_dir is None:
@@ -234,8 +246,8 @@ if __name__ == '__main__':
                 args.fold_thresholds = json.load(f)
         else:
             # set default fold thresholds to 0.5
-            folds = [int(fold.split('_')[2]) for fold in os.listdir(args.predictions_dir) if fold.startswith('predictions_fold_') and fold.endswith('.tsv')]
-            args.fold_thresholds = {f"{fold:02d}": args.default_threshold for fold in folds}
+            _, folds = get_taxons_and_folds(args.predictions_dir)
+            args.fold_thresholds = {fold: args.default_threshold for fold in folds}
         
     print(f"Predictions directory: {args.predictions_dir}")
     print(f"Optimized directory: {args.optimized_dir}")

@@ -10,7 +10,7 @@ Inputs:
 Outputs:
 - taxon_adjusted_predictions.tsv: tab-separated file with protein name, GO term, and adjusted prediction score.
 
-This version uses Google OR-Tools CP-SAT for 10-50x speedup over Z3.
+This version uses Google OR-Tools CP-SAT.
 """
 
 import csv
@@ -52,7 +52,7 @@ def load_predictions(file_path):
     with open(file_path, 'r') as file:
         reader = csv.reader(file, delimiter='\t')
         for row in reader:
-            if len(row) < 2:
+            if not row or not row[0]:
                 continue
             protein_name = row[0]
 
@@ -83,11 +83,10 @@ def load_constraints(file_path):
                 never_in_taxon_constraints[go_term].append(taxon_id)
     return in_taxon_constraints, never_in_taxon_constraints
 
-def load_go_hierarchy(file_path):
+def load_go_hierarchy(file_path, obo_file=None):
     """
-    Load the GO hierarchy from the file, and augment with is_a/part_of edges
-    from go-basic.obo in the same directory when present so hierarchy edges
-    match the ontology used by GAEF evaluation.
+    Load the specified hierarchy, optionally adding an explicitly named OBO.
+    The presence of an unrelated file in the same directory has no effect.
     """
     hierarchy = defaultdict(set)
     with open(file_path, 'r') as file:
@@ -98,10 +97,9 @@ def load_go_hierarchy(file_path):
             child_go_term = row[0]
             parent_go_term = row[1]
             hierarchy[child_go_term].add(parent_go_term)
-    obo_candidate = os.path.join(os.path.dirname(os.path.abspath(file_path)), 'go-basic.obo')
-    if os.path.exists(obo_candidate):
+    if obo_file is not None:
         cur_id = None
-        with open(obo_candidate, 'r', encoding='utf-8', errors='replace') as fh:
+        with open(obo_file, 'r', encoding='utf-8') as fh:
             for raw in fh:
                 line = raw.strip()
                 if line == '[Term]':
@@ -244,6 +242,51 @@ def normalize_taxon_id(taxon_id: str) -> str:
     # Add NCBITaxon_ prefix if not present
     return f'NCBITaxon_{taxon_id}'
 
+def _add_taxon_model(model, seeds, isa, disjoint, unions, known=None):
+    """Encode complete union membership and a single NCBI lineage.
+
+    Union members are alternatives, and are not assumed pairwise disjoint.
+    Ordinary siblings in the NCBI tree are mutually exclusive.
+    """
+    relevant = set(seeds)
+    if known is not None:
+        known = normalize_taxon_id(known)
+        relevant.add(known)
+    pending = list(relevant)
+    while pending:
+        taxon = pending.pop()
+        additions = set(isa.get(taxon, ())) | set(disjoint.get(taxon, ())) | set(unions.get(taxon, ()))
+        new = additions - relevant
+        relevant.update(new)
+        pending.extend(sorted(new))
+    variables = {t: model.NewBoolVar(f'taxon_{t}') for t in sorted(relevant)}
+    children = defaultdict(set)
+    for child in sorted(relevant):
+        for parent in sorted(isa.get(child, ())):
+            if parent in variables:
+                model.AddImplication(variables[child], variables[parent])
+                if not parent.startswith('NCBITaxon_Union_') and not child.startswith('NCBITaxon_Union_'):
+                    children[parent].add(child)
+        for other in sorted(disjoint.get(child, ())):
+            if other in variables:
+                model.AddBoolOr([variables[child].Not(), variables[other].Not()])
+        if child.startswith('NCBITaxon_Union_'):
+            members = sorted(unions.get(child, ()))
+            if not members:
+                raise ValueError(f'Union without member definition: {child}')
+            model.AddBoolOr([variables[t] for t in members]).OnlyEnforceIf(variables[child])
+            for member in members:
+                model.AddImplication(variables[member], variables[child])
+    for siblings in children.values():
+        model.AddAtMostOne([variables[t] for t in sorted(siblings)])
+    if known is not None:
+        lineage = {known} | get_all_ancestors_of_list(isa, [known])
+        for taxon, variable in variables.items():
+            if not taxon.startswith('NCBITaxon_Union_'):
+                model.Add(variable == int(taxon in lineage))
+    return variables
+
+
 def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
                 in_taxon_constraints: Dict[str, List[str]],
                 never_in_taxon_constraints: Dict[str, List[str]],
@@ -253,6 +296,7 @@ def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
                 taxon_disjoint_from_hierarchy: Dict[str, Set[str]],
                 taxon_union_of_hierarchy: Dict[str, Set[str]],
                 genome_taxon_id: str = None,
+                violation_costs: Dict[str, float] = None,
                ) -> Dict[str, Dict[str, bool]]:
     """
     Solve the SAT problem using OR-Tools CP-SAT.
@@ -271,6 +315,8 @@ def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
     Returns:
         Dict of dicts of booleans, where adjusted_predictions[protein][go_term] is True if go_term is annotated to protein.
     """
+    if violation_costs is not None and any(v < 0 for v in violation_costs.values()):
+        raise ValueError('Violation costs must be nonnegative')
     setup_start_time = time.time()
     model = cp_model.CpModel()
 
@@ -285,135 +331,59 @@ def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
 
     # Add GO term variables and flip variables
     flip_variables = {}
-    for go_term in all_go_terms:
+    for go_term in sorted(all_go_terms):
         go_term_variables[go_term] = model.NewBoolVar(f'go_{go_term}')
         flip_variables[go_term] = model.NewBoolVar(f'flip_{go_term}')
     print(f"[INFO] Added {len(go_term_variables)} GO term variables and {len(flip_variables)} flip variables")
 
     # Add GO hierarchy constraints
-    for go_term in all_go_terms:
-        for parent_go_term in go_hierarchy[go_term]:
+    for go_term in sorted(all_go_terms):
+        for parent_go_term in sorted(go_hierarchy.get(go_term, ())):
             if parent_go_term in all_go_terms:
                 model.AddImplication(go_term_variables[go_term], go_term_variables[parent_go_term])
     
     # get all taxons mapped by predictions
     in_taxon_taxons = set()
     never_in_taxon_taxons = set()
-    for go_term in all_go_terms:
+    for go_term in sorted(all_go_terms):
         in_taxon_taxons.update(in_taxon_constraints.get(go_term, []))
         never_in_taxon_taxons.update(never_in_taxon_constraints.get(go_term, []))
     common_taxons = in_taxon_taxons.intersection(never_in_taxon_taxons)
     all_taxons = in_taxon_taxons.union(never_in_taxon_taxons)
     print(f"[INFO] Common taxons count: {len(common_taxons)}")
 
-    # Add a variable for each taxon 
-    taxon_variables = {}
-    for taxon in all_taxons:
-        taxon_variables[taxon] = model.NewBoolVar(f'taxon_{taxon}')
-    print(f"[INFO] Added {len(taxon_variables)} taxon variables")
-
-    # Add constraint for genome's taxon (if provided)
-    if genome_taxon_id:
-        normalized_genome_taxon = normalize_taxon_id(genome_taxon_id)
-        if normalized_genome_taxon not in all_taxons:
-            all_taxons.add(normalized_genome_taxon)
-            taxon_variables[normalized_genome_taxon] = model.NewBoolVar(f'taxon_{normalized_genome_taxon}')
-        model.Add(taxon_variables[normalized_genome_taxon] == 1)
-        print(f"[INFO] Added constraint for genome taxon {genome_taxon_id}: {normalized_genome_taxon}")
-
-    # performance optimization: only add taxon that are relevant
-    relevant_taxon_is_a_hierarchy = get_all_ancestors_of_list(taxon_is_a_hierarchy, all_taxons)
-    # add relevant taxon is_a hierarchy to taxon_variables that are not already in taxon_variables
-    for taxon in relevant_taxon_is_a_hierarchy:
-        if taxon not in all_taxons:
-            all_taxons.add(taxon)
-            taxon_variables[taxon] = model.NewBoolVar(f'taxon_{taxon}')
-
-    relevant_taxon_disjoint_from_hierarchy = get_all_ancestors_of_list(taxon_disjoint_from_hierarchy, all_taxons)
-    # add relevant taxon disjoint_from hierarchy to taxon_variables that are not already in taxon_variables
-    for taxon in relevant_taxon_disjoint_from_hierarchy:
-        if taxon not in all_taxons:
-            all_taxons.add(taxon)
-            taxon_variables[taxon] = model.NewBoolVar(f'taxon_{taxon}')
-
-
-    # Add taxon is_a hierarchy constraints
-    count_is_a_constraints = 0
-    for taxon in all_taxons:
-        for parent_taxon in taxon_is_a_hierarchy[taxon]:
-            if parent_taxon in all_taxons:
-
-                model.AddImplication(taxon_variables[taxon], taxon_variables[parent_taxon])
-                count_is_a_constraints += 1
-
-    # Add taxon disjoint_from hierarchy constraints
-    count_disjoint_from_constraints = 0
-    for taxon in all_taxons:
-        for disjoint_from_taxon in taxon_disjoint_from_hierarchy[taxon]:
-            if disjoint_from_taxon in all_taxons:
-
-                model.AddBoolOr([taxon_variables[taxon].Not(), taxon_variables[disjoint_from_taxon].Not()])
-                count_disjoint_from_constraints += 1
-
-    print(f"[INFO] Added {count_is_a_constraints} is_a constraints")
-    print(f"[INFO] Added {count_disjoint_from_constraints} disjoint_from constraints")
-
+    taxon_variables = _add_taxon_model(
+        model, all_taxons, taxon_is_a_hierarchy, taxon_disjoint_from_hierarchy,
+        taxon_union_of_hierarchy, genome_taxon_id)
 
     # Add go and taxon variables constraints
     taxons_added_with_go_term_constraints = set()    
-    for go_term in all_go_terms:
-        for taxon in in_taxon_constraints[go_term]:
+    violation_variables = {}
+    if violation_costs is not None:
+        violation_variables = {g: model.NewBoolVar(f'violation_{g}') for g in sorted(all_go_terms)
+                               if in_taxon_constraints.get(g) or never_in_taxon_constraints.get(g)}
+    for go_term in sorted(all_go_terms):
+        for taxon in sorted(in_taxon_constraints.get(go_term, ())):
             if taxon in taxon_variables:
-                model.AddImplication(go_term_variables[go_term], taxon_variables[taxon])
+                constraint = model.AddImplication(go_term_variables[go_term], taxon_variables[taxon])
+                if violation_costs is not None:
+                    constraint.OnlyEnforceIf(violation_variables[go_term].Not())
                 taxons_added_with_go_term_constraints.add(taxon)
-    for go_term in all_go_terms:
-        for taxon in never_in_taxon_constraints[go_term]:
+    for go_term in sorted(all_go_terms):
+        for taxon in sorted(never_in_taxon_constraints.get(go_term, ())):
             if taxon in taxon_variables:
-                model.AddImplication(go_term_variables[go_term], taxon_variables[taxon].Not())
+                constraint = model.AddImplication(go_term_variables[go_term], taxon_variables[taxon].Not())
+                if violation_costs is not None:
+                    constraint.OnlyEnforceIf(violation_variables[go_term].Not())
                 taxons_added_with_go_term_constraints.add(taxon)
 
-    # Add taxon union constraints (IMPORTANT: This must be added after the taxon variables are added)
-    disjoint_children_constraints = 0
-    for taxon in all_taxons:
-        if taxon.startswith('NCBITaxon_Union_'):
-            children_taxons = [child_taxon for child_taxon in all_taxons if taxon in taxon_is_a_hierarchy[child_taxon]]
-            # add union equivalent to OR of children_taxons
-            if children_taxons:
-                children_vars = [taxon_variables[child_taxon] for child_taxon in children_taxons]
-                # Union taxon is True if and only if at least one child is True
-                # taxon == OR(children) means: taxon -> OR(children) AND OR(children) -> taxon
-                # If taxon is True, at least one child must be True
-                model.AddBoolOr(children_vars).OnlyEnforceIf(taxon_variables[taxon])
-                # If any child is True, taxon must be True
-                for child_var in children_vars:
-                    model.AddImplication(child_var, taxon_variables[taxon])
 
-            # This is currently only adding disjoint constraints for union children. TODO: check if this is sufficient.
-            if taxon in taxon_union_of_hierarchy:
-                taxon_union_of_children = taxon_union_of_hierarchy[taxon]
-                taxon_union_of_children = taxon_union_of_children.intersection(all_taxons)
-                if len(taxon_union_of_children) > 1:
-                    for child_taxon1, child_taxon2 in itertools.combinations(taxon_union_of_children, 2):
-                        model.AddBoolOr([taxon_variables[child_taxon1].Not(), taxon_variables[child_taxon2].Not()])
-                        disjoint_children_constraints += 1
-        else:
-            # if taxon in taxons_added_with_go_term_constraints:
-            children_taxons = [child_taxon for child_taxon in all_taxons if taxon in taxon_is_a_hierarchy[child_taxon]]
-            # filter out union taxons. TODO: I don't think this is complete. Might want to replace union taxons with their children, but this is not trivial as a child might also be in children_taxons already. Can't have not(And(child_1, child_1)).
-            children_taxons = [child_taxon for child_taxon in children_taxons if not child_taxon.startswith('NCBITaxon_Union_')]
-
-            if len(children_taxons) > 1:
-                for child_taxon1, child_taxon2 in itertools.combinations(children_taxons, 2):
-                    model.AddBoolOr([taxon_variables[child_taxon1].Not(), taxon_variables[child_taxon2].Not()])
-                    disjoint_children_constraints += 1
-
-    print(f"[INFO] Added {disjoint_children_constraints} disjoint children constraints")
 
     
 
     # Add XOR constraints for each GO term (enforce once per GO term, not per protein)
     # XOR constraint: go_var XOR flip_var = True means exactly one is true: go_var + flip_var == 1
-    for go_term in all_go_terms:
+    for go_term in sorted(all_go_terms):
         model.Add(go_term_variables[go_term] + flip_variables[go_term] == 1)
 
     # No need to add protein variables and constraints since we are enforcing the XOR constraints globally.
@@ -432,6 +402,9 @@ def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
         flip_variables[go_term] * compute_cost(go_term)
         for go_term in flip_variables
     ]
+    if violation_costs is not None:
+        cost_terms.extend(var * round(violation_costs.get(g, 0.0) * cost_scale)
+                          for g, var in violation_variables.items())
     
     if cost_terms:
         model.Minimize(sum(cost_terms))
@@ -446,6 +419,8 @@ def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
     print("[INFO] Solving SAT problem...")
     
     solver = cp_model.CpSolver()
+    solver.parameters.num_search_workers = 1
+    solver.parameters.random_seed = 42
     status = solver.Solve(model)
     solve_time = time.time() - solve_start_time
 
@@ -479,14 +454,7 @@ def solve_sat_ortools_hierarchy(annotated_predictions: Dict[str, Set[str]],
 
         return adjusted_predictions, total_flips
     else:
-        print(f"[INFO] SAT problem is unsatisfiable after {solve_time:.2f}s")
-        print(f"[INFO] Returning original predictions")    
-        # Return original annotations as dict of bools
-        result = defaultdict(dict)
-        for protein, terms in annotated_predictions.items():
-            for term in terms:
-                result[protein][term] = True
-        return result, 0
+        raise RuntimeError(f"CP-SAT did not produce a valid repair: {solver.StatusName(status)}")
 
 
 def solve_sat_ortools_taxon_assignment(annotated_predictions: Dict[str, Set[str]],
@@ -529,127 +497,51 @@ def solve_sat_ortools_taxon_assignment(annotated_predictions: Dict[str, Set[str]
     for protein in annotated_predictions:
         all_go_terms.update(annotated_predictions[protein])
     all_go_terms.update(get_all_ancestors_of_list(go_hierarchy, list(all_go_terms)))
+    all_go_terms.update(get_all_ancestors_of_list(go_hierarchy, list(all_go_terms)))
 
     # Add GO term variables and flip variables
     flip_variables = {}
-    for go_term in all_go_terms:
+    for go_term in sorted(all_go_terms):
         go_term_variables[go_term] = model.NewBoolVar(f'go_{go_term}')
         flip_variables[go_term] = model.NewBoolVar(f'flip_{go_term}')
     print(f"[INFO] Added {len(go_term_variables)} GO term variables and {len(flip_variables)} flip variables")
 
     # Add GO hierarchy constraints
-    for go_term in all_go_terms:
-        for parent_go_term in go_hierarchy[go_term]:
+    for go_term in sorted(all_go_terms):
+        for parent_go_term in sorted(go_hierarchy.get(go_term, ())):
             if parent_go_term in all_go_terms:
                 model.AddImplication(go_term_variables[go_term], go_term_variables[parent_go_term])
     
     # get all taxons mapped by predictions
     in_taxon_taxons = set()
     never_in_taxon_taxons = set()
-    for go_term in all_go_terms:
+    for go_term in sorted(all_go_terms):
         in_taxon_taxons.update(in_taxon_constraints.get(go_term, []))
         never_in_taxon_taxons.update(never_in_taxon_constraints.get(go_term, []))
     common_taxons = in_taxon_taxons.intersection(never_in_taxon_taxons)
     all_taxons = in_taxon_taxons.union(never_in_taxon_taxons)
     print(f"[INFO] Common taxons count: {len(common_taxons)}")
 
-    # Add a variable for each taxon 
-    taxon_variables = {}
-    for taxon in all_taxons:
-        taxon_variables[taxon] = model.NewBoolVar(f'taxon_{taxon}')
-    print(f"[INFO] Added {len(taxon_variables)} taxon variables")
-
-    # Add constraint for genome's taxon (if provided)
-    if genome_taxon_id:
-        normalized_genome_taxon = normalize_taxon_id(genome_taxon_id)
-        if normalized_genome_taxon not in all_taxons:
-            all_taxons.add(normalized_genome_taxon)
-            taxon_variables[normalized_genome_taxon] = model.NewBoolVar(f'taxon_{normalized_genome_taxon}')
-        model.Add(taxon_variables[normalized_genome_taxon] == 1)
-        print(f"[INFO] Added constraint for genome taxon {genome_taxon_id}: {normalized_genome_taxon}")
-
-    # performance optimization: only add taxon that are relevant
-    relevant_taxon_is_a_hierarchy = get_all_ancestors_of_list(taxon_is_a_hierarchy, all_taxons)
-    # add relevant taxon is_a hierarchy to taxon_variables that are not already in taxon_variables
-    for taxon in relevant_taxon_is_a_hierarchy:
-        if taxon not in all_taxons:
-            all_taxons.add(taxon)
-            taxon_variables[taxon] = model.NewBoolVar(f'taxon_{taxon}')
-
-    relevant_taxon_disjoint_from_hierarchy = get_all_ancestors_of_list(taxon_disjoint_from_hierarchy, all_taxons)
-    # add relevant taxon disjoint_from hierarchy to taxon_variables that are not already in taxon_variables
-    for taxon in relevant_taxon_disjoint_from_hierarchy:
-        if taxon not in all_taxons:
-            all_taxons.add(taxon)
-            taxon_variables[taxon] = model.NewBoolVar(f'taxon_{taxon}')
-
-    # Add taxon is_a hierarchy constraints
-    count_is_a_constraints = 0
-    for taxon in all_taxons:
-        for parent_taxon in taxon_is_a_hierarchy[taxon]:
-            if parent_taxon in all_taxons:
-                model.AddImplication(taxon_variables[taxon], taxon_variables[parent_taxon])
-                count_is_a_constraints += 1
-
-    # Add taxon disjoint_from hierarchy constraints
-    count_disjoint_from_constraints = 0
-    for taxon in all_taxons:
-        for disjoint_from_taxon in taxon_disjoint_from_hierarchy[taxon]:
-            if disjoint_from_taxon in all_taxons:
-                model.AddBoolOr([taxon_variables[taxon].Not(), taxon_variables[disjoint_from_taxon].Not()])
-                count_disjoint_from_constraints += 1
-    print(f"[INFO] Added {count_is_a_constraints} is_a constraints")
-    print(f"[INFO] Added {count_disjoint_from_constraints} disjoint_from constraints")
+    taxon_variables = _add_taxon_model(
+        model, all_taxons, taxon_is_a_hierarchy, taxon_disjoint_from_hierarchy,
+        taxon_union_of_hierarchy, genome_taxon_id)
 
     # Add go and taxon variables constraints
     taxons_added_with_go_term_constraints = set()    
-    for go_term in all_go_terms:
-        for taxon in in_taxon_constraints[go_term]:
+    for go_term in sorted(all_go_terms):
+        for taxon in sorted(in_taxon_constraints.get(go_term, ())):
             if taxon in taxon_variables:
                 model.AddImplication(go_term_variables[go_term], taxon_variables[taxon])
                 taxons_added_with_go_term_constraints.add(taxon)
-    for go_term in all_go_terms:
-        for taxon in never_in_taxon_constraints[go_term]:
+    for go_term in sorted(all_go_terms):
+        for taxon in sorted(never_in_taxon_constraints.get(go_term, ())):
             if taxon in taxon_variables:
                 model.AddImplication(go_term_variables[go_term], taxon_variables[taxon].Not())
                 taxons_added_with_go_term_constraints.add(taxon)
 
-    # Add taxon union constraints (IMPORTANT: This must be added after the taxon variables are added)
-    disjoint_children_constraints = 0
-    for taxon in all_taxons:
-        if taxon.startswith('NCBITaxon_Union_'):
-            children_taxons = [child_taxon for child_taxon in all_taxons if taxon in taxon_is_a_hierarchy[child_taxon]]
-            # add union equivalent to OR of children_taxons
-            if children_taxons:
-                children_vars = [taxon_variables[child_taxon] for child_taxon in children_taxons]
-                # Union taxon is True if and only if at least one child is True
-                # taxon == OR(children) means: taxon -> OR(children) AND OR(children) -> taxon
-                # If taxon is True, at least one child must be True
-                model.AddBoolOr(children_vars).OnlyEnforceIf(taxon_variables[taxon])
-                # If any child is True, taxon must be True
-                for child_var in children_vars:
-                    model.AddImplication(child_var, taxon_variables[taxon])
-            # This is currently only adding disjoint constraints for union children. TODO: check if this is sufficient.
-            if taxon in taxon_union_of_hierarchy:
-                taxon_union_of_children = taxon_union_of_hierarchy[taxon]
-                taxon_union_of_children = taxon_union_of_children.intersection(all_taxons)
-                if len(taxon_union_of_children) > 1:
-                    for child_taxon1, child_taxon2 in itertools.combinations(taxon_union_of_children, 2):
-                        model.AddBoolOr([taxon_variables[child_taxon1].Not(), taxon_variables[child_taxon2].Not()])
-                        disjoint_children_constraints += 1
-        else:
-            # if taxon in taxons_added_with_go_term_constraints:
-            children_taxons = [child_taxon for child_taxon in all_taxons if taxon in taxon_is_a_hierarchy[child_taxon]]
-            # filter out union taxons. TODO: I don't think this is complete. Might want to replace union taxons with their children, but this is not trivial as a child might also be in children_taxons already. Can't have not(And(child_1, child_1)).
-            children_taxons = [child_taxon for child_taxon in children_taxons if not child_taxon.startswith('NCBITaxon_Union_')]
-            if len(children_taxons) > 1:
-                for child_taxon1, child_taxon2 in itertools.combinations(children_taxons, 2):
-                    model.AddBoolOr([taxon_variables[child_taxon1].Not(), taxon_variables[child_taxon2].Not()])
-                    disjoint_children_constraints += 1
 
-    print(f"[INFO] Added {disjoint_children_constraints} disjoint children constraints")
 
-    for go_term in all_go_terms:
+    for go_term in sorted(all_go_terms):
         model.Add(go_term_variables[go_term] + flip_variables[go_term] == 1)
     cost_scale = 1000000
 
@@ -674,6 +566,8 @@ def solve_sat_ortools_taxon_assignment(annotated_predictions: Dict[str, Set[str]
     print(f"[INFO] Setup time: {solve_start_time - setup_start_time:.2f}s")
     print("[INFO] Solving SAT problem...")
     solver = cp_model.CpSolver()
+    solver.parameters.num_search_workers = 1
+    solver.parameters.random_seed = 42
     status = solver.Solve(model)
     solve_time = time.time() - solve_start_time
 
@@ -706,28 +600,33 @@ def solve_sat_ortools_taxon_assignment(annotated_predictions: Dict[str, Set[str]
 
         return adjusted_predictions, predicted_taxons, total_flips
     else:
-        print(f"[INFO] SAT problem is unsatisfiable after {solve_time:.2f}s")
-        print(f"[INFO] Returning original predictions")    
-        # Return original annotations as dict of bools
-        result = defaultdict(dict)
-        for protein, terms in annotated_predictions.items():
-            for term in terms:
-                result[protein][term] = True
-        return result, [], 0
+        raise RuntimeError(f"CP-SAT did not produce a valid repair: {solver.StatusName(status)}")
 
 
-def get_final_predictions(adjusted_predictions: Dict[str, Dict[str, bool]], predictions: Dict[str, Dict[str, float]]) -> Dict[str, Dict[str, float]]:
+def get_final_predictions(adjusted_predictions: Dict[str, Dict[str, bool]], predictions: Dict[str, Dict[str, float]], go_hierarchy=None) -> Dict[str, Dict[str, float]]:
     """
     Get the final predictions from the adjusted predictions.
-    Remove the demoted predictions entirely.
+    Remove genome-wide demoted terms and descendants at every score.
+    Unmodified scores, including sub-threshold scores, are preserved.
     """
-    # Use dictionary comprehension with .get() for fast filtering
-    # Filter out the demoted predictions entirely.
+    removed = {term for assignments in adjusted_predictions.values()
+               for term, present in assignments.items() if not present}
+    if go_hierarchy is not None:
+        children = defaultdict(set)
+        for child, parents in go_hierarchy.items():
+            for parent in parents:
+                children[parent].add(child)
+        pending = list(removed)
+        while pending:
+            for child in children.get(pending.pop(), ()):
+                if child not in removed:
+                    removed.add(child)
+                    pending.append(child)
     final_predictions = {
         protein: {
             go_term: score 
             for go_term, score in go_terms.items()
-            if adjusted_predictions.get(protein, {}).get(go_term, True)
+            if go_term not in removed
         }
         for protein, go_terms in predictions.items()
     }
@@ -742,7 +641,7 @@ def save_predictions(predictions: Dict[str, Dict[str, float]], file_path: str):
     with open(file_path, 'w') as file:
         writer = csv.writer(file, delimiter='\t')
         for protein, go_terms in predictions.items():
-            go_terms_scores = [f"{go_term}|{score:.6f}" for go_term, score in go_terms.items()]
+            go_terms_scores = [f"{go_term}|{score:.17g}" for go_term, score in go_terms.items()]
 
             writer.writerow([protein] + go_terms_scores)
 
@@ -777,10 +676,10 @@ def adjust_per_taxon(
         taxon_id,
         )
 
-    print(f"[INFO] percentage of flipped predictions: {total_flips / num_annotated_predictions * 100:.2f}%")
+    print(f"[INFO] percentage of flipped predictions: {total_flips / num_annotated_predictions * 100 if num_annotated_predictions else 0:.2f}%")
 
     
-    final_predictions = get_final_predictions(adjusted_predictions, predictions)
+    final_predictions = get_final_predictions(adjusted_predictions, predictions, go_hierarchy)
     
     print(f"\nSaving final predictions to {output_file}...")
     save_predictions(final_predictions, output_file)
@@ -832,9 +731,9 @@ def main(
         taxon_id,
         )
 
-    print(f"[INFO] percentage of flipped predictions: {total_flips / num_annotated_predictions * 100:.2f}%")
+    print(f"[INFO] percentage of flipped predictions: {total_flips / num_annotated_predictions * 100 if num_annotated_predictions else 0:.2f}%")
 
-    final_predictions = get_final_predictions(adjusted_predictions, predictions)
+    final_predictions = get_final_predictions(adjusted_predictions, predictions, go_hierarchy)
     
     print(f"\nSaving final predictions to {output_file}...")
     save_predictions(final_predictions, output_file)

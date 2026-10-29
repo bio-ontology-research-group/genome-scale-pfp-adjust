@@ -55,7 +55,7 @@ def test_stage1_taxon_consistency():
                 f"Expected GO:0009001 to be demoted below 0.3 on protein1, got {protein1['GO:0009001']}"
             )
         # Non-violating annotations should be preserved
-        assert adjusted.get("protein2", {}).get("GO:0008002", 0.0) >= 0.3, \
+        assert adjusted.get("protein2", {}).get("GO:0008002", 0.0) > 0.3, \
             "Expected GO:0008002 on protein2 to be preserved"
         print(f"  Stage 1 OK: total_flips={total_flips}, num_annotated={num_annotated}")
     finally:
@@ -82,7 +82,7 @@ def test_stage2_complex_coherence():
         p2 = adjusted.get("protein2", {}).get("GO:0099001", 0.0)
         p3 = adjusted.get("protein3", {}).get("GO:0099001", 0.0)
         # After repair, GO:0099001 must NOT be on exactly one protein above threshold.
-        above = sum(1 for x in (p1, p2, p3) if x >= 0.3)
+        above = sum(1 for x in (p1, p2, p3) if x > 0.3)
         assert above != 1, (
             f"Expected GO:0099001 to be on 0 or >=2 proteins above threshold, "
             f"got {above} (p1={p1}, p2={p2}, p3={p3})"
@@ -111,7 +111,7 @@ def _singleton_count(adjusted, term="GO:0099001", tau=0.3):
     return sum(
         1
         for p in ("protein1", "protein2", "protein3")
-        if adjusted.get(p, {}).get(term, 0.0) >= tau
+        if adjusted.get(p, {}).get(term, 0.0) > tau
     )
 
 

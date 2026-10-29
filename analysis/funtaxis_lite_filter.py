@@ -1,7 +1,10 @@
 """
-FunTaxIS-lite (Bianca et al., Bioinformatics 2023) baseline comparator for Stage 1.
+HISTORICAL EXPLORATORY IMPLEMENTATION; NOT ACCEPTED REVISION EVIDENCE.
+The current workflow is analysis/revision_audit_run.py.
 
-Implements the FunTaxIS-lite constraint generation and post-hoc filtering pipeline:
+Historical local corpus-absence filter inspired by FunTaxIS-lite.
+
+Implements a local corpus-absence approximation, not the published FunTaxIS-lite pipeline:
 1. Partitions NCBI Taxonomy into the 172 reference clades from
    data/funtaxis_lite/taxonConstraintsDef.txt ('reliable' vs 'unreliable').
 2. Computes cumulative GO term annotation frequencies across the training
@@ -379,5 +382,5 @@ def main():
         json.dump(summary, fh, indent=2)
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    raise SystemExit('This historical evaluator is retired. Use analysis/revision_audit_run.py and the documented revision workflow.')

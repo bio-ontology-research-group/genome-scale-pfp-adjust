@@ -1,282 +1,307 @@
 #!/usr/bin/env python3
+"""Generate revision tables from a complete, validated result bundle.
+
+No manuscript tables or rendered figures are used as numerical inputs.
 """
-Reproduce all tables (Tables 1-2, Supplementary Tables S1-S15) and figures
-(Supplementary Figures S1-S2) for:
-
-  GenoAdjust: genome-scale protein function adjustment using constraint optimization
-  Asaad Mohammedsaleh and Robert Hoehndorf (Bioinformatics, BIOINF-2026-2454)
-
-Usage:
-  uv run python reproducibility/reproduce_all_tables_and_figures.py
-"""
-
-from __future__ import annotations
-
+import argparse
+import csv
+import hashlib
 import json
-import re
-import shutil
 from pathlib import Path
-from typing import Any
+import shutil
+import tempfile
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-REV_DIR = REPO_ROOT / "analysis" / "revision_results"
-REV2_DIR = REV_DIR / "rev2"
-OUT_DIR = Path(__file__).resolve().parent / "output"
-
-
-def load_json(path: Path) -> Any:
-    with path.open("r", encoding="utf-8") as fh:
-        return json.load(fh)
-
-
-def write_artifact(name: str, content: str) -> Path:
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_path = OUT_DIR / name
-    out_path.write_text(content, encoding="utf-8")
-    return out_path
+MODELS = ['seq_sim_timeset', 'deepgo-se', 'sprof-go', 'seq_sim_heldout', 'mlp_heldout']
+SHORT = dict(zip(MODELS, ['SS-E', 'DGO-E', 'SP-E', 'SS-H', 'MLP-H']))
+ASPECTS = ['cc', 'mf', 'bp']
+RANKS = ['none', 'domain', 'phylum', 'class', 'order', 'family', 'genus', 'species']
+LEGEND = 'SS: Seq-Sim; DGO: DeepGO-SE; SP: SPROF-GO; MLP: MLP-ESM2. E: entry-date split; H: heldout split.'
+MODES = {'before': 'Raw', 'stage1': 'Known taxon', 'stage1_unknown': 'Inferred taxon',
+         'published_funtaxis': 'FunTaxIS-lite', 'stage2_standard': 'Stage 2 standard',
+         'stage2_demotion': 'Stage 2 demotion'}
 
 
-def build_table1_flips() -> str:
-    """Reproduce Main Paper Table 1 (tab:flips): Stage 1 annotation flips and rates across all models/splits."""
-    models = [
-        ("seq_sim_timeset", "Seq-Sim (timeset, n=50)"),
-        ("deepgo-se", "DeepGO-SE* (timeset, n=50)"),
-        ("sprof-go", "SPROF-GO* (timeset, n=50)"),
-        ("seq_sim_heldout", "Seq-Sim (heldout, n=219)"),
-        ("mlp_heldout", "MLP-ESM2 (heldout, n=219)"),
-    ]
-    lines = [
-        "# Main Paper Table 1 (tab:flips): Stage 1 Annotation Flips and Rates",
-        "",
-        "| Model (Split) | Aspect | Mode | Stage 1 Flips | Preds > tau | Act.% | Grid% |",
-        "| :--- | :--- | :--- | ---: | ---: | ---: | ---: |",
-    ]
-    for m_key, m_label in models:
-        for sub in ["cc", "mf", "bp"]:
-            fpath = REV2_DIR / f"flips_{m_key}_{sub}.json"
-            if not fpath.exists():
-                continue
-            rows = load_json(fpath)
-            by_mode = {r["mode"]: r for r in rows}
-            for mode_key, mode_label in [("no_taxons", "no taxons"), ("with_taxons", "taxons")]:
-                if mode_key not in by_mode:
-                    continue
-                r = by_mode[mode_key]
-                lines.append(
-                    f"| {m_label} | {sub.upper()} | {mode_label} | {r['flips_above_tau']:,} | "
-                    f"{r['preds_above_tau']:,} | {r['active_flip_rate_pct']:.2f}% | "
-                    f"{r['grid_flip_rate_pct']:.4f}% |"
-                )
-    return "\n".join(lines) + "\n"
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def build_table_s10_tau_sweep() -> str:
-    """Reproduce Supplementary Table S10 (8-point threshold sensitivity sweep)."""
-    lines = [
-        "# Supplementary Table S10: 8-Point Decision Threshold (tau) Sensitivity Sweep",
-        "",
-        "| Predictor | Aspect | tau | Preds > tau | Stage 1 Flips | Act.% | Grid% | TC | Fmax | Smin | AUC | AUPR |",
-        "| :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
-    ]
-    for m_key, m_label in [
-        ("seq_sim_timeset", "Seq-Sim"),
-        ("deepgo-se", "DeepGO-SE"),
-        ("sprof-go", "SPROF-GO"),
-    ]:
-        for sub in ["cc", "mf"]:
-            p = REV2_DIR / f"tau_sweep_{m_key}_{sub}.json"
-            if not p.exists():
-                continue
-            rows = load_json(p)
-            for r in rows:
-                cafa = r.get("pooled_cafa") or {}
-                lines.append(
-                    f"| {m_label} | {sub.upper()} | {float(r['tau']):.3f} | {r['preds_above_tau']:,} | "
-                    f"{r['flips_above_tau']:,} | {r['active_flip_rate_pct']:.2f}% | "
-                    f"{r['grid_flip_rate_pct']:.4f}% | {r.get('gaef_taxon_consistency_after', 1.0):.2f} | "
-                    f"{cafa.get('fmax', 0.0):.4f} | {cafa.get('smin', 0.0):.2f} | "
-                    f"{cafa.get('avg_auc', 0.0):.4f} | {cafa.get('aupr', 0.0):.4f} |"
-                )
-    return "\n".join(lines) + "\n"
+def fmt(value, digits=4):
+    if value is None:
+        return '--'
+    return f'{value:.{digits}f}'
 
 
-def build_table_s12_lineage() -> str:
-    """Reproduce Supplementary Table S12 (Multi-rank taxonomic lineage inference)."""
-    p = REV2_DIR / "lineage_inference.json"
-    d = load_json(p)
-    lines = [
-        "# Supplementary Table S12: Multi-Rank Taxonomic Lineage Inference (50 Timeset Proteomes)",
-        "",
-        "| Predictor | Aspect | Deepest Correct (None/Dom/Phy/Cls/Ord+) | First Divergence (None/Dom/Phy/Cls+) | Exact Prefix | Cross-Aspect Compat. (Forced / Solver) |",
-        "| :--- | :--- | :--- | :--- | ---: | :--- |",
-    ]
-    for m_key, m_label in [
-        ("seq_sim_timeset", "Seq-Sim"),
-        ("deepgo-se", "DeepGO-SE"),
-        ("sprof-go", "SPROF-GO"),
-    ]:
-        md = d[m_key]
-        for aspect in ["cc", "mf", "bp", "joint_all_3"]:
-            ad = md[aspect]
-            dc = ad["solver_deepest_correct_counts"]
-            fd = ad["solver_first_divergence_counts"]
-            ord_plus = sum(dc.get(r, 0) for r in ["order", "family", "genus"])
-            cls_plus = sum(fd.get(r, 0) for r in ["class", "order", "family", "genus"])
-            dc_str = f"{dc.get('none',0)} / {dc.get('domain',0)} / {dc.get('phylum',0)} / {dc.get('class',0)} / {ord_plus}"
-            fd_str = f"{fd.get('none',0)} / {fd.get('domain',0)} / {fd.get('phylum',0)} / {cls_plus}"
-            ex = ad["solver_exact_prefix_count"]
-            asp_label = "Joint (All)" if aspect == "joint_all_3" else aspect.upper()
-            compat_str = (
-                f"{ad.get('cross_aspect_forced_compatible_count', '--')} / {ad.get('cross_aspect_solver_compatible_count', '--')}"
-                if aspect == "joint_all_3"
-                else "--"
-            )
-            lines.append(f"| {m_label} | {asp_label} | {dc_str} | {fd_str} | {ex} / 50 | {compat_str} |")
-    return "\n".join(lines) + "\n"
+def pct(value):
+    return fmt(100*value, 2) if value is not None else '--'
 
 
-def build_table_s13_baselines_and_stage2() -> str:
-    """Reproduce Supplementary Table S13 (Baselines, FunTaxIS-lite, Soft SBR, Stage 2 modes)."""
-    lines = [
-        "# Supplementary Table S13: Baselines, Soft Regularizer (SBR), and Stage 2 Modes on CC",
-        "",
-        "| Predictor | Method / Mode | TC (n=50) | CCoh% (n=50) | TC (n=41) | CCoh% (n=41) | Fmax | Smin | AUC | AUPR | wFmax |",
-        "| :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
-    ]
-    spec_order = [
-        ("before", "Raw (preds)"),
-        ("naive_noprop", "Naive (no prop, taxons)"),
-        ("naive_prop", "Naive (prop, taxons)"),
-        ("funtaxis_lite_prop", "FunTaxIS-lite (prop, taxons)"),
-        ("soft_s1_lam0.2", "Soft SBR Stage 1 (lambda=0.2)"),
-        ("soft_s2_lam0.2", "Soft SBR Stage 2 (lambda=0.2)"),
-        ("soft_s1_lam0.5", "Soft SBR Stage 1 (lambda=0.5)"),
-        ("soft_s2_lam0.5", "Soft SBR Stage 2 (lambda=0.5)"),
-        ("stage1_no_taxons", "Stage 1 (no taxons)"),
-        ("stage1_with_taxons", "Stage 1 (taxons)"),
-        ("existing_stage2_standard_withtax", "Stage 2 Standard (taxons)"),
-        ("stage2_demotion_only_withtax", "Stage 2 Demotion-Only (taxons)"),
-    ]
-    for m_key, m_label in [
-        ("seq_sim_timeset", "Seq-Sim"),
-        ("deepgo-se", "DeepGO-SE"),
-        ("sprof-go", "SPROF-GO"),
-    ]:
-        p = REV2_DIR / f"stage2_and_baselines_{m_key}.json"
-        if not p.exists():
-            continue
-        cc = load_json(p).get("subontologies", {}).get("cc", {})
-        for s_key, s_label in spec_order:
-            if s_key not in cc:
-                continue
-            r = cc[s_key]
-            g50 = r.get("gaef_all50", {})
-            g41 = r.get("gaef_gt_subset", {})
-            cafa = r.get("pooled_cafa", {})
-            lines.append(
-                f"| {m_label} | {s_label} | {g50.get('taxon_consistency', 0.0):.2f} | "
-                f"{100.0 * g50.get('complex_coherence', 0.0):.2f} | "
-                f"{g41.get('taxon_consistency', 0.0):.2f} | "
-                f"{100.0 * g41.get('complex_coherence', 0.0):.2f} | "
-                f"{cafa.get('fmax', 0.0):.4f} | {cafa.get('smin', 0.0):.2f} | "
-                f"{cafa.get('avg_auc', 0.0):.4f} | {cafa.get('aupr', 0.0):.4f} | "
-                f"{cafa.get('wfmax', 0.0):.4f} |"
-            )
-    return "\n".join(lines) + "\n"
+def compact(value):
+    return '--' if value is None else f'{value:.4g}'
 
 
-def build_table_s15_complex_portal() -> str:
-    """Reproduce Supplementary Table S15 (Complex Portal validation of Standard vs Demotion-Only Stage 2)."""
-    lines = [
-        "# Supplementary Table S15: Complex Portal Subunit Validation of Stage 2 Modes",
-        "",
-        "| Predictor | Scope (n) | Stage 2 Mode | Total Prom. | Covered Prom. | True Subunit | Total Dem. | Covered Dem. | Non-Subunit Removal |",
-        "| :--- | :--- | :--- | ---: | ---: | :--- | ---: | ---: | :--- |",
-    ]
-    configs = [
-        ("DeepGO-SE", "Timeset (50)", "Standard (taxons)", "cp_val_deepgo-se_standard_withtax.json"),
-        ("DeepGO-SE", "Timeset (50)", "Demotion-Only (taxons)", "cp_val_deepgo-se_demotion_only_withtax.json"),
-        ("DeepGO-SE", "Timeset (50)", "Demotion-Only (no taxons)", "cp_val_deepgo-se_demotion_only_notax.json"),
-        ("DeepGO-SE", "CP Ref. (4)", "Demotion-Only (no taxons)", "cp6_val_deepgo-se_demotion_only.json"),
-        ("Seq-Sim", "Timeset (50)", "Standard (taxons)", "cp_val_seq_sim_timeset_standard_withtax.json"),
-        ("Seq-Sim", "Timeset (50)", "Demotion-Only (taxons)", "cp_val_seq_sim_timeset_demotion_only_withtax.json"),
-        ("Seq-Sim", "Timeset (50)", "Demotion-Only (no taxons)", "cp_val_seq_sim_timeset_demotion_only_notax.json"),
-        ("SPROF-GO", "Timeset (50)", "Standard (taxons)", "cp_val_sprof-go_standard_withtax.json"),
-        ("SPROF-GO", "Timeset (50)", "Demotion-Only (taxons)", "cp_val_sprof-go_demotion_only_withtax.json"),
-        ("SPROF-GO", "Timeset (50)", "Demotion-Only (no taxons)", "cp_val_sprof-go_demotion_only_notax.json"),
-    ]
-    for pred, scope, mode, fname in configs:
-        p = REV2_DIR / fname
-        if not p.exists():
-            continue
-        d = load_json(p)
-        pr = d["promotions"]
-        dm = d["demotions"]
-        p_cov = pr["with_curated_reference"]
-        p_true = pr["true_subunit_promotions"]
-        p_str = f"{p_true} / {p_cov} ({pr['precision_pct_on_covered']:.1f}%)" if p_cov > 0 else "--"
-        d_cov = dm["with_curated_reference"]
-        d_non = d_cov - dm["harmful_demotions_curated_subunit_removed"]
-        d_str = f"{d_non} / {d_cov} ({dm['good_demotion_pct_on_covered']:.1f}%)" if d_cov > 0 else "--"
-        lines.append(
-            f"| {pred} | {scope} | {mode} | {pr['total']:,} | {p_cov} | {p_str} | "
-            f"{dm['total']:,} | {d_cov} | {d_str} |"
-        )
-    return "\n".join(lines) + "\n"
+def mode_name(mode):
+    if mode.startswith('soft_stage'):
+        stage, penalty = mode.removeprefix('soft_stage').split('_')
+        return f'Soft {stage}, {penalty}'
+    return MODES[mode]
 
 
-def copy_other_revision_artifacts() -> list[Path]:
-    """Copy committed TSV/CSV/JSON summary tables and figures into output/."""
-    written = []
-    paper_fig_dir = REPO_ROOT.parent / "paper" / "oup-authoring-template" / "figures"
-    mapping = {
-        "TableS6_ablation_var_counts.csv": REV_DIR / "ablation_var_counts.csv",
-        "TableS7_top20_violated_pairs.tsv": REV_DIR / "top20_violated_pairs.tsv",
-        "TableS11_cost_ablation.txt": REV_DIR / "cost_ablation.txt",
-        "TableS14_soft_regularizer_deepgo-se_cc.tsv": REV_DIR / "soft_regularizer_deepgo-se_cc.tsv",
-        "FigureS1_metagenomics_bp.pdf": paper_fig_dir / "metagenomics_fig_main_condense.pdf",
-        "FigureS2_metagenomics_seqsim.pdf": paper_fig_dir / "metagenomics_fig_summary.pdf",
-    }
-    for dst_name, src_path in mapping.items():
-        if src_path.exists():
-            dst = OUT_DIR / dst_name
-            shutil.copy2(src_path, dst)
-            written.append(dst)
-    return written
+def render_table(out, name, caption, headers, rows, main=False):
+    # The TSV and TeX are generated from the same in-memory rows.
+    with (out/(name+'.tsv')).open('w') as fh:
+        writer = csv.writer(fh, delimiter='\t')
+        writer.writerow(headers)
+        writer.writerows(rows)
+    columns = 'l' + 'r'*(len(headers)-1)
+    if main:
+        lines = [r'\begin{table*}[t]', r'\centering\small', r'\caption{'+caption+'}',
+                 r'\label{tab:'+name+'}', r'\setlength{\tabcolsep}{4pt}', r'\begin{tabular}{'+columns+'}']
+    else:
+        lines = [r'\begingroup\scriptsize', r'\setlength{\tabcolsep}{4pt}', r'\begin{longtable}{'+columns+'}',
+                 r'\caption{'+caption+r'}\label{tab:'+name+r'}\\']
+    heading = ' & '.join(headers)+r' \\'
+    lines += [r'\toprule', heading, r'\midrule']
+    if not main:
+        lines += [r'\endfirsthead', r'\toprule', heading, r'\midrule', r'\endhead']
+    lines += [' & '.join(map(str,row))+r' \\' for row in rows]
+    lines += [r'\bottomrule', r'\end{tabular}' if main else r'\end{longtable}', r'\end{table*}' if main else r'\endgroup']
+    (out/(name+'.tex')).write_text('\n'.join(lines)+'\n')
 
 
-def extract_all_latex_tables() -> list[Path]:
-    """Extract all LaTeX tables from paper-draft.tex (Tables 1-2) and paper-supplementary.tex (Tables S1-S15) if present."""
-    written = []
-    paper_dir = REPO_ROOT.parent / "paper" / "oup-authoring-template"
-    for tex_name, prefix in [("paper-draft.tex", "Main_Table"), ("paper-supplementary.tex", "Supp_Table_S")]:
-        tex_path = paper_dir / tex_name
-        if not tex_path.exists():
-            continue
-        text = tex_path.read_text(encoding="utf-8")
-        blocks = re.findall(r"(\\begin\{table\*?\}.*?\\end\{table\*?\})", text, flags=re.DOTALL)
-        for idx, block in enumerate(blocks, start=1):
-            out = write_artifact(f"{prefix}{idx}.tex", block + "\n")
-            written.append(out)
-    return written
+def generate(args):
+    source, out = Path(args.results), Path(args.output)
+    required = [source/'summaries'/f'{m}_{a}.json' for m in MODELS for a in ASPECTS]
+    required += [source/'lineage.json', source/'evidence-sensitivity.json', source/'export-validation.json']
+    required += [source/f'membership_{m}_{mode}.json' for m in MODELS[:3] for mode in ['standard','demotion']]
+    missing = [str(p) for p in required if not p.is_file()]
+    if missing:
+        raise FileNotFoundError(f'Incomplete result bundle ({len(missing)} missing): {missing[:5]}')
+    rows, index, sources = [], {}, {}
+    code = None
+    ic_inputs = None
+    for path in required[:15]:
+        data = json.loads(path.read_text())
+        if data.get('schema_version') != 2 or not data['sources']:
+            raise ValueError(f'Unaccepted summary schema: {path}')
+        if not data.get('reference_manifest_sha256'):
+            raise ValueError('Accuracy summaries require source-rebuilt reference labels')
+        current_ic = (data['ic_reference_inputs'], data['ic_split_inputs'], data['reference_manifest_sha256'])
+        if ic_inputs is None:
+            ic_inputs = current_ic
+        elif current_ic != ic_inputs:
+            raise ValueError('Summaries use different IC reference inputs')
+        for item in data['sources']:
+            sources[tuple(item['task'])] = item
+            if code is None:
+                code = item['code']
+            elif item['code'] != code:
+                raise ValueError('Mixed experiment code manifests')
+        for row in data['rows']:
+            key = row['predictor'], row['aspect'], row['mode'], row['tau']
+            if key in index:
+                raise ValueError(f'Duplicate summary condition {key}')
+            if row['n_organisms'] != (219 if key[0].endswith('_heldout') else 50):
+                raise ValueError(f'Unexpected organism count: {key}')
+            index[key] = row
+            rows.append(row)
+    def get(m, a, mode, tau=None):
+        return index[m, a, mode, (.3 if m == 'deepgo-se' else .001) if tau is None else tau]
+    for m in MODELS:
+        for a in ASPECTS:
+            for mode in ['before','stage1','stage1_unknown']:
+                get(m,a,mode)
+            if m != 'seq_sim_heldout':
+                for t in [.001,.01,.05,.1,.2,.3,.4,.5]:
+                    get(m,a,'before',t)
+                    get(m,a,'stage1',t)
+    export_qc = json.loads((source/'export-validation.json').read_text())
+    if export_qc.get('validated') != 300 or len(export_qc.get('records', [])) != 300:
+        raise ValueError('Missing independent hard-repair export validation')
+    lineage = json.loads((source/'lineage.json').read_text())
+    evidence = json.loads((source/'evidence-sensitivity.json').read_text())
+    if len(evidence['rows']) != 50 or len(lineage['summary']) != 20:
+        raise ValueError('Incomplete evidence or lineage summary')
+    if lineage['input_sha256'] != {'/'.join(task): item['result_sha256'] for task, item in sources.items()}:
+        raise ValueError('Lineage and metric summaries use different result files')
+    checks = {(r['predictor'], r['taxon'], r['mode']): r for r in export_qc['records']}
+    expected_checks = {(m, t, mode) for m, a, t in sources if m in MODELS[:3] and a == 'cc'
+                       for mode in ['standard', 'demotion']}
+    if set(checks) != expected_checks or len(checks) != 300:
+        raise ValueError('Export validation organism manifest differs')
+    for (m, t, mode), check in checks.items():
+        if check['metadata_sha256'] != sources[m, 'cc', t]['result_sha256']:
+            raise ValueError('Export validation uses different result metadata')
+    memberships = {}
+    for m in MODELS[:3]:
+        for mode in ['standard','demotion']:
+            d = json.loads((source/f'membership_{m}_{mode}.json').read_text())
+            if d['n_organism_pairs'] != 50:
+                raise ValueError('Incomplete curated membership comparison')
+            for pair in d['provenance']['pairs']:
+                check = checks[m, pair['taxon'], mode]
+                if pair['stage1'] != check['stage1_sha256'] or pair['stage2'] != check['stage2_sha256']:
+                    raise ValueError('Membership and export checks use different prediction files')
+            if {p['taxon'] for p in d['provenance']['pairs']} != {t for mm, t, md in checks if mm == m and md == mode}:
+                raise ValueError('Membership organism manifest differs')
+            for key in ['promotions', 'demotions']:
+                total = sum(c[key] for (mm, _, md), c in checks.items() if mm == m and md == mode)
+                if total != d[key]['total'] or total != get(m, 'cc', 'stage2_'+mode)[key]:
+                    raise ValueError('Serialized, membership and summary edit counts disagree')
+            memberships[m,mode] = d
+    destination = out
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    staging = tempfile.TemporaryDirectory(prefix='.revision-tables-', dir=destination.parent)
+    out = Path(staging.name)
+    flip_rows, metric_rows, scope_rows, accuracy_rows, identifier_rows = [], [], [], [], []
+    for m in MODELS:
+        for a in ASPECTS:
+            r, b = get(m,a,'stage1'), get(m,a,'before')
+            label = SHORT[m]+' '+a.upper()
+            flip_rows.append([label, fmt(r['tau'],3), f"{r['active_input']:,}", f"{r['demotions']:,}", fmt(r['demotion_active_pct'],3), compact(r['flip_grid_pct'])])
+            paired = lambda key: fmt(b['metrics'][key])+'/'+fmt(r['metrics'][key])
+            metric_rows.append([label,r['n_annotated_proteins'],pct(b['known_taxon_consistency'])+'/'+pct(r['known_taxon_consistency']),paired('fmax'),paired('smin'),paired('aupr')])
+            scope_rows.append([label,r['n_organisms'],r['scope_counts']['n_mask_proteins'],r['scope_counts']['n_annotation_matches'],r['n_annotated_proteins'],r['n_annotated_organisms']])
+            identifier_rows.append([label]+[r['identifier_normalization'].get(key,0) for key in
+                ['alternative_id_pairs','merged_duplicate_pairs','unknown_or_obsolete_pairs','other_namespace_pairs','hierarchy_added_pairs','hierarchy_raised_pairs']])
+            for mode in ['before','stage1','stage1_unknown']:
+                rr=get(m,a,mode)
+                accuracy_rows.append([label,mode_name(mode)]+[fmt(rr['metrics'][k]) for k in ['fmax','smin','avg_auc','aupr','precision','recall']])
+    render_table(out,'main-flips', 'Stage 1 edit burden with the known taxon at native thresholds. Active and grid rates use different, explicitly defined denominators. '+LEGEND,
+        ['Model/aspect',r'$\tau$','Active input','Demotions','Active '+r'\%','Grid '+r'\%'],flip_rows,True)
+    render_table(out,'main-metrics','Raw/known-taxon Stage 1 results at native thresholds. TC is known-taxon consistency across all designated organisms; $n$ is the eligible protein count for accuracy. '+LEGEND,
+        ['Model/aspect','$n$','TC '+r'\%',r'$F_{\max}$',r'$S_{\min}$','AUPR'],metric_rows,True)
+    render_table(out,'supp-scope','Evaluation populations. Matched entries can lack non-root labels in a particular aspect. '+LEGEND,
+        ['Model/aspect','Organisms','Candidates','Matched','Eligible proteins','Eligible organisms'],scope_rows)
+    render_table(out,'supp-identifiers','Input score alignment before every comparison. Alternative IDs are mapped to primary IDs, duplicate scores merged by maximum, and unknown/obsolete or out-of-aspect scores excluded. Ancestor scores are then raised to the largest descendant score. Added/raised pairs are preprocessing operations, not repair flips. Counts precede thresholding and are counted once per input file. '+LEGEND,
+        ['Model/aspect','Aliases','Merged','Unknown/obsolete','Other aspect','Added ancestors','Raised scores'],identifier_rows)
+    render_table(out,'supp-accuracy','Accuracy at native thresholds. AUC excludes terms without both label classes. '+LEGEND,
+        ['Model/aspect','Mode',r'$F_{\max}$',r'$S_{\min}$','AUC','AUPR','Precision','Recall'],accuracy_rows)
+    tflips,tmetrics,tstructure=[],[],[]
+    for m in [MODELS[0],MODELS[1],MODELS[2],MODELS[4]]:
+        for a in ASPECTS:
+            for t in [.001,.01,.05,.1,.2,.3,.4,.5]:
+                r=get(m,a,'stage1',t)
+                label=SHORT[m]+' '+a.upper()
+                tflips.append([label,fmt(t,3),f"{r['active_input']:,}",f"{r['demotions']:,}",fmt(r['demotion_active_pct'],3),compact(r['flip_grid_pct']),pct(r['known_taxon_consistency']),pct(r['gaef_taxon_consistency'])])
+                tmetrics.append([label,fmt(t,3)]+[fmt(r['metrics'][k]) for k in ['fmax','smin','avg_auc','aupr']])
+                b=get(m,a,'before',t)
+                structural = []
+                for key in ['complex_coherence','process_coherence','pathway_coherence','essential_completeness']:
+                    values=[]
+                    for item in [b,r]:
+                        value=item[key]
+                        n=item['n_organisms'] if key=='complex_coherence' and value is not None else item.get(key+'_n',0)
+                        values.append(pct(value)+' ('+str(n)+')' if value is not None else '--')
+                    structural.append(' / '.join(values))
+                tstructure.append([label,fmt(t,3)]+structural)
+    render_table(out,'supp-threshold-flips','Threshold sweep: edit counts and structural consistency after Stage 1. KTC uses the known taxon; GTC is the bundled GAEF pairwise screen. '+LEGEND,
+        ['Model/aspect',r'$\tau$','Active input','Demotions','Active '+r'\%','Grid '+r'\%','KTC '+r'\%','GTC '+r'\%'],tflips)
+    render_table(out,'supp-threshold-metrics','Threshold sweep: accuracy after Stage 1. Raw continuous-score baselines are in Table S2 and do not depend on the repair threshold. '+LEGEND,
+        ['Model/aspect',r'$\tau$',r'$F_{\max}$',r'$S_{\min}$','AUC','AUPR'],tmetrics)
+    render_table(out,'supp-threshold-structure','Other structural measures before / after known-taxon Stage 1, as percentages (assessable organisms). Complex coherence assigns 100 percent to an organism without a present complex; process and pathway means exclude organisms with no assessable relations or pathways. Essential completeness applies to BP. '+LEGEND,
+        ['Model/aspect',r'$\tau$','Complex','Process','Pathway','Essential'],tstructure)
+    lrows=[]
+    for r in lineage['summary']:
+        expected=219 if r['predictor'].endswith('_heldout') else 50
+        if r['n'] != expected:
+            raise ValueError('Incomplete lineage population')
+        for measure,key in [('Deepest','deepest_correct_rank'),('Divergence','first_divergence_rank')]:
+            counts=r['supported'][key]
+            if sum(counts.values()) != expected:
+                raise ValueError('Lineage histogram does not sum to population')
+            lrows.append([SHORT[r['predictor']]+' '+r['aspect'].upper(),measure]+[counts.get(rank,0) for rank in RANKS])
+    render_table(out,'supp-lineage','Ranks required by the selected retained GO set. Deepest: deepest correct rank; Divergence: first divergent rank. None denotes no resolved correct rank or no observed divergence, respectively, and is not itself evidence of correct identity. Raw assignments and cross-aspect rank records are included in lineage.json. '+LEGEND,
+        ['Model/aspect','Measure','None','Domain','Phylum','Class','Order','Family','Genus','Species'],lrows)
+    joint_rows = [r for r in lineage['summary'] if r['aspect'] == 'joint']
+    cross = [r'\par Cross-aspect compatibility / all three aspects resolved identically, by rank.',
+             r'\begin{center}\scriptsize\begin{tabular}{lrrrrrrr}\toprule',
+             'Model & Domain & Phylum & Class & Order & Family & Genus & Species '+r'\\', r'\midrule']
+    for row in joint_rows:
+        values = [str(row['cross_aspect_rank_agreement'][rank]['compatible'])+'/'+str(row['cross_aspect_rank_agreement'][rank]['all_three_resolved_equal']) for rank in RANKS[1:]]
+        cross.append(' & '.join([SHORT[row['predictor']]]+values)+r'\\')
+    cross += [r'\bottomrule\end{tabular}\end{center}']
+    with (out/'supp-lineage.tex').open('a') as fh:
+        fh.write('\n'.join(cross)+'\n')
+    comparisons=[]
+    conditions=['before','stage1','published_funtaxis']+[f'soft_stage{s}_{p}' for p in [.2,.5,1.0] for s in [1,2]]+['stage2_standard','stage2_demotion']
+    for m in MODELS[:3]:
+        for aspect in ASPECTS:
+            for mode in conditions if aspect == 'cc' else ['before','stage1','published_funtaxis']:
+                r=get(m,aspect,mode)
+                comparisons.append([SHORT[m]+' '+aspect.upper(),mode_name(mode),pct(r['known_taxon_consistency']),pct(r['complex_coherence'])]+[fmt(r['metrics'][k]) for k in ['fmax','smin','avg_auc','aupr']])
+    render_table(out,'supp-comparators','Published filtering in all three GO aspects, with complex repair and soft-constraint ablation in CC, on all 50 entry-date organisms per predictor. KTC and complex coherence are percentages; accuracy uses the exact eligible proteins in Table S1. '+LEGEND,
+        ['Model/aspect','Mode','KTC '+r'\%','Coherence '+r'\%',r'$F_{\max}$',r'$S_{\min}$','AUC','AUPR'],comparisons)
+    erows=[]
+    for r in evidence['rows']:
+        ref=r['complex_counts']['curated']; all_=r['complex_counts']['all_proteome']
+        erows.append([r['taxon'],ref['present'],ref['singletons'],r['curated_singletons_with_partner_all_same_proteins'],r['curated_singletons_with_partner_all_proteome'],all_['present'],all_['singletons']])
+    render_table(out,'supp-evidence','Annotation evidence sensitivity. Ref: reference evidence including TAS/IC. Resolved-same and resolved-all count original reference singletons that gain another annotated protein using all evidence on the same eligible proteins or the whole proteome. All-present/all-single count the expanded complex vocabulary, not the original denominator.',
+        ['Taxon','Ref-present','Ref-single','Resolved-same','Resolved-all','All-present','All-single'],erows)
+    reference_singletons=sum(r['complex_counts']['curated']['singletons'] for r in evidence['rows'])
+    same=sum(r['curated_singletons_with_partner_all_same_proteins'] for r in evidence['rows'])
+    whole=sum(r['curated_singletons_with_partner_all_proteome'] for r in evidence['rows'])
+    (out/'evidence-results.tex').write_text(
+        f'The reference-evidence annotations contain {reference_singletons} organism--complex singleton pairs across the 50 source proteomes. '
+        f'Adding all GO evidence supplies another annotated protein in {same} of these cases on the same reference-annotated proteins, '
+        f'and in {whole} cases when all source-proteome proteins are eligible (Supplementary Table~S7). '
+        'These are annotation-coverage changes, not validated interaction gains.\n')
+    mrows=[]
+    for (m,mode),d in memberships.items():
+        p,dem=d['promotions'],d['demotions']
+        changed_taxa = sum(c['promotions'] + c['demotions'] > 0 for (mm, _, md), c in checks.items() if mm == m and md == mode)
+        mrows.append([SHORT[m],mode,changed_taxa,f"{p['total']}/{p['with_curated_reference']}/{p['true_subunit_promotions']}",f"{dem['total']}/{dem['with_curated_reference']}/{dem['curated_subunit_demotions']}",d['unmapped_promotions_with_reference'],d['unmapped_demotions_with_reference']])
+    render_table(out,'supp-membership','Curated membership validation. All 50 designated organisms are checked in each row; changed taxa counts those with at least one active-state edit. Triples are total edits / edits with an assessable reference / edits involving a listed subunit. Unmapped counts have an organism--complex reference but unresolved protein accession. Unlisted does not mean biologically incorrect. '+LEGEND,
+        ['Model','Mode','Changed taxa','Promotions','Demotions','Unmapped P','Unmapped D'],mrows)
+    solver_rows=[]
+    for m in MODELS[:3]:
+        for mode in ['stage2_standard','stage2_demotion']+[f'soft_stage2_{p}' for p in [.2,.5,1.0]]:
+            r=get(m,'cc',mode); counts=r['solver_status_counts']
+            if sum(counts.values()) != 50:
+                raise ValueError('Missing solver status')
+            solver_rows.append([SHORT[m],mode_name(mode),counts.get('OPTIMAL',0),counts.get('FEASIBLE',0),fmt(r['solver_objective_sum']),fmt(r['solver_bound_sum'])])
+    render_table(out,'supp-solvers','Bounded Stage 2 optimization. Counts sum to 50 organisms in each row. Objectives and lower bounds are sums across organisms for the indicated objective; differing soft penalties are not the same optimization problem. An optimal restricted model need not be optimal without the candidate restriction. '+LEGEND,
+        ['Model','Mode','Optimal','Feasible','Objective sum','Bound sum'],solver_rows)
+    budgets = {m: {} for m in MODELS[:3]}
+    for (m,a,t), source_record in sources.items():
+        if m in budgets and a == 'cc':
+            budget = source_record['configuration']['solver_seconds']
+            budgets[m][budget] = budgets[m].get(budget,0)+1
+    with (out/'supp-solvers.tex').open('a') as fh:
+        fh.write('\\par Accepted per-condition search budgets by organism task: '+
+            '; '.join(SHORT[m]+': '+', '.join(str(n)+' at '+str(seconds)+' s' for seconds,n in sorted(budgets[m].items())) for m in budgets)+'.\n')
+    native=[get(m,a,'stage1') for m in MODELS for a in ASPECTS]
+    rates=[r['demotion_active_pct'] for r in native if r['demotion_active_pct'] is not None]
+    delta=lambda key:max(abs(get(m,a,'stage1')['metrics'][key]-get(m,a,'before')['metrics'][key]) for m in MODELS for a in ASPECTS)
+    burden = ('At the native thresholds, known-taxon Stage~1 demotes '+fmt(min(rates),3)+r'\% to '+fmt(max(rates),3)
+        +r'\% of active input pairs across the assessable predictor--aspect conditions (Table~\ref{tab:main-flips}). '
+        if rates else r'All active-input denominators are empty at native thresholds; demotion rates are undefined (Table~\ref{tab:main-flips}). ')
+    (out/'main-results.tex').write_text(
+        burden
+        +'The largest absolute change across these conditions is '+fmt(delta('fmax'))
+        +r' in $F_{\max}$ and '+fmt(delta('aupr'))+r' in AUPR (Table~\ref{tab:main-metrics}). '
+        +'Full threshold-specific counts and metrics are reported in Supplementary Tables~S3 and~S4.\n')
+    joint=[r for r in lineage['summary'] if r['aspect']=='joint']
+    (out/'lineage-results.tex').write_text('The jointly evaluated GO-supported lineages are exact ancestral prefixes for '+', '.join(SHORT[r['predictor']]+' '+str(r['supported']['exact_prefix_count'])+'/'+str(r['n']) for r in joint)+'. These counts exclude fully unresolved outputs. Supplementary Table~S5 reports all seven ranks, while the accompanying per-organism records distinguish raw assignments, required ranks and cross-aspect compatibility. Published filtering and soft-penalty comparisons are reported in Supplementary Table~S6.\n')
+    hard=[get(m,'cc',mode) for m in MODELS[:3] for mode in ['stage2_standard','stage2_demotion']]
+    if any(r['known_taxon_consistency'] != 1 or r['complex_coherence'] != 1 for r in hard):
+        raise ValueError('Hard Stage 2 structural contract failed')
+    nopt=sum(r['solver_status_counts'].get('OPTIMAL',0) for r in hard)
+    nfeas=sum(r['solver_status_counts'].get('FEASIBLE',0) for r in hard)
+    (out/'complex-results.tex').write_text('Both hard Stage~2 modes satisfy the known-taxon and complex-cardinality checks on all 50 organisms for each of the three entry-date predictors. Of the 300 organism--mode solves, '+str(nopt)+' are proven optimal within their encoded domains and '+str(nfeas)+' are feasible without a proof of optimality at the search limit. Supplementary Tables~S8 and~S9 report curated membership coverage and optimization bounds.\n')
+    # The diagram is executable vector source, not a copied rendered figure.
+    shutil.copyfile(Path(__file__).parent/'figures/repair-schematic.tex', out/'repair-schematic.tex')
+    manifest={'inputs':{str(p):digest(p) for p in required},'generator_sha256':digest(__file__),
+              'outputs':{p.name:digest(p) for p in sorted(out.iterdir()) if p.suffix in {'.tex','.tsv'}}}
+    (out/'generation-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+    destination.mkdir(parents=True, exist_ok=True)
+    for path in sorted(out.iterdir(), key=lambda p: p.name == 'generation-manifest.json'):
+        path.replace(destination/path.name)
+    staging.cleanup()
+    print(f'Generated {len(manifest["outputs"])} source artifacts from {len(required)} validated inputs in {destination}')
 
 
-def main() -> None:
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    generated = [
-        write_artifact("Table1_flips.md", build_table1_flips()),
-        write_artifact("TableS10_tau_sweep.md", build_table_s10_tau_sweep()),
-        write_artifact("TableS12_lineage_inference.md", build_table_s12_lineage()),
-        write_artifact("TableS13_baselines_soft_stage2.md", build_table_s13_baselines_and_stage2()),
-        write_artifact("TableS15_complex_portal.md", build_table_s15_complex_portal()),
-    ]
-    generated.extend(copy_other_revision_artifacts())
-    generated.extend(extract_all_latex_tables())
-
-    print(f"Successfully generated {len(generated)} reproducibility artifacts in {OUT_DIR}:")
-    for p in generated:
-        print(f"  - {p.relative_to(REPO_ROOT)}")
-
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    ap=argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--results',required=True,help='Complete result bundle with summaries/, lineage, evidence and membership JSON files')
+    ap.add_argument('--output',required=True)
+    generate(ap.parse_args())

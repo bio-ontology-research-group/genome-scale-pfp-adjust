@@ -1,0 +1,18 @@
+# CPU analysis stack used for the canonical rerun on IBEX (Python 3.10.20).
+# GAEF source and scientific resources are separate, archived inputs.
+absl-py==2.4.0
+immutabledict==4.3.1
+joblib==1.5.3
+numpy==2.2.6
+ortools==9.15.6755
+pandas==2.3.3
+protobuf==6.33.6
+python-dateutil==2.9.0.post0
+pytz==2026.2
+scikit-learn==1.7.2
+scipy==1.15.2
+six==1.17.0
+threadpoolctl==3.6.0
+tqdm==4.68.2
+typing-extensions==4.15.0
+tzdata==2026.2

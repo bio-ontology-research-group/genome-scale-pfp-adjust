@@ -9,6 +9,11 @@
 #SBATCH --constraint=[v100|rtx2080ti|gtx1080ti]
 #SBATCH --mail-type=ALL
 
+# Historical input paths are not valid for the corrected-training comparison.
+printf 'Use reproducibility/BASELINES.md with source-rebuilt labels and a new output directory.\n' >&2
+exit 2
+
+
 # Usage:
 #   sbatch slurm/train/train_mlp_heldout.slurm <TASK>     # TASK ∈ {cc,mf,bp}
 # Writes ${DATA_DIR}/swissprot_proteomes_folds/mlp_heldout_results/<TASK>/predictions/,

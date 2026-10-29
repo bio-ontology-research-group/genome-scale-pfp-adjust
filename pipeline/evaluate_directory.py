@@ -35,7 +35,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'GAEF')))
 
 from genome_scores_evaluator import main as genome_scores_evaluator, load_predictions_prop, load_annotations, evaluate_prediction_metrics
-from GAEF.utils import Ontology
+from gaef_patches.ontology import Ontology
 
 
 def verify_predictions_format(predictions_file: str, max_lines: int = 10) -> bool:
@@ -212,13 +212,13 @@ def evaluate_single_file(args: Tuple) -> Tuple[bool, str, Optional[str]]:
     
     Args:
         args: Tuple of (prediction_file, identifier, annotation_file, output_file, 
-                       GAEF_dir, threshold, groovy_flag, verify_format, subontology)
+                       GAEF_dir, threshold, groovy_flag, verify_format, subontology, temporal_proteins)
         
     Returns:
         Tuple of (success, identifier, error_message)
     """
     (prediction_file, fold, identifier, annotation_file, output_file, 
-     GAEF_dir, go_file, threshold, groovy_flag, verify_format, subontology) = args
+     GAEF_dir, go_file, threshold, groovy_flag, verify_format, subontology, temporal_proteins) = args
     
     try:
         # Verify format if requested
@@ -238,6 +238,7 @@ def evaluate_single_file(args: Tuple) -> Tuple[bool, str, Optional[str]]:
             threshold=threshold,
             output_file=output_file,
             subontology=subontology,
+            temporal_proteins=temporal_proteins,
         )
         return (True, fold, identifier, None)
     except Exception as e:
@@ -256,9 +257,10 @@ def evaluate_directory(
     identifier_pattern: Optional[str] = None,
     threshold_map: Optional[Dict[str, float]] = None,
     num_workers: Optional[int] = None,
-    skip_existing: bool = True,
+    skip_existing: bool = False,
     verify_format: bool = True,
     subontology: str = 'cc',
+    temporal_proteins: Optional[str] = None,
 ) -> Dict:
     """
     Evaluate all predictions in a directory (optimized with parallel processing).
@@ -281,6 +283,8 @@ def evaluate_directory(
     Returns:
         Dictionary with summary statistics
     """
+    if skip_existing:
+        raise ValueError('Unverified cache reuse is disabled; rerun without --skip_existing')
     # Create output directory
     os.makedirs(output_dir, exist_ok=True)
     
@@ -362,12 +366,14 @@ def evaluate_directory(
             groovy_flag,
             verify_format,
             subontology,
+            temporal_proteins,
         ))
     
     if skipped > 0:
         print(f"Skipped {skipped} files that already have valid outputs")
     
     if errors_prep:
+        raise ValueError('Incomplete evaluation inputs: ' + '; '.join(errors_prep[:5]))
         print(f"\n[Warning] {len(errors_prep)} files skipped due to preparation errors:")
         for error in errors_prep[:5]:  # Show first 5
             print(f"  - {error}")
@@ -375,11 +381,11 @@ def evaluate_directory(
             print(f"  ... and {len(errors_prep) - 5} more")
     
     if not tasks:
-        print("No additional files to evaluate, computing micro-averaged metrics")
+        print("No additional files to evaluate, computing pooled protein-macro metrics")
         summary = aggregate_metrics(output_dir, subontology)
         print_summary(summary, subontology)
 
-        # Compute micro-averaged metrics
+        # Compute pooled protein-macro metrics
         micro_metrics = compute_micro_averaged_metrics(
             predictions_dir=predictions_dir,
             annotations_dir=annotations_dir,
@@ -387,6 +393,7 @@ def evaluate_directory(
             subontology=subontology,
             file_pattern=file_pattern,
             identifier_pattern=identifier_pattern,
+            temporal_proteins=temporal_proteins,
         )
         print_summary(summary, subontology, micro_metrics)
 
@@ -398,7 +405,7 @@ def evaluate_directory(
     
     # Determine number of workers
     if num_workers is None:
-        num_workers = min(len(tasks), mp.cpu_count())
+        num_workers = min(len(tasks), int(os.environ.get("SLURM_CPUS_PER_TASK", "1")))
     
     print(f"\nEvaluating {len(tasks)} files with {num_workers} parallel workers...")
     
@@ -427,6 +434,7 @@ def evaluate_directory(
     
     # Print error summary
     if error_messages:
+        raise RuntimeError(f'{len(error_messages)} evaluations failed: {error_messages[:3]}')
         print(f"\n[Errors] {len(error_messages)} evaluations failed:")
         for fold, identifier, error_msg in error_messages[:10]:  # Show first 10
             print(f"  - Fold {fold}: {identifier}: {error_msg}")
@@ -444,7 +452,7 @@ def evaluate_directory(
     # Aggregate and print summary statistics (macro-average)
     summary = aggregate_metrics(output_dir, subontology)
     
-    # Compute micro-averaged metrics (CAFA standard)
+    # Compute pooled protein-macro metrics (CAFA standard)
     micro_metrics = compute_micro_averaged_metrics(
         predictions_dir=predictions_dir,
         annotations_dir=annotations_dir,
@@ -452,6 +460,7 @@ def evaluate_directory(
         subontology=subontology,
         file_pattern=file_pattern,
         identifier_pattern=identifier_pattern,
+            temporal_proteins=temporal_proteins,
     )
     
     # Print both macro and micro averages
@@ -491,7 +500,7 @@ def aggregate_metrics(output_dir: str, subontology: str = 'cc') -> Dict:
         subontology: {key: [] for key in metric_keys},
     }
     
-    json_files = [f for f in os.listdir(output_dir) if f.endswith('.json')]
+    json_files = [f for f in os.listdir(output_dir) if f.startswith('evaluation_') and f != 'evaluation_summary.json' and f.endswith('.json')]
     
     for json_file in json_files:
         json_path = os.path.join(output_dir, json_file)
@@ -513,7 +522,7 @@ def aggregate_metrics(output_dir: str, subontology: str = 'cc') -> Dict:
                     # Per-ontology metrics (only for the specified subontology)
                     if subontology in data['prediction_metrics']:
                         for key in metric_keys:
-                            if key in data['prediction_metrics'][subontology]:
+                            if data['prediction_metrics'][subontology].get(key) is not None:
                                 ontology_metrics[subontology][key].append(data['prediction_metrics'][subontology][key])
         except Exception as e:
             print(f"[Warning] Error reading {json_file}: {e}")
@@ -534,9 +543,10 @@ def compute_micro_averaged_metrics(
     subontology: str = 'cc',
     file_pattern: str = "*.tsv",
     identifier_pattern: Optional[str] = None,
+    temporal_proteins: Optional[str] = None,
 ) -> Optional[Dict]:
     """
-    Compute micro-averaged metrics by pooling all proteins from all genomes.
+    Compute pooled protein-macro metrics by pooling all proteins from all genomes.
     This is the CAFA standard evaluation method.
     
     Args:
@@ -548,10 +558,10 @@ def compute_micro_averaged_metrics(
         identifier_pattern: Optional regex pattern to extract identifier from filenames
         
     Returns:
-        Dictionary with micro-averaged metrics or None if computation fails
+        Dictionary with pooled protein-macro metrics or None if computation fails
     """
     print(f"\n{'='*60}")
-    print("Computing Micro-Averaged Metrics (CAFA Standard)")
+    print("Computing Pooled Protein-Macro Metrics (CAFA Standard)")
     print(f"{'='*60}")
     
     # Find all prediction files
@@ -599,6 +609,9 @@ def compute_micro_averaged_metrics(
         try:
             # Load annotations for this genome
             genome_annotations = load_annotations(annotation_file)
+            if temporal_proteins is not None:
+                from analysis.evaluation_scope import load_temporal_proteins, select_annotations
+                genome_annotations = select_annotations(genome_annotations, str(identifier), load_temporal_proteins(temporal_proteins))
             
             # Load predictions for this genome (only for annotated proteins)
             annotated_protein_ids = set(genome_annotations.keys())
@@ -621,21 +634,21 @@ def compute_micro_averaged_metrics(
             continue
     
     if skipped_files > 0:
-        print(f"[Warning] Skipped {skipped_files} files due to errors")
+        raise RuntimeError(f'Incomplete pooled evaluation: {skipped_files} files failed')
     
     print(f"\nPooled {len(all_annotations)} proteins from {len(prediction_files) - skipped_files} genomes")
-    print("Computing micro-averaged F-max on entire pool...")
+    print("Computing pooled protein-macro F-max on entire pool...")
     
     # Compute metrics on pooled data
     try:
         metrics = evaluate_prediction_metrics(go, subontology, all_annotations, all_predictions)
         
         if metrics is not None:
-            print(f"\nMicro-Averaged Metrics ({subontology.upper()}):")
+            print(f"\nPooled Protein-Macro Metrics ({subontology.upper()}):")
             print(f"  Fmax: {metrics['fmax']:.5f}")
             print(f"  Smin: {metrics['smin']:.5f}")
             print(f"  Threshold: {metrics['tmax']:.5f}")
-            print(f"  AUC: {metrics['avg_auc']:.5f}")
+            print(f"  AUC: {metrics['avg_auc']}")
             print(f"  AUPR: {metrics['aupr']:.5f}")
             print(f"  AVGIC: {metrics['avgic']:.5f}")
             print(f"  Precision: {metrics['precision']:.5f}")
@@ -643,14 +656,14 @@ def compute_micro_averaged_metrics(
             print(f"  TP: {metrics.get('tp', 'N/A')}, FP: {metrics.get('fp', 'N/A')}, FN: {metrics.get('fn', 'N/A')}")
             return metrics
         else:
-            print("[Warning] Could not compute micro-averaged metrics")
+            print("[Warning] Could not compute pooled protein-macro metrics")
             return None
             
     except Exception as e:
-        print(f"[Error] Error computing micro-averaged metrics: {e}")
+        print(f"[Error] Error computing pooled protein-macro metrics: {e}")
         import traceback
         traceback.print_exc()
-        return None
+        raise
 
 
 def print_summary(summary: Dict, subontology: str = 'cc', micro_metrics: Optional[Dict] = None):
@@ -660,7 +673,7 @@ def print_summary(summary: Dict, subontology: str = 'cc', micro_metrics: Optiona
     Args:
         summary: Dictionary with aggregated metrics (macro-average)
         subontology: Subontology to print metrics for (default: cc)
-        micro_metrics: Optional dictionary with micro-averaged metrics (CAFA standard)
+        micro_metrics: Optional dictionary with pooled protein-macro metrics (CAFA standard)
     """
     print(f"\n{'='*60}")
     print(f"Metrics Summary ({subontology.upper()} Ontology)")
@@ -701,7 +714,7 @@ def print_summary(summary: Dict, subontology: str = 'cc', micro_metrics: Optiona
     if micro_metrics is not None:
         print(f"\n--- {subontology.upper()} Ontology Metrics (Micro-Average: CAFA Standard) ---")
         for key in metric_keys:
-            if key in micro_metrics:
+            if key in micro_metrics and micro_metrics[key] is not None:
                 if key in ('tp', 'fp', 'fn'):
                     print(f"{key}: {micro_metrics[key]}")
                 else:
@@ -767,6 +780,7 @@ Examples:
     parser.add_argument('--subontology', type=str, default='cc', choices=['cc', 'bp', 'mf'],
                        help='Subontology to evaluate (default: cc, choices: cc, bp, mf)')
     
+    parser.add_argument('--temporal-proteins', help='Exact entry-date test-protein TSV; omit only for whole-organism evaluation')
     args = parser.parse_args()
     
     # Load threshold map if provided
@@ -794,6 +808,7 @@ Examples:
         skip_existing=args.skip_existing,
         verify_format=args.verify_format,
         subontology=args.subontology,
+        temporal_proteins=args.temporal_proteins,
     )
     
     # Save summary to file

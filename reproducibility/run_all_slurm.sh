@@ -1,61 +1,48 @@
 #!/usr/bin/env bash
-# =============================================================================
-# Master SLURM Orchestration Script to Reproduce All Experiments, Tables, and
-# Figures in GenoAdjust (Bioinformatics, BIOINF-2026-2454)
-# =============================================================================
+# Rerun adjustment/evaluation on fixed, identified predictor inputs.
 set -euo pipefail
-
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
-cd "${REPO_ROOT}"
-
-if [[ ! -f config.env ]]; then
-    echo "ERROR: config.env not found. Copy config.env.example to config.env and set DATA_DIR." >&2
-    exit 1
+config=$(realpath "${1:?Usage: bash reproducibility/run_all_slurm.sh /absolute/path/to/revision.env}")
+source "$config"
+: "${CODE_DIR:?}" "${DATA_DIR:?}" "${RESOURCE_DIR:?}" "${OUT_DIR:?}" "${PYTHON:?}" "${GAEF_DIR:?}"
+: "${FUNTAXIS_MANIFEST:?}" "${PROTEOME_ROOT:?}" "${PROTEOME_INDEX:?}" "${CP_SUBUNIT_INDEX:?}"
+: "${ANNOTATION_DIR:?Set the rebuilt source-reference directory}"
+: "${SLURM_ACCOUNT:?}" "${SLURM_PARTITION:?}"
+AUDIT_WORKERS=${AUDIT_WORKERS:-36}
+AUDIT_TIME=${AUDIT_TIME:-12:00:00}
+AUDIT_MEMORY=${AUDIT_MEMORY:-64G}
+AUDIT_AGGREGATE_MEMORY=${AUDIT_AGGREGATE_MEMORY:-128G}
+AUDIT_LINEAGE_MEMORY=${AUDIT_LINEAGE_MEMORY:-128G}
+TASKS="$CODE_DIR/reproducibility/revision_tasks.txt"
+[[ "$AUDIT_WORKERS" =~ ^[1-9][0-9]*$ ]]
+for file in "$TASKS" "$FUNTAXIS_MANIFEST" "$PROTEOME_INDEX" "$CP_SUBUNIT_INDEX" "$ANNOTATION_DIR/reference-manifest.json"; do
+  [[ -s "$file" ]] || { printf 'Missing required input: %s\n' "$file" >&2; exit 1; }
+done
+if [[ -e "$OUT_DIR/run-config.env" ]]; then
+  printf 'Use a new output directory; a run configuration already exists.\n' >&2
+  exit 1
 fi
-source config.env
-
-echo "=== Step 1: Verify pinned constraint checksums ==="
-python data/constraints/verify_checksums.py
-
-echo "=== Step 2: Upstream Predictions (ESM2, Seq-Sim, MLP-ESM2, DeepGO-SE, SPROF-GO) ==="
-ESM_JOB=$(sbatch --parsable slurm/train/extract_esm2.slurm)
-SS_H_JOB=$(sbatch --parsable slurm/train/predict_seq_sim_heldout.slurm)
-SS_T_JOB=$(sbatch --parsable slurm/train/predict_seq_sim_timeset.slurm)
-for T in cc mf bp; do
-    sbatch --dependency=afterok:${ESM_JOB} slurm/train/train_mlp_heldout.slurm "${T}"
-    sbatch --dependency=afterok:${ESM_JOB} slurm/train/predict_deepgo_se.slurm "${T}"
-done
-SPROF_JOB=$(sbatch --dependency=afterok:${ESM_JOB} --parsable slurm/train/predict_sprof_go.slurm)
-
-echo "=== Step 3: Two-Stage CP-SAT Adjustment (Stage 1 Taxon + Stage 2 Complex Coherence) ==="
-ADJ_SST=$(sbatch --dependency=afterok:${SS_T_JOB} --parsable slurm/adjust/seq_sim_timeset.slurm)
-ADJ_SSH=$(sbatch --dependency=afterok:${SS_H_JOB} --parsable slurm/adjust/seq_sim_heldout.slurm)
-ADJ_MLP=$(sbatch --parsable slurm/adjust/mlp_heldout.slurm)
-ADJ_DGO=$(sbatch --parsable slurm/adjust/deepgo_se.slurm)
-for T in cc mf bp; do
-    sbatch --dependency=afterok:${SPROF_JOB} slurm/adjust/sprof_go.slurm "${T}"
-done
-
-echo "=== Step 4: GAEF & Per-Protein CAFA Evaluations (Tables 1, 2, 4; Supp. Tables S1-S9) ==="
-sbatch slurm/eval/gaef_annotations.slurm
-sbatch --dependency=afterok:${ADJ_SST}:${ADJ_DGO} slurm/eval/gaef_timeset_methods.slurm
-for TX in 272844 759272 10116; do
-    sbatch slurm/ablation/heuristic.slurm "${TX}"
-done
-
-echo "=== Step 5: Revision Experiments (Table 3; Supp. Tables S10-S15) ==="
-# Table 3: Stage 1 + Stage 2 flip counts & rates across all 15 (model x aspect) pairs
-sbatch --dependency=afterok:${ADJ_SST}:${ADJ_SSH}:${ADJ_MLP}:${ADJ_DGO} slurm/rev2_table1_flips.slurm
-
-# Supplementary Table S10: 8-point decision threshold (tau) sensitivity sweep
-sbatch --dependency=afterok:${ADJ_SST}:${ADJ_DGO} slurm/rev2_tau_sweep.slurm
-
-# Supplementary Table S12 & S13: 7-rank taxonomic lineage inference + FunTaxIS-lite
-sbatch --dependency=afterok:${ADJ_SST}:${ADJ_DGO} slurm/rev2_lineage_and_funtaxis.slurm
-
-# Supplementary Tables S13 & S15: Stage 2 (Standard vs Demotion-Only), Naive, FunTaxIS-lite, Soft SBR, Complex Portal
-sbatch --dependency=afterok:${ADJ_SST}:${ADJ_DGO} slurm/rev2_stage2_and_baselines.slurm
-
-echo "All SLURM jobs submitted. Once completed, run:"
-echo "  uv run python reproducibility/reproduce_all_tables_and_figures.py"
+mkdir -p "$OUT_DIR/logs" "$OUT_DIR/summaries"
+# Freeze configuration values. Source code and external inputs must remain fixed.
+for key in CODE_DIR DATA_DIR RESOURCE_DIR OUT_DIR PYTHON GAEF_DIR FUNTAXIS_MANIFEST PROTEOME_ROOT PROTEOME_INDEX CP_SUBUNIT_INDEX ANNOTATION_DIR TASKS AUDIT_WORKERS AUDIT_MEMORY AUDIT_AGGREGATE_MEMORY AUDIT_LINEAGE_MEMORY; do
+  printf '%s=%q\n' "$key" "${!key}"
+done > "$OUT_DIR/run-config.env"
+for model in deepgo-se seq_sim_timeset sprof-go seq_sim_heldout mlp_heldout; do
+  for aspect in cc mf bp; do printf '%s %s\n' "$model" "$aspect"; done
+done > "$OUT_DIR/aggregate-tasks.txt"
+export AUDIT_CONFIG="$OUT_DIR/run-config.env"
+common=(--parsable --account="$SLURM_ACCOUNT" --partition="$SLURM_PARTITION" --cpus-per-task=1 --export=ALL,AUDIT_CONFIG="$AUDIT_CONFIG")
+phase="$CODE_DIR/reproducibility/revision_phase.sh"
+workers=$(sbatch "${common[@]}" --array="0-$((AUDIT_WORKERS-1))" --time="$AUDIT_TIME" --mem="$AUDIT_MEMORY" --output="$OUT_DIR/logs/workers_%A_%a.log" "$phase" workers)
+printf 'workers %s\n' "$workers" | tee -a "$OUT_DIR/jobs.txt"
+evidence=$(sbatch "${common[@]}" --time=02:00:00 --mem=16G --output="$OUT_DIR/logs/evidence_%j.log" "$phase" evidence)
+printf 'evidence %s\n' "$evidence" | tee -a "$OUT_DIR/jobs.txt"
+aggregate=$(sbatch "${common[@]}" --array=0-14%4 --time=04:00:00 --mem="$AUDIT_AGGREGATE_MEMORY" --dependency="afterok:$workers" --output="$OUT_DIR/logs/aggregate_%A_%a.log" "$phase" aggregate)
+printf 'aggregate %s\n' "$aggregate" | tee -a "$OUT_DIR/jobs.txt"
+lineage=$(sbatch "${common[@]}" --time=04:00:00 --mem="$AUDIT_LINEAGE_MEMORY" --dependency="afterok:$workers" --output="$OUT_DIR/logs/lineage_%j.log" "$phase" lineage)
+printf 'lineage %s\n' "$lineage" | tee -a "$OUT_DIR/jobs.txt"
+membership=$(sbatch "${common[@]}" --array=0-5 --time=02:00:00 --mem=16G --dependency="afterok:$workers:$evidence" --output="$OUT_DIR/logs/membership_%A_%a.log" "$phase" membership)
+printf 'membership %s\n' "$membership" | tee -a "$OUT_DIR/jobs.txt"
+validation=$(sbatch "${common[@]}" --time=02:00:00 --mem=16G --dependency="afterok:$workers" --output="$OUT_DIR/logs/export-qc_%j.log" "$phase" validate-exports)
+printf 'validate-exports %s\n' "$validation" | tee -a "$OUT_DIR/jobs.txt"
+generate=$(sbatch "${common[@]}" --time=00:30:00 --mem=4G --dependency="afterok:$aggregate:$lineage:$membership:$evidence:$validation" --output="$OUT_DIR/logs/generate_%j.log" "$phase" generate)
+printf 'generate %s\n' "$generate" | tee -a "$OUT_DIR/jobs.txt"

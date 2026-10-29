@@ -1,7 +1,8 @@
 # SLURM job scripts
 
-All scripts source `config.env` at the top, so values like `DATA_DIR`,
-`CONDA_BASE`, `CONDA_ENV`, `GAEF_DIR`, `GO_OBO` resolve consistently.
+The audited revision is submitted through `reproducibility/run_all_slurm.sh` with an explicit revision configuration; see [the workflow](../reproducibility/README.md). It orders all required phases with successful-completion dependencies.
+
+The older wrappers listed below remain available for separate upstream training and exploratory work. Most source `config.env`; they are not the current paper reproduction workflow, and running them does not validate the revised tables.
 
 ## Quickstart
 

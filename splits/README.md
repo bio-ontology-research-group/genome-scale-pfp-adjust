@@ -1,32 +1,17 @@
 # Dataset splits
 
-Two splits used in the paper. Organism lists are committed; per-protein TSVs
-are regenerated from the organism lists + Swiss-Prot via `data_prep/`.
+The revision preserves the committed organism splits and recorded training/validation protein membership. Corrected local baseline labels and vocabularies are rebuilt from source evidence as documented in `reproducibility/BASELINES.md`; pretrained DeepGO-SE and SPROF-GO prediction files remain fixed. The reference index contains 569 taxa; available annotation files cover 568 taxa.
 
-## `timeset/` — 50 organisms
+## Entry-date split (`timeset/`)
 
-Test proteins are those with experimental Swiss-Prot integration date strictly
-after **2024-05-23**, chosen to fall after the training cutoff of the pretrained
-predictors (DeepGO-SE, SPROF-GO). The rest of the proteomes form the training
-pool.
+`proteins_by_date_23-MAY-2024_filtered.tsv` lists 169 candidate Swiss-Prot entries integrated after 2024-05-23 in the 50 taxa in `test_organisms.txt`. The date is entry integration, not first sequence availability or first experimental annotation. This criterion does not establish exclusion from a pretrained model's training corpus.
 
-- `test_organisms.txt` — 50 taxa containing at least one post-cutoff protein
-- `train_organisms.txt` — remaining taxa
-- `proteins_by_date_23-MAY-2024_filtered.tsv` — the cutoff-filtered protein
-  table; the source for the timeset test proteins
+Accuracy evaluation intersects exact entry names with the reference annotations and requires a non-root label in the evaluated GO aspect. Structural evaluation retains all proteins in each of the 50 prediction files. The generated scope table reports matched and eligible populations separately. For information content, candidate entries are excluded from the reference corpus.
 
-Regenerate via `python data_prep/extract_proteins_by_date.py --cutoff-date 23-MAY-2024 ...`.
+The original extraction utility is `data_prep/extract_proteins_by_date.py`; rerunning it against a newer UniProt release creates a different input set and does not reproduce the archived experiment.
 
-## `heldout/` — 219 organisms
+## Heldout split (`heldout/`)
 
-Test set is sampled to contain ~10% of all experimental annotations across the
-benchmark. Train/val are partitioned 90:10 using MMseqs2 easy-cluster
-(`--min-seq-id 0.3`): no two proteins with ≥30% sequence identity cross the
-train/val boundary.
+`test_organisms.txt` contains 219 test taxa and `train_organisms.txt` contains 350 training taxa. The annotation file for training taxon 6645 is unavailable, so the fixed information-content corpus uses the other 349 training taxa. Every designated test task has its required prediction and annotation file.
 
-- `test_organisms.txt` — 219 held-out taxa
-- `train_organisms.txt` — taxa contributing to the train/val pool
-- `split_info.json` — split summary (counts, seed, parameters)
-
-Regenerate via `python data_prep/create_heldout_split.py ...` after the
-benchmark TSVs have been built by `data_prep/build_dataset.py`.
+`split_info.json` describes the original split construction. The revision does not independently establish a universal pairwise sequence-identity exclusion or freedom from pretrained-model leakage. Preserve the exact split files, supplied predictions and annotation snapshot when reproducing the reported results.

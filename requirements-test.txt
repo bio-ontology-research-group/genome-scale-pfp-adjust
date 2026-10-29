@@ -5,3 +5,7 @@
 # suite needs nothing from the heavy GPU/ML stack in environment.yml. CI installs
 # from this file; see .github/workflows/ci.yml.
 ortools==9.15.6755
+
+# Evaluation contracts (no GPU or external GAEF checkout required).
+scikit-learn==1.7.2
+tqdm==4.68.2

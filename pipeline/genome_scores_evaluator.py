@@ -43,8 +43,7 @@ import numpy as np
 import pandas as pd
 
 # Upstream-clean GAEF modules.
-from GAEF.completeness import read_essential_terms, count_essential_terms
-from GAEF.utils import Ontology, FUNC_DICT, NAMESPACES
+from gaef_patches.ontology import Ontology, FUNC_DICT, NAMESPACES
 
 from gaef_patches.taxon_consistency import TaxonHierarchy, parse_owl_files
 from gaef_patches.complex_classifier import parse_homodimer_terms_file
@@ -55,6 +54,7 @@ _DEFAULT_CONSTRAINTS_DIR = os.path.join(_REPO_ROOT, 'data', 'constraints')
 
 from sklearn.metrics import roc_curve, auc
 import math
+from functools import lru_cache
 
 
 def evaluate_annotations_optimized(go, real_annots, pred_annots, ic_cache=None):
@@ -201,7 +201,7 @@ def compute_metrics_optimized(test_df, go, terms_dict, terms, ont, eval_preds, l
             roc_auc = compute_roc_auc(labels_matrix[:, i], eval_preds[:, i])
             total_sum += roc_auc
 
-    avg_auc = total_sum / total_n if total_n > 0 else 0.0
+    avg_auc = total_sum / total_n if total_n > 0 else None
 
     # Prepare labels using set intersection (faster than map/lambda/filter)
     go_set = go.get_namespace_terms(NAMESPACES[ont])
@@ -237,7 +237,7 @@ def compute_metrics_optimized(test_df, go, terms_dict, terms, ont, eval_preds, l
         threshold = t / 100.0
 
         # Vectorized threshold application
-        above_threshold = eval_preds >= threshold
+        above_threshold = (eval_preds > 0) & (eval_preds >= threshold)
 
         # Build prediction sets using set intersection with go_set
         preds = []
@@ -261,7 +261,7 @@ def compute_metrics_optimized(test_df, go, terms_dict, terms, ont, eval_preds, l
         precisions.append(prec)
         recalls.append(rec)
 
-        if fmax < fscore:
+        if t == 0 or fmax < fscore:
             fmax = fscore
             tmax = threshold
             avgic = avg_ic
@@ -277,16 +277,18 @@ def compute_metrics_optimized(test_df, go, terms_dict, terms, ont, eval_preds, l
         if smin > s:
             smin = s
 
-    # Compute AUPR
-    precisions = np.array(precisions)
-    recalls = np.array(recalls)
-    sorted_index = np.argsort(recalls)
-    recalls = recalls[sorted_index]
-    precisions = precisions[sorted_index]
-    aupr = np.trapz(precisions, recalls)
+    # Macro protein PR curve on the declared 0.01 grid. Include the empty
+    # prediction endpoint, retain the best precision at each repeated recall,
+    # and integrate only the attained recall range (no extrapolation to 1).
+    curve = {0.0: 1.0}
+    for rec, prec in zip(recalls, precisions):
+        curve[rec] = max(curve.get(rec, 0.0), prec)
+    points = sorted(curve.items())
+    aupr = sum((r1-r0) * (p0+p1) / 2
+               for (r0, p0), (r1, p1) in zip(points, points[1:]))
 
     # Term-centric sensitivity and specificity at F-max threshold
-    above_at_tmax = eval_preds >= tmax
+    above_at_tmax = (eval_preds > 0) & (eval_preds >= tmax)
     sens_list, spec_list = [], []
     for i in range(num_terms):
         labels_i = labels_matrix[:, i]
@@ -351,6 +353,7 @@ def get_specific_with_ontology(protein_go_terms, ontology, ancestor_cache=None):
 
     result = {}
     for protein_id, terms in protein_go_terms.items():
+        terms = ontology.normalize_terms(terms)
         # Collect all ancestors for this protein's terms using cache
         all_ancestors = set()
         for term in terms:
@@ -359,8 +362,7 @@ def get_specific_with_ontology(protein_go_terms, ontology, ancestor_cache=None):
                 ancestor_cache[term] = ontology.get_ancestors(term)
             ancestors = ancestor_cache[term]
             # Add ancestors excluding the term itself
-            all_ancestors.update(ancestors)
-            all_ancestors.discard(term)
+            all_ancestors.update(ancestors - {term})
         # Single set subtraction - keep only terms that aren't ancestors of other terms
         result[protein_id] = terms - all_ancestors
     return result
@@ -386,20 +388,8 @@ def load_predictions(predictions_file, threshold=0.5):
     return protein_go_terms
 
 
-def check_consistency_fast(protein_go_terms, taxa_constraints_file, owl_dir=None):
-    """
-    Check taxonomic consistency of protein-GO term annotations using a fast implementation.
-
-    Args:
-        protein_go_terms: Dictionary mapping protein_id -> set of GO terms
-        taxa_constraints_file: Path to TSV file with taxon constraints
-        owl_dir: Directory containing `ncbitaxon_with_disjointness.owl` and
-                 `go-taxon-groupings.owl`. Defaults to the directory containing
-                 `taxa_constraints_file`.
-
-    Returns:
-        True if consistent (satisfiable), False otherwise
-    """
+@lru_cache(maxsize=8)
+def _load_consistency_reference(taxa_constraints_file, owl_dir, go_file=None):
     # === Process constraints ===
     constraints = pd.read_csv(taxa_constraints_file, sep="\t", dtype=str)
     only_map = defaultdict(set)
@@ -412,6 +402,43 @@ def check_consistency_fast(protein_go_terms, taxa_constraints_file, owl_dir=None
             only_map[go_id].add(lineage)  # expected to be normalized: NCBITaxon_<taxon_id>
         elif row["Constraint_Type"] == "never_in_taxon":
             never_map[go_id].add(lineage)  # expected to be normalized: NCBITaxon_<taxon_id>
+
+    # === Load taxon hierarchy ===
+    owl_dir_path = Path(owl_dir) if owl_dir is not None else Path(taxa_constraints_file).parent
+    taxon_file = owl_dir_path / "ncbitaxon_with_disjointness.owl"
+    go_taxon_file = owl_dir_path / "go-taxon-groupings.owl"
+
+    # Parse ontologies
+    subclass_of, disjoint_with, union_members = parse_owl_files(
+        str(taxon_file), str(go_taxon_file)
+    )
+
+    # Build hierarchy
+    hierarchy = TaxonHierarchy(subclass_of, disjoint_with, union_members)
+
+    if go_file is not None:
+        go = Ontology(go_file)
+        only_map, never_map = go.normalize_constraints(only_map), go.normalize_constraints(never_map)
+    return only_map, never_map, hierarchy
+
+
+def check_consistency_fast(protein_go_terms, taxa_constraints_file, owl_dir=None, ontology=None):
+    """
+    Check taxonomic consistency of protein-GO term annotations using a fast implementation.
+
+    Args:
+        protein_go_terms: Dictionary mapping protein_id -> set of GO terms
+        taxa_constraints_file: Path to TSV file with taxon constraints
+        owl_dir: Directory containing `ncbitaxon_with_disjointness.owl` and
+                 `go-taxon-groupings.owl`. Defaults to the directory containing
+                 `taxa_constraints_file`.
+
+    Returns:
+        True if the bundled GAEF pairwise screen passes. This is not a general
+        satisfiability proof for arbitrary combinations of taxon unions.
+    """
+    only_map, never_map, hierarchy = _load_consistency_reference(str(taxa_constraints_file), owl_dir,
+        ontology.filename if ontology is not None else None)
 
     # Build GenomeAnnotation objects in memory
     annotations = defaultdict(dict)
@@ -431,26 +458,13 @@ def check_consistency_fast(protein_go_terms, taxa_constraints_file, owl_dir=None
     if not annotations:
         return True
     
-    # === Load taxon hierarchy ===
-    owl_dir_path = Path(owl_dir) if owl_dir is not None else Path(taxa_constraints_file).parent
-    taxon_file = owl_dir_path / "ncbitaxon_with_disjointness.owl"
-    go_taxon_file = owl_dir_path / "go-taxon-groupings.owl"
-    
-    # Parse ontologies
-    subclass_of, disjoint_with, union_members = parse_owl_files(
-        str(taxon_file), str(go_taxon_file)
-    )
-    
-    # Build hierarchy
-    hierarchy = TaxonHierarchy(subclass_of, disjoint_with, union_members)
-    
     # === Fast satisfiability check ===
     return _is_satisfiable_fast(annotations, hierarchy)
 
 
 def _is_satisfiable_fast(annotations: DefaultDict[str, DefaultDict[str, Set[str]]], hierarchy: TaxonHierarchy) -> bool:
     """
-    Fast satisfiability check without explanation generation.
+    Legacy GAEF pairwise compatibility screen without explanations.
 
     Returns:
         True if satisfiable, False otherwise
@@ -559,6 +573,7 @@ def GAEF_evaluation_from_terms(assembly_name, protein_go_terms, GAEF_dir, go_fil
     Returns:
         Dictionary with GAEF metrics (JSON-serializable)
     """
+    from GAEF.completeness import read_essential_terms, count_essential_terms
     cdir = constraints_dir if constraints_dir is not None else _DEFAULT_CONSTRAINTS_DIR
     term_file = os.path.join(cdir, "essential_terms.tsv")
     has_part_file = os.path.join(cdir, "has_part_relations.txt")
@@ -573,6 +588,8 @@ def GAEF_evaluation_from_terms(assembly_name, protein_go_terms, GAEF_dir, go_fil
 
     # Load ontology once and reuse
     go = Ontology(ontology_file)
+    protein_go_terms = {p: go.normalize_terms(ts) for p, ts in protein_go_terms.items()}
+    homodimer_terms = go.normalize_terms(homodimer_terms)
 
     # Expand terms to ancestors and get specific terms
     protein_go_terms_ancestors, ancestor_cache = get_ancestors_with_ontology(protein_go_terms, go)
@@ -582,8 +599,8 @@ def GAEF_evaluation_from_terms(assembly_name, protein_go_terms, GAEF_dir, go_fil
     # Essential terms
     if subontology is None or subontology == 'bp':
         core_terms, periph_terms = read_essential_terms(term_file)
-        core_ids = {e['term'] for e in core_terms}
-        periph_ids = {e['term'] for e in periph_terms}
+        core_ids = {go.canonical_id(e['term']) or e['term'] for e in core_terms}
+        periph_ids = {go.canonical_id(e['term']) or e['term'] for e in periph_terms}
 
         core_count = count_essential_terms(protein_go_terms_ancestors, core_ids)
         periph_count = count_essential_terms(protein_go_terms_ancestors, periph_ids)
@@ -601,12 +618,14 @@ def GAEF_evaluation_from_terms(assembly_name, protein_go_terms, GAEF_dir, go_fil
     ### COHERENCE ###
     # Process coherence
     has_part_dict = coherence.parse_has_part(has_part_file)
-    process_coherence, has_part_protein_details = coherence.check_has_part(protein_go_terms, has_part_dict)
+    has_part_dict, _, _ = coherence.normalize_go_resources(go, has_part_dict, {}, {})
+    process_coherence, has_part_protein_details = coherence.check_has_part(protein_go_terms_ancestors, has_part_dict)
 
     # pathway coherence
     if subontology is None or subontology == 'bp' or subontology == 'mf':
         ec2go_mapping      = coherence.parse_ec2go(ec2go_file)
         pathway_to_go      = coherence.map_pathways_to_go_terms(pathway_file, ec2go_mapping)
+        _, ec2go_mapping, pathway_to_go = coherence.normalize_go_resources(go, {}, ec2go_mapping, pathway_to_go)
         _, metacyc_completed, metacyc_annotated, pathway_details = coherence.analyze_genome(protein_go_terms_ancestors, pathway_to_go, ec2go_mapping)
         if len(metacyc_annotated) > 0:
             metacyc_pct       = (len(metacyc_completed) / len(metacyc_annotated)) * 100
@@ -636,7 +655,7 @@ def GAEF_evaluation_from_terms(assembly_name, protein_go_terms, GAEF_dir, go_fil
 
     ### CONSISTENCY ###
     # Taxonomic consistency
-    consistency_satisfiable =  check_consistency_fast(protein_go_terms_ancestors, taxa_constraints_file)
+    consistency_satisfiable =  check_consistency_fast(protein_go_terms_ancestors, taxa_constraints_file, ontology=go)
 
     ### OVERVIEW ###
     context = {
@@ -685,12 +704,12 @@ def GAEF_evaluation_from_terms(assembly_name, protein_go_terms, GAEF_dir, go_fil
     return json_context
 
 
-def GAEF_evaluation(assembly_name, predictions_file, GAEF_dir, go_file, groovy_flag=False, python_consistency=False, python_ic=True, threshold=0.5, subontology=None, constraints_dir=None):
+def GAEF_evaluation(assembly_name, predictions_file, GAEF_dir, go_file, groovy_flag=False, python_consistency=False, python_ic=True, threshold=0.5, subontology=None, constraints_dir=None, output_file=None):
     """
     Compute GAEF metrics from a predictions file. Thin wrapper around GAEF_evaluation_from_terms().
     """
     protein_go_terms = load_predictions(predictions_file, threshold)
-    return GAEF_evaluation_from_terms(assembly_name, protein_go_terms, GAEF_dir, go_file, subontology, constraints_dir=constraints_dir)
+    return GAEF_evaluation_from_terms(assembly_name, protein_go_terms, GAEF_dir, go_file, subontology, constraints_dir=constraints_dir, output_file=output_file)
 
 
 
@@ -819,7 +838,7 @@ def load_annotations(annotations_file):
     return annotations
 
 
-def evaluate_prediction_metrics(go, ont, annotations, predictions):
+def evaluate_prediction_metrics(go, ont, annotations, predictions, ic_annotations=None, reuse_ic=False):
     """
     Evaluate prediction metrics for a single ontology namespace following CAFA-style evaluation.
 
@@ -844,6 +863,7 @@ def evaluate_prediction_metrics(go, ont, annotations, predictions):
         Dictionary with metrics: fmax, smin, tmax, wfmax, wtmax, avg_auc, aupr, avgic, precision, recall
         Returns None if no proteins with annotations are found or other errors occur.
     """
+    predictions = go.normalize_scores(predictions, NAMESPACES[ont])
     # Pre-compute namespace-filtered GO terms once
     go_set_filtered = go.get_namespace_terms(NAMESPACES[ont])
     root_term = FUNC_DICT[ont]
@@ -852,14 +872,20 @@ def evaluate_prediction_metrics(go, ont, annotations, predictions):
 
     # Get all terms from annotations, filtered by namespace (use set intersection)
     terms = set()
+    annotations = {p: set().union(*(go.get_ancestors(g) for g in ts))
+                   for p, ts in annotations.items()}
     for go_terms in annotations.values():
         terms.update(go_terms & go_set_filtered)
+    # Predictions absent from all test labels still count as false positives.
+    for protein, scores in predictions.items():
+        if protein in annotations:
+            terms.update(set(scores) & go_set_filtered)
     terms.discard(root_term)
 
     if len(terms) == 0:
         return None
 
-    terms = list(terms)
+    terms = sorted(terms)
     terms_dict = {v: i for i, v in enumerate(terms)}
     go_set = set(terms_dict)
     num_terms = len(terms)
@@ -920,187 +946,16 @@ def evaluate_prediction_metrics(go, ont, annotations, predictions):
         'exp_annotations': prop_annotations
     })
 
-    # Calculate IC for terms
-    try:
-        go.calculate_ic(prop_annotations)
-    except Exception as e:
-        print(f"[Error] Error calculating IC for {ont}: {e}")
-        return None
-
-    # CAFA-style: Check if there are NO predictions at all
-    if np.max(eval_preds) == 0:
-        print(f"[Warning] No predictions found for any annotated protein in {ont}. Assigning zero metrics (CAFA-style).")
-        return {
-            'fmax': 0.0,
-            'smin': float('inf'),
-            'tmax': 0.0,
-            'wfmax': 0.0,
-            'wtmax': 0.0,
-            'avg_auc': 0.0,
-            'aupr': 0.0,
-            'avgic': 0.0,
-            'precision': 0.0,
-            'recall': 0.0,
-            'sensitivity': 0.0,
-            'specificity': 0.0,
-            'fmax_spec_match': 0.0,
-            'tp': 0,
-            'fp': 0,
-            'fn': 0
-        }
-
-    # Compute metrics using optimized function (passes pre-built labels_matrix)
-    try:
-        result = compute_metrics_optimized(
-            test_df, go, terms_dict, terms, ont, eval_preds, labels_matrix=labels_matrix)
-
-        fmax, smin, tmax, wfmax, wtmax, avg_auc, aupr, avgic, fmax_spec_match, precision, recall, tp, fp, fn, sensitivity, specificity = result
-
-        return {
-            'fmax': fmax,
-            'smin': smin,
-            'tmax': tmax,
-            'wfmax': wfmax,
-            'wtmax': wtmax,
-            'avg_auc': avg_auc,
-            'aupr': aupr,
-            'avgic': avgic,
-            'precision': precision,
-            'recall': recall,
-            'sensitivity': sensitivity,
-            'specificity': specificity,
-            'fmax_spec_match': fmax_spec_match,
-            'tp': tp,
-            'fp': fp,
-            'fn': fn
-        }
-    except ZeroDivisionError as e:
-        print(f"[Error] Division by zero in AUC computation for {ont}: {e}")
-        print(f"  This happens when no GO terms have valid distributions for per-term AUC.")
-        print(f"  Computing F-max and other metrics without AUC...")
-
-        # Fallback: compute metrics with AUC set to 0
-        # Use optimized evaluate_annotations with IC cache
-        go_set_for_labels = go.get_namespace_terms(NAMESPACES[ont])
-        if root_term in go_set_for_labels:
-            go_set_for_labels.remove(root_term)
-
-        # Use set intersection instead of map/lambda/filter
-        labels = [annots & go_set_for_labels for annots in prop_annotations]
-        spec_labels = labels  # Same as prop_annotations for our case
-
-        fmax = 0.0
-        tmax = 0.0
-        wfmax = 0.0
-        wtmax = 0.0
-        avgic = 0.0
-        smin = 1000000.0
-        fmax_spec_match = 0
-        precisions = []
-        recalls = []
-        precision_at_tmax = 0.0
-        recall_at_tmax = 0.0
-        tp_at_tmax = 0
-        fp_at_tmax = 0
-        fn_at_tmax = 0
-
-        # IC cache for optimized evaluation
-        ic_cache = {}
-
-        # Threshold sweep
-        for t in range(0, 101):
-            threshold = t / 100.0
-
-            # Vectorized threshold + set intersection
-            above_threshold = eval_preds >= threshold
-            preds_at_t = []
-            for i in range(num_proteins):
-                above_indices = np.where(above_threshold[i])[0]
-                annots = {terms[j] for j in above_indices} & go_set_for_labels
-                preds_at_t.append(annots)
-
-            # Evaluate at this threshold
-            fscore, prec, rec, s, ru, mi, fps, fns, avg_ic, wf = evaluate_annotations_optimized(
-                go, labels, preds_at_t, ic_cache)
-
-            spec_match = sum(len(spec_labels[i] & preds_at_t[i]) for i in range(num_proteins))
-
-            tp_sum = sum(len(labels[i] & preds_at_t[i]) for i in range(num_proteins) if len(labels[i]) > 0)
-            fp_sum = sum(len(fp) for fp in fps)
-            fn_sum = sum(len(fn) for fn in fns)
-
-            precisions.append(prec)
-            recalls.append(rec)
-
-            if fmax < fscore:
-                fmax = fscore
-                tmax = threshold
-                avgic = avg_ic
-                fmax_spec_match = spec_match
-                precision_at_tmax = prec
-                recall_at_tmax = rec
-                tp_at_tmax = tp_sum
-                fp_at_tmax = fp_sum
-                fn_at_tmax = fn_sum
-            if wfmax < wf:
-                wfmax = wf
-                wtmax = threshold
-            if smin > s:
-                smin = s
-
-        # Compute AUPR
-        precisions = np.array(precisions)
-        recalls = np.array(recalls)
-        sorted_index = np.argsort(recalls)
-        recalls = recalls[sorted_index]
-        precisions = precisions[sorted_index]
-        aupr = np.trapz(precisions, recalls)
-
-        # Term-centric sensitivity and specificity at F-max threshold
-        above_at_tmax = eval_preds >= tmax
-        sens_list, spec_list = [], []
-        for i in range(num_terms):
-            labels_i = labels_matrix[:, i]
-            preds_i = above_at_tmax[:, i]
-            tp_t = np.sum((labels_i == 1) & preds_i)
-            fn_t = np.sum((labels_i == 1) & ~preds_i)
-            fp_t = np.sum((labels_i == 0) & preds_i)
-            tn_t = np.sum((labels_i == 0) & ~preds_i)
-            pos_n = tp_t + fn_t
-            neg_n = tn_t + fp_t
-            if pos_n > 0:
-                sens_list.append(tp_t / pos_n)
-            if neg_n > 0:
-                spec_list.append(tn_t / neg_n)
-        sensitivity_at_tmax = float(np.mean(sens_list)) if sens_list else 0.0
-        specificity_at_tmax = float(np.mean(spec_list)) if spec_list else 0.0
-
-        avg_auc = 0.0
-        print(f"  Successfully computed F-max={fmax:.4f} without AUC")
-
-        return {
-            'fmax': fmax,
-            'smin': smin,
-            'tmax': tmax,
-            'wfmax': wfmax,
-            'wtmax': wtmax,
-            'avg_auc': avg_auc,
-            'aupr': aupr,
-            'avgic': avgic,
-            'precision': precision_at_tmax,
-            'recall': recall_at_tmax,
-            'sensitivity': sensitivity_at_tmax,
-            'specificity': specificity_at_tmax,
-            'fmax_spec_match': fmax_spec_match,
-            'tp': tp_at_tmax,
-            'fp': fp_at_tmax,
-            'fn': fn_at_tmax
-        }
-    except Exception as e:
-        print(f"[Error] Error computing metrics for {ont}: {e}")
-        import traceback
-        traceback.print_exc()
-        return None
+    if not reuse_ic:
+        go.calculate_ic(prop_annotations if ic_annotations is None else ic_annotations)
+    elif go.ic is None:
+        raise ValueError('reuse_ic requires a precomputed reference IC corpus')
+    result = compute_metrics_optimized(
+        test_df, go, terms_dict, terms, ont, eval_preds, labels_matrix=labels_matrix)
+    keys = ('fmax', 'smin', 'tmax', 'wfmax', 'wtmax', 'avg_auc', 'aupr',
+            'avgic', 'fmax_spec_match', 'precision', 'recall', 'tp', 'fp', 'fn',
+            'sensitivity', 'specificity')
+    return dict(zip(keys, result))
 
 
 def _build_term_matrices(go, ont, annotations, predictions):
@@ -1116,20 +971,26 @@ def _build_term_matrices(go, ont, annotations, predictions):
         Tuple of (terms, terms_dict, eval_preds, labels_matrix, valid_proteins, prop_annotations)
         or (None, None, None, None, None, None) on error.
     """
+    predictions = go.normalize_scores(predictions, NAMESPACES[ont])
     go_set_filtered = go.get_namespace_terms(NAMESPACES[ont])
     root_term = FUNC_DICT[ont]
     if root_term in go_set_filtered:
         go_set_filtered.remove(root_term)
 
     terms = set()
+    annotations = {p: set().union(*(go.get_ancestors(g) for g in ts))
+                   for p, ts in annotations.items()}
     for go_terms in annotations.values():
         terms.update(go_terms & go_set_filtered)
+    for protein, scores in predictions.items():
+        if protein in annotations:
+            terms.update(set(scores) & go_set_filtered)
     terms.discard(root_term)
 
     if len(terms) == 0:
         return None, None, None, None, None, None
 
-    terms = list(terms)
+    terms = sorted(terms)
     terms_dict = {v: i for i, v in enumerate(terms)}
     go_set = set(terms_dict)
 
@@ -1169,11 +1030,7 @@ def _build_term_matrices(go, ont, annotations, predictions):
                 if go_id in terms_dict:
                     eval_preds[idx, terms_dict[go_id]] = score
 
-    try:
-        go.calculate_ic(prop_annotations)
-    except Exception as e:
-        print(f"[Error] Error calculating IC for {ont}: {e}")
-        return None, None, None, None, None, None
+    go.calculate_ic(prop_annotations)
 
     return terms, terms_dict, eval_preds, labels_matrix, valid_proteins, prop_annotations
 
@@ -1217,7 +1074,7 @@ def compute_per_term_metrics(go, ont, annotations, predictions, threshold=None):
     else:
         tmax = threshold
 
-    above_threshold = eval_preds >= tmax
+    above_threshold = (eval_preds > 0) & (eval_preds >= tmax)
     per_term = {}
     for i, term_id in enumerate(terms):
         labels_i = labels_matrix[:, i]
@@ -1276,9 +1133,9 @@ def compute_per_term_auc(go, ont, annotations, predictions):
     return per_term_auc
 
 
-def main(assembly_name, annotations_file, predictions_file, GAEF_dir, go_file, groovy_flag=False, python_consistency=False, python_ic=True, threshold=0.5, output_file=None, subontology=None):
+def main(assembly_name, annotations_file, predictions_file, GAEF_dir, go_file, groovy_flag=False, python_consistency=False, python_ic=True, threshold=0.5, output_file=None, subontology=None, temporal_proteins=None):
     # Run GAEF evaluation
-    json_context = GAEF_evaluation(assembly_name, predictions_file, GAEF_dir, go_file, groovy_flag, python_consistency, python_ic, threshold, subontology)
+    json_context = GAEF_evaluation(assembly_name, predictions_file, GAEF_dir, go_file, groovy_flag, python_consistency, python_ic, threshold, subontology, output_file=output_file)
     
     print(f"--- GAEF evaluation for {assembly_name} (threshold: {threshold}) ---")
     if subontology is None or subontology == 'bp':
@@ -1295,6 +1152,9 @@ def main(assembly_name, annotations_file, predictions_file, GAEF_dir, go_file, g
     go = Ontology(ontology_file)
     # Load annotations once and reuse across all namespaces
     all_annotations = load_annotations(annotations_file)
+    if temporal_proteins is not None:
+        from analysis.evaluation_scope import load_temporal_proteins, select_annotations
+        all_annotations = select_annotations(all_annotations, str(assembly_name), load_temporal_proteins(temporal_proteins))
     
     prediction_metrics = {}
     try:
@@ -1329,7 +1189,7 @@ def main(assembly_name, annotations_file, predictions_file, GAEF_dir, go_file, g
                 prediction_metrics[ont] = metrics
                 print(f"---- {ont.upper()} ----")
                 print(f"Fmax: {metrics['fmax']:.5f}, Smin: {metrics['smin']:.5f}, Threshold: {metrics['tmax']:.5f}, WFmax: {metrics['wfmax']:.5f}, WTmax: {metrics['wtmax']:.5f}")
-                print(f"AUC: {metrics['avg_auc']:.5f}")
+                print(f"AUC: {metrics['avg_auc']}")
                 print(f"AUPR: {metrics['aupr']:.5f}")
                 print(f"AVGIC: {metrics['avgic']:.5f}")
                 print(f"Precision: {metrics['precision']:.5f}")
@@ -1346,33 +1206,27 @@ def main(assembly_name, annotations_file, predictions_file, GAEF_dir, go_file, g
             overall_metrics = {}
             metric_keys = ['fmax', 'smin', 'wfmax', 'avg_auc', 'aupr', 'avgic', 'precision', 'recall', 'sensitivity', 'specificity', 'tp', 'fp', 'fn']
             for key in metric_keys:
-                values = [prediction_metrics[ont][key] for ont in prediction_metrics.keys() if key in prediction_metrics[ont]]
+                values = [prediction_metrics[ont][key] for ont in prediction_metrics.keys() if prediction_metrics[ont].get(key) is not None]
                 if values:
                     overall_metrics[f'avg_{key}'] = sum(values) / len(values)
             
             prediction_metrics['overall'] = overall_metrics
-            json_context['prediction_metrics'] = prediction_metrics
-            
-            # Update the JSON file with prediction metrics
-            json_context_copy = json_context.copy()
-
-            if output_file is None:
-                output_file = f"{assembly_name}_report.json"
-
-            # create the directory if it doesn't exist
-            os.makedirs(os.path.dirname(output_file), exist_ok=True)
-            
-            with open(output_file, "w") as f:
-                json.dump(json_context_copy, f, indent=2, default=str)
-            
-            print(f"\nPrediction metrics computed for {len(prediction_metrics) - 1} ontology namespace(s)")
-            print(f"Updated {output_file} with prediction metrics")
-        else:
-            print("[Warning] No prediction metrics were computed")
+        json_context['prediction_metrics'] = prediction_metrics
+        json_context['n_reference_proteins'] = len(all_annotations)
+        if temporal_proteins is not None:
+            from analysis.evaluation_scope import scope_manifest
+            json_context['protein_scope'] = scope_manifest(temporal_proteins)
+        if output_file is None:
+            output_file = f'{assembly_name}_report.json'
+        os.makedirs(os.path.dirname(output_file) or '.', exist_ok=True)
+        with open(output_file, 'w') as fh:
+            json.dump(json_context, fh, indent=2, default=str, allow_nan=False)
+        print(f'Updated {output_file}; accuracy is unavailable where no eligible labels exist')
     except Exception as e:
         print(f"[Error] Error evaluating prediction metrics: {e}")
         import traceback
         traceback.print_exc()
+        raise
     
     return json_context
 
@@ -1392,6 +1246,7 @@ if __name__ == "__main__":
     parser.add_argument('--output_file', default=None, help='Path to the output file')
     parser.add_argument('--subontology', type=str, default=None, choices=['cc', 'bp', 'mf'],
                        help='Subontology to evaluate (default: None, evaluates all)')
+    parser.add_argument('--temporal-proteins', help='Exact entry-date test-protein TSV')
     args = parser.parse_args()
     main(
         assembly_name=args.assembly_name, 
@@ -1404,5 +1259,6 @@ if __name__ == "__main__":
         python_ic=args.python_ic, 
         threshold=args.threshold,
         output_file=args.output_file,
-        subontology=args.subontology
+        subontology=args.subontology,
+        temporal_proteins=args.temporal_proteins,
         )

@@ -147,6 +147,12 @@ def main(
     Outputs land in predictions/test_mf/, predictions/test_bp/, predictions/test_cc/.
     """
 
+    raise ck.UsageError(
+        'This historical runner used unverified propagated labels. Use '
+        'baselines/seq_sim/rebuild_from_sources.py with source-rebuilt references; '
+        'see reproducibility/BASELINES.md.'
+    )
+
     # ------------------------------------------------------------------
     # 0. Validate / normalise paths
     # ------------------------------------------------------------------

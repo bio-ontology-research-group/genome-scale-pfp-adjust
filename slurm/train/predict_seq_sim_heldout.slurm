@@ -7,6 +7,11 @@
 #SBATCH --cpus-per-task=32
 #SBATCH --mail-type=ALL
 
+# Historical input paths are not valid for the corrected-training comparison.
+printf 'Use reproducibility/BASELINES.md with source-rebuilt labels and a new output directory.\n' >&2
+exit 2
+
+
 # Load modules and activate environment
 [ -f config.env ] && source config.env
 

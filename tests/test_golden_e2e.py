@@ -3,7 +3,7 @@
 This is the test a reviewer can actually run. It solves a single synthetic
 organism of 50 proteins (``fixtures/golden_predictions.tsv``, built by
 ``fixtures/make_golden_organism.py``) through both adjustment stages and asserts
-that the output is byte-for-byte identical to the committed golden files:
+that the output is numerically identical to the committed golden files:
 
     fixtures/golden_predictions.tsv      (input)
       --Stage 1: taxon consistency-->    fixtures/golden_stage1.tsv
@@ -82,7 +82,7 @@ def _canonical(path):
 
     The solver preserves each protein's score values exactly but does not fix
     the *order* of the GO-term columns within a line (it iterates a set), so the
-    raw byte order is not reproducible. Sorting the term columns per line yields
+    raw byte order can differ. Sorting the term columns per line yields
     a canonical form that diffs cleanly while still catching any change to which
     terms or scores a protein carries."""
     lines = []
@@ -92,6 +92,7 @@ def _canonical(path):
             if not line:
                 continue
             pid, *terms = line.split("\t")
+            terms = [f"{token.split('|')[0]}|{float(token.split('|')[1]):.17g}" for token in terms]
             lines.append(pid + "\t" + "\t".join(sorted(terms)))
     return "\n".join(sorted(lines)) + "\n"
 
@@ -107,15 +108,15 @@ def _assert_invariants(stage1_path, stage2_path):
     s2 = load_predictions(stage2_path)
 
     # Stage 1: no Bacteria-only term survives above threshold on this eukaryote.
-    surviving = [p for p, t in s1.items() if t.get(BACTERIA_TERM, 0.0) >= THRESHOLD]
+    surviving = [p for p, t in s1.items() if t.get(BACTERIA_TERM, 0.0) > THRESHOLD]
     assert not surviving, f"Bacteria-only term survived Stage 1 on: {surviving}"
     # ...and at least one such term was actually present to demote.
     demoted = sum(1 for p, t in load_predictions(INPUT).items()
-                  if t.get(BACTERIA_TERM, 0.0) >= THRESHOLD)
+                  if t.get(BACTERIA_TERM, 0.0) > THRESHOLD)
     assert demoted > 0, "Fixture has no Bacteria-only annotation to demote"
 
     # Stage 2: the complex term is never on exactly one protein above threshold.
-    above = sum(1 for t in s2.values() if t.get(COMPLEX_TERM, 0.0) >= THRESHOLD)
+    above = sum(1 for t in s2.values() if t.get(COMPLEX_TERM, 0.0) > THRESHOLD)
     assert above != 1, f"Stage 2 left {COMPLEX_TERM} as a singleton complex"
 
     # Benign terms must survive both stages unchanged for every protein.
@@ -123,9 +124,18 @@ def _assert_invariants(stage1_path, stage2_path):
     for pid, terms in inp.items():
         for bt in BENIGN_TERMS:
             if bt in terms:
-                assert s2.get(pid, {}).get(bt, 0.0) >= THRESHOLD, (
+                assert s2.get(pid, {}).get(bt, 0.0) > THRESHOLD, (
                     f"Benign term {bt} on {pid} was not preserved"
                 )
+    # The original fixture deliberately omits hierarchy parents. The corrected
+    # repair must restore the true-path rule, not merely remove singletons.
+    from complex_coherence.adjust_ortools import load_go_hierarchy
+    hierarchy = load_go_hierarchy(GO_HIER)
+    for protein, scores in s2.items():
+        for child, score in scores.items():
+            if score > THRESHOLD:
+                for parent in hierarchy.get(child, ()):
+                    assert scores.get(parent, 0) > THRESHOLD, (protein, child, parent)
 
 
 def test_golden_end_to_end():

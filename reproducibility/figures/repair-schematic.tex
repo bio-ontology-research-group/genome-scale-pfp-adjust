@@ -1,0 +1,7 @@
+\begin{tikzpicture}[node distance=7mm, every node/.style={align=center,font=\small}, box/.style={draw,rounded corners,text width=43mm,minimum height=13mm}, >=Stealth]
+\node[box] (in) {Input at $\tau=0.3$\\$p_1:0.9$, $p_2:0.0$\\one annotated protein};
+\node[box,below left=14mm and 4mm of in] (add) {Promote $p_2$ to $0.301$\\flip cost $0.3$\\two annotated proteins};
+\node[box,below right=14mm and 4mm of in] (drop) {Demote $p_1$ to $0.3$\\flip cost $0.6$\\zero annotated proteins};
+\draw[->] (in) -- (add);
+\draw[->] (in) -- (drop);
+\end{tikzpicture}

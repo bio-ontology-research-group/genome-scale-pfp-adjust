@@ -1,47 +1,17 @@
-# Reproducibility map: paper claim → producing code
+# Audited revision analysis
 
-This file maps each table, figure, and headline number in the manuscript to the
-script that produces it, per *Bioinformatics* §3. Per-organism intermediate
-outputs (predictions, adjusted annotations, per-organism evaluation JSONs) live
-under `${DATA_DIR}/swissprot_proteomes_folds/` (see top-level `README.md`);
-small aggregated result files for the post-review experiments are committed
-under `analysis/revision_results/`.
+The October 2026 audit invalidated the earlier numerical tables and several analysis claims. The historical files under `revision_results/` are retained for traceability; they are not the accepted results of the corrected workflow. In particular, the earlier exact sparse-reduction claim, locally approximated FunTaxIS-lite comparison, heuristic SBR label and unmasked entry-date accuracy must not be reused.
 
-## Main paper
+The current workflow and table-to-source mapping are in [reproducibility/README.md](../reproducibility/README.md). It consumes identified predictor inputs. Local baseline regeneration is documented in [BASELINES.md](../reproducibility/BASELINES.md); supplied pretrained predictions are distinguished from regenerated local baselines.
 
-| Claim / table | Producing code |
+| Analysis | Current implementation |
 |---|---|
-| Table 2 — flip rates by predictor × sub-ontology | `slurm/adjust/*.slurm` (`pipeline/run_adjustment_pipeline.py`); rates via `analysis/flip_rate.py` |
-| Table 3 — GAEF metrics after adjustment (100% taxon / complex coherence) | `slurm/eval/gaef_timeset_methods.slurm` → `pipeline/evaluate_directory.py` → `pipeline/genome_scores_evaluator.py` |
-| §2.4 τ-sensitivity sweep (flip rates across τ) | `slurm/tau_sweep.slurm` (CC), `slurm/tau_sweep_bpmf.slurm` (BP/MF) + `analysis/flip_rate.py` → `revision_results/tau_sweep/` |
-| §2.5 naive-filter baseline (satisfiable %) | `analysis/naive_filter.py` + `slurm/eval_rerun.slurm` (`satisfiable` field of `genome_scores_evaluator`) |
-| §2.5 paired Wilcoxon / bootstrap (per-organism CAFA) | `slurm/eval_rerun.slurm` / `slurm/eval_all.slurm` → `analysis/paired_stats.py` → `revision_results/wilcoxon/` |
-| §2.4 cost-function ablation (margin / uniform / IC) | `analysis/compute_go_ic.py` + `slurm/cost_ablation.slurm` (driven by `PFP_COST_MODE`/`PFP_IC_FILE` in `taxon_consistency/adjust_ortools.py`) → `revision_results/cost_ablation/` |
-| §3.1 / Table S8 — GAEF on ground-truth proteomes (6.2%, IC depth) | `slurm/eval/gaef_annotations.slurm` → `genome_scores_evaluator` |
-| §3.1 / Table S7 — top-20 closure-based curated taxon violations | `analysis/top_violated_pairs.py --gaef_reports_dir ...` → `revision_results/top20_violated_pairs.tsv` |
-| §3.4 / Table S9 — per-protein CAFA on modified subset | `pipeline/evaluate_directory.py` (modified-protein subset) |
-| §3.6 — Stage-2 biological validity vs Complex Portal | `analysis/complex_validation/` (`download_complex_dbs.sh` → `build_subunit_index.py` → `validate_stage2.py`); broadened run via `slurm/stage2_validation.slurm` → `revision_results/complex_validation/` |
-| §3.6 — scalability ablation (5,380× reduction, 12.9 s) | `complex_coherence/heuristic_ablation.py` (`slurm/ablation/heuristic.slurm`); variable/constraint counts materialized by `analysis/ablation_var_counts.py` (`slurm/ablation_var_counts.slurm`) → `revision_results/ablation_var_counts.csv` |
-| §2.1 — 1,982 obligate heteromeric complex terms | `data_prep/materialize_complex_list.py` → `data/constraints/heteromeric_complexes_2025_10.tsv` (SHA-256 `08bdc20fbeb5…`) |
-| Discussion / Table S10 — soft-regularizer baseline (soft vs hard taxon stage) | `analysis/soft_regularizer.py` → `revision_results/soft_regularizer_deepgo-se_cc.tsv` |
-| §2.2 — MLP-ESM2 deterministic split + seeded re-run | `data_prep/regen_heldout_proteins.py` (regenerate train/val TSVs) + `slurm/mlp_reproduce.slurm` (train cc/mf/bp under `--seed 42`) |
+| Canonical input alignment, threshold sweep, hard/soft repair, published filtering | `revision_audit_run.py` |
+| Explicit test populations and fixed-corpus accuracy | `evaluation_scope.py`, `aggregate_revision_audit.py` |
+| Seven-rank lineage entailment and cross-aspect agreement | `audit_lineage_results.py` |
+| Complete-proteome evidence sensitivity and accession mapping | `audit_annotation_evidence.py` |
+| Paired curated complex-membership coverage | `complex_validation/validate_stage2.py` |
+| Independent serialized hard-repair checks | `validate_repair_exports.py` |
+| Numerical tables and illustrative figure source | `../reproducibility/reproduce_all_tables_and_figures.py` |
 
-## Supplement
-
-| Claim / table | Producing code |
-|---|---|
-| Tables S1–S2 — per-protein CAFA (timeset / heldout, full) | `pipeline/evaluate_directory.py` |
-| Tables S3–S4 — CP-SAT solver runtimes | instrumentation in `taxon_consistency/` and `complex_coherence/adjust_ortools.py` |
-| Tables S5–S6 — reduction & heuristic ablation | `complex_coherence/heuristic_ablation.py` |
-| §S5 — exactness proofs for H1/H2 | analytic; smoke-checked by `tests/test_solver_smoke.py` |
-| §S4 / Fig S1–S2 — joint taxon recovery from contigs | `analysis/metagenomics_*.py` |
-
-## Post-review experiment scripts (added during revision)
-
-- `analysis/flip_rate.py` — Stage-1 flip rate at a given τ.
-- `analysis/naive_filter.py` — naive taxon-filter baseline (± GO-hierarchy propagation).
-- `analysis/paired_stats.py` — paired Wilcoxon + organism-level bootstrap CIs.
-- `analysis/top_violated_pairs.py` — rank closure-based curated taxon-constraint violations.
-- `analysis/compute_go_ic.py` — GO-term information content for the IC-weighted cost.
-- `analysis/complex_validation/validate_stage2.py` — score Stage-2 repairs vs Complex Portal.
-- `slurm/{tau_sweep,tau_sweep_bpmf,eval_rerun,eval_all,cost_ablation,stage2_validation,mlp_retrain}.slurm`.
+A complete run includes 1,764 model/aspect/taxon tasks, all 15 aggregate groups, lineage and evidence analyses, six curated-membership comparisons and 300 independently checked hard-repair files. Missing or inconsistent results block final generation. Numerical acceptance and archival verification remain pending until that complete run passes.

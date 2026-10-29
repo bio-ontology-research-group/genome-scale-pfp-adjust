@@ -31,6 +31,8 @@ from taxon_consistency.adjust_ortools import (
     solve_sat_ortools_hierarchy,
     get_all_ancestors_of_list,
 )
+from analysis.evaluation_scope import load_temporal_proteins, select_annotations, scope_manifest
+
 from genome_scores_evaluator import (
     Ontology,
     load_annotations,
@@ -179,6 +181,7 @@ def run_single_setting(
     taxon_union: dict,
     eval_cafa: bool = True,
     save_dir: str = None,
+    temporal_proteins: dict = None,
 ):
     os.environ["PFP_COST_MODE"] = cost_mode
     pred_dir = os.path.join(
@@ -222,7 +225,7 @@ def run_single_setting(
         if eval_cafa:
             ann_file = os.path.join(ann_dir, f"annots_taxon_{taxon}.tsv")
             if os.path.exists(ann_file):
-                org_annots = load_annotations(ann_file)
+                org_annots = select_annotations(load_annotations(ann_file), taxon, temporal_proteins)
                 if org_annots:
                     gt_prot_ids = set(org_annots.keys())
 
@@ -322,6 +325,8 @@ def run_single_setting(
         "tau": tau,
         "n_organisms": n_organisms,
         "n_cafa_organisms": len(cafa_fmax),
+        "n_annotation_proteins": len(pooled_annotations),
+        "evaluation_scope": "entry_date_mask" if temporal_proteins is not None else "organism_holdout",
         "preds_above_tau": total_active_preds,
         "grid_decisions": total_grid_decisions,
         "flips_above_tau": total_flips_above_tau,
@@ -350,7 +355,11 @@ def main():
     ap.add_argument("--subontology", default="cc")
     ap.add_argument("--output_json", required=True)
     ap.add_argument("--save_adjusted_root", default=None)
+    ap.add_argument("--temporal-proteins", help="Explicit entry-date protein TSV; required for timeset accuracy")
     args = ap.parse_args()
+    if args.predictor in ("seq_sim_timeset", "deepgo-se", "sprof-go") and not args.temporal_proteins:
+        ap.error("--temporal-proteins is required: organism membership is not a protein test mask")
+    temporal_proteins = load_temporal_proteins(args.temporal_proteins) if args.temporal_proteins else None
 
     with open(args.timeset_taxons_file) as fh:
         timeset_taxons = {line.strip() for line in fh if line.strip()}
@@ -365,7 +374,7 @@ def main():
     go_hierarchy = load_go_hierarchy(go_hierarchy_file)
     go = Ontology(go_obo_file)
     for t_id, t_info in go.ont.items():
-        for rel in ("is_a", "part_of", "regulates"):
+        for rel in ("is_a", "part_of"):
             for p_id in t_info.get(rel, ()):
                 go_hierarchy[t_id].add(p_id)
     _, go_descendants = build_go_descendants(go_hierarchy)
@@ -416,6 +425,7 @@ def main():
                     taxon_union,
                     eval_cafa=(scope_label in ("timeset_50", "heldout_112") and args.subontology != "bp"),
                     save_dir=sdir,
+                    temporal_proteins=temporal_proteins,
                 )
                 records.append(rec)
                 print(json.dumps(rec))
@@ -445,6 +455,7 @@ def main():
                 taxon_union,
                 eval_cafa=True,
                 save_dir=None,
+                temporal_proteins=temporal_proteins,
             )
             records.append(rec)
             print(json.dumps(rec))
@@ -477,6 +488,7 @@ def main():
                     taxon_union,
                     eval_cafa=(scope_label == "timeset_50"),
                     save_dir=None,
+                temporal_proteins=temporal_proteins,
                 )
                 records.append(rec)
                 print(json.dumps(rec))
@@ -486,5 +498,5 @@ def main():
         json.dump(records, fh, indent=2)
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    raise SystemExit('This historical evaluator is retired. Use the documented reproducibility/revision workflow.')

@@ -1,16 +1,9 @@
-# Conda environment for the genome-scale PFP adjustment pipeline.
-#
-# Reproducibility tiers:
-#   1. This file pins every dependency to a major[.minor] version range, so a
-#      fresh `conda env create -f environment.yml` resolves to a compatible,
-#      stable stack (Python 3.10, PyTorch 2.x / CUDA 12.1, OR-Tools 9.x).
-#   2. For a BIT-EXACT rebuild, generate a solved lockfile on the build host
-#      (which has the CUDA stack) and commit it alongside this file:
-#          conda activate pfp
-#          conda env export --no-builds > environment.lock.yml   # exact versions
-#          #   or, cross-platform:  conda-lock -f environment.yml -p linux-64
-#   3. CPU-only smoke/golden tests (no GPU, no ML stack) run from
-#      requirements-test.txt, which pins OR-Tools exactly; this is what CI uses.
+# Legacy upstream-training environment (GPU models, DIAMOND and MMseqs2).
+# The audited fixed-input revision uses requirements-revision.txt instead.
+# These broad ranges are not a solved lockfile and do not establish an exact
+# or universally compatible rebuild. Resolve and verify predictor-specific
+# environments separately before retraining; do not mix this NumPy<2 stack
+# with the canonical OR-Tools 9.15 / NumPy 2 revision environment.
 name: pfp
 channels:
   - conda-forge

@@ -2,6 +2,18 @@ import ast
 import re
 from collections import defaultdict
 
+
+def normalize_go_resources(go, has_part, ec2go, pathways):
+    """Resolve alternative IDs without deleting unresolved required functions."""
+    resolve = lambda term: go.canonical_id(term) or term
+    parts = defaultdict(set)
+    for whole, requirements in has_part.items():
+        parts[resolve(whole)].update(resolve(term) for term in requirements)
+    enzymes = {ec: sorted({resolve(term) for term in terms}) for ec, terms in ec2go.items()}
+    paths = {path: (resolve(term), [{resolve(g) for g in combo} for combo in alternatives])
+             for path, (term, alternatives) in pathways.items()}
+    return parts, enzymes, paths
+
 #### PROCESS COHERENCE ####
 def parse_has_part(file_path):
     """

@@ -1,5 +1,8 @@
 """
-Given the proteomes ids, obtain propagated experimental annotations from .dat files.
+Extract reference-evidence annotations from UniProt DAT files and safely propagate.
+
+The reference evidence filter includes TAS and IC as well as direct experimental
+codes. Only is_a and part_of imply annotation inheritance; regulates does not.
 """
 
 import gzip
@@ -8,7 +11,7 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from deepgo.utils import Ontology
+from gaef_patches.ontology import Ontology
 
 
 EXP_CODES = set([
