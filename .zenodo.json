@@ -1,0 +1,11 @@
+{
+  "title": "GenoAdjust: genome-scale protein function adjustment using constraint optimization",
+  "description": "Source code, reproduction scripts and results for GenoAdjust, a post-hoc constraint optimization method that adjusts genome-scale protein function predictions so that they satisfy taxon constraints and complex coherence. This release contains the code and the results of the experiments reported in the revised manuscript.",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {"name": "Mohammedsaleh, Asaad", "affiliation": "King Abdullah University of Science and Technology", "orcid": "0009-0007-3160-8819"},
+    {"name": "Hoehndorf, Robert", "affiliation": "King Abdullah University of Science and Technology", "orcid": "0000-0001-8149-5890"}
+  ],
+  "keywords": ["protein function prediction", "gene ontology", "constraint optimization", "genome-scale annotation", "CP-SAT"]
+}
