@@ -7,8 +7,13 @@ revised manuscript (BIOINF-2026-2454). The files under
 ## paper-tables/
 
 The generated tables and result paragraphs included in the revised manuscript
-and its supplement, as TeX and TSV, with `generation-manifest.json` listing the
-checksums of their inputs and outputs.
+and its supplement, as TeX and TSV. `generation-manifest.json` records the
+inputs and outputs of the table generator for the corrected baselines. Six
+tables were edited after generation, so their checksums differ from the
+manifest: `supp-accuracy.tex`, `supp-accuracy.tsv`, `supp-comparators.tex`,
+`supp-membership.tex`, `supp-solvers.tex` and `supp-threshold-metrics.tex`. The
+membership and solver tables received the rows of the evidence-gated Stage 2
+(from `reruns/rerun-gated/tables/`); their TSV versions do not contain them.
 
 ## reruns/
 
