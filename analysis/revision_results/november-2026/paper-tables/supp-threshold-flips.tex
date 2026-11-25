@@ -1,7 +1,7 @@
 \begingroup\scriptsize
 \setlength{\tabcolsep}{4pt}
 \begin{longtable}{lrrrrrrr}
-\caption{Threshold sweep: edit counts and structural consistency after Stage 1. KTC uses the known taxon; GTC is the bundled GAEF pairwise screen. SS: Seq-Sim; DGO: DeepGO-SE; SP: SPROF-GO; MLP: MLP-ESM2. E: entry-date split; H: heldout split.}\label{tab:supp-threshold-flips}\\
+\caption{Threshold sweep: edit counts and structural consistency after Stage 1. KTC: percentage of organisms whose repaired annotations are consistent with the known taxon; GTC: percentage passing the bundled GAEF pairwise screen. Seq-Sim heldout (SS-H) is reported at its native threshold only. SS: Seq-Sim; DGO: DeepGO-SE; SP: SPROF-GO; MLP: MLP-ESM2. E: entry-date split; H: heldout split.}\label{tab:supp-threshold-flips}\\
 \toprule
 Model/aspect & $\tau$ & Active input & Demotions & Active \% & Grid \% & KTC \% & GTC \% \\
 \midrule
@@ -82,6 +82,9 @@ SP-E BP & 0.200 & 20,797,448 & 30,441 & 0.146 & 0.00152 & 100.00 & 100.00 \\
 SP-E BP & 0.300 & 12,155,940 & 3,052 & 0.025 & 0.0002533 & 100.00 & 100.00 \\
 SP-E BP & 0.400 & 7,644,551 & 518 & 0.007 & 7.081e-05 & 100.00 & 100.00 \\
 SP-E BP & 0.500 & 4,868,891 & 101 & 0.002 & 2.007e-05 & 100.00 & 100.00 \\
+SS-H CC & 0.001 & 76,136,598 & 5,390,327 & 7.080 & 0.1076 & 100.00 & 100.00 \\
+SS-H MF & 0.001 & 47,439,003 & 78,602 & 0.166 & 0.0006945 & 100.00 & 100.00 \\
+SS-H BP & 0.001 & 363,577,489 & 30,760,645 & 8.461 & 0.08508 & 100.00 & 100.00 \\
 MLP-H CC & 0.001 & 302,649,234 & 17,827,832 & 5.891 & 0.3626 & 100.00 & 100.00 \\
 MLP-H CC & 0.010 & 105,956,884 & 2,411,645 & 2.276 & 0.07735 & 100.00 & 100.00 \\
 MLP-H CC & 0.050 & 50,949,683 & 459,709 & 0.902 & 0.02129 & 100.00 & 100.00 \\

@@ -8,9 +8,11 @@ revised manuscript (BIOINF-2026-2454). The files under
 
 The generated tables and result paragraphs included in the revised manuscript
 and its supplement, as TeX and TSV. `generation-manifest.json` records the
-inputs and outputs of the table generator for the corrected baselines. Seven
+inputs and outputs of the table generator for the corrected baselines. Nine
 tables were edited or replaced after generation, so their checksums differ from the
 manifest: `supp-lineage.tex` (now the lineage objective, see `lineage-data/`),
+`supp-threshold-flips.tex` (heldout Seq-Sim rows added), `supp-optimal-lineage.tex`
+(caption),
 `supp-accuracy.tex`, `supp-accuracy.tsv`, `supp-comparators.tex`,
 `supp-membership.tex`, `supp-solvers.tex` and `supp-threshold-metrics.tex`. The
 membership and solver tables received the rows of the evidence-gated Stage 2

@@ -16,7 +16,7 @@ for sub in ['lv','lv-heldout']:
             deep[(pred,r['aspect'])][r['deepest']] += 1; div[(pred,r['aspect'])][r['divergence']] += 1
             per[(pred,taxon)][r['aspect']] = r['inferred_ranks']
 L = [r'\begingroup\scriptsize', r'\setlength{\tabcolsep}{4pt}', r'\begin{longtable}{lrrrrrrrrr}',
-     r'\caption{Lineage inference with the lineage objective: number of organisms by deepest correct rank (Deepest) and by first divergent rank (Divergence). A taxon counts as inferred only if every optimal solution requires it. None denotes no resolved correct rank or no observed divergence, respectively. SS: Seq-Sim; DGO: DeepGO-SE; SP: SPROF-GO; MLP: MLP-ESM2. E: entry-date split ($n=50$); H: heldout split ($n=219$).}\label{tab:supp-lineage}\\']
+     r'\caption{Lineage inference with the lineage objective: number of organisms by deepest correct rank (Deepest) and by first divergent rank (Divergence). A taxon counts as inferred only if every optimal solution requires it. None denotes no resolved correct rank or no observed divergence, respectively; an organism counted at a deepest correct rank can diverge at a deeper rank. SS: Seq-Sim; DGO: DeepGO-SE; SP: SPROF-GO; MLP: MLP-ESM2. E: entry-date split ($n=50$); H: heldout split ($n=219$).}\label{tab:supp-lineage}\\']
 head = [r'\toprule', r'Model/aspect & Measure & None & Domain & Phylum & Class & Order & Family & Genus & Species \\', r'\midrule']
 L += head + [r'\endfirsthead'] + head + [r'\endhead']
 for p, lab in SETS:
@@ -43,6 +43,6 @@ for p, lab in SETS:
         cells.append(f"{comp}/{ident}")
     rows.append(f"{lab} & " + ' & '.join(cells) + f" & {ok}/{len(orgs)}" + r" \\")
     agree.append(f"{lab} {ok}/{len(orgs)}")
-L.append(r'\par Agreement of CC, MF and BP by rank: organisms without conflicting inferred taxa / organisms in which all three sub-ontologies infer the same taxon. All ranks: organisms without a conflict at any rank.')
+L.append(r'\par Table~\ref{tab:supp-lineage}, continued. Agreement of CC, MF and BP by rank: organisms without conflicting inferred taxa / organisms in which all three sub-ontologies infer the same taxon. All ranks: organisms without a conflict at any rank, out of all organisms of the split.')
 L += [r'\begin{center}\scriptsize\begin{tabular}{lrrrrrrrr}\toprule', r'Model & Domain & Phylum & Class & Order & Family & Genus & Species & All ranks \\', r'\midrule'] + rows + [r'\bottomrule\end{tabular}\end{center}']
 pathlib.Path(out).write_text('\n'.join(L) + '\n'); print('\n'.join(L[-48:]))

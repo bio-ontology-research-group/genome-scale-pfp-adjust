@@ -1,7 +1,7 @@
 \begingroup\scriptsize
 \setlength{\tabcolsep}{4pt}
 \begin{longtable}{lrrrrrrrrr}
-\caption{Lineage inference with the lineage objective: number of organisms by deepest correct rank (Deepest) and by first divergent rank (Divergence). A taxon counts as inferred only if every optimal solution requires it. None denotes no resolved correct rank or no observed divergence, respectively. SS: Seq-Sim; DGO: DeepGO-SE; SP: SPROF-GO; MLP: MLP-ESM2. E: entry-date split ($n=50$); H: heldout split ($n=219$).}\label{tab:supp-lineage}\\
+\caption{Lineage inference with the lineage objective: number of organisms by deepest correct rank (Deepest) and by first divergent rank (Divergence). A taxon counts as inferred only if every optimal solution requires it. None denotes no resolved correct rank or no observed divergence, respectively; an organism counted at a deepest correct rank can diverge at a deeper rank. SS: Seq-Sim; DGO: DeepGO-SE; SP: SPROF-GO; MLP: MLP-ESM2. E: entry-date split ($n=50$); H: heldout split ($n=219$).}\label{tab:supp-lineage}\\
 \toprule
 Model/aspect & Measure & None & Domain & Phylum & Class & Order & Family & Genus & Species \\
 \midrule
@@ -53,7 +53,7 @@ MLP-H JOINT & Divergence & 182 & 18 & 17 & 2 & 0 & 0 & 0 & 0 \\
 \bottomrule
 \end{longtable}
 \endgroup
-\par Agreement of CC, MF and BP by rank: organisms without conflicting inferred taxa / organisms in which all three sub-ontologies infer the same taxon. All ranks: organisms without a conflict at any rank.
+\par Table~\ref{tab:supp-lineage}, continued. Agreement of CC, MF and BP by rank: organisms without conflicting inferred taxa / organisms in which all three sub-ontologies infer the same taxon. All ranks: organisms without a conflict at any rank, out of all organisms of the split.
 \begin{center}\scriptsize\begin{tabular}{lrrrrrrrr}\toprule
 Model & Domain & Phylum & Class & Order & Family & Genus & Species & All ranks \\
 \midrule
