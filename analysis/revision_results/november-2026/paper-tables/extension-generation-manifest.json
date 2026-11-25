@@ -1,0 +1,9 @@
+{
+  "generator_sha256": "29bda905737282ea625e217798f58739f3d92b864f417631d7610c195528a09e",
+  "outputs": {
+    "supp-conservative-complexes.tex": "e53c65c3ff4ef2672daf1502588026cf774c8bc57e68342eedbf667883906770",
+    "supp-optimal-lineage.tex": "24f9f3464c4674caea69f4500c886cc2d22b7331b9f6a0302fe6aef6ba2dd0c3",
+    "supp-targeted-recovery.tex": "e730a31b5d1cb14adda3be766ee43bddf82974efa175fe5c2d77f0391cb63d16"
+  },
+  "summary_sha256": "2974d0c559497147238037e45d666120dc6e46a6ec7bac7e4a8ff706c315ccb0"
+}

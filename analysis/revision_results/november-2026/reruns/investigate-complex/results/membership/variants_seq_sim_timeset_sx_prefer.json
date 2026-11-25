@@ -1,0 +1,335 @@
+{
+  "provenance": {
+    "script_sha256": "7763bb0eca3f02deaae21a61750efa01314f17492058fff2dd6a67762768acae",
+    "index_sha256": "3d68847b2c7b7884b2a274d244d3ce2c41c57829bfd610da30ddf99d7a5e84c2",
+    "go_sha256": "923645000afcb1df0e72e252b64950b1c2bcc98c9393fec8c1dd1a0f7c9d4d77",
+    "complex_exclusions_sha256": "320803f8ecadaf569845a257c2dace49bc84d9452ad154332c1f12e2471c406f",
+    "raw_reference_keys": 7747,
+    "complex_reference_keys": 2051,
+    "mapping_sha256": "f3c5916f6f1459b54835339686c3dfc02fd419ea87d9e0a2b410a0c217b11925",
+    "pairs": [
+      {
+        "taxon": "10116",
+        "stage1": "f9c14a2e5af7616e63a51337fcf6f09b5836f3ff8ebf1bef6c3ff1483bb1df80",
+        "stage2": "78f382e273999f65c97bfcfdb766f58a49841cd9be06b728bfa10627aa497215"
+      },
+      {
+        "taxon": "1073375",
+        "stage1": "11d194644a6d874e01872963001b118e1bbb28af3c7faf9e64b501a83b93d7ca",
+        "stage2": "603ce1453a5156e0a41fadd587cd7d760874010b551fdca5809f938d8033fb7e"
+      },
+      {
+        "taxon": "1220924",
+        "stage1": "a6473ddc75027eec0a037a6bf72b3cac2c91a073ae522027843ee3974dbfa6a5",
+        "stage2": "590a656984eeb553da2ff1b97a27a5177152cc0d07caa3b9e868904775d79dfe"
+      },
+      {
+        "taxon": "187420",
+        "stage1": "46e9a85691fcd47e639ab2367929e985e5c3c22b4c7c1a9f4cabf82299ddfe12",
+        "stage2": "5faa117cafe12daeb33f8aaa32aaafb6e1159b4804d6c220b0bac93471d9119d"
+      },
+      {
+        "taxon": "208964",
+        "stage1": "49d81783347e6dde871537c6c4e8a79a1d8e05568e6fb74b2d8a9db8a92f6796",
+        "stage2": "e9367f7dc9abc5d2aba071088abe54ad343eb7c432151723a999c6721edc94eb"
+      },
+      {
+        "taxon": "221103",
+        "stage1": "914add1fe5b5bf3366c4ba43785d76f6c9e7494edc9322dd642ff9ea05bff676",
+        "stage2": "328fccb2dcccdf660b75e10ada756197938dcac00b25d68b3d416a6bbb3348de"
+      },
+      {
+        "taxon": "227321",
+        "stage1": "a6c909437d2088266b9acb0ec489f1430ca273b67e6005875a570f32400ec3a7",
+        "stage2": "ae06edad35a5ac6eb2d819268e360946454bacba2752fbce5a909bb013239e2a"
+      },
+      {
+        "taxon": "229533",
+        "stage1": "3e25c9dfe5831a7f0a2fc9b3e9a6762abffbb5a7a3a451caf203323443197f0a",
+        "stage2": "7047a38c6f6a31bed33c7980c25a81a7ffa1772c8a5714ca72053e55f71beafb"
+      },
+      {
+        "taxon": "237561",
+        "stage1": "a6374f5ef183b895889934752ac8173db87638c14986135fdd128e13f366d6e2",
+        "stage2": "8f42c3174bc8c336a57d319d0ed87b0de4b3a18d2d2244ca37998aa05f222815"
+      },
+      {
+        "taxon": "243274",
+        "stage1": "ddf0ce369513f7cf95171abe4e5bb7b05ea7a088451d933b336dada1e60364c3",
+        "stage2": "f6504a05101ab5adc3c118e92d8549d2e6764d6b806c5507a922cfc2b246f18d"
+      },
+      {
+        "taxon": "267377",
+        "stage1": "fa211063eaa58720e9f571478c51b3afa1c9d7851053c1447244086430ece528",
+        "stage2": "9b6fa3ba401900cf43cdc9d74e2d57ae0ffc34bdbd1305601ff18f315ec9e731"
+      },
+      {
+        "taxon": "272844",
+        "stage1": "212f4fcbf4d45a782bf1255bef4d0e35b7bbf9f48fb1605111c1b1d53debe61f",
+        "stage2": "14993ff06ae1c8171d425221bffb0a520c45674dbf2cb98a6ddf14f11cf3d7ba"
+      },
+      {
+        "taxon": "3197",
+        "stage1": "a6c0c41e9b1b2b17fc35cae4213cc944b97be23e6c32d4cfa84539a0a0dbdab7",
+        "stage2": "10528bfc8a32e66a6f7655c33e1d603f5a4f425590ef8a87625a115c366c6e05"
+      },
+      {
+        "taxon": "3218",
+        "stage1": "43441e600758223fe511215d968649d2da4097a02688adb261dfdc435d899451",
+        "stage2": "118127ba7ab06912e4f3a1c3058e2bdb8d10c1875603bbc9c712c6d9d9b48f9e"
+      },
+      {
+        "taxon": "330879",
+        "stage1": "5a20f87668c1b746fcf15428d6f2cddd9c225321a3a3c3ddd69ac8560b95b761",
+        "stage2": "cebe415ed4fee9b0548b7032af1d497733cb4636e82efe05f88ee7bd818b02b4"
+      },
+      {
+        "taxon": "331117",
+        "stage1": "f643bf0b21eebac7ef79663e4880e7634f15ee078e992f625149ac457e6b5f88",
+        "stage2": "3f88497fb763b35eaa14aae21580f477f389da5d6a65147afcd14ed053c0484d"
+      },
+      {
+        "taxon": "336722",
+        "stage1": "20f08dd622fe890534400272fa2693347f39f6a4fb0d54be2f10e07be045ed16",
+        "stage2": "60abe604eb3d049bc801886c8389b1c8a788c904875b3faa8457d6894dab057f"
+      },
+      {
+        "taxon": "3572",
+        "stage1": "0255ed21f6a60d6d718aaf716361749a48e5101fd57b6e1128732d1b15c700be",
+        "stage2": "d271573c6f404c605801fe1e8991c977d913ebb170265961664f46a53ace8cce"
+      },
+      {
+        "taxon": "367110",
+        "stage1": "74930f2ed1a96cba2c1550dd4fab742af2ab30479cecb1d6121b970397199e31",
+        "stage2": "e3337000bcd1b5774c8504b8e46ca73b3ab62b20a408379f8bfb59e53df0f90c"
+      },
+      {
+        "taxon": "3750",
+        "stage1": "260839d334201161d2295616023271717287a7cc5a17e9a51dc2971ce13e5a30",
+        "stage2": "84342cfad45bcfcc5667e4cbea6d089b353589535bc8b600c248f194116af97e"
+      },
+      {
+        "taxon": "3847",
+        "stage1": "995f9b814084d21b41e2241b9592d0800e19cbe1426890ed77fc1ffd9324e853",
+        "stage2": "a6d54a83877acf77efd58754480649185810aa92d43c3d922dccf8053554d91e"
+      },
+      {
+        "taxon": "3871",
+        "stage1": "46e2f311fca413da56fc296b448b3055bcfc2de27db359a4c6bfb902e243e191",
+        "stage2": "ee2cc79bef84cd298dfbe93f0fb86ca5fbff606929a362fa7e2961273010178f"
+      },
+      {
+        "taxon": "3880",
+        "stage1": "5c45aeb27c36eb66fe41f02267de62f7698a537033e0f3b095dc6b913ec2d448",
+        "stage2": "a4c1e609f0a1d3ca6506ba854f4088f94531f0ebd221f2dfc874a29c9b0aa219"
+      },
+      {
+        "taxon": "3983",
+        "stage1": "184d93569b7ab51ae0301d8de7faa7beb44ca910f962629d9aa7ec902c9c4d00",
+        "stage2": "943f0362bbd201d17f96292cbcc3266f3aedbf1ea7a3b485e90b3c061c231f54"
+      },
+      {
+        "taxon": "39947",
+        "stage1": "a5aae3210d0b062acd25b9e83c38a41311ab25769cbfc6a8c58fc3d25b71bbc1",
+        "stage2": "b3e3f2078025293b2085d7e514bd41a64fae8930b0810e3622c4e8191b76dcb5"
+      },
+      {
+        "taxon": "4072",
+        "stage1": "c766080fe1313d96067aac10f4b94e2c888e5730f625b76ddc89ec8f1e860e97",
+        "stage2": "6d7ffe9796d9eadf9270b49c1147bc2c3d701107574683e3d7b7bf50a4f33682"
+      },
+      {
+        "taxon": "4081",
+        "stage1": "71fd14156d12b021a2b192bb496ccd0f193b328f98dbaf87f9f4f7f2faa0e0ac",
+        "stage2": "896124ebb54d9ee5438799e60ba181578665a2708d8b41d719a737bdaa59ffec"
+      },
+      {
+        "taxon": "510516",
+        "stage1": "6afbd84b0d39130726e3f73a6eba724222427531d1649ed507d07939a4a6ab0e",
+        "stage2": "19070a86ee2688dc0c136b3b5412e95e257070c803c5a3bf99a9f059a50a8ef4"
+      },
+      {
+        "taxon": "5270",
+        "stage1": "97000458e87acd26dcc52486e74c31b3b7e118ec05de82b177eda768993b5d78",
+        "stage2": "4b5c0727091072bbd27b812d608a34f90669af21a889f9d04eabae762aff8d6c"
+      },
+      {
+        "taxon": "6239",
+        "stage1": "7c21cc24457c45ea6df1d93c8007837f8c8088545deedc0433727142cf6c30c5",
+        "stage2": "931e6f4557d826bdae468e8024c2b2d2a6b061209d517558e429df80e675d79d"
+      },
+      {
+        "taxon": "655827",
+        "stage1": "f6e18db1c10055603d6d1b26fb1beec8bd018503d0df6d300e25f1aa3bf50424",
+        "stage2": "4db11171a35d078b74c9629f477fd076a8422197015416a9a2b8e1fb5a6f9035"
+      },
+      {
+        "taxon": "69014",
+        "stage1": "5e0e39ee9478ed599d2731a98df38c6c49f4f59b8ea34734b7e7b6586bb60dc4",
+        "stage2": "5336ee9a83473e6466a19ea4045f08a6ceaa6d69610d1fdb87262602ee0c4f3a"
+      },
+      {
+        "taxon": "70601",
+        "stage1": "9ba0d200f5c6f15f9bf2fb519cfca2cb9ad5841bba79e8f771af5350505fed15",
+        "stage2": "fd50a0d7b80e76f9ea4a01b9baa5d60dd5d9025a70390614d37ad573660d3761"
+      },
+      {
+        "taxon": "7070",
+        "stage1": "73ceb3af5907f97f1078d52479f98236f9bd8c605470a7ddfdef246267236e21",
+        "stage2": "16a84fb832c88ca6c45c01905cab3e519c2cad4a3cd50c72eaa93a7018225fc1"
+      },
+      {
+        "taxon": "7176",
+        "stage1": "c1e57bea82976e31c74fa7563c7ddcecf01877b4e2d276e1eeb10bcc76cded95",
+        "stage2": "afee5aa3a87bf252794ffc9d2d81c089344318bdee269af5f0286f0b19857a2d"
+      },
+      {
+        "taxon": "7227",
+        "stage1": "a41df5e2190931786d1386e82163e337f1b219b3ebf54bbdcca7ceb55dfd87f4",
+        "stage2": "88de40c2318d44f29d9035407012f5b6d4bc29bcf36b31b9ffcc60bebc01b2ab"
+      },
+      {
+        "taxon": "742740",
+        "stage1": "c4caa5a93ff5dec3db1594aff6fbc0f4c768f3cce834c95b9c1821697c171ae4",
+        "stage2": "bb0eed690ece465c66c89c793efa42738dbfd0926d1be3b2d0e4169c8dc0d430"
+      },
+      {
+        "taxon": "759272",
+        "stage1": "297017c1d3f41c864a9345f6eb0bbe35591300fc81f24d221f9528521927f082",
+        "stage2": "8549c3602507a9d63e753b013ee0f2d34fa9033e5924bbb6df3a8ddf6d371502"
+      },
+      {
+        "taxon": "7757",
+        "stage1": "e4154dbbb9455fb3a10db84e4a6dd2516d4ade0356188a6fea8a70312ae87c8d",
+        "stage2": "2a207d7e0c5f016bbc846390149f6755dd8c88e8f5411dd9188df1fd349a0ab6"
+      },
+      {
+        "taxon": "7868",
+        "stage1": "97094fa40c8c19e6a3cb9e1a07dc5598837f62275cb03d56bbf18a46abf591d1",
+        "stage2": "51f347baa32f660c0cf40c22597532d2324f24f56aeccb1e16aa982a000851ee"
+      },
+      {
+        "taxon": "7955",
+        "stage1": "8787cbf435499a86aa395d462acd3884a714fc82dc89e66562a438a17d9e6e4f",
+        "stage2": "e5443fa8d0f8578457d8be3fad3b02694a6acb44bc27491cfd99bc199b81c44b"
+      },
+      {
+        "taxon": "8090",
+        "stage1": "ac84385fc1f4cb7d2e06d044427d43c2faf295481385c57249792574274001f2",
+        "stage2": "8017b285df20c54fc53ee4b16acd08f57d5cf62f1a605da381d148e70c16cd73"
+      },
+      {
+        "taxon": "83332",
+        "stage1": "e5a822ea3e4758ab00e6aa13bb3f15b02141491711870ef4ab1b4a49c25bf4c8",
+        "stage2": "85a338ac7f093c6d035c17949aa3cefbca3c139b27aaae9e81f5921f56ad62e2"
+      },
+      {
+        "taxon": "8355",
+        "stage1": "e856091ef1c4b893be0c2947e89ec3be1d0f74d01c07c91d7bcbfb194572f8e6",
+        "stage2": "6c42c3b73809d83b223991f9fd79ba97eb0437c0b577c1ed1825bfc9b6bf1212"
+      },
+      {
+        "taxon": "8364",
+        "stage1": "6439aa2d039f8799ad1bf125efd36e1d19c0a0011ba053f0e95ecc67fff5f31d",
+        "stage2": "27bed52a2cad278bc0097dbadd2396e165e57c49c0c39630ed7ec41be0ec771b"
+      },
+      {
+        "taxon": "85962",
+        "stage1": "da3819cec653eab4e60e27b1e6a7bd11aebb72de86ed2d50814969f76b427014",
+        "stage2": "c3ee1eb70bc8b8028562a03f2f7e16a793ea3ee917ca2f767fad3980217e830d"
+      },
+      {
+        "taxon": "88036",
+        "stage1": "66b5c33e6cd906a354d309430bc7b5c4118cabebe6b286fc6d4f27d389a0d95c",
+        "stage2": "7e5bcd8411e8256410bdda612f6a0f778473f6d175810aeae32aebdf673c6d74"
+      },
+      {
+        "taxon": "9031",
+        "stage1": "90fdf22d1549e335f60054cd5c6db1892fd689ef884c59738de0ba06e19a038c",
+        "stage2": "818c9fa8cb1be7998bdfcbb21be25b3b2a72465c4e18d851d8f30ddffe226506"
+      },
+      {
+        "taxon": "9913",
+        "stage1": "ec8a6bb8f289e9449474dd3cf4e1b49f9c778ee3aa9d3282ae44a6d469c1d4ac",
+        "stage2": "625056e1a52843cab7845ef5c66ebd8b3838933e886f827553dd4ff1c1f70eb4"
+      },
+      {
+        "taxon": "9940",
+        "stage1": "93a47a9018255b5590f62067c2c78b4bfcc1469bfabaa05e6135a707ff9951d1",
+        "stage2": "11460e26667eb2b3ebc8052c5236bd57550f744b89531ec7ce0e65bc4d617ee6"
+      }
+    ]
+  },
+  "label": "seq_sim_timeset sx_prefer",
+  "n_organism_pairs": 50,
+  "threshold": 0.001,
+  "interpretation": "Absence from a curated membership list is not proof of non-membership.",
+  "unmapped_promotions_with_reference": 0,
+  "unmapped_demotions_with_reference": 0,
+  "promotions": {
+    "total": 406,
+    "with_curated_reference": 1,
+    "coverage_pct": 0.25,
+    "precision_pct_on_covered": 100.0,
+    "true_subunit_promotions": 1
+  },
+  "demotions": {
+    "total": 2850,
+    "with_curated_reference": 10,
+    "coverage_pct": 0.35,
+    "unlisted_demotion_pct_on_covered": 30.0,
+    "curated_subunit_demotions": 7
+  },
+  "promotion_examples": [
+    [
+      "6239",
+      "GO:0031262",
+      "Q21952",
+      "subunit"
+    ]
+  ],
+  "harmful_demotion_examples": [
+    [
+      "10116",
+      "GO:0097140",
+      "O88498",
+      "curated_subunit_removed"
+    ],
+    [
+      "10116",
+      "GO:0097141",
+      "O88498",
+      "curated_subunit_removed"
+    ],
+    [
+      "6239",
+      "GO:0031436",
+      "B6VQ60",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0031084",
+      "Q9VHN9",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0005673",
+      "O96880",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:0032936",
+      "Q9VW37",
+      "curated_subunit_removed"
+    ],
+    [
+      "7227",
+      "GO:1990529",
+      "Q9W2E4",
+      "curated_subunit_removed"
+    ]
+  ]
+}

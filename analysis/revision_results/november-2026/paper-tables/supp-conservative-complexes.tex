@@ -1,0 +1,27 @@
+\begingroup\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{llrrrrrr}
+\caption{Complex repair across 50 entry-date organisms per predictor. Additions and deletions count all GO pairs. Residual gives unresolved complexes divided by initial singleton complexes. Listed/covered counts added pairs in curated membership lists among additions with an assessable reference. Listed deletions count removed curated members. Opt. gives proven optimal tasks out of 50, within each mode's candidate domain. Both conservative gates preserve all active inputs. Corroboration requires both other predictors above their native thresholds; nonzero uses positive primary scores. Missing membership remains unassessed.}\label{tab:supp-conservative-complexes}\\
+\toprule
+Model & Mode & Added & Deleted & Residual & Listed/covered & Listed deletions & Opt. \\
+\midrule
+\endfirsthead
+\toprule
+Model & Mode & Added & Deleted & Residual & Listed/covered & Listed deletions & Opt. \\
+\midrule
+\endhead
+SS-E & Hard standard & 5919 & 0 & 0/2904 & 0/30 & 0 & 1/50 \\
+SS-E & Demotion-only & 0 & 2949 & 0/2904 & 0/0 & 8 & 50/50 \\
+SS-E & Nonzero gate & 0 & 0 & 2904/2904 & 0/0 & 0 & 50/50 \\
+SS-E & Corroboration gate & 13 & 0 & 2901/2904 & 0/0 & 0 & 50/50 \\
+DGO-E & Hard standard & 1024 & 1405 & 0/2017 & 7/16 & 21 & 16/50 \\
+DGO-E & Demotion-only & 0 & 2035 & 0/2017 & 0/0 & 30 & 50/50 \\
+DGO-E & Nonzero gate & 4242 & 0 & 22/2017 & 17/58 & 0 & 14/50 \\
+DGO-E & Corroboration gate & 790 & 0 & 1580/2017 & 2/7 & 0 & 50/50 \\
+SP-E & Hard standard & 262 & 0 & 0/143 & 0/0 & 0 & 45/50 \\
+SP-E & Demotion-only & 0 & 143 & 0/143 & 0/0 & 0 & 50/50 \\
+SP-E & Nonzero gate & 0 & 0 & 143/143 & 0/0 & 0 & 50/50 \\
+SP-E & Corroboration gate & 0 & 0 & 143/143 & 0/0 & 0 & 50/50 \\
+\bottomrule
+\end{longtable}
+\endgroup

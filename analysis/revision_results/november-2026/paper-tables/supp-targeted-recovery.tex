@@ -1,0 +1,33 @@
+\begingroup\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{llrrrr}
+\caption{Controlled completion of two-member complex annotations. Each case supplies one curated member and withholds the other from repair inputs. Other target scores are compressed below the activation threshold. Primary-score eligibility uses original scores above the native threshold; corroboration uses both other predictors. Greedy adds the eligible protein with the highest original primary score. Recovery gives hidden members restored per case. Deleted counts supplied members removed; unresolved counts singleton outputs. Other proposals count proteins apart from the supplied and hidden members. Both directions and related complex terms are correlated cases.}\label{tab:supp-targeted-recovery}\\
+\toprule
+Model & Mode & Recovered/cases & Deleted & Unresolved & Other proposals \\
+\midrule
+\endfirsthead
+\toprule
+Model & Mode & Recovered/cases & Deleted & Unresolved & Other proposals \\
+\midrule
+\endhead
+SS-E & Hard standard & 104/292 & 0 & 0 & 188 \\
+SS-E & Demotion-only & 0/292 & 292 & 0 & 0 \\
+SS-E & Primary-score gate & 104/292 & 0 & 44 & 144 \\
+SS-E & Primary-score greedy & 104/292 & 0 & 44 & 144 \\
+SS-E & Corroboration gate & 1/292 & 0 & 234 & 57 \\
+SS-E & Corroboration greedy & 1/292 & 0 & 234 & 57 \\
+DGO-E & Hard standard & 32/292 & 111 & 0 & 149 \\
+DGO-E & Demotion-only & 0/292 & 292 & 0 & 0 \\
+DGO-E & Primary-score gate & 18/292 & 0 & 207 & 67 \\
+DGO-E & Primary-score greedy & 20/292 & 0 & 201 & 71 \\
+DGO-E & Corroboration gate & 1/292 & 0 & 236 & 55 \\
+DGO-E & Corroboration greedy & 1/292 & 0 & 234 & 57 \\
+SP-E & Hard standard & 0/292 & 0 & 0 & 292 \\
+SP-E & Demotion-only & 0/292 & 292 & 0 & 0 \\
+SP-E & Primary-score gate & 0/292 & 0 & 234 & 58 \\
+SP-E & Primary-score greedy & 0/292 & 0 & 234 & 58 \\
+SP-E & Corroboration gate & 13/292 & 0 & 201 & 78 \\
+SP-E & Corroboration greedy & 13/292 & 0 & 201 & 78 \\
+\bottomrule
+\end{longtable}
+\endgroup

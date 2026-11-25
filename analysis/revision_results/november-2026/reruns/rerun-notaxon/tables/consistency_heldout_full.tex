@@ -1,0 +1,42 @@
+% KTC: repaired proteome consistent with the TRUE lineage (% organisms); GTC: GAEF pairwise screen; GAEF metrics macro-averaged over organisms
+\begin{tabular}{lllrrrrrr}
+\toprule
+Model & Sub & Setting & KTC \% & GTC \% & Proc.\ coh.\ \% & Path.\ coh.\ \% & Ess.\ compl.\ \% & Cplx.\ coh.\ \% \\
+\midrule
+Seq-Sim & CC & Preds & 0.0 & 0.0 & 89.7 & -- & -- & 80.6 \\
+ &  & Taxons & 100.0 & 100.0 & 97.3 & -- & -- & 83.2 \\
+ &  & No taxons (current) & 6.8 & 100.0 & 89.1 & -- & -- & 80.6 \\
+ &  & No taxons (siglogit, required) & 45.2 & 100.0 & 93.9 & -- & -- & 82.2 \\
+ &  & No taxons (siglogit, full lineage) & 46.6 & 100.0 & 94.0 & -- & -- & 82.3 \\
+\addlinespace
+Seq-Sim & MF & Preds & 0.0 & 0.0 & 96.7 & -- & -- & -- \\
+ &  & Taxons & 100.0 & 100.0 & 97.2 & -- & -- & -- \\
+ &  & No taxons (current) & 24.2 & 100.0 & 97.2 & -- & -- & -- \\
+ &  & No taxons (siglogit, required) & 59.4 & 100.0 & 97.2 & -- & -- & -- \\
+ &  & No taxons (siglogit, full lineage) & 59.8 & 100.0 & 97.2 & -- & -- & -- \\
+\addlinespace
+Seq-Sim & BP & Preds & 0.0 & 0.0 & 62.7 & 10.9 & 95.5 & -- \\
+ &  & Taxons & 100.0 & 100.0 & 60.5 & 10.9 & 95.5 & -- \\
+ &  & No taxons (current) & 11.4 & 100.0 & 63.1 & 10.7 & 95.5 & -- \\
+ &  & No taxons (siglogit, required) & 46.1 & 100.0 & 61.5 & 10.9 & 95.5 & -- \\
+ &  & No taxons (siglogit, full lineage) & 39.7 & 100.0 & 61.2 & 10.9 & 95.5 & -- \\
+\midrule
+MLP-ESM2 & CC & Preds & 0.0 & 0.0 & 92.4 & -- & -- & 88.3 \\
+ &  & Taxons & 100.0 & 100.0 & 97.5 & -- & -- & 89.4 \\
+ &  & No taxons (current) & 35.2 & 100.0 & 95.0 & -- & -- & 88.8 \\
+ &  & No taxons (siglogit, required) & 59.8 & 100.0 & 96.8 & -- & -- & 89.2 \\
+ &  & No taxons (siglogit, full lineage) & 63.9 & 100.0 & 96.9 & -- & -- & 89.2 \\
+\addlinespace
+MLP-ESM2 & MF & Preds & 0.0 & 0.0 & 95.8 & -- & -- & -- \\
+ &  & Taxons & 100.0 & 100.0 & 96.9 & -- & -- & -- \\
+ &  & No taxons (current) & 11.4 & 100.0 & 96.4 & -- & -- & -- \\
+ &  & No taxons (siglogit, required) & 28.8 & 100.0 & 96.6 & -- & -- & -- \\
+ &  & No taxons (siglogit, full lineage) & 28.8 & 100.0 & 96.7 & -- & -- & -- \\
+\addlinespace
+MLP-ESM2 & BP & Preds & 0.0 & 0.0 & 64.5 & 7.8 & 95.5 & -- \\
+ &  & Taxons & 100.0 & 100.0 & 62.2 & 8.0 & 95.5 & -- \\
+ &  & No taxons (current) & 37.9 & 100.0 & 63.8 & 8.1 & 95.5 & -- \\
+ &  & No taxons (siglogit, required) & 61.2 & 100.0 & 63.0 & 8.0 & 95.5 & -- \\
+ &  & No taxons (siglogit, full lineage) & 56.6 & 100.0 & 62.6 & 8.0 & 95.5 & -- \\
+\bottomrule
+\end{tabular}

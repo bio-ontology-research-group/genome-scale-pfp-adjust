@@ -22,6 +22,10 @@ the standalone repair command, and the controlled recovery evaluation.
 The [validated extension results](analysis/revision_results/extensions/README.md)
 report preservation, all-optimum lineage conclusions and the recovery controls.
 
+## Results of the revised manuscript
+
+The tables of the revised manuscript, the scripts of the follow-up experiments (evidence-gated Stage 2, lineage objective, two-step repair without the organism taxon, contig lineage inference) and their outputs are in [`analysis/revision_results/november-2026/`](analysis/revision_results/november-2026/README.md).
+
 ## Demo
 
 An executable Showboat demo is available in [`demos/empty_quarter_ibex/README.md`](demos/empty_quarter_ibex/README.md). It fetches a real Empty Quarter genome annotation from the public reproducibility bundle at `https://bio2vec.net/data/genoadjust/rh04_63_rh04_bacillus_spizizenii_genoadjust_demo/` (`rh04` / `63_rh04`, *Bacillus spizizenii*, `NCBITaxon_96241`), converts PGAP GO annotations into the solver's prediction format, and verifies both taxon-consistency and complex-coherence repairs.

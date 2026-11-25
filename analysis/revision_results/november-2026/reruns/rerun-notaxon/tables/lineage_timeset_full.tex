@@ -1,0 +1,24 @@
+% Organisms whose repaired proteome is consistent with the true lineage (KTC counts); sel. correct/wrong: deepest taxon of the selected siglogit lineage in / not in the true lineage; Full = known: identical demotion count to known-taxon Stage 1
+\begin{tabular}{lllrrrrrr}
+\toprule
+Model & Sub & Organisms & Current & Required & Full & Full | sel.\ correct & Full | sel.\ wrong & Full = known \\
+\midrule
+Seq-Sim & CC & 50 & 6 & 13 & 14 & 4/22 & 10/28 & 14 \\
+\addlinespace
+Seq-Sim & MF & 50 & 21 & 28 & 28 & 11/22 & 17/28 & 21 \\
+\addlinespace
+Seq-Sim & BP & 50 & 10 & 17 & 9 & 3/22 & 6/28 & 9 \\
+\midrule
+DeepGO-SE & CC & 50 & 11 & 14 & 23 & 19/34 & 4/16 & 22 \\
+\addlinespace
+DeepGO-SE & MF & 50 & 49 & 50 & 44 & 33/34 & 11/16 & 36 \\
+\addlinespace
+DeepGO-SE & BP & 50 & 25 & 28 & 22 & 18/34 & 4/16 & 18 \\
+\midrule
+SPROF-GO & CC & 50 & 7 & 10 & 20 & 18/39 & 2/11 & 20 \\
+\addlinespace
+SPROF-GO & MF & 50 & 14 & 19 & 36 & 34/39 & 2/11 & 36 \\
+\addlinespace
+SPROF-GO & BP & 50 & 13 & 16 & 15 & 13/39 & 2/11 & 8 \\
+\bottomrule
+\end{tabular}

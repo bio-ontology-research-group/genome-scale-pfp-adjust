@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering\small
+\caption{Stage 1 edit burden with the known taxon at native thresholds. Active and grid rates use different, explicitly defined denominators. SS: Seq-Sim; DGO: DeepGO-SE; SP: SPROF-GO; MLP: MLP-ESM2. E: entry-date split; H: heldout split.}
+\label{tab:main-flips}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Model/aspect & $\tau$ & Active input & Demotions & Active \% & Grid \% \\
+\midrule
+SS-E CC & 0.001 & 28,325,014 & 1,698,216 & 5.995 & 0.09338 \\
+SS-E MF & 0.001 & 17,331,616 & 30,526 & 0.176 & 0.0007266 \\
+SS-E BP & 0.001 & 123,332,626 & 7,868,742 & 6.380 & 0.06295 \\
+DGO-E CC & 0.300 & 11,346,991 & 10,179 & 0.090 & 0.002136 \\
+DGO-E MF & 0.300 & 7,473,532 & 224 & 0.003 & 1.583e-05 \\
+DGO-E BP & 0.300 & 18,780,359 & 3,018 & 0.016 & 0.000205 \\
+SP-E CC & 0.001 & 50,941,261 & 2,040,031 & 4.005 & 0.3611 \\
+SP-E MF & 0.001 & 49,157,980 & 57,664 & 0.117 & 0.008504 \\
+SP-E BP & 0.001 & 277,371,942 & 13,146,294 & 4.740 & 0.3322 \\
+SS-H CC & 0.001 & 76,136,598 & 5,390,327 & 7.080 & 0.1076 \\
+SS-H MF & 0.001 & 47,439,003 & 78,602 & 0.166 & 0.0006945 \\
+SS-H BP & 0.001 & 363,577,489 & 30,760,645 & 8.461 & 0.08508 \\
+MLP-H CC & 0.001 & 302,649,234 & 17,827,832 & 5.891 & 0.3626 \\
+MLP-H MF & 0.001 & 348,597,940 & 790,680 & 0.227 & 0.006738 \\
+MLP-H BP & 0.001 & 2,245,535,481 & 121,741,502 & 5.421 & 0.4044 \\
+\bottomrule
+\end{tabular}
+\end{table*}

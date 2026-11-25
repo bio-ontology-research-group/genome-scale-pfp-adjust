@@ -1,0 +1,30 @@
+\begingroup\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{lrrrrrr}
+\caption{Input score alignment before every comparison. Alternative IDs are mapped to primary IDs, duplicate scores merged by maximum, and unknown/obsolete or out-of-aspect scores excluded. Ancestor scores are then raised to the largest descendant score. Added/raised pairs are preprocessing operations, not repair flips. Counts precede thresholding and are counted once per input file. SS: Seq-Sim; DGO: DeepGO-SE; SP: SPROF-GO; MLP: MLP-ESM2. E: entry-date split; H: heldout split.}\label{tab:supp-identifiers}\\
+\toprule
+Model/aspect & Aliases & Merged & Unknown/obsolete & Other aspect & Added ancestors & Raised scores \\
+\midrule
+\endfirsthead
+\toprule
+Model/aspect & Aliases & Merged & Unknown/obsolete & Other aspect & Added ancestors & Raised scores \\
+\midrule
+\endhead
+SS-E CC & 0 & 0 & 0 & 0 & 0 & 0 \\
+SS-E MF & 0 & 0 & 0 & 0 & 0 & 0 \\
+SS-E BP & 0 & 0 & 0 & 0 & 0 & 0 \\
+DGO-E CC & 513529 & 508578 & 2589015 & 0 & 71318 & 115961 \\
+DGO-E MF & 16944 & 9652 & 3063125 & 0 & 280017 & 84634 \\
+DGO-E BP & 5727558 & 5698202 & 62189966 & 0 & 438441 & 111229 \\
+SP-E CC & 1308426 & 1300759 & 1978900 & 0 & 2801020 & 1563034 \\
+SP-E MF & 1003055 & 903009 & 2689840 & 0 & 3419304 & 821417 \\
+SP-E BP & 5983967 & 4601516 & 46078000 & 0 & 6912227 & 7099996 \\
+SS-H CC & 0 & 0 & 0 & 0 & 0 & 0 \\
+SS-H MF & 0 & 0 & 0 & 0 & 0 & 0 \\
+SS-H BP & 0 & 0 & 0 & 0 & 0 & 0 \\
+MLP-H CC & 0 & 0 & 0 & 0 & 0 & 0 \\
+MLP-H MF & 0 & 0 & 0 & 0 & 0 & 0 \\
+MLP-H BP & 0 & 0 & 0 & 0 & 0 & 0 \\
+\bottomrule
+\end{longtable}
+\endgroup

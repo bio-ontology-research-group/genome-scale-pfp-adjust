@@ -1,0 +1,66 @@
+\begingroup\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{lrrrrrrr}
+\caption{Published filtering in all three GO aspects, with complex repair and soft-constraint ablation in CC, on all 50 entry-date organisms per predictor. KTC and complex coherence are percentages; accuracy uses the exact eligible proteins in Table~\ref{tab:supp-scope}. SS: Seq-Sim; DGO: DeepGO-SE; SP: SPROF-GO; MLP: MLP-ESM2. E: entry-date split; H: heldout split.}\label{tab:supp-comparators}\\
+\toprule
+Model/aspect & Mode & KTC \% & Coherence \% & $F_{\max}$ & $S_{\min}$ & AUC & AUPR \\
+\midrule
+\endfirsthead
+\toprule
+Model/aspect & Mode & KTC \% & Coherence \% & $F_{\max}$ & $S_{\min}$ & AUC & AUPR \\
+\midrule
+\endhead
+SS-E CC & Raw & 0.00 & 87.32 & 0.6173 & 8.8550 & 0.8089 & 0.5322 \\
+SS-E CC & Known taxon & 100.00 & 88.54 & 0.6173 & 8.8195 & 0.8098 & 0.5332 \\
+SS-E CC & FunTaxIS-lite & 0.00 & 91.01 & 0.6173 & 8.8550 & 0.8099 & 0.5330 \\
+SS-E CC & Soft 1, 0.2 & 6.00 & 88.57 & 0.6173 & 8.8195 & 0.8098 & 0.5332 \\
+SS-E CC & Soft 2, 0.2 & 6.00 & 99.85 & 0.6173 & 8.8195 & 0.8098 & 0.5332 \\
+SS-E CC & Soft 1, 0.5 & 76.00 & 88.54 & 0.6173 & 8.8195 & 0.8098 & 0.5332 \\
+SS-E CC & Soft 2, 0.5 & 76.00 & 99.93 & 0.6173 & 8.8195 & 0.8098 & 0.5332 \\
+SS-E CC & Soft 1, 1.0 & 100.00 & 88.54 & 0.6173 & 8.8195 & 0.8098 & 0.5332 \\
+SS-E CC & Soft 2, 1.0 & 100.00 & 99.96 & 0.6173 & 8.8195 & 0.8098 & 0.5332 \\
+SS-E CC & Stage 2 standard & 100.00 & 100.00 & 0.6173 & 8.8195 & 0.8098 & 0.5332 \\
+SS-E CC & Stage 2 demotion & 100.00 & 100.00 & 0.6173 & 8.8195 & 0.8098 & 0.5333 \\
+SS-E MF & Raw & 0.00 & -- & 0.7279 & 7.4290 & 0.9069 & 0.6685 \\
+SS-E MF & Known taxon & 100.00 & -- & 0.7279 & 7.4290 & 0.9069 & 0.6685 \\
+SS-E MF & FunTaxIS-lite & 8.00 & -- & 0.7269 & 7.5731 & 0.9023 & 0.6665 \\
+SS-E BP & Raw & 0.00 & -- & 0.4423 & 24.7026 & 0.7511 & 0.2907 \\
+SS-E BP & Known taxon & 100.00 & -- & 0.4423 & 24.7026 & 0.7520 & 0.2911 \\
+SS-E BP & FunTaxIS-lite & 0.00 & -- & 0.4427 & 24.6250 & 0.7513 & 0.2914 \\
+DGO-E CC & Raw & 0.00 & 79.07 & 0.6529 & 9.8851 & 0.8560 & 0.6972 \\
+DGO-E CC & Known taxon & 100.00 & 79.87 & 0.6529 & 9.8851 & 0.8561 & 0.6973 \\
+DGO-E CC & FunTaxIS-lite & 74.00 & 80.65 & 0.6529 & 9.8851 & 0.8566 & 0.6976 \\
+DGO-E CC & Soft 1, 0.2 & 74.00 & 79.87 & 0.6529 & 9.8851 & 0.8561 & 0.6973 \\
+DGO-E CC & Soft 2, 0.2 & 74.00 & 98.62 & 0.6529 & 9.8851 & 0.8561 & 0.6973 \\
+DGO-E CC & Soft 1, 0.5 & 100.00 & 79.87 & 0.6529 & 9.8851 & 0.8561 & 0.6973 \\
+DGO-E CC & Soft 2, 0.5 & 100.00 & 100.00 & 0.6529 & 9.8851 & 0.8561 & 0.6973 \\
+DGO-E CC & Soft 1, 1.0 & 100.00 & 79.87 & 0.6529 & 9.8851 & 0.8561 & 0.6973 \\
+DGO-E CC & Soft 2, 1.0 & 100.00 & 100.00 & 0.6529 & 9.8851 & 0.8561 & 0.6973 \\
+DGO-E CC & Stage 2 standard & 100.00 & 100.00 & 0.6529 & 9.8851 & 0.8561 & 0.6973 \\
+DGO-E CC & Stage 2 demotion & 100.00 & 100.00 & 0.6529 & 9.8851 & 0.8561 & 0.6973 \\
+DGO-E MF & Raw & 42.00 & -- & 0.5619 & 9.9844 & 0.8772 & 0.5340 \\
+DGO-E MF & Known taxon & 100.00 & -- & 0.5619 & 9.9844 & 0.8772 & 0.5340 \\
+DGO-E MF & FunTaxIS-lite & 86.00 & -- & 0.5619 & 9.9844 & 0.8773 & 0.5342 \\
+DGO-E BP & Raw & 0.00 & -- & 0.3650 & 25.6532 & 0.7789 & 0.2921 \\
+DGO-E BP & Known taxon & 100.00 & -- & 0.3650 & 25.6532 & 0.7801 & 0.2922 \\
+DGO-E BP & FunTaxIS-lite & 42.00 & -- & 0.3654 & 25.6532 & 0.7820 & 0.2926 \\
+SP-E CC & Raw & 0.00 & 96.47 & 0.6316 & 8.7276 & 0.8534 & 0.6871 \\
+SP-E CC & Known taxon & 100.00 & 96.99 & 0.6316 & 8.7276 & 0.8537 & 0.6874 \\
+SP-E CC & FunTaxIS-lite & 2.00 & 99.09 & 0.6316 & 8.7276 & 0.8531 & 0.6873 \\
+SP-E CC & Soft 1, 0.2 & 100.00 & 96.99 & 0.6316 & 8.7276 & 0.8537 & 0.6874 \\
+SP-E CC & Soft 2, 0.2 & 100.00 & 100.00 & 0.6316 & 8.7276 & 0.8537 & 0.6874 \\
+SP-E CC & Soft 1, 0.5 & 100.00 & 96.99 & 0.6316 & 8.7276 & 0.8537 & 0.6874 \\
+SP-E CC & Soft 2, 0.5 & 100.00 & 100.00 & 0.6316 & 8.7276 & 0.8537 & 0.6874 \\
+SP-E CC & Soft 1, 1.0 & 100.00 & 96.99 & 0.6316 & 8.7276 & 0.8537 & 0.6874 \\
+SP-E CC & Soft 2, 1.0 & 100.00 & 100.00 & 0.6316 & 8.7276 & 0.8537 & 0.6874 \\
+SP-E CC & Stage 2 standard & 100.00 & 100.00 & 0.6316 & 8.7276 & 0.8537 & 0.6874 \\
+SP-E CC & Stage 2 demotion & 100.00 & 100.00 & 0.6316 & 8.7276 & 0.8537 & 0.6874 \\
+SP-E MF & Raw & 28.00 & -- & 0.6447 & 8.6547 & 0.8221 & 0.6225 \\
+SP-E MF & Known taxon & 100.00 & -- & 0.6447 & 8.6547 & 0.8221 & 0.6225 \\
+SP-E MF & FunTaxIS-lite & 98.00 & -- & 0.6447 & 8.6547 & 0.8221 & 0.6227 \\
+SP-E BP & Raw & 0.00 & -- & 0.4347 & 23.8969 & 0.8280 & 0.3810 \\
+SP-E BP & Known taxon & 100.00 & -- & 0.4347 & 23.8969 & 0.8284 & 0.3813 \\
+SP-E BP & FunTaxIS-lite & 0.00 & -- & 0.4351 & 23.8958 & 0.8286 & 0.3819 \\
+\bottomrule
+\end{longtable}
+\endgroup

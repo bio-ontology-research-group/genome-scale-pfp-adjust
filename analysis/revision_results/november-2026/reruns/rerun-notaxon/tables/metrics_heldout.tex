@@ -1,0 +1,42 @@
+% Per-protein CAFA metrics (aggregate_revision_audit evaluator); Changed = test proteins whose stored scores changed
+\begin{tabular}{lllrrrrrr}
+\toprule
+Model & Sub & Setting & $F_{\max}$ & $S_{\min}$ & AUPR & AUC & Changed & Test \\
+\midrule
+Seq-Sim & CC & Preds & 0.5714 & 15.454 & 0.5310 & 0.7502 & 0 & 5{,}272 \\
+ &  & Taxons & 0.5718 & 15.424 & 0.5319 & 0.7507 & 2{,}187 & 5{,}272 \\
+ &  & No taxons (current) & 0.5708 & 15.458 & 0.5299 & 0.7435 & 2{,}205 & 5{,}272 \\
+ &  & No taxons (siglogit, joint) & 0.5715 & 15.440 & 0.5313 & 0.7471 & 2{,}166 & 5{,}272 \\
+ &  & No taxons (siglogit, per aspect) & 0.5709 & 15.452 & 0.5298 & 0.7422 & 2{,}259 & 5{,}272 \\
+\addlinespace
+Seq-Sim & MF & Preds & 0.6283 & 10.977 & 0.5840 & 0.8398 & 0 & 5{,}648 \\
+ &  & Taxons & 0.6283 & 10.977 & 0.5840 & 0.8398 & 62 & 5{,}648 \\
+ &  & No taxons (current) & 0.6283 & 10.977 & 0.5840 & 0.8398 & 39 & 5{,}648 \\
+ &  & No taxons (siglogit, joint) & 0.6283 & 10.977 & 0.5840 & 0.8398 & 49 & 5{,}648 \\
+ &  & No taxons (siglogit, per aspect) & 0.6283 & 10.977 & 0.5840 & 0.8398 & 41 & 5{,}648 \\
+\addlinespace
+Seq-Sim & BP & Preds & 0.4050 & 43.353 & 0.3045 & 0.6744 & 0 & 7{,}251 \\
+ &  & Taxons & 0.4051 & 43.343 & 0.3048 & 0.6746 & 4{,}038 & 7{,}251 \\
+ &  & No taxons (current) & 0.4046 & 43.354 & 0.3041 & 0.6727 & 3{,}957 & 7{,}251 \\
+ &  & No taxons (siglogit, joint) & 0.4049 & 43.345 & 0.3045 & 0.6738 & 3{,}921 & 7{,}251 \\
+ &  & No taxons (siglogit, per aspect) & 0.4048 & 43.345 & 0.3044 & 0.6733 & 3{,}931 & 7{,}251 \\
+\midrule
+MLP-ESM2 & CC & Preds & 0.5654 & 15.843 & 0.5721 & 0.7757 & 0 & 5{,}272 \\
+ &  & Taxons & 0.5656 & 15.832 & 0.5729 & 0.7767 & 3{,}871 & 5{,}272 \\
+ &  & No taxons (current) & 0.5654 & 15.838 & 0.5721 & 0.7713 & 3{,}839 & 5{,}272 \\
+ &  & No taxons (siglogit, joint) & 0.5654 & 15.836 & 0.5723 & 0.7732 & 3{,}828 & 5{,}272 \\
+ &  & No taxons (siglogit, per aspect) & 0.5654 & 15.836 & 0.5723 & 0.7732 & 3{,}829 & 5{,}272 \\
+\addlinespace
+MLP-ESM2 & MF & Preds & 0.5914 & 11.794 & 0.5630 & 0.8369 & 0 & 5{,}648 \\
+ &  & Taxons & 0.5914 & 11.794 & 0.5630 & 0.8369 & 1{,}042 & 5{,}648 \\
+ &  & No taxons (current) & 0.5913 & 11.796 & 0.5629 & 0.8366 & 939 & 5{,}648 \\
+ &  & No taxons (siglogit, joint) & 0.5914 & 11.795 & 0.5630 & 0.8368 & 992 & 5{,}648 \\
+ &  & No taxons (siglogit, per aspect) & 0.5913 & 11.796 & 0.5629 & 0.8366 & 940 & 5{,}648 \\
+\addlinespace
+MLP-ESM2 & BP & Preds & 0.3772 & 43.246 & 0.3012 & 0.7144 & 0 & 7{,}251 \\
+ &  & Taxons & 0.3772 & 43.244 & 0.3013 & 0.7148 & 6{,}387 & 7{,}251 \\
+ &  & No taxons (current) & 0.3771 & 43.244 & 0.3011 & 0.7128 & 6{,}331 & 7{,}251 \\
+ &  & No taxons (siglogit, joint) & 0.3772 & 43.244 & 0.3012 & 0.7135 & 6{,}342 & 7{,}251 \\
+ &  & No taxons (siglogit, per aspect) & 0.3772 & 43.244 & 0.3010 & 0.7105 & 6{,}357 & 7{,}251 \\
+\bottomrule
+\end{tabular}

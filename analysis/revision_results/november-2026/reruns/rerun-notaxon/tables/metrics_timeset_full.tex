@@ -1,0 +1,60 @@
+% Per-protein CAFA metrics (aggregate_revision_audit evaluator); Changed = test proteins whose stored scores changed
+\begin{tabular}{lllrrrrrr}
+\toprule
+Model & Sub & Setting & $F_{\max}$ & $S_{\min}$ & AUPR & AUC & Changed & Test \\
+\midrule
+Seq-Sim & CC & Preds & 0.6173 & 8.855 & 0.5322 & 0.8089 & 0 & 68 \\
+ &  & Taxons & 0.6173 & 8.820 & 0.5332 & 0.8098 & 16 & 68 \\
+ &  & No taxons (current) & 0.6177 & 8.753 & 0.5329 & 0.8097 & 15 & 68 \\
+ &  & No taxons (siglogit, required) & 0.6176 & 8.819 & 0.5328 & 0.8097 & 14 & 68 \\
+ &  & No taxons (siglogit, full lineage) & 0.6176 & 8.819 & 0.5328 & 0.8097 & 14 & 68 \\
+\addlinespace
+Seq-Sim & MF & Preds & 0.7279 & 7.429 & 0.6685 & 0.9069 & 0 & 74 \\
+ &  & Taxons & 0.7279 & 7.429 & 0.6685 & 0.9069 & 0 & 74 \\
+ &  & No taxons (current) & 0.7279 & 7.429 & 0.6685 & 0.9069 & 0 & 74 \\
+ &  & No taxons (siglogit, required) & 0.7279 & 7.429 & 0.6685 & 0.9069 & 0 & 74 \\
+ &  & No taxons (siglogit, full lineage) & 0.7279 & 7.429 & 0.6685 & 0.9069 & 0 & 74 \\
+\addlinespace
+Seq-Sim & BP & Preds & 0.4423 & 24.703 & 0.2907 & 0.7511 & 0 & 117 \\
+ &  & Taxons & 0.4423 & 24.703 & 0.2911 & 0.7520 & 42 & 117 \\
+ &  & No taxons (current) & 0.4421 & 24.709 & 0.2906 & 0.7502 & 31 & 117 \\
+ &  & No taxons (siglogit, required) & 0.4423 & 24.703 & 0.2906 & 0.7509 & 30 & 117 \\
+ &  & No taxons (siglogit, full lineage) & 0.4408 & 24.807 & 0.2893 & 0.7500 & 37 & 117 \\
+\midrule
+DeepGO-SE & CC & Preds & 0.6529 & 9.885 & 0.6972 & 0.8560 & 0 & 68 \\
+ &  & Taxons & 0.6529 & 9.885 & 0.6973 & 0.8561 & 21 & 68 \\
+ &  & No taxons (current) & 0.6529 & 9.885 & 0.6973 & 0.8562 & 23 & 68 \\
+ &  & No taxons (siglogit, required) & 0.6529 & 9.885 & 0.6973 & 0.8561 & 22 & 68 \\
+ &  & No taxons (siglogit, full lineage) & 0.6529 & 9.885 & 0.6974 & 0.8561 & 16 & 68 \\
+\addlinespace
+DeepGO-SE & MF & Preds & 0.5619 & 9.984 & 0.5340 & 0.8772 & 0 & 74 \\
+ &  & Taxons & 0.5619 & 9.984 & 0.5340 & 0.8772 & 0 & 74 \\
+ &  & No taxons (current) & 0.5619 & 9.984 & 0.5340 & 0.8772 & 0 & 74 \\
+ &  & No taxons (siglogit, required) & 0.5619 & 9.984 & 0.5340 & 0.8772 & 0 & 74 \\
+ &  & No taxons (siglogit, full lineage) & 0.5619 & 9.984 & 0.5340 & 0.8772 & 0 & 74 \\
+\addlinespace
+DeepGO-SE & BP & Preds & 0.3650 & 25.653 & 0.2921 & 0.7789 & 0 & 117 \\
+ &  & Taxons & 0.3650 & 25.653 & 0.2922 & 0.7801 & 56 & 117 \\
+ &  & No taxons (current) & 0.3650 & 25.653 & 0.2920 & 0.7783 & 51 & 117 \\
+ &  & No taxons (siglogit, required) & 0.3650 & 25.653 & 0.2920 & 0.7783 & 52 & 117 \\
+ &  & No taxons (siglogit, full lineage) & 0.3650 & 25.653 & 0.2920 & 0.7780 & 68 & 117 \\
+\midrule
+SPROF-GO & CC & Preds & 0.6316 & 8.728 & 0.6871 & 0.8534 & 0 & 68 \\
+ &  & Taxons & 0.6316 & 8.728 & 0.6874 & 0.8537 & 23 & 68 \\
+ &  & No taxons (current) & 0.6330 & 8.681 & 0.6847 & 0.8473 & 27 & 68 \\
+ &  & No taxons (siglogit, required) & 0.6330 & 8.681 & 0.6847 & 0.8473 & 27 & 68 \\
+ &  & No taxons (siglogit, full lineage) & 0.6316 & 8.728 & 0.6847 & 0.8487 & 22 & 68 \\
+\addlinespace
+SPROF-GO & MF & Preds & 0.6447 & 8.655 & 0.6225 & 0.8221 & 0 & 74 \\
+ &  & Taxons & 0.6447 & 8.655 & 0.6225 & 0.8221 & 0 & 74 \\
+ &  & No taxons (current) & 0.6447 & 8.655 & 0.6225 & 0.8221 & 0 & 74 \\
+ &  & No taxons (siglogit, required) & 0.6447 & 8.655 & 0.6225 & 0.8221 & 0 & 74 \\
+ &  & No taxons (siglogit, full lineage) & 0.6447 & 8.655 & 0.6225 & 0.8221 & 0 & 74 \\
+\addlinespace
+SPROF-GO & BP & Preds & 0.4347 & 23.897 & 0.3810 & 0.8280 & 0 & 117 \\
+ &  & Taxons & 0.4347 & 23.897 & 0.3813 & 0.8284 & 78 & 117 \\
+ &  & No taxons (current) & 0.4341 & 23.889 & 0.3777 & 0.8224 & 64 & 117 \\
+ &  & No taxons (siglogit, required) & 0.4341 & 23.889 & 0.3778 & 0.8231 & 69 & 117 \\
+ &  & No taxons (siglogit, full lineage) & 0.4347 & 23.897 & 0.3798 & 0.8245 & 88 & 117 \\
+\bottomrule
+\end{tabular}

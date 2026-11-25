@@ -1,0 +1,16 @@
+% Stage 1 demotions of active pairs at native tau, summed over organisms; % = demotions / active input pairs
+\begin{tabular}{llrrrrrrrrr}
+\toprule
+Model & Sub & Preds & \multicolumn{2}{c}{With taxons} & \multicolumn{2}{c}{No taxons (current)} & \multicolumn{2}{c}{No taxons (siglogit)} & \multicolumn{2}{c}{Siglogit per aspect} \\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}
+& & & Flips & \% & Flips & \% & Flips & \% & Flips & \% \\
+\midrule
+Seq-Sim & CC & 76{,}136{,}598 & 5{,}390{,}327 & 7.080 & 3{,}394{,}781 & 4.459 & 4{,}188{,}627 & 5.501 & 5{,}136{,}263 & 6.746 \\
+ & MF & 47{,}439{,}003 & 78{,}602 & 0.166 & 34{,}578 & 0.073 & 51{,}771 & 0.109 & 37{,}897 & 0.080 \\
+ & BP & 363{,}577{,}489 & 30{,}760{,}645 & 8.461 & 16{,}281{,}119 & 4.478 & 22{,}263{,}693 & 6.124 & 19{,}827{,}830 & 5.454 \\
+\midrule
+MLP-ESM2 & CC & 302{,}649{,}234 & 17{,}827{,}832 & 5.891 & 13{,}138{,}980 & 4.341 & 14{,}310{,}079 & 4.728 & 15{,}095{,}402 & 4.988 \\
+ & MF & 348{,}597{,}940 & 790{,}680 & 0.227 & 442{,}748 & 0.127 & 617{,}589 & 0.177 & 455{,}432 & 0.131 \\
+ & BP & 2{,}245{,}535{,}481 & 121{,}741{,}502 & 5.421 & 84{,}092{,}977 & 3.745 & 101{,}101{,}105 & 4.502 & 108{,}581{,}858 & 4.835 \\
+\bottomrule
+\end{tabular}

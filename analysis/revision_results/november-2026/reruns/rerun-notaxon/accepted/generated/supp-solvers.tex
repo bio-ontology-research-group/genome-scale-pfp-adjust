@@ -1,0 +1,31 @@
+\begingroup\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{lrrrrr}
+\caption{Bounded Stage 2 optimization. Counts sum to 50 organisms in each row. Objectives and lower bounds are sums across organisms for the indicated objective; differing soft penalties are not the same optimization problem. An optimal restricted model need not be optimal without the candidate restriction. SS: Seq-Sim; DGO: DeepGO-SE; SP: SPROF-GO; MLP: MLP-ESM2. E: entry-date split; H: heldout split.}\label{tab:supp-solvers}\\
+\toprule
+Model & Mode & Optimal & Feasible & Objective sum & Bound sum \\
+\midrule
+\endfirsthead
+\toprule
+Model & Mode & Optimal & Feasible & Objective sum & Bound sum \\
+\midrule
+\endhead
+SS-E & Stage 2 standard & 1 & 49 & 5.9190 & 1.2560 \\
+SS-E & Stage 2 demotion & 50 & 0 & 581.9200 & 581.9200 \\
+SS-E & Soft 2, 0.2 & 0 & 50 & 20.8493 & 0.1550 \\
+SS-E & Soft 2, 0.5 & 0 & 50 & 32.1351 & 0.1170 \\
+SS-E & Soft 2, 1.0 & 0 & 50 & 35.2380 & 0.1510 \\
+DGO-E & Stage 2 standard & 16 & 34 & 182.9355 & 27.5261 \\
+DGO-E & Stage 2 demotion & 50 & 0 & 228.4546 & 228.4546 \\
+DGO-E & Soft 2, 0.2 & 15 & 35 & 161.7782 & 10.7874 \\
+DGO-E & Soft 2, 0.5 & 16 & 34 & 168.8005 & 13.7992 \\
+DGO-E & Soft 2, 1.0 & 16 & 34 & 169.4217 & 14.2887 \\
+SP-E & Stage 2 standard & 45 & 5 & 0.2620 & 0.1580 \\
+SP-E & Stage 2 demotion & 50 & 0 & 5.8490 & 5.8490 \\
+SP-E & Soft 2, 0.2 & 44 & 6 & 0.2630 & 0.1260 \\
+SP-E & Soft 2, 0.5 & 44 & 6 & 0.2650 & 0.1260 \\
+SP-E & Soft 2, 1.0 & 44 & 6 & 0.2620 & 0.1260 \\
+\bottomrule
+\end{longtable}
+\endgroup
+\par Accepted per-condition search budgets by organism task: SS-E: 50 at 120.0 s; DGO-E: 50 at 120.0 s; SP-E: 50 at 120.0 s.

@@ -1,0 +1,4502 @@
+{
+ "per_organism": {
+  "100226": {
+   "n_proteins": 47,
+   "n_terms": 355,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0030448"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "10029": {
+   "n_proteins": 54,
+   "n_terms": 432,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1003195": {
+   "n_proteins": 6,
+   "n_terms": 50,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "10089": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "10103": {
+   "n_proteins": 1,
+   "n_terms": 24,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "10116": {
+   "n_proteins": 5840,
+   "n_terms": 11164,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "10141": {
+   "n_proteins": 35,
+   "n_terms": 379,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "10181": {
+   "n_proteins": 1,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "10224": {
+   "n_proteins": 1,
+   "n_terms": 5,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1026970": {
+   "n_proteins": 1,
+   "n_terms": 3,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1028307": {
+   "n_proteins": 1,
+   "n_terms": 3,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "104623": {
+   "n_proteins": 2,
+   "n_terms": 13,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1052585": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "106370": {
+   "n_proteins": 1,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1072389": {
+   "n_proteins": 4,
+   "n_terms": 16,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1073375": {
+   "n_proteins": 1,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1079": {
+   "n_proteins": 1,
+   "n_terms": 17,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1091494": {
+   "n_proteins": 1,
+   "n_terms": 34,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1094619": {
+   "n_proteins": 2,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "110193": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "1111708": {
+   "n_proteins": 178,
+   "n_terms": 429,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0046905"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "1114943": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "1120755": {
+   "n_proteins": 1,
+   "n_terms": 8,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1121448": {
+   "n_proteins": 2,
+   "n_terms": 44,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1122195": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "1122247": {
+   "n_proteins": 2,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "112509": {
+   "n_proteins": 4,
+   "n_terms": 26,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1128398": {
+   "n_proteins": 1,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1140": {
+   "n_proteins": 31,
+   "n_terms": 133,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0046905"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "1173020": {
+   "n_proteins": 1,
+   "n_terms": 38,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "121224": {
+   "n_proteins": 1,
+   "n_terms": 8,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1214101": {
+   "n_proteins": 1,
+   "n_terms": 9,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1214242": {
+   "n_proteins": 1,
+   "n_terms": 41,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1220924": {
+   "n_proteins": 1,
+   "n_terms": 57,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1221996": {
+   "n_proteins": 3,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "122586": {
+   "n_proteins": 19,
+   "n_terms": 155,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1227453": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "1227494": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "1229662": {
+   "n_proteins": 1,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "123214": {
+   "n_proteins": 1,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1237896": {
+   "n_proteins": 1,
+   "n_terms": 22,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1255043": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "126793": {
+   "n_proteins": 7,
+   "n_terms": 116,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "130081": {
+   "n_proteins": 1,
+   "n_terms": 26,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "13035": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "13249": {
+   "n_proteins": 2,
+   "n_terms": 48,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "133901": {
+   "n_proteins": 1,
+   "n_terms": 11,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1344416": {
+   "n_proteins": 1,
+   "n_terms": 17,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1365484": {
+   "n_proteins": 5,
+   "n_terms": 53,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "13735": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "1392": {
+   "n_proteins": 23,
+   "n_terms": 205,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1392255": {
+   "n_proteins": 13,
+   "n_terms": 36,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1403190": {
+   "n_proteins": 26,
+   "n_terms": 92,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1408282": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "1437824": {
+   "n_proteins": 3,
+   "n_terms": 46,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "15368": {
+   "n_proteins": 13,
+   "n_terms": 106,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1547922": {
+   "n_proteins": 2,
+   "n_terms": 17,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "156889": {
+   "n_proteins": 3,
+   "n_terms": 20,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "157652": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "1590841": {
+   "n_proteins": 9,
+   "n_terms": 106,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "160488": {
+   "n_proteins": 41,
+   "n_terms": 178,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1661398": {
+   "n_proteins": 1,
+   "n_terms": 11,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "169963": {
+   "n_proteins": 35,
+   "n_terms": 202,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "170187": {
+   "n_proteins": 14,
+   "n_terms": 161,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "171101": {
+   "n_proteins": 14,
+   "n_terms": 157,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "174633": {
+   "n_proteins": 5,
+   "n_terms": 46,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "176279": {
+   "n_proteins": 2,
+   "n_terms": 37,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "176299": {
+   "n_proteins": 38,
+   "n_terms": 220,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "177437": {
+   "n_proteins": 1,
+   "n_terms": 8,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "178306": {
+   "n_proteins": 4,
+   "n_terms": 55,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "183190": {
+   "n_proteins": 2,
+   "n_terms": 28,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "184922": {
+   "n_proteins": 30,
+   "n_terms": 317,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "185431": {
+   "n_proteins": 6745,
+   "n_terms": 2022,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0001775",
+    "GO:0002274",
+    "GO:0005816",
+    "GO:0020007",
+    "GO:0020025",
+    "GO:0031555",
+    "GO:0035244",
+    "GO:0042116",
+    "GO:0044732",
+    "GO:0045321"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "186497": {
+   "n_proteins": 21,
+   "n_terms": 255,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "187420": {
+   "n_proteins": 8,
+   "n_terms": 62,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "188937": {
+   "n_proteins": 9,
+   "n_terms": 71,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0035244"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "189518": {
+   "n_proteins": 5,
+   "n_terms": 30,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "1901": {
+   "n_proteins": 4,
+   "n_terms": 36,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "190192": {
+   "n_proteins": 9,
+   "n_terms": 72,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "190485": {
+   "n_proteins": 16,
+   "n_terms": 134,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "190650": {
+   "n_proteins": 66,
+   "n_terms": 167,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "192222": {
+   "n_proteins": 31,
+   "n_terms": 206,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "194439": {
+   "n_proteins": 10,
+   "n_terms": 71,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "195102": {
+   "n_proteins": 8,
+   "n_terms": 112,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "195103": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "196627": {
+   "n_proteins": 57,
+   "n_terms": 203,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "197221": {
+   "n_proteins": 10,
+   "n_terms": 68,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "198628": {
+   "n_proteins": 85,
+   "n_terms": 278,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "199310": {
+   "n_proteins": 10,
+   "n_terms": 188,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0002694",
+    "GO:0002695",
+    "GO:0034121",
+    "GO:0034122",
+    "GO:0034124",
+    "GO:0034125",
+    "GO:0045088",
+    "GO:0050865",
+    "GO:0050866",
+    "GO:0051239",
+    "GO:0051241",
+    "GO:0062207",
+    "GO:1902563",
+    "GO:1902564"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "2015173": {
+   "n_proteins": 1,
+   "n_terms": 38,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "203119": {
+   "n_proteins": 12,
+   "n_terms": 76,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "204722": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "206672": {
+   "n_proteins": 1,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "207559": {
+   "n_proteins": 2,
+   "n_terms": 29,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "208435": {
+   "n_proteins": 5,
+   "n_terms": 72,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "208964": {
+   "n_proteins": 891,
+   "n_terms": 1648,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0001504",
+    "GO:0001868",
+    "GO:0001869",
+    "GO:0002685",
+    "GO:0002686",
+    "GO:0002691",
+    "GO:0002692",
+    "GO:0002703",
+    "GO:0002704",
+    "GO:0002706",
+    "GO:0002707",
+    "GO:0002712",
+    "GO:0002713",
+    "GO:0002819",
+    "GO:0002820",
+    "GO:0002822",
+    "GO:0002823",
+    "GO:0002889",
+    "GO:0002890",
+    "GO:0002923",
+    "GO:0002924",
+    "GO:0005634",
+    "GO:0006836",
+    "GO:0006914",
+    "GO:0020039",
+    "GO:0030450",
+    "GO:0043846",
+    "GO:0045088",
+    "GO:0045724",
+    "GO:0045824",
+    "GO:0045959",
+    "GO:0051615",
+    "GO:0070258",
+    "GO:0140513",
+    "GO:1902017",
+    "GO:1902019",
+    "GO:1903037",
+    "GO:1903038",
+    "GO:1903236",
+    "GO:1903237",
+    "GO:1904994",
+    "GO:1904995",
+    "GO:2000155"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "210007": {
+   "n_proteins": 21,
+   "n_terms": 144,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "211586": {
+   "n_proteins": 21,
+   "n_terms": 161,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "212042": {
+   "n_proteins": 45,
+   "n_terms": 64,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "2126942": {
+   "n_proteins": 2,
+   "n_terms": 5,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "212717": {
+   "n_proteins": 2,
+   "n_terms": 59,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "214684": {
+   "n_proteins": 10,
+   "n_terms": 158,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "216591": {
+   "n_proteins": 2,
+   "n_terms": 4,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "216594": {
+   "n_proteins": 2,
+   "n_terms": 23,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "216596": {
+   "n_proteins": 9,
+   "n_terms": 82,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "216597": {
+   "n_proteins": 6,
+   "n_terms": 57,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "218497": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "219594": {
+   "n_proteins": 3,
+   "n_terms": 17,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "220668": {
+   "n_proteins": 12,
+   "n_terms": 78,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "221103": {
+   "n_proteins": 2,
+   "n_terms": 36,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "223283": {
+   "n_proteins": 21,
+   "n_terms": 168,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "224308": {
+   "n_proteins": 290,
+   "n_terms": 1068,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "224324": {
+   "n_proteins": 21,
+   "n_terms": 136,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "224325": {
+   "n_proteins": 21,
+   "n_terms": 155,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "224326": {
+   "n_proteins": 91,
+   "n_terms": 141,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "224911": {
+   "n_proteins": 10,
+   "n_terms": 88,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "224914": {
+   "n_proteins": 1,
+   "n_terms": 10,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "226185": {
+   "n_proteins": 12,
+   "n_terms": 178,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0034121",
+    "GO:0034122",
+    "GO:0034124",
+    "GO:0034125",
+    "GO:0045088",
+    "GO:0062207"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "226186": {
+   "n_proteins": 22,
+   "n_terms": 119,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "22663": {
+   "n_proteins": 2,
+   "n_terms": 32,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "226900": {
+   "n_proteins": 7,
+   "n_terms": 56,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "227321": {
+   "n_proteins": 904,
+   "n_terms": 1873,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0002009",
+    "GO:0035146",
+    "GO:0035239",
+    "GO:0035295",
+    "GO:0048754",
+    "GO:0060429",
+    "GO:0060562",
+    "GO:0061138"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "227377": {
+   "n_proteins": 11,
+   "n_terms": 57,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "227882": {
+   "n_proteins": 11,
+   "n_terms": 64,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "228410": {
+   "n_proteins": 5,
+   "n_terms": 54,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "228908": {
+   "n_proteins": 2,
+   "n_terms": 23,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "229533": {
+   "n_proteins": 14,
+   "n_terms": 180,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "233413": {
+   "n_proteins": 14,
+   "n_terms": 113,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "235279": {
+   "n_proteins": 3,
+   "n_terms": 51,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "235909": {
+   "n_proteins": 3,
+   "n_terms": 80,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "237561": {
+   "n_proteins": 1812,
+   "n_terms": 2862,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0000756",
+    "GO:0000760",
+    "GO:0001516",
+    "GO:0001968",
+    "GO:0006693",
+    "GO:0007159",
+    "GO:0007610",
+    "GO:0007617",
+    "GO:0009652",
+    "GO:0009725",
+    "GO:0009755",
+    "GO:0015485",
+    "GO:0016477",
+    "GO:0019098",
+    "GO:0030193",
+    "GO:0030195",
+    "GO:0030518",
+    "GO:0030984",
+    "GO:0030985",
+    "GO:0032870",
+    "GO:0042730",
+    "GO:0043401",
+    "GO:0048545",
+    "GO:0048870",
+    "GO:0050764",
+    "GO:0050765",
+    "GO:0061041",
+    "GO:0061045",
+    "GO:0071383",
+    "GO:0090399"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "242231": {
+   "n_proteins": 22,
+   "n_terms": 131,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "242507": {
+   "n_proteins": 17,
+   "n_terms": 228,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "242619": {
+   "n_proteins": 3,
+   "n_terms": 35,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243159": {
+   "n_proteins": 10,
+   "n_terms": 65,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243160": {
+   "n_proteins": 1,
+   "n_terms": 32,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243230": {
+   "n_proteins": 28,
+   "n_terms": 127,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243231": {
+   "n_proteins": 12,
+   "n_terms": 107,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243232": {
+   "n_proteins": 64,
+   "n_terms": 369,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243233": {
+   "n_proteins": 6,
+   "n_terms": 58,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243265": {
+   "n_proteins": 5,
+   "n_terms": 24,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243273": {
+   "n_proteins": 5,
+   "n_terms": 27,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243274": {
+   "n_proteins": 41,
+   "n_terms": 257,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243275": {
+   "n_proteins": 2,
+   "n_terms": 38,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243276": {
+   "n_proteins": 2,
+   "n_terms": 22,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243277": {
+   "n_proteins": 40,
+   "n_terms": 247,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "243365": {
+   "n_proteins": 5,
+   "n_terms": 45,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "246196": {
+   "n_proteins": 72,
+   "n_terms": 436,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "246197": {
+   "n_proteins": 14,
+   "n_terms": 73,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0031155",
+    "GO:0075260"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "246200": {
+   "n_proteins": 53,
+   "n_terms": 148,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "246409": {
+   "n_proteins": 5,
+   "n_terms": 70,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "247156": {
+   "n_proteins": 1,
+   "n_terms": 18,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "251221": {
+   "n_proteins": 3,
+   "n_terms": 4,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "255470": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "257309": {
+   "n_proteins": 2,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "257313": {
+   "n_proteins": 4,
+   "n_terms": 72,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "259536": {
+   "n_proteins": 1,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "259564": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "262316": {
+   "n_proteins": 3,
+   "n_terms": 38,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "262723": {
+   "n_proteins": 1,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "264199": {
+   "n_proteins": 6,
+   "n_terms": 43,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "264203": {
+   "n_proteins": 2,
+   "n_terms": 46,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "264462": {
+   "n_proteins": 6,
+   "n_terms": 49,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "264951": {
+   "n_proteins": 6,
+   "n_terms": 36,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "2652724": {
+   "n_proteins": 1,
+   "n_terms": 7,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "266117": {
+   "n_proteins": 1,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "266264": {
+   "n_proteins": 8,
+   "n_terms": 109,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "266265": {
+   "n_proteins": 1,
+   "n_terms": 18,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "266834": {
+   "n_proteins": 26,
+   "n_terms": 96,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "266940": {
+   "n_proteins": 1,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "267377": {
+   "n_proteins": 15,
+   "n_terms": 87,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "267608": {
+   "n_proteins": 8,
+   "n_terms": 91,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "269796": {
+   "n_proteins": 13,
+   "n_terms": 149,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "269798": {
+   "n_proteins": 1,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "269799": {
+   "n_proteins": 2,
+   "n_terms": 30,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "2711": {
+   "n_proteins": 1,
+   "n_terms": 25,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "271848": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "272557": {
+   "n_proteins": 10,
+   "n_terms": 63,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272558": {
+   "n_proteins": 4,
+   "n_terms": 47,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272559": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "272560": {
+   "n_proteins": 2,
+   "n_terms": 22,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272561": {
+   "n_proteins": 16,
+   "n_terms": 88,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272562": {
+   "n_proteins": 22,
+   "n_terms": 169,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272563": {
+   "n_proteins": 9,
+   "n_terms": 114,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272569": {
+   "n_proteins": 2,
+   "n_terms": 16,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272621": {
+   "n_proteins": 2,
+   "n_terms": 49,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272623": {
+   "n_proteins": 22,
+   "n_terms": 85,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272624": {
+   "n_proteins": 28,
+   "n_terms": 254,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272630": {
+   "n_proteins": 5,
+   "n_terms": 23,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272631": {
+   "n_proteins": 6,
+   "n_terms": 37,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272634": {
+   "n_proteins": 16,
+   "n_terms": 76,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0030193",
+    "GO:0030195",
+    "GO:0031639",
+    "GO:0050818",
+    "GO:0050819",
+    "GO:0051239",
+    "GO:0051241",
+    "GO:0051917",
+    "GO:0051919"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "272843": {
+   "n_proteins": 3,
+   "n_terms": 43,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272844": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "272942": {
+   "n_proteins": 19,
+   "n_terms": 143,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0016120"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "272943": {
+   "n_proteins": 12,
+   "n_terms": 131,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "272947": {
+   "n_proteins": 5,
+   "n_terms": 31,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "273057": {
+   "n_proteins": 39,
+   "n_terms": 251,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "273063": {
+   "n_proteins": 16,
+   "n_terms": 136,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "273068": {
+   "n_proteins": 4,
+   "n_terms": 65,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "273075": {
+   "n_proteins": 14,
+   "n_terms": 178,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "273121": {
+   "n_proteins": 5,
+   "n_terms": 70,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "27334": {
+   "n_proteins": 14,
+   "n_terms": 91,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "2769": {
+   "n_proteins": 1,
+   "n_terms": 23,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "279010": {
+   "n_proteins": 5,
+   "n_terms": 53,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "279238": {
+   "n_proteins": 1,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "283166": {
+   "n_proteins": 1,
+   "n_terms": 27,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "284590": {
+   "n_proteins": 7,
+   "n_terms": 71,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "284591": {
+   "n_proteins": 4,
+   "n_terms": 89,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "284593": {
+   "n_proteins": 538,
+   "n_terms": 858,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0090399"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "284812": {
+   "n_proteins": 4610,
+   "n_terms": 5269,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "284813": {
+   "n_proteins": 7,
+   "n_terms": 11,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "290398": {
+   "n_proteins": 1,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "290633": {
+   "n_proteins": 2,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "29158": {
+   "n_proteins": 1,
+   "n_terms": 13,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "29159": {
+   "n_proteins": 1,
+   "n_terms": 5,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "294381": {
+   "n_proteins": 34,
+   "n_terms": 318,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "294747": {
+   "n_proteins": 2,
+   "n_terms": 41,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "29760": {
+   "n_proteins": 5,
+   "n_terms": 91,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "300267": {
+   "n_proteins": 2,
+   "n_terms": 21,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "30069": {
+   "n_proteins": 1,
+   "n_terms": 3,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "300852": {
+   "n_proteins": 33,
+   "n_terms": 285,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "301447": {
+   "n_proteins": 12,
+   "n_terms": 186,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "30195": {
+   "n_proteins": 1,
+   "n_terms": 43,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0030193",
+    "GO:0030194",
+    "GO:0051917",
+    "GO:0051918"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "3055": {
+   "n_proteins": 44,
+   "n_terms": 247,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "306263": {
+   "n_proteins": 1,
+   "n_terms": 10,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "306902": {
+   "n_proteins": 1,
+   "n_terms": 8,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "309800": {
+   "n_proteins": 26,
+   "n_terms": 267,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "309803": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "31033": {
+   "n_proteins": 2,
+   "n_terms": 45,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "311402": {
+   "n_proteins": 2,
+   "n_terms": 9,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "312017": {
+   "n_proteins": 26,
+   "n_terms": 192,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "312309": {
+   "n_proteins": 22,
+   "n_terms": 117,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "31234": {
+   "n_proteins": 3,
+   "n_terms": 30,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "314256": {
+   "n_proteins": 1,
+   "n_terms": 20,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "314265": {
+   "n_proteins": 1,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "316274": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "317655": {
+   "n_proteins": 1,
+   "n_terms": 13,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "318586": {
+   "n_proteins": 12,
+   "n_terms": 123,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3197": {
+   "n_proteins": 4,
+   "n_terms": 80,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "319795": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "320483": {
+   "n_proteins": 1,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3218": {
+   "n_proteins": 17,
+   "n_terms": 189,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "322104": {
+   "n_proteins": 2,
+   "n_terms": 20,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "322710": {
+   "n_proteins": 3,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "323850": {
+   "n_proteins": 1,
+   "n_terms": 7,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "324602": {
+   "n_proteins": 5,
+   "n_terms": 43,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "326298": {
+   "n_proteins": 1,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "326423": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "330779": {
+   "n_proteins": 23,
+   "n_terms": 105,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "330879": {
+   "n_proteins": 308,
+   "n_terms": 1027,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0001516",
+    "GO:0006693"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "331111": {
+   "n_proteins": 2,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "331117": {
+   "n_proteins": 1,
+   "n_terms": 54,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "332648": {
+   "n_proteins": 8,
+   "n_terms": 87,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "332952": {
+   "n_proteins": 3,
+   "n_terms": 45,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "333849": {
+   "n_proteins": 2,
+   "n_terms": 8,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "334819": {
+   "n_proteins": 13,
+   "n_terms": 49,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "336722": {
+   "n_proteins": 10,
+   "n_terms": 119,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "339670": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "341663": {
+   "n_proteins": 7,
+   "n_terms": 37,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "342108": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "344612": {
+   "n_proteins": 4,
+   "n_terms": 27,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3469": {
+   "n_proteins": 7,
+   "n_terms": 29,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "347257": {
+   "n_proteins": 1,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3483": {
+   "n_proteins": 2,
+   "n_terms": 41,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "34839": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "348780": {
+   "n_proteins": 1,
+   "n_terms": 5,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "349741": {
+   "n_proteins": 1,
+   "n_terms": 22,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "350058": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "35128": {
+   "n_proteins": 1,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "353152": {
+   "n_proteins": 1,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "353153": {
+   "n_proteins": 5,
+   "n_terms": 68,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "35570": {
+   "n_proteins": 1,
+   "n_terms": 22,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "35608": {
+   "n_proteins": 5,
+   "n_terms": 52,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3572": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "357809": {
+   "n_proteins": 3,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "359391": {
+   "n_proteins": 25,
+   "n_terms": 143,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "36329": {
+   "n_proteins": 1022,
+   "n_terms": 1575,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0001775",
+    "GO:0002263",
+    "GO:0002285",
+    "GO:0002312",
+    "GO:0002366",
+    "GO:0006915",
+    "GO:0009279",
+    "GO:0030313",
+    "GO:0031244",
+    "GO:0042113",
+    "GO:0043952",
+    "GO:0045321",
+    "GO:0046649"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "3659": {
+   "n_proteins": 1,
+   "n_terms": 29,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3661": {
+   "n_proteins": 1,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "367110": {
+   "n_proteins": 31,
+   "n_terms": 322,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0016120",
+    "GO:0040012",
+    "GO:0040017",
+    "GO:0046905",
+    "GO:0050920",
+    "GO:0050921"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "367928": {
+   "n_proteins": 1,
+   "n_terms": 30,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3694": {
+   "n_proteins": 9,
+   "n_terms": 93,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "369723": {
+   "n_proteins": 1,
+   "n_terms": 4,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3708": {
+   "n_proteins": 2,
+   "n_terms": 47,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3726": {
+   "n_proteins": 1,
+   "n_terms": 35,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "373153": {
+   "n_proteins": 9,
+   "n_terms": 126,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0010755",
+    "GO:0010756",
+    "GO:0030193",
+    "GO:0030195",
+    "GO:0050818",
+    "GO:0050819",
+    "GO:0051239",
+    "GO:0051241",
+    "GO:0051917",
+    "GO:0051919"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "3750": {
+   "n_proteins": 5,
+   "n_terms": 50,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "37546": {
+   "n_proteins": 2,
+   "n_terms": 36,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3755": {
+   "n_proteins": 1,
+   "n_terms": 5,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3760": {
+   "n_proteins": 2,
+   "n_terms": 18,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "376619": {
+   "n_proteins": 1,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "376686": {
+   "n_proteins": 5,
+   "n_terms": 17,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "379731": {
+   "n_proteins": 4,
+   "n_terms": 34,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3816": {
+   "n_proteins": 2,
+   "n_terms": 47,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "381666": {
+   "n_proteins": 3,
+   "n_terms": 26,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3818": {
+   "n_proteins": 2,
+   "n_terms": 20,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "384616": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "3847": {
+   "n_proteins": 70,
+   "n_terms": 363,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3871": {
+   "n_proteins": 1,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3880": {
+   "n_proteins": 68,
+   "n_terms": 302,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0001759",
+    "GO:0003156",
+    "GO:0110110",
+    "GO:2000027"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "390333": {
+   "n_proteins": 2,
+   "n_terms": 39,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "391595": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "3916": {
+   "n_proteins": 2,
+   "n_terms": 32,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "392499": {
+   "n_proteins": 1,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "393595": {
+   "n_proteins": 3,
+   "n_terms": 17,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "394503": {
+   "n_proteins": 1,
+   "n_terms": 13,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "395019": {
+   "n_proteins": 2,
+   "n_terms": 24,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3983": {
+   "n_proteins": 1,
+   "n_terms": 22,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "3988": {
+   "n_proteins": 11,
+   "n_terms": 62,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "39946": {
+   "n_proteins": 121,
+   "n_terms": 325,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:1901342"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "39947": {
+   "n_proteins": 1059,
+   "n_terms": 2130,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0042335",
+    "GO:1901342"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "399549": {
+   "n_proteins": 5,
+   "n_terms": 28,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "399742": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "401614": {
+   "n_proteins": 10,
+   "n_terms": 16,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "402612": {
+   "n_proteins": 1,
+   "n_terms": 13,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "403677": {
+   "n_proteins": 10,
+   "n_terms": 89,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "403833": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "404380": {
+   "n_proteins": 1,
+   "n_terms": 14,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "405948": {
+   "n_proteins": 8,
+   "n_terms": 93,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "405955": {
+   "n_proteins": 4,
+   "n_terms": 33,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "4072": {
+   "n_proteins": 6,
+   "n_terms": 86,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "4081": {
+   "n_proteins": 85,
+   "n_terms": 527,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0031155"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "4096": {
+   "n_proteins": 6,
+   "n_terms": 31,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "4097": {
+   "n_proteins": 47,
+   "n_terms": 360,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "410359": {
+   "n_proteins": 1,
+   "n_terms": 25,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "4113": {
+   "n_proteins": 27,
+   "n_terms": 263,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "411684": {
+   "n_proteins": 1,
+   "n_terms": 16,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "413071": {
+   "n_proteins": 1,
+   "n_terms": 22,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "415426": {
+   "n_proteins": 2,
+   "n_terms": 16,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "4182": {
+   "n_proteins": 7,
+   "n_terms": 48,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "419947": {
+   "n_proteins": 10,
+   "n_terms": 53,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "4232": {
+   "n_proteins": 1,
+   "n_terms": 20,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "425011": {
+   "n_proteins": 116,
+   "n_terms": 507,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "425265": {
+   "n_proteins": 2,
+   "n_terms": 11,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "426428": {
+   "n_proteins": 2,
+   "n_terms": 66,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "431241": {
+   "n_proteins": 2,
+   "n_terms": 38,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "431943": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "431944": {
+   "n_proteins": 22,
+   "n_terms": 32,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "432359": {
+   "n_proteins": 3,
+   "n_terms": 105,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "43346": {
+   "n_proteins": 1,
+   "n_terms": 32,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "436308": {
+   "n_proteins": 1,
+   "n_terms": 23,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "439375": {
+   "n_proteins": 2,
+   "n_terms": 10,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "441771": {
+   "n_proteins": 3,
+   "n_terms": 43,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "443254": {
+   "n_proteins": 1,
+   "n_terms": 8,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "444178": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "44689": {
+   "n_proteins": 1716,
+   "n_terms": 2863,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0006915",
+    "GO:0008637",
+    "GO:0034305",
+    "GO:0042981",
+    "GO:0043653",
+    "GO:0043943",
+    "GO:0043944",
+    "GO:0043945"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "452652": {
+   "n_proteins": 1,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "452662": {
+   "n_proteins": 1,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "45351": {
+   "n_proteins": 4,
+   "n_terms": 87,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "4536": {
+   "n_proteins": 80,
+   "n_terms": 9,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "4558": {
+   "n_proteins": 6,
+   "n_terms": 47,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "456481": {
+   "n_proteins": 1,
+   "n_terms": 27,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "4565": {
+   "n_proteins": 25,
+   "n_terms": 203,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "457429": {
+   "n_proteins": 1,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "4577": {
+   "n_proteins": 203,
+   "n_terms": 995,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0042335"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "458233": {
+   "n_proteins": 1,
+   "n_terms": 34,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "459349": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "46245": {
+   "n_proteins": 2,
+   "n_terms": 9,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "465515": {
+   "n_proteins": 2,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "46731": {
+   "n_proteins": 1,
+   "n_terms": 7,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "467705": {
+   "n_proteins": 4,
+   "n_terms": 54,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "471852": {
+   "n_proteins": 1,
+   "n_terms": 24,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "47427": {
+   "n_proteins": 1,
+   "n_terms": 23,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "479432": {
+   "n_proteins": 1,
+   "n_terms": 7,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "479433": {
+   "n_proteins": 2,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "479437": {
+   "n_proteins": 3,
+   "n_terms": 22,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "485917": {
+   "n_proteins": 2,
+   "n_terms": 35,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "49451": {
+   "n_proteins": 4,
+   "n_terms": 27,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "498211": {
+   "n_proteins": 8,
+   "n_terms": 56,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "498257": {
+   "n_proteins": 5,
+   "n_terms": 72,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "499177": {
+   "n_proteins": 6,
+   "n_terms": 38,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "500485": {
+   "n_proteins": 5,
+   "n_terms": 52,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "502779": {
+   "n_proteins": 1,
+   "n_terms": 83,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "502780": {
+   "n_proteins": 2,
+   "n_terms": 32,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "50429": {
+   "n_proteins": 8,
+   "n_terms": 33,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "50452": {
+   "n_proteins": 1,
+   "n_terms": 9,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "508771": {
+   "n_proteins": 6,
+   "n_terms": 108,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "510516": {
+   "n_proteins": 139,
+   "n_terms": 499,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "51239": {
+   "n_proteins": 1,
+   "n_terms": 38,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "51240": {
+   "n_proteins": 4,
+   "n_terms": 37,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "51338": {
+   "n_proteins": 1,
+   "n_terms": 42,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "515849": {
+   "n_proteins": 3,
+   "n_terms": 21,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "522373": {
+   "n_proteins": 1,
+   "n_terms": 23,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "523794": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "523841": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "523849": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "523850": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "5270": {
+   "n_proteins": 11,
+   "n_terms": 149,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "529507": {
+   "n_proteins": 2,
+   "n_terms": 17,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "545693": {
+   "n_proteins": 2,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "55188": {
+   "n_proteins": 1,
+   "n_terms": 4,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "553175": {
+   "n_proteins": 2,
+   "n_terms": 15,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "555778": {
+   "n_proteins": 1,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "556484": {
+   "n_proteins": 6,
+   "n_terms": 100,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "559298": {
+   "n_proteins": 1,
+   "n_terms": 32,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "559305": {
+   "n_proteins": 2,
+   "n_terms": 54,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "559307": {
+   "n_proteins": 1,
+   "n_terms": 17,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "559515": {
+   "n_proteins": 1,
+   "n_terms": 18,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "55952": {
+   "n_proteins": 1,
+   "n_terms": 9,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "563041": {
+   "n_proteins": 7,
+   "n_terms": 60,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "565050": {
+   "n_proteins": 8,
+   "n_terms": 54,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "5661": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "5664": {
+   "n_proteins": 180,
+   "n_terms": 883,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0042981",
+    "GO:0043066"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "5671": {
+   "n_proteins": 3,
+   "n_terms": 67,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "56780": {
+   "n_proteins": 3,
+   "n_terms": 45,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "568706": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "5689": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "572477": {
+   "n_proteins": 4,
+   "n_terms": 27,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "572478": {
+   "n_proteins": 1,
+   "n_terms": 7,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "573063": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "573729": {
+   "n_proteins": 1,
+   "n_terms": 36,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "573826": {
+   "n_proteins": 18,
+   "n_terms": 120,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0009652"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "574521": {
+   "n_proteins": 6,
+   "n_terms": 91,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "5762": {
+   "n_proteins": 1,
+   "n_terms": 20,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "578454": {
+   "n_proteins": 105,
+   "n_terms": 223,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "578461": {
+   "n_proteins": 2,
+   "n_terms": 16,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "579405": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "580327": {
+   "n_proteins": 1,
+   "n_terms": 5,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "5811": {
+   "n_proteins": 10,
+   "n_terms": 127,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "5823": {
+   "n_proteins": 33,
+   "n_terms": 362,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "5843": {
+   "n_proteins": 8,
+   "n_terms": 109,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "5849": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "5874": {
+   "n_proteins": 1,
+   "n_terms": 23,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "5888": {
+   "n_proteins": 2,
+   "n_terms": 59,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "588858": {
+   "n_proteins": 8,
+   "n_terms": 76,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "591159": {
+   "n_proteins": 1,
+   "n_terms": 29,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "595528": {
+   "n_proteins": 1,
+   "n_terms": 31,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "59729": {
+   "n_proteins": 26,
+   "n_terms": 398,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "602072": {
+   "n_proteins": 6,
+   "n_terms": 25,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "610380": {
+   "n_proteins": 1,
+   "n_terms": 42,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6183": {
+   "n_proteins": 17,
+   "n_terms": 278,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0052164",
+    "GO:0052167",
+    "GO:0052553",
+    "GO:0141082"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "623": {
+   "n_proteins": 22,
+   "n_terms": 176,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6238": {
+   "n_proteins": 7,
+   "n_terms": 58,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6239": {
+   "n_proteins": 3875,
+   "n_terms": 5533,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0007179",
+    "GO:0007400",
+    "GO:0010695",
+    "GO:0010696",
+    "GO:0010973",
+    "GO:0014016",
+    "GO:0014017",
+    "GO:0014018",
+    "GO:0014019",
+    "GO:0014866",
+    "GO:0016203",
+    "GO:0016204",
+    "GO:0017015",
+    "GO:0030240",
+    "GO:0030241",
+    "GO:0030511",
+    "GO:0030512",
+    "GO:0032955",
+    "GO:0043010",
+    "GO:0043588",
+    "GO:0048593",
+    "GO:0050062",
+    "GO:0060065",
+    "GO:0060538",
+    "GO:0061038",
+    "GO:0061073",
+    "GO:0098773",
+    "GO:1901891",
+    "GO:1901893"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "6279": {
+   "n_proteins": 10,
+   "n_terms": 73,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6282": {
+   "n_proteins": 4,
+   "n_terms": 64,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6289": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "63186": {
+   "n_proteins": 4,
+   "n_terms": 24,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "632": {
+   "n_proteins": 24,
+   "n_terms": 170,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0039531",
+    "GO:0039532",
+    "GO:0045088",
+    "GO:0062207",
+    "GO:0141085",
+    "GO:0141086",
+    "GO:1900225",
+    "GO:1900226"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "632518": {
+   "n_proteins": 1,
+   "n_terms": 49,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6339": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "63737": {
+   "n_proteins": 5,
+   "n_terms": 92,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "639283": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "64091": {
+   "n_proteins": 4,
+   "n_terms": 46,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "643867": {
+   "n_proteins": 1,
+   "n_terms": 43,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "644223": {
+   "n_proteins": 6,
+   "n_terms": 169,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6500": {
+   "n_proteins": 5,
+   "n_terms": 146,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6526": {
+   "n_proteins": 2,
+   "n_terms": 35,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "655819": {
+   "n_proteins": 2,
+   "n_terms": 38,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "655827": {
+   "n_proteins": 1,
+   "n_terms": 57,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6565": {
+   "n_proteins": 1,
+   "n_terms": 5,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "660122": {
+   "n_proteins": 2,
+   "n_terms": 32,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "663331": {
+   "n_proteins": 1,
+   "n_terms": 28,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "66420": {
+   "n_proteins": 1,
+   "n_terms": 8,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6669": {
+   "n_proteins": 1,
+   "n_terms": 15,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6850": {
+   "n_proteins": 1,
+   "n_terms": 28,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "69014": {
+   "n_proteins": 18,
+   "n_terms": 208,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6945": {
+   "n_proteins": 4,
+   "n_terms": 47,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "6956": {
+   "n_proteins": 5,
+   "n_terms": 47,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "69820": {
+   "n_proteins": 1,
+   "n_terms": 26,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "70448": {
+   "n_proteins": 2,
+   "n_terms": 53,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7048": {
+   "n_proteins": 1,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "70601": {
+   "n_proteins": 31,
+   "n_terms": 252,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "706191": {
+   "n_proteins": 1,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7070": {
+   "n_proteins": 73,
+   "n_terms": 159,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0060538"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "7091": {
+   "n_proteins": 43,
+   "n_terms": 472,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7108": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "713604": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "71421": {
+   "n_proteins": 20,
+   "n_terms": 158,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0010755",
+    "GO:0010756"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "7159": {
+   "n_proteins": 19,
+   "n_terms": 192,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7160": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "7165": {
+   "n_proteins": 37,
+   "n_terms": 314,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "716541": {
+   "n_proteins": 1,
+   "n_terms": 16,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7167": {
+   "n_proteins": 1,
+   "n_terms": 3,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7176": {
+   "n_proteins": 3,
+   "n_terms": 18,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "717774": {
+   "n_proteins": 1,
+   "n_terms": 25,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7217": {
+   "n_proteins": 1,
+   "n_terms": 5,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7220": {
+   "n_proteins": 2,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7222": {
+   "n_proteins": 1,
+   "n_terms": 5,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7224": {
+   "n_proteins": 3,
+   "n_terms": 60,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7225": {
+   "n_proteins": 1,
+   "n_terms": 4,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7227": {
+   "n_proteins": 6656,
+   "n_terms": 8781,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0001885",
+    "GO:0003151",
+    "GO:0003158",
+    "GO:0003264",
+    "GO:0003313",
+    "GO:0003314",
+    "GO:0003315",
+    "GO:0003319",
+    "GO:0003344",
+    "GO:0007400",
+    "GO:0008065",
+    "GO:0014016",
+    "GO:0014017",
+    "GO:0014018",
+    "GO:0014019",
+    "GO:0016203",
+    "GO:0016204",
+    "GO:0045446",
+    "GO:0050727",
+    "GO:0050728",
+    "GO:0050729",
+    "GO:0055060",
+    "GO:0060039",
+    "GO:0060538",
+    "GO:0060914",
+    "GO:0061028",
+    "GO:0106014",
+    "GO:0106016",
+    "GO:1905062"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "7230": {
+   "n_proteins": 2,
+   "n_terms": 35,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7234": {
+   "n_proteins": 1,
+   "n_terms": 5,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7238": {
+   "n_proteins": 1,
+   "n_terms": 28,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7240": {
+   "n_proteins": 5,
+   "n_terms": 35,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7244": {
+   "n_proteins": 9,
+   "n_terms": 59,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7245": {
+   "n_proteins": 2,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7260": {
+   "n_proteins": 2,
+   "n_terms": 10,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "73239": {
+   "n_proteins": 1,
+   "n_terms": 22,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7425": {
+   "n_proteins": 1,
+   "n_terms": 7,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "742740": {
+   "n_proteins": 1,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7460": {
+   "n_proteins": 18,
+   "n_terms": 180,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "74940": {
+   "n_proteins": 3,
+   "n_terms": 119,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "749414": {
+   "n_proteins": 1,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "75702": {
+   "n_proteins": 1,
+   "n_terms": 27,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "759272": {
+   "n_proteins": 16,
+   "n_terms": 71,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "759273": {
+   "n_proteins": 4,
+   "n_terms": 33,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "760192": {
+   "n_proteins": 1,
+   "n_terms": 15,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "76114": {
+   "n_proteins": 1,
+   "n_terms": 24,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7668": {
+   "n_proteins": 6,
+   "n_terms": 89,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "768486": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "768679": {
+   "n_proteins": 1,
+   "n_terms": 44,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "771870": {
+   "n_proteins": 1,
+   "n_terms": 21,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7739": {
+   "n_proteins": 3,
+   "n_terms": 26,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7741": {
+   "n_proteins": 2,
+   "n_terms": 47,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7757": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "78245": {
+   "n_proteins": 5,
+   "n_terms": 36,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7868": {
+   "n_proteins": 1,
+   "n_terms": 25,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7897": {
+   "n_proteins": 1,
+   "n_terms": 22,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7955": {
+   "n_proteins": 5031,
+   "n_terms": 6084,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0001745",
+    "GO:0001751",
+    "GO:0030326",
+    "GO:0035108",
+    "GO:0035116",
+    "GO:0035137",
+    "GO:0044003",
+    "GO:0044068",
+    "GO:0048058",
+    "GO:0048076",
+    "GO:0048749",
+    "GO:0052040",
+    "GO:0052042",
+    "GO:0052150",
+    "GO:0052151",
+    "GO:0060174",
+    "GO:0060887",
+    "GO:1905748",
+    "GO:2000495"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "7957": {
+   "n_proteins": 4,
+   "n_terms": 53,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "7962": {
+   "n_proteins": 3,
+   "n_terms": 55,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "79782": {
+   "n_proteins": 2,
+   "n_terms": 24,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "79929": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "7998": {
+   "n_proteins": 52,
+   "n_terms": 355,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "8010": {
+   "n_proteins": 1,
+   "n_terms": 7,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "8019": {
+   "n_proteins": 1,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "8022": {
+   "n_proteins": 79,
+   "n_terms": 495,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "8090": {
+   "n_proteins": 16,
+   "n_terms": 190,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "8128": {
+   "n_proteins": 2,
+   "n_terms": 13,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "83331": {
+   "n_proteins": 208,
+   "n_terms": 439,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "83332": {
+   "n_proteins": 2027,
+   "n_terms": 2198,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0010755",
+    "GO:0010756"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "83333": {
+   "n_proteins": 3389,
+   "n_terms": 4697,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0001070",
+    "GO:0001659",
+    "GO:0005634",
+    "GO:0007610",
+    "GO:0007638",
+    "GO:0032501",
+    "GO:0043846",
+    "GO:0044776",
+    "GO:0048871",
+    "GO:0055051",
+    "GO:0140513",
+    "GO:1902767"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "83334": {
+   "n_proteins": 26,
+   "n_terms": 206,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "8355": {
+   "n_proteins": 692,
+   "n_terms": 2044,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:1905275"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "8364": {
+   "n_proteins": 218,
+   "n_terms": 623,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "84588": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "8502": {
+   "n_proteins": 2,
+   "n_terms": 30,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "858221": {
+   "n_proteins": 0,
+   "n_terms": 0,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": null
+  },
+  "85962": {
+   "n_proteins": 40,
+   "n_terms": 252,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0001817",
+    "GO:0001819",
+    "GO:0002694",
+    "GO:0002695",
+    "GO:0032677",
+    "GO:0032757",
+    "GO:0032944",
+    "GO:0032945",
+    "GO:0042129",
+    "GO:0042130",
+    "GO:0050670",
+    "GO:0050672",
+    "GO:0050863",
+    "GO:0050865",
+    "GO:0050866",
+    "GO:0050868",
+    "GO:0051239",
+    "GO:0051240",
+    "GO:0051241",
+    "GO:0051249",
+    "GO:0051250",
+    "GO:0070663",
+    "GO:0070664",
+    "GO:1901987",
+    "GO:1901988",
+    "GO:1902806",
+    "GO:1902807",
+    "GO:1903037",
+    "GO:1903038"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "8673": {
+   "n_proteins": 2,
+   "n_terms": 21,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "88036": {
+   "n_proteins": 5,
+   "n_terms": 65,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "882": {
+   "n_proteins": 8,
+   "n_terms": 77,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "8845": {
+   "n_proteins": 1,
+   "n_terms": 13,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "88771": {
+   "n_proteins": 1,
+   "n_terms": 18,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "89187": {
+   "n_proteins": 1,
+   "n_terms": 10,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9031": {
+   "n_proteins": 686,
+   "n_terms": 3102,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0035846",
+    "GO:0044305",
+    "GO:0060066"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "90370": {
+   "n_proteins": 2,
+   "n_terms": 26,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9103": {
+   "n_proteins": 38,
+   "n_terms": 426,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9258": {
+   "n_proteins": 4,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "930089": {
+   "n_proteins": 1,
+   "n_terms": 29,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "93061": {
+   "n_proteins": 36,
+   "n_terms": 232,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "931626": {
+   "n_proteins": 5,
+   "n_terms": 19,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "93934": {
+   "n_proteins": 8,
+   "n_terms": 194,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0035848",
+    "GO:0060066"
+   ],
+   "gaef_pairwise_consistent": true
+  },
+  "9402": {
+   "n_proteins": 1,
+   "n_terms": 25,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "947166": {
+   "n_proteins": 1,
+   "n_terms": 13,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9483": {
+   "n_proteins": 2,
+   "n_terms": 65,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9541": {
+   "n_proteins": 20,
+   "n_terms": 310,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9544": {
+   "n_proteins": 33,
+   "n_terms": 299,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9555": {
+   "n_proteins": 1,
+   "n_terms": 24,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9595": {
+   "n_proteins": 2,
+   "n_terms": 25,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9598": {
+   "n_proteins": 2,
+   "n_terms": 12,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9601": {
+   "n_proteins": 2,
+   "n_terms": 26,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9615": {
+   "n_proteins": 150,
+   "n_terms": 1046,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9669": {
+   "n_proteins": 2,
+   "n_terms": 50,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9739": {
+   "n_proteins": 1,
+   "n_terms": 6,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9796": {
+   "n_proteins": 15,
+   "n_terms": 218,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9823": {
+   "n_proteins": 299,
+   "n_terms": 1932,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:1904187",
+    "GO:1904188"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "9913": {
+   "n_proteins": 843,
+   "n_terms": 2914,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9925": {
+   "n_proteins": 9,
+   "n_terms": 139,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "99287": {
+   "n_proteins": 129,
+   "n_terms": 652,
+   "closure_violation": true,
+   "violating_terms": [
+    "GO:0001817",
+    "GO:0001819",
+    "GO:0010363",
+    "GO:0032677",
+    "GO:0032757",
+    "GO:0034052",
+    "GO:0039531",
+    "GO:0045088",
+    "GO:0045089",
+    "GO:0051239",
+    "GO:0051240",
+    "GO:0062207",
+    "GO:0062208",
+    "GO:0070424",
+    "GO:0070426",
+    "GO:0070428",
+    "GO:0070430"
+   ],
+   "gaef_pairwise_consistent": false
+  },
+  "9940": {
+   "n_proteins": 45,
+   "n_terms": 490,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  },
+  "9986": {
+   "n_proteins": 212,
+   "n_terms": 1252,
+   "closure_violation": false,
+   "violating_terms": [],
+   "gaef_pairwise_consistent": true
+  }
+ },
+ "n_organisms": 564,
+ "n_closure_violating": 42,
+ "n_gaef_inconsistent": 28,
+ "top_pairs": [
+  {
+   "term": "GO:0051239",
+   "name": "regulation of multicellular organismal process",
+   "constraint": "never_in_taxon",
+   "taxa": "NCBITaxon_2",
+   "n_organisms": 5,
+   "n_annotations": 6
+  },
+  {
+   "term": "GO:0045088",
+   "name": "regulation of innate immune response",
+   "constraint": "never_in_taxon",
+   "taxa": "NCBITaxon_2",
+   "n_organisms": 5,
+   "n_annotations": 5
+  },
+  {
+   "term": "GO:0051241",
+   "name": "negative regulation of multicellular organismal process",
+   "constraint": "never_in_taxon",
+   "taxa": "NCBITaxon_2",
+   "n_organisms": 4,
+   "n_annotations": 5
+  },
+  {
+   "term": "GO:0030193",
+   "name": "regulation of blood coagulation",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 4,
+   "n_annotations": 5
+  },
+  {
+   "term": "GO:0062207",
+   "name": "regulation of pattern recognition receptor signaling pathway",
+   "constraint": "never_in_taxon",
+   "taxa": "NCBITaxon_2",
+   "n_organisms": 4,
+   "n_annotations": 4
+  },
+  {
+   "term": "GO:0060538",
+   "name": "skeletal muscle organ development",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 3,
+   "n_annotations": 55
+  },
+  {
+   "term": "GO:0010756",
+   "name": "positive regulation of plasminogen activation",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 3,
+   "n_annotations": 5
+  },
+  {
+   "term": "GO:0010755",
+   "name": "regulation of plasminogen activation",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 3,
+   "n_annotations": 5
+  },
+  {
+   "term": "GO:0030195",
+   "name": "negative regulation of blood coagulation",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 3,
+   "n_annotations": 4
+  },
+  {
+   "term": "GO:0051917",
+   "name": "regulation of fibrinolysis",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 3,
+   "n_annotations": 4
+  },
+  {
+   "term": "GO:0046905",
+   "name": "15-cis-phytoene synthase activity",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_33090",
+   "n_organisms": 3,
+   "n_annotations": 3
+  },
+  {
+   "term": "GO:0014016",
+   "name": "neuroblast differentiation",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 2,
+   "n_annotations": 59
+  },
+  {
+   "term": "GO:0014017",
+   "name": "neuroblast fate commitment",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 2,
+   "n_annotations": 40
+  },
+  {
+   "term": "GO:0016203",
+   "name": "muscle attachment",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 2,
+   "n_annotations": 38
+  },
+  {
+   "term": "GO:0007400",
+   "name": "neuroblast fate determination",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 2,
+   "n_annotations": 28
+  },
+  {
+   "term": "GO:0014019",
+   "name": "neuroblast development",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 2,
+   "n_annotations": 22
+  },
+  {
+   "term": "GO:0140513",
+   "name": "nuclear protein-containing complex",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_2759",
+   "n_organisms": 2,
+   "n_annotations": 9
+  },
+  {
+   "term": "GO:0005634",
+   "name": "nucleus",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_2759",
+   "n_organisms": 2,
+   "n_annotations": 9
+  },
+  {
+   "term": "GO:0006693",
+   "name": "prostaglandin metabolic process",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_6072",
+   "n_organisms": 2,
+   "n_annotations": 9
+  },
+  {
+   "term": "GO:0014018",
+   "name": "neuroblast fate specification",
+   "constraint": "only_in_taxon",
+   "taxa": "NCBITaxon_7742",
+   "n_organisms": 2,
+   "n_annotations": 8
+  }
+ ]
+}

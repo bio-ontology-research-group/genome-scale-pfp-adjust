@@ -1,0 +1,517 @@
+{
+ "runtime": {
+  "seq_sim_timeset_cc": {
+   "n": 50,
+   "stage1_mean": 0.900979377804324,
+   "stage1_sd": 0.8260740090267772,
+   "stage1_max": 3.929091287776828,
+   "stage2_standard_mean": 118.68597796440125,
+   "stage2_demotion_mean": 0.0013279962539672853,
+   "stage2_standard_sd": 9.375700704297003,
+   "stage2_demotion_sd": 0.0011126605850062723,
+   "stage2_standard_max": 120.58162379264832,
+   "stage2_demotion_max": 0.008838415145874023,
+   "stage2_standard_status": {
+    "FEASIBLE": 49,
+    "OPTIMAL": 1
+   },
+   "stage2_demotion_status": {
+    "OPTIMAL": 50
+   }
+  },
+  "seq_sim_timeset_mf": {
+   "n": 50,
+   "stage1_mean": 0.815196657362394,
+   "stage1_sd": 0.7297750969146536,
+   "stage1_max": 3.0653322096914053
+  },
+  "seq_sim_timeset_bp": {
+   "n": 50,
+   "stage1_mean": 5.53165968419984,
+   "stage1_sd": 4.5726903280070985,
+   "stage1_max": 22.333727041259408
+  },
+  "deepgo-se_cc": {
+   "n": 50,
+   "stage1_mean": 0.742117138778558,
+   "stage1_sd": 0.66209503959586,
+   "stage1_max": 2.909450490027666,
+   "stage2_standard_mean": 81.9651844739914,
+   "stage2_demotion_mean": 0.0010755109786987306,
+   "stage2_standard_sd": 55.47681171722736,
+   "stage2_demotion_sd": 0.0002480010783177972,
+   "stage2_standard_max": 120.06677103042603,
+   "stage2_demotion_max": 0.0015943050384521484,
+   "stage2_standard_status": {
+    "FEASIBLE": 34,
+    "OPTIMAL": 16
+   },
+   "stage2_demotion_status": {
+    "OPTIMAL": 50
+   }
+  },
+  "deepgo-se_mf": {
+   "n": 50,
+   "stage1_mean": 0.8945387783297337,
+   "stage1_sd": 0.7084081307343544,
+   "stage1_max": 3.075920145958662
+  },
+  "deepgo-se_bp": {
+   "n": 50,
+   "stage1_mean": 3.415032169474289,
+   "stage1_sd": 2.883761797278893,
+   "stage1_max": 11.36588592454791
+  },
+  "sprof-go_cc": {
+   "n": 50,
+   "stage1_mean": 1.5386395543185063,
+   "stage1_sd": 1.2981221644940906,
+   "stage1_max": 4.406679851934314,
+   "stage2_standard_mean": 14.339257307052613,
+   "stage2_demotion_mean": 0.0007143592834472656,
+   "stage2_standard_sd": 36.99236503061793,
+   "stage2_demotion_sd": 0.0001510390377998253,
+   "stage2_standard_max": 120.07061219215393,
+   "stage2_demotion_max": 0.000997781753540039,
+   "stage2_standard_status": {
+    "OPTIMAL": 45,
+    "FEASIBLE": 5
+   },
+   "stage2_demotion_status": {
+    "OPTIMAL": 50
+   }
+  },
+  "sprof-go_mf": {
+   "n": 50,
+   "stage1_mean": 1.4388909039611462,
+   "stage1_sd": 1.1735174023264188,
+   "stage1_max": 4.513950670138001
+  },
+  "sprof-go_bp": {
+   "n": 50,
+   "stage1_mean": 8.206076265501324,
+   "stage1_sd": 7.190796454521321,
+   "stage1_max": 26.17640039511025
+  }
+ },
+ "term_centric": {
+  "seq_sim_timeset_cc": {
+   "n_flips": 101,
+   "total_cost": 25.042355545155946,
+   "top10_share": 0.6195468156370393,
+   "top10": [
+    {
+     "term": "GO:0005634",
+     "name": "nucleus",
+     "cost": 3.5473381885933786,
+     "flips": 6
+    },
+    {
+     "term": "GO:0140513",
+     "name": "nuclear protein-containing complex",
+     "cost": 2.286684398398722,
+     "flips": 5
+    },
+    {
+     "term": "GO:0031981",
+     "name": "nuclear lumen",
+     "cost": 1.6203652759267058,
+     "flips": 5
+    },
+    {
+     "term": "GO:0005739",
+     "name": "mitochondrion",
+     "cost": 1.3248345831495367,
+     "flips": 2
+    },
+    {
+     "term": "GO:0016605",
+     "name": "PML body",
+     "cost": 1.316071569322929,
+     "flips": 2
+    },
+    {
+     "term": "GO:0005847",
+     "name": "mRNA cleavage and polyadenylation specificity factor complex",
+     "cost": 1.2921175683363915,
+     "flips": 4
+    },
+    {
+     "term": "GO:0005849",
+     "name": "mRNA cleavage factor complex",
+     "cost": 1.2921175683363915,
+     "flips": 4
+    },
+    {
+     "term": "GO:0030054",
+     "name": "cell junction",
+     "cost": 0.9949399859839402,
+     "flips": 5
+    },
+    {
+     "term": "GO:0005654",
+     "name": "nucleoplasm",
+     "cost": 0.9861953917568216,
+     "flips": 5
+    },
+    {
+     "term": "GO:0005730",
+     "name": "nucleolus",
+     "cost": 0.8542471042471043,
+     "flips": 1
+    }
+   ]
+  },
+  "seq_sim_timeset_mf": {
+   "n_flips": 0,
+   "total_cost": 0,
+   "top10_share": null,
+   "top10": []
+  },
+  "seq_sim_timeset_bp": {
+   "n_flips": 205,
+   "total_cost": 47.466432427025865,
+   "top10_share": 0.20564412817870248,
+   "top10": [
+    {
+     "term": "GO:0001701",
+     "name": "in utero embryonic development",
+     "cost": 2.068691054299979,
+     "flips": 5
+    },
+    {
+     "term": "GO:0001824",
+     "name": "blastocyst development",
+     "cost": 1.1161469625344362,
+     "flips": 3
+    },
+    {
+     "term": "GO:0008283",
+     "name": "cell population proliferation",
+     "cost": 1.036752355017537,
+     "flips": 4
+    },
+    {
+     "term": "GO:0001832",
+     "name": "blastocyst growth",
+     "cost": 1.0089378884805589,
+     "flips": 2
+    },
+    {
+     "term": "GO:0007399",
+     "name": "nervous system development",
+     "cost": 0.8633164906966133,
+     "flips": 4
+    },
+    {
+     "term": "GO:0050877",
+     "name": "nervous system process",
+     "cost": 0.8375925300978924,
+     "flips": 3
+    },
+    {
+     "term": "GO:0040012",
+     "name": "regulation of locomotion",
+     "cost": 0.8151461345426081,
+     "flips": 4
+    },
+    {
+     "term": "GO:0030334",
+     "name": "regulation of cell migration",
+     "cost": 0.7283361854226458,
+     "flips": 4
+    },
+    {
+     "term": "GO:2000145",
+     "name": "regulation of cell motility",
+     "cost": 0.7283361854226458,
+     "flips": 4
+    },
+    {
+     "term": "GO:0002685",
+     "name": "regulation of leukocyte migration",
+     "cost": 0.5579373276941104,
+     "flips": 3
+    }
+   ]
+  },
+  "deepgo-se_cc": {
+   "n_flips": 17,
+   "total_cost": 2.941361,
+   "top10_share": 0.9655465616087247,
+   "top10": [
+    {
+     "term": "GO:0005634",
+     "name": "nucleus",
+     "cost": 0.883209,
+     "flips": 4
+    },
+    {
+     "term": "GO:0030054",
+     "name": "cell junction",
+     "cost": 0.6287699999999999,
+     "flips": 3
+    },
+    {
+     "term": "GO:0044423",
+     "name": "virion component",
+     "cost": 0.341598,
+     "flips": 2
+    },
+    {
+     "term": "GO:0045202",
+     "name": "synapse",
+     "cost": 0.183313,
+     "flips": 1
+    },
+    {
+     "term": "GO:0140513",
+     "name": "nuclear protein-containing complex",
+     "cost": 0.179464,
+     "flips": 1
+    },
+    {
+     "term": "GO:0070062",
+     "name": "extracellular exosome",
+     "cost": 0.152831,
+     "flips": 1
+    },
+    {
+     "term": "GO:0009506",
+     "name": "plasmodesma",
+     "cost": 0.117709,
+     "flips": 1
+    },
+    {
+     "term": "GO:0070161",
+     "name": "anchoring junction",
+     "cost": 0.117709,
+     "flips": 1
+    },
+    {
+     "term": "GO:0055044",
+     "name": "symplast",
+     "cost": 0.117709,
+     "flips": 1
+    },
+    {
+     "term": "GO:0005911",
+     "name": "cell-cell junction",
+     "cost": 0.117709,
+     "flips": 1
+    }
+   ]
+  },
+  "deepgo-se_mf": {
+   "n_flips": 0,
+   "total_cost": 0,
+   "top10_share": null,
+   "top10": []
+  },
+  "deepgo-se_bp": {
+   "n_flips": 41,
+   "total_cost": 5.824389999999999,
+   "top10_share": 0.576070627138636,
+   "top10": [
+    {
+     "term": "GO:0007399",
+     "name": "nervous system development",
+     "cost": 0.710002,
+     "flips": 5
+    },
+    {
+     "term": "GO:0022008",
+     "name": "neurogenesis",
+     "cost": 0.443113,
+     "flips": 3
+    },
+    {
+     "term": "GO:0048699",
+     "name": "generation of neurons",
+     "cost": 0.39925700000000003,
+     "flips": 3
+    },
+    {
+     "term": "GO:0030182",
+     "name": "neuron differentiation",
+     "cost": 0.395613,
+     "flips": 3
+    },
+    {
+     "term": "GO:0048666",
+     "name": "neuron development",
+     "cost": 0.379681,
+     "flips": 3
+    },
+    {
+     "term": "GO:0002165",
+     "name": "instar larval or pupal development",
+     "cost": 0.218482,
+     "flips": 1
+    },
+    {
+     "term": "GO:0048707",
+     "name": "instar larval or pupal morphogenesis",
+     "cost": 0.215988,
+     "flips": 1
+    },
+    {
+     "term": "GO:0010154",
+     "name": "fruit development",
+     "cost": 0.211165,
+     "flips": 1
+    },
+    {
+     "term": "GO:0048316",
+     "name": "seed development",
+     "cost": 0.198567,
+     "flips": 1
+    },
+    {
+     "term": "GO:0007444",
+     "name": "imaginal disc development",
+     "cost": 0.183392,
+     "flips": 1
+    }
+   ]
+  },
+  "sprof-go_cc": {
+   "n_flips": 31,
+   "total_cost": 7.025000000000001,
+   "top10_share": 1.0,
+   "top10": [
+    {
+     "term": "GO:0005634",
+     "name": "nucleus",
+     "cost": 1.761,
+     "flips": 6
+    },
+    {
+     "term": "GO:0031981",
+     "name": "nuclear lumen",
+     "cost": 1.399,
+     "flips": 5
+    },
+    {
+     "term": "GO:0005654",
+     "name": "nucleoplasm",
+     "cost": 1.19,
+     "flips": 4
+    },
+    {
+     "term": "GO:0005849",
+     "name": "mRNA cleavage factor complex",
+     "cost": 0.7,
+     "flips": 4
+    },
+    {
+     "term": "GO:0005847",
+     "name": "mRNA cleavage and polyadenylation specificity factor complex",
+     "cost": 0.7,
+     "flips": 4
+    },
+    {
+     "term": "GO:0140513",
+     "name": "nuclear protein-containing complex",
+     "cost": 0.7,
+     "flips": 4
+    },
+    {
+     "term": "GO:0005730",
+     "name": "nucleolus",
+     "cost": 0.195,
+     "flips": 1
+    },
+    {
+     "term": "GO:0044423",
+     "name": "virion component",
+     "cost": 0.171,
+     "flips": 1
+    },
+    {
+     "term": "GO:0043292",
+     "name": "contractile muscle fiber",
+     "cost": 0.105,
+     "flips": 1
+    },
+    {
+     "term": "GO:0030016",
+     "name": "myofibril",
+     "cost": 0.104,
+     "flips": 1
+    }
+   ]
+  },
+  "sprof-go_mf": {
+   "n_flips": 0,
+   "total_cost": 0,
+   "top10_share": null,
+   "top10": []
+  },
+  "sprof-go_bp": {
+   "n_flips": 8,
+   "total_cost": 0.9059999999999999,
+   "top10_share": 1.0,
+   "top10": [
+    {
+     "term": "GO:0007591",
+     "name": "molting cycle, chitin-based cuticle",
+     "cost": 0.12,
+     "flips": 1
+    },
+    {
+     "term": "GO:0042127",
+     "name": "regulation of cell population proliferation",
+     "cost": 0.119,
+     "flips": 1
+    },
+    {
+     "term": "GO:0008284",
+     "name": "positive regulation of cell population proliferation",
+     "cost": 0.112,
+     "flips": 1
+    },
+    {
+     "term": "GO:0001701",
+     "name": "in utero embryonic development",
+     "cost": 0.112,
+     "flips": 1
+    },
+    {
+     "term": "GO:0040011",
+     "name": "locomotion",
+     "cost": 0.111,
+     "flips": 1
+    },
+    {
+     "term": "GO:0035108",
+     "name": "limb morphogenesis",
+     "cost": 0.111,
+     "flips": 1
+    },
+    {
+     "term": "GO:0030326",
+     "name": "embryonic limb morphogenesis",
+     "cost": 0.111,
+     "flips": 1
+    },
+    {
+     "term": "GO:0042733",
+     "name": "embryonic digit morphogenesis",
+     "cost": 0.11,
+     "flips": 1
+    }
+   ]
+  }
+ },
+ "flipped_by_all_three": {
+  "cc": [
+   "GO:0005634 nucleus",
+   "GO:0140513 nuclear protein-containing complex"
+  ],
+  "mf": [],
+  "bp": [
+   "GO:0040011 locomotion"
+  ]
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "taxon": "759272",
+ "tau": 0.001,
+ "n_proteins": 7186,
+ "n_active_pairs": 173875,
+ "n_incoherent_complexes": 79,
+ "configs": {
+  "naive": {
+   "n_vars": 29284941,
+   "n_constraints": 46662680,
+   "analytic": false,
+   "total_s": 1852.6050371676683,
+   "flips": null,
+   "solve_s": 814.4044527746737,
+   "status": "UNKNOWN",
+   "objective": null,
+   "bound": 0.0
+  },
+  "H1+H2": {
+   "n_vars": 1368971,
+   "n_constraints": 1830599,
+   "total_s": 711.2978163398802,
+   "flips": null,
+   "solve_s": 630.6851905118674,
+   "status": "UNKNOWN",
+   "objective": null,
+   "bound": 0.0
+  },
+  "H1+H2+H3": {
+   "n_vars": 9252,
+   "n_constraints": 11377,
+   "total_s": 603.6845519822091,
+   "flips": 149,
+   "solve_s": 600.0329310763627,
+   "status": "FEASIBLE",
+   "objective": 0.149,
+   "bound": 0.032
+  }
+ }
+}

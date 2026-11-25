@@ -1,0 +1,917 @@
+{
+ "predictor": "seq_sim_timeset",
+ "aspect": "cc",
+ "n_tasks": 50,
+ "n_valid_proteins": 68,
+ "stats": {
+  "labels_impossible_pairs": 0,
+  "filter_removed": 505,
+  "filter_removed_above_tau": 505,
+  "filter_removed_true_label": 0,
+  "stage1_changed": 505,
+  "stage1_changed_true_label": 0,
+  "n_test": 150,
+  "filter_changed_proteins": 43,
+  "stage1_changed_proteins": 43
+ },
+ "per_taxon": [
+  {
+   "taxon": "10116",
+   "labels_impossible_pairs": 0,
+   "filter_removed": 29,
+   "filter_removed_above_tau": 29,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 29,
+   "stage1_changed_true_label": 0,
+   "n_test": 14,
+   "filter_changed_proteins": 4,
+   "stage1_changed_proteins": 4
+  },
+  {
+   "taxon": "1073375",
+   "filter_removed": 16,
+   "filter_removed_above_tau": 16,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 16,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "1220924",
+   "filter_removed": 4,
+   "filter_removed_above_tau": 4,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 4,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "187420",
+   "filter_removed": 10,
+   "filter_removed_above_tau": 10,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 10,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "208964",
+   "labels_impossible_pairs": 0,
+   "n_test": 13,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "221103",
+   "filter_removed": 3,
+   "filter_removed_above_tau": 3,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 3,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "227321",
+   "filter_removed": 56,
+   "filter_removed_above_tau": 56,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 56,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "229533",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "237561",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "243274",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "267377",
+   "filter_removed": 13,
+   "filter_removed_above_tau": 13,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 13,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "272844",
+   "n_test": 0,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "3197",
+   "filter_removed": 14,
+   "filter_removed_above_tau": 14,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 14,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 2,
+   "filter_changed_proteins": 2,
+   "stage1_changed_proteins": 2
+  },
+  {
+   "taxon": "3218",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "330879",
+   "labels_impossible_pairs": 0,
+   "filter_removed": 133,
+   "filter_removed_above_tau": 133,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 133,
+   "stage1_changed_true_label": 0,
+   "n_test": 6,
+   "filter_changed_proteins": 3,
+   "stage1_changed_proteins": 3
+  },
+  {
+   "taxon": "331117",
+   "filter_removed": 4,
+   "filter_removed_above_tau": 4,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 4,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "336722",
+   "labels_impossible_pairs": 0,
+   "n_test": 2,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "3572",
+   "n_test": 0,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "367110",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "3750",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "3847",
+   "labels_impossible_pairs": 0,
+   "filter_removed": 5,
+   "filter_removed_above_tau": 5,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 5,
+   "stage1_changed_true_label": 0,
+   "n_test": 7,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "3871",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "3880",
+   "labels_impossible_pairs": 0,
+   "n_test": 7,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "3983",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "39947",
+   "labels_impossible_pairs": 0,
+   "filter_removed": 16,
+   "filter_removed_above_tau": 16,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 16,
+   "stage1_changed_true_label": 0,
+   "n_test": 6,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "4072",
+   "filter_removed": 20,
+   "filter_removed_above_tau": 20,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 20,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 2,
+   "filter_changed_proteins": 2,
+   "stage1_changed_proteins": 2
+  },
+  {
+   "taxon": "4081",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "510516",
+   "labels_impossible_pairs": 0,
+   "filter_removed": 7,
+   "filter_removed_above_tau": 7,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 7,
+   "stage1_changed_true_label": 0,
+   "n_test": 3,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "5270",
+   "labels_impossible_pairs": 0,
+   "filter_removed": 7,
+   "filter_removed_above_tau": 7,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 7,
+   "stage1_changed_true_label": 0,
+   "n_test": 3,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "6239",
+   "filter_removed": 2,
+   "filter_removed_above_tau": 2,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 2,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "655827",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "69014",
+   "filter_removed": 20,
+   "filter_removed_above_tau": 20,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 20,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 2,
+   "filter_changed_proteins": 2,
+   "stage1_changed_proteins": 2
+  },
+  {
+   "taxon": "70601",
+   "filter_removed": 12,
+   "filter_removed_above_tau": 12,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 12,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "7070",
+   "labels_impossible_pairs": 0,
+   "filter_removed": 4,
+   "filter_removed_above_tau": 4,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 4,
+   "stage1_changed_true_label": 0,
+   "n_test": 2,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "7176",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "7227",
+   "filter_removed": 24,
+   "filter_removed_above_tau": 24,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 24,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 10,
+   "filter_changed_proteins": 2,
+   "stage1_changed_proteins": 2
+  },
+  {
+   "taxon": "742740",
+   "filter_removed": 1,
+   "filter_removed_above_tau": 1,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 1,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "759272",
+   "filter_removed": 56,
+   "filter_removed_above_tau": 56,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 56,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 4,
+   "filter_changed_proteins": 4,
+   "stage1_changed_proteins": 4
+  },
+  {
+   "taxon": "7757",
+   "n_test": 0,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "7868",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "7955",
+   "labels_impossible_pairs": 0,
+   "filter_removed": 30,
+   "filter_removed_above_tau": 30,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 30,
+   "stage1_changed_true_label": 0,
+   "n_test": 21,
+   "filter_changed_proteins": 5,
+   "stage1_changed_proteins": 5
+  },
+  {
+   "taxon": "8090",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "83332",
+   "labels_impossible_pairs": 0,
+   "n_test": 7,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "8355",
+   "labels_impossible_pairs": 0,
+   "n_test": 3,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "8364",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "85962",
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "88036",
+   "labels_impossible_pairs": 0,
+   "n_test": 2,
+   "filter_changed_proteins": 0,
+   "stage1_changed_proteins": 0
+  },
+  {
+   "taxon": "9031",
+   "filter_removed": 13,
+   "filter_removed_above_tau": 13,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 13,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 4,
+   "filter_changed_proteins": 2,
+   "stage1_changed_proteins": 2
+  },
+  {
+   "taxon": "9913",
+   "labels_impossible_pairs": 0,
+   "filter_removed": 5,
+   "filter_removed_above_tau": 5,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 5,
+   "stage1_changed_true_label": 0,
+   "n_test": 4,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  },
+  {
+   "taxon": "9940",
+   "filter_removed": 1,
+   "filter_removed_above_tau": 1,
+   "filter_removed_true_label": 0,
+   "stage1_changed": 1,
+   "stage1_changed_true_label": 0,
+   "labels_impossible_pairs": 0,
+   "n_test": 1,
+   "filter_changed_proteins": 1,
+   "stage1_changed_proteins": 1
+  }
+ ],
+ "top_filter_removed_terms": [
+  [
+   "GO:0009536",
+   17,
+   "plastid"
+  ],
+  [
+   "GO:0009507",
+   15,
+   "chloroplast"
+  ],
+  [
+   "GO:0009506",
+   13,
+   "plasmodesma"
+  ],
+  [
+   "GO:0055044",
+   13,
+   "symplast"
+  ],
+  [
+   "GO:0009526",
+   10,
+   "plastid envelope"
+  ],
+  [
+   "GO:0045202",
+   9,
+   "synapse"
+  ],
+  [
+   "GO:0098978",
+   9,
+   "glutamatergic synapse"
+  ],
+  [
+   "GO:0009941",
+   8,
+   "chloroplast envelope"
+  ],
+  [
+   "GO:0005929",
+   8,
+   "cilium"
+  ],
+  [
+   "GO:0043209",
+   7,
+   "myelin sheath"
+  ],
+  [
+   "GO:0000325",
+   7,
+   "plant-type vacuole"
+  ],
+  [
+   "GO:0043005",
+   7,
+   "neuron projection"
+  ],
+  [
+   "GO:0005634",
+   6,
+   "nucleus"
+  ],
+  [
+   "GO:0005764",
+   6,
+   "lysosome"
+  ],
+  [
+   "GO:0036477",
+   6,
+   "somatodendritic compartment"
+  ],
+  [
+   "GO:0070062",
+   6,
+   "extracellular exosome"
+  ],
+  [
+   "GO:0098794",
+   6,
+   "postsynapse"
+  ],
+  [
+   "GO:0009532",
+   5,
+   "plastid stroma"
+  ],
+  [
+   "GO:0009570",
+   5,
+   "chloroplast stroma"
+  ],
+  [
+   "GO:0005654",
+   5,
+   "nucleoplasm"
+  ],
+  [
+   "GO:0031981",
+   5,
+   "nuclear lumen"
+  ],
+  [
+   "GO:0140513",
+   5,
+   "nuclear protein-containing complex"
+  ],
+  [
+   "GO:0005765",
+   5,
+   "lysosomal membrane"
+  ],
+  [
+   "GO:0005911",
+   5,
+   "cell-cell junction"
+  ],
+  [
+   "GO:0030054",
+   5,
+   "cell junction"
+  ]
+ ],
+ "metrics": {
+  "before": {
+   "fmax": 0.6172510062639581,
+   "smin": 8.854981817666925,
+   "tmax": 0.38,
+   "wfmax": 0.5493773822566566,
+   "wtmax": 0.38,
+   "avg_auc": 0.8089442373845495,
+   "aupr": 0.5322205916419438,
+   "avgic": 12.824566384922221,
+   "fmax_spec_match": 459,
+   "precision": 0.6459231390003168,
+   "recall": 0.5910161606836004,
+   "tp": 459,
+   "fp": 290,
+   "fn": 253,
+   "sensitivity": 0.4883731986316063,
+   "specificity": 0.991021952855308,
+   "aupr_original_rule": 0.38010710227851147,
+   "n_eval": 150
+  },
+  "stage1": {
+   "fmax": 0.6173331868123458,
+   "smin": 8.819529457088231,
+   "tmax": 0.38,
+   "wfmax": 0.5494994013918733,
+   "wtmax": 0.38,
+   "avg_auc": 0.809788779968831,
+   "aupr": 0.5332003380246505,
+   "avgic": 12.772565606977514,
+   "fmax_spec_match": 459,
+   "precision": 0.6461031505210543,
+   "recall": 0.5910161606836004,
+   "tp": 459,
+   "fp": 289,
+   "fn": 253,
+   "sensitivity": 0.4883731986316063,
+   "specificity": 0.9905598249630218,
+   "aupr_original_rule": 0.3810243472761765,
+   "n_eval": 150
+  },
+  "stage1_unknown": {
+   "fmax": 0.6177126998694895,
+   "smin": 8.753044177994749,
+   "tmax": 0.38,
+   "wfmax": 0.5498037698396979,
+   "wtmax": 0.38,
+   "avg_auc": 0.8096947896929375,
+   "aupr": 0.5328537788344558,
+   "avgic": 12.674385185924734,
+   "fmax_spec_match": 459,
+   "precision": 0.6469351310405348,
+   "recall": 0.5910161606836004,
+   "tp": 459,
+   "fp": 286,
+   "fn": 253,
+   "sensitivity": 0.4883731986316063,
+   "specificity": 0.9907585615446985,
+   "aupr_original_rule": 0.38067781832091613,
+   "n_eval": 150
+  },
+  "filter_all": {
+   "fmax": 0.6173331868123458,
+   "smin": 8.819529457088231,
+   "tmax": 0.38,
+   "wfmax": 0.5494994013918733,
+   "wtmax": 0.38,
+   "avg_auc": 0.809788779968831,
+   "aupr": 0.5332003380246505,
+   "avgic": 12.772565606977514,
+   "fmax_spec_match": 459,
+   "precision": 0.6461031505210543,
+   "recall": 0.5910161606836004,
+   "tp": 459,
+   "fp": 289,
+   "fn": 253,
+   "sensitivity": 0.4883731986316063,
+   "specificity": 0.9905598249630218,
+   "aupr_original_rule": 0.3810243472761765,
+   "n_eval": 150
+  }
+ },
+ "modified_subset": {
+  "before": {
+   "n": 0,
+   "n_taxa": 0
+  },
+  "stage1": {
+   "n": 16,
+   "n_taxa": 13,
+   "before": {
+    "fmax": 0.7041841388962751,
+    "smin": 10.369299760374215,
+    "tmax": 0.55,
+    "wfmax": 0.6323599743271378,
+    "wtmax": 0.37,
+    "avg_auc": 0.8278574342324341,
+    "aupr": 0.6858407342740541,
+    "avgic": 10.351258528794903,
+    "fmax_spec_match": 128,
+    "precision": 0.7267313364739836,
+    "recall": 0.6829939163165267,
+    "tp": 128,
+    "fp": 44,
+    "fn": 76,
+    "sensitivity": 0.39375,
+    "specificity": 0.9895534218712609,
+    "aupr_original_rule": 0.48415828686887735,
+    "n_eval": 16
+   },
+   "after": {
+    "fmax": 0.7048186163400781,
+    "smin": 10.229730783830371,
+    "tmax": 0.55,
+    "wfmax": 0.6328482915033733,
+    "wtmax": 0.37,
+    "avg_auc": 0.8372542596292596,
+    "aupr": 0.6905454811046807,
+    "avgic": 10.13025522252989,
+    "fmax_spec_match": 128,
+    "precision": 0.7280841503267974,
+    "recall": 0.6829939163165267,
+    "tp": 128,
+    "fp": 43,
+    "fn": 76,
+    "sensitivity": 0.39375,
+    "specificity": 0.988431530804412,
+    "aupr_original_rule": 0.48850406315495165,
+    "n_eval": 16
+   }
+  },
+  "stage1_unknown": {
+   "n": 15,
+   "n_taxa": 12,
+   "before": {
+    "fmax": 0.6971953873833154,
+    "smin": 11.541050739740085,
+    "tmax": 0.55,
+    "wfmax": 0.644372119898193,
+    "wtmax": 0.57,
+    "avg_auc": 0.8383219906596531,
+    "aupr": 0.6408527205744412,
+    "avgic": 12.85006495822484,
+    "fmax_spec_match": 120,
+    "precision": 0.6825874996463231,
+    "recall": 0.7124421879863055,
+    "tp": 120,
+    "fp": 58,
+    "fn": 65,
+    "sensitivity": 0.3987179487179487,
+    "specificity": 0.9853225860744658,
+    "aupr_original_rule": 0.4909158333997457,
+    "n_eval": 15
+   },
+   "after": {
+    "fmax": 0.6984289955625638,
+    "smin": 11.25879980341027,
+    "tmax": 0.55,
+    "wfmax": 0.6475823095452233,
+    "wtmax": 0.57,
+    "avg_auc": 0.8467421419369472,
+    "aupr": 0.643717948203825,
+    "avgic": 12.173675141295421,
+    "fmax_spec_match": 120,
+    "precision": 0.6849564270152506,
+    "recall": 0.7124421879863055,
+    "tp": 120,
+    "fp": 55,
+    "fn": 65,
+    "sensitivity": 0.3987179487179487,
+    "specificity": 0.984156055584627,
+    "aupr_original_rule": 0.49342319487912545,
+    "n_eval": 15
+   }
+  },
+  "filter_all": {
+   "n": 16,
+   "n_taxa": 13,
+   "before": {
+    "fmax": 0.7041841388962751,
+    "smin": 10.369299760374215,
+    "tmax": 0.55,
+    "wfmax": 0.6323599743271378,
+    "wtmax": 0.37,
+    "avg_auc": 0.8278574342324341,
+    "aupr": 0.6858407342740541,
+    "avgic": 10.351258528794903,
+    "fmax_spec_match": 128,
+    "precision": 0.7267313364739836,
+    "recall": 0.6829939163165267,
+    "tp": 128,
+    "fp": 44,
+    "fn": 76,
+    "sensitivity": 0.39375,
+    "specificity": 0.9895534218712609,
+    "aupr_original_rule": 0.48415828686887735,
+    "n_eval": 16
+   },
+   "after": {
+    "fmax": 0.7048186163400781,
+    "smin": 10.229730783830371,
+    "tmax": 0.55,
+    "wfmax": 0.6328482915033733,
+    "wtmax": 0.37,
+    "avg_auc": 0.8372542596292596,
+    "aupr": 0.6905454811046807,
+    "avgic": 10.13025522252989,
+    "fmax_spec_match": 128,
+    "precision": 0.7280841503267974,
+    "recall": 0.6829939163165267,
+    "tp": 128,
+    "fp": 43,
+    "fn": 76,
+    "sensitivity": 0.39375,
+    "specificity": 0.988431530804412,
+    "aupr_original_rule": 0.48850406315495165,
+    "n_eval": 16
+   }
+  }
+ },
+ "crosscheck": {
+  "before": {
+   "fmax": 0.6172510062639581,
+   "smin": 8.854981817666925,
+   "avg_auc": 0.8089442373845495,
+   "aupr": 0.5322205916419438
+  },
+  "published_funtaxis": {
+   "fmax": 0.6172510062639581,
+   "smin": 8.854981817666925,
+   "avg_auc": 0.8098598026961037,
+   "aupr": 0.5330439031656823
+  },
+  "soft_stage1_0.2": {
+   "fmax": 0.6173331868123458,
+   "smin": 8.819529457088231,
+   "avg_auc": 0.809788779968831,
+   "aupr": 0.5332003380246505
+  },
+  "soft_stage1_0.5": {
+   "fmax": 0.6173331868123458,
+   "smin": 8.819529457088231,
+   "avg_auc": 0.809788779968831,
+   "aupr": 0.5332003380246505
+  },
+  "soft_stage1_1.0": {
+   "fmax": 0.6173331868123458,
+   "smin": 8.819529457088231,
+   "avg_auc": 0.809788779968831,
+   "aupr": 0.5332003380246505
+  },
+  "soft_stage2_0.2": {
+   "fmax": 0.6173331868123458,
+   "smin": 8.819529457088231,
+   "avg_auc": 0.809788779968831,
+   "aupr": 0.5332003380246505
+  },
+  "soft_stage2_0.5": {
+   "fmax": 0.6173331868123458,
+   "smin": 8.819529457088231,
+   "avg_auc": 0.809788779968831,
+   "aupr": 0.5332003380246505
+  },
+  "soft_stage2_1.0": {
+   "fmax": 0.6173331868123458,
+   "smin": 8.819529457088231,
+   "avg_auc": 0.809788779968831,
+   "aupr": 0.5332310485156329
+  },
+  "stage1": {
+   "fmax": 0.6173331868123458,
+   "smin": 8.819529457088231,
+   "avg_auc": 0.809788779968831,
+   "aupr": 0.5332003380246505
+  },
+  "stage1_unknown": {
+   "fmax": 0.6177126998694895,
+   "smin": 8.753044177994749,
+   "avg_auc": 0.8096947896929375,
+   "aupr": 0.5328537788344558
+  },
+  "stage2_demotion": {
+   "fmax": 0.6173331868123458,
+   "smin": 8.819529457088231,
+   "avg_auc": 0.809788779968831,
+   "aupr": 0.5332802011188588
+  },
+  "stage2_standard": {
+   "fmax": 0.6173331868123458,
+   "smin": 8.819529457088231,
+   "avg_auc": 0.809788779968831,
+   "aupr": 0.5332003380246505
+  }
+ }
+}

@@ -1,0 +1,1066 @@
+{
+ "seq_sim_timeset": {
+  "rerun": {
+   "before": {
+    "complex_coherence": 0.8732073102051047,
+    "process_coherence": 0.9439894007166899,
+    "known_taxon_consistency": 0.0,
+    "gaef_taxon_consistency": 0.0,
+    "promotions": 0,
+    "demotions": 0,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6172510062639581,
+     "smin": 8.854981817666925,
+     "aupr": 0.5322205916419438,
+     "avg_auc": 0.8089442373845495
+    },
+    "modified_metrics": null
+   },
+   "stage1": {
+    "complex_coherence": 0.8853655002300205,
+    "process_coherence": 0.9760886110725144,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 1698216,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 16,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6173331868123458,
+     "smin": 8.819529457088231,
+     "aupr": 0.5332003380246505,
+     "avg_auc": 0.809788779968831
+    },
+    "modified_metrics": {
+     "fmax": 0.7048186163400781,
+     "smin": 10.229730783830371,
+     "aupr": 0.6905454811046807,
+     "avg_auc": 0.8372542596292596
+    }
+   },
+   "stage2_standard": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.9760886110725144,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 6056,
+    "demotions": 0,
+    "solver_status_counts": {
+     "FEASIBLE": 49,
+     "OPTIMAL": 1
+    },
+    "solver_objective_sum": 6.056000000000001,
+    "solver_bound_sum": 1.2449999999999999,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6173331868123458,
+     "smin": 8.819529457088231,
+     "aupr": 0.5332003380246505,
+     "avg_auc": 0.809788779968831
+    },
+    "modified_metrics": null
+   },
+   "stage2_demotion": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.9757829951890823,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 2949,
+    "solver_status_counts": {
+     "OPTIMAL": 50
+    },
+    "solver_objective_sum": 581.9199839999999,
+    "solver_bound_sum": 581.9199839999999,
+    "n_modified_test_proteins": 3,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6173331868123458,
+     "smin": 8.819529457088231,
+     "aupr": 0.5332802011188588,
+     "avg_auc": 0.809788779968831
+    },
+    "modified_metrics": {
+     "fmax": 0.7534605312383089,
+     "smin": 8.594760072940634,
+     "aupr": 0.8531628414668156,
+     "avg_auc": 1.0
+    }
+   },
+   "stage2_gated": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.9764736595145139,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 406,
+    "demotions": 2850,
+    "solver_status_counts": {
+     "OPTIMAL": 50
+    },
+    "solver_objective_sum": 567.1336999999997,
+    "solver_bound_sum": 567.1336999999997,
+    "n_modified_test_proteins": 3,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6173331868123458,
+     "smin": 8.819529457088231,
+     "aupr": 0.5332802011188588,
+     "avg_auc": 0.809788779968831
+    },
+    "modified_metrics": {
+     "fmax": 0.7534605312383089,
+     "smin": 8.594760072940634,
+     "aupr": 0.8531628414668156,
+     "avg_auc": 1.0
+    }
+   }
+  },
+  "accepted": {
+   "before": {
+    "complex_coherence": 0.8732073102051047,
+    "process_coherence": 0.9439894007166899,
+    "known_taxon_consistency": 0.0,
+    "gaef_taxon_consistency": 0.0,
+    "promotions": 0,
+    "demotions": 0,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6172510062639581,
+     "smin": 8.854981817666925,
+     "aupr": 0.5322205916419438,
+     "avg_auc": 0.8089442373845495
+    },
+    "modified_metrics": null
+   },
+   "stage1": {
+    "complex_coherence": 0.8853655002300205,
+    "process_coherence": 0.9760886110725144,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 1698216,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 16,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6173331868123458,
+     "smin": 8.819529457088231,
+     "aupr": 0.5332003380246505,
+     "avg_auc": 0.809788779968831
+    },
+    "modified_metrics": {
+     "fmax": 0.7048186163400781,
+     "smin": 10.229730783830371,
+     "aupr": 0.6905454811046807,
+     "avg_auc": 0.8372542596292596
+    }
+   },
+   "stage2_standard": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.9760886110725144,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 5919,
+    "demotions": 0,
+    "solver_status_counts": {
+     "FEASIBLE": 49,
+     "OPTIMAL": 1
+    },
+    "solver_objective_sum": 5.919000000000002,
+    "solver_bound_sum": 1.2559999999999998,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6173331868123458,
+     "smin": 8.819529457088231,
+     "aupr": 0.5332003380246505,
+     "avg_auc": 0.809788779968831
+    },
+    "modified_metrics": null
+   },
+   "stage2_demotion": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.9757829951890823,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 2949,
+    "solver_status_counts": {
+     "OPTIMAL": 50
+    },
+    "solver_objective_sum": 581.9199839999999,
+    "solver_bound_sum": 581.9199839999999,
+    "n_modified_test_proteins": 3,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6173331868123458,
+     "smin": 8.819529457088231,
+     "aupr": 0.5332802011188588,
+     "avg_auc": 0.809788779968831
+    },
+    "modified_metrics": {
+     "fmax": 0.7534605312383089,
+     "smin": 8.594760072940634,
+     "aupr": 0.8531628414668156,
+     "avg_auc": 1.0
+    }
+   }
+  },
+  "per_organism": {
+   "stage1": {
+    "seconds_sum": 86.28031954052858,
+    "seconds_max": 4.55051990703214
+   },
+   "stage2_standard": {
+    "organisms_with_edits": 50,
+    "status": {
+     "FEASIBLE": 49,
+     "OPTIMAL": 1
+    },
+    "formulation": {},
+    "solver_seconds_sum": 5996.536058187485,
+    "solver_seconds_median": 120.01354086399078,
+    "solver_seconds_max": 120.65465497970581,
+    "organisms_with_singletons_after": 0,
+    "taxon_consistent_organisms": 50
+   },
+   "stage2_demotion": {
+    "organisms_with_edits": 50,
+    "status": {
+     "OPTIMAL": 50
+    },
+    "formulation": {},
+    "solver_seconds_sum": 0.659294605255127,
+    "solver_seconds_median": 0.0016556978225708008,
+    "solver_seconds_max": 0.3189883232116699,
+    "organisms_with_singletons_after": 0,
+    "taxon_consistent_organisms": 50
+   },
+   "stage2_gated": {
+    "organisms_with_edits": 50,
+    "status": {
+     "OPTIMAL": 50
+    },
+    "formulation": {
+     "hard": 50
+    },
+    "solver_seconds_sum": 2.954948663711548,
+    "solver_seconds_median": 0.007038712501525879,
+    "solver_seconds_max": 0.7407104969024658,
+    "organisms_with_singletons_after": 0,
+    "taxon_consistent_organisms": 50
+   }
+  },
+  "gated_counts": {
+   "singletons": 2904,
+   "with_evidence": 98,
+   "outcome_demoted": 2806,
+   "outcome_promoted": 98
+  },
+  "job_wall_seconds": {
+   "sum": 12528.780000000002,
+   "median": 248.085,
+   "max": 415.07
+  },
+  "membership": {
+   "standard": {
+    "promotions": {
+     "total": 6056,
+     "with_curated_reference": 30,
+     "coverage_pct": 0.5,
+     "precision_pct_on_covered": 0.0,
+     "true_subunit_promotions": 0
+    },
+    "demotions": {
+     "total": 0,
+     "with_curated_reference": 0,
+     "coverage_pct": null,
+     "unlisted_demotion_pct_on_covered": null,
+     "curated_subunit_demotions": 0
+    },
+    "unmapped_p": 0,
+    "unmapped_d": 0
+   },
+   "demotion": {
+    "promotions": {
+     "total": 0,
+     "with_curated_reference": 0,
+     "coverage_pct": null,
+     "precision_pct_on_covered": null,
+     "true_subunit_promotions": 0
+    },
+    "demotions": {
+     "total": 2949,
+     "with_curated_reference": 11,
+     "coverage_pct": 0.37,
+     "unlisted_demotion_pct_on_covered": 27.27,
+     "curated_subunit_demotions": 8
+    },
+    "unmapped_p": 0,
+    "unmapped_d": 0
+   },
+   "gated": {
+    "promotions": {
+     "total": 406,
+     "with_curated_reference": 1,
+     "coverage_pct": 0.25,
+     "precision_pct_on_covered": 100.0,
+     "true_subunit_promotions": 1
+    },
+    "demotions": {
+     "total": 2850,
+     "with_curated_reference": 10,
+     "coverage_pct": 0.35,
+     "unlisted_demotion_pct_on_covered": 30.0,
+     "curated_subunit_demotions": 7
+    },
+    "unmapped_p": 0,
+    "unmapped_d": 0
+   }
+  },
+  "uniprot_cp": {
+   "initial_singletons": 2904,
+   "outcome_promoted": 98,
+   "outcome_demoted": 2806,
+   "outcome_unresolved": 0,
+   "X_prom": 98,
+   "X_prom_uni": 2,
+   "X_prom_cp_assess": 1,
+   "X_prom_cp_listed": 1,
+   "X_dem": 2806,
+   "X_dem_cp_assess": 10,
+   "X_dem_cp_listed": 7,
+   "X_dem_lone_uni": 532,
+   "prom_cx": 245,
+   "prom_uni_any": 11,
+   "prom_cp_assess": 1,
+   "prom_cp_listed": 1,
+   "dem_cx": 2806,
+   "dem_cp_assess": 10,
+   "dem_cp_listed": 7,
+   "prom_test": 0,
+   "prom_test_inref": 0,
+   "dem_test": 3,
+   "dem_test_inref": 0,
+   "optimal": 50
+  }
+ },
+ "deepgo-se": {
+  "rerun": {
+   "before": {
+    "complex_coherence": 0.7907429878709727,
+    "process_coherence": 0.9945027988021669,
+    "known_taxon_consistency": 0.0,
+    "gaef_taxon_consistency": 0.0,
+    "promotions": 0,
+    "demotions": 0,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6528568857850426,
+     "smin": 9.88510832635477,
+     "aupr": 0.6972187229876711,
+     "avg_auc": 0.8559670644386342
+    },
+    "modified_metrics": null
+   },
+   "stage1": {
+    "complex_coherence": 0.798680828569792,
+    "process_coherence": 0.9960849869332623,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 10179,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 21,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6528568857850426,
+     "smin": 9.88510832635477,
+     "aupr": 0.6973066745875018,
+     "avg_auc": 0.8560617614083312
+    },
+    "modified_metrics": {
+     "fmax": 0.7306459957349372,
+     "smin": 6.232730591480417,
+     "aupr": 0.7681405699641337,
+     "avg_auc": 0.8885001881649849
+    }
+   },
+   "stage2_standard": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.9959810256939757,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 1017,
+    "demotions": 1408,
+    "solver_status_counts": {
+     "FEASIBLE": 34,
+     "OPTIMAL": 16
+    },
+    "solver_objective_sum": 183.12276100000003,
+    "solver_bound_sum": 27.362209000000014,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6528568857850426,
+     "smin": 9.88510832635477,
+     "aupr": 0.6973066745875018,
+     "avg_auc": 0.8560617614083312
+    },
+    "modified_metrics": null
+   },
+   "stage2_demotion": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.9949336889503866,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 2035,
+    "solver_status_counts": {
+     "OPTIMAL": 50
+    },
+    "solver_objective_sum": 228.45463399999997,
+    "solver_bound_sum": 228.45463399999997,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6528568857850426,
+     "smin": 9.88510832635477,
+     "aupr": 0.6973066745875018,
+     "avg_auc": 0.8560617614083312
+    },
+    "modified_metrics": null
+   },
+   "stage2_gated": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.9960849869332623,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 4847,
+    "demotions": 39,
+    "solver_status_counts": {
+     "OPTIMAL": 50
+    },
+    "solver_objective_sum": 531.382326,
+    "solver_bound_sum": 531.382326,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6528568857850426,
+     "smin": 9.88510832635477,
+     "aupr": 0.6973066745875018,
+     "avg_auc": 0.8560617614083312
+    },
+    "modified_metrics": null
+   }
+  },
+  "accepted": {
+   "before": {
+    "complex_coherence": 0.7907429878709727,
+    "process_coherence": 0.9945027988021669,
+    "known_taxon_consistency": 0.0,
+    "gaef_taxon_consistency": 0.0,
+    "promotions": 0,
+    "demotions": 0,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6528568857850426,
+     "smin": 9.88510832635477,
+     "aupr": 0.6972187229876711,
+     "avg_auc": 0.8559670644386342
+    },
+    "modified_metrics": null
+   },
+   "stage1": {
+    "complex_coherence": 0.798680828569792,
+    "process_coherence": 0.9960849869332623,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 10179,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 21,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6528568857850426,
+     "smin": 9.88510832635477,
+     "aupr": 0.6973066745875018,
+     "avg_auc": 0.8560617614083312
+    },
+    "modified_metrics": {
+     "fmax": 0.7306459957349372,
+     "smin": 6.232730591480417,
+     "aupr": 0.7681405699641337,
+     "avg_auc": 0.8885001881649849
+    }
+   },
+   "stage2_standard": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.9959810256939757,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 1024,
+    "demotions": 1405,
+    "solver_status_counts": {
+     "FEASIBLE": 34,
+     "OPTIMAL": 16
+    },
+    "solver_objective_sum": 182.93547000000004,
+    "solver_bound_sum": 27.526066000000014,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6528568857850426,
+     "smin": 9.88510832635477,
+     "aupr": 0.6973066745875018,
+     "avg_auc": 0.8560617614083312
+    },
+    "modified_metrics": null
+   },
+   "stage2_demotion": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.9949336889503866,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 2035,
+    "solver_status_counts": {
+     "OPTIMAL": 50
+    },
+    "solver_objective_sum": 228.45463399999997,
+    "solver_bound_sum": 228.45463399999997,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.6528568857850426,
+     "smin": 9.88510832635477,
+     "aupr": 0.6973066745875018,
+     "avg_auc": 0.8560617614083312
+    },
+    "modified_metrics": null
+   }
+  },
+  "per_organism": {
+   "stage1": {
+    "seconds_sum": 63.32182260998525,
+    "seconds_max": 3.372448652982712
+   },
+   "stage2_standard": {
+    "organisms_with_edits": 50,
+    "status": {
+     "FEASIBLE": 34,
+     "OPTIMAL": 16
+    },
+    "formulation": {},
+    "solver_seconds_sum": 4108.311215162277,
+    "solver_seconds_median": 120.00962722301483,
+    "solver_seconds_max": 120.32537770271301,
+    "organisms_with_singletons_after": 0,
+    "taxon_consistent_organisms": 50
+   },
+   "stage2_demotion": {
+    "organisms_with_edits": 50,
+    "status": {
+     "OPTIMAL": 50
+    },
+    "formulation": {},
+    "solver_seconds_sum": 0.1593775749206543,
+    "solver_seconds_median": 0.0015361309051513672,
+    "solver_seconds_max": 0.08463835716247559,
+    "organisms_with_singletons_after": 0,
+    "taxon_consistent_organisms": 50
+   },
+   "stage2_gated": {
+    "organisms_with_edits": 50,
+    "status": {
+     "OPTIMAL": 50
+    },
+    "formulation": {
+     "hard": 50
+    },
+    "solver_seconds_sum": 39.298943281173706,
+    "solver_seconds_median": 0.476576566696167,
+    "solver_seconds_max": 2.7884392738342285,
+    "organisms_with_singletons_after": 0,
+    "taxon_consistent_organisms": 50
+   }
+  },
+  "gated_counts": {
+   "singletons": 2017,
+   "with_evidence": 1978,
+   "outcome_promoted": 1978,
+   "outcome_demoted": 39
+  },
+  "job_wall_seconds": {
+   "sum": 10145.81,
+   "median": 211.64499999999998,
+   "max": 375.37
+  },
+  "membership": {
+   "standard": {
+    "promotions": {
+     "total": 1017,
+     "with_curated_reference": 16,
+     "coverage_pct": 1.57,
+     "precision_pct_on_covered": 43.75,
+     "true_subunit_promotions": 7
+    },
+    "demotions": {
+     "total": 1408,
+     "with_curated_reference": 24,
+     "coverage_pct": 1.7,
+     "unlisted_demotion_pct_on_covered": 12.5,
+     "curated_subunit_demotions": 21
+    },
+    "unmapped_p": 0,
+    "unmapped_d": 0
+   },
+   "demotion": {
+    "promotions": {
+     "total": 0,
+     "with_curated_reference": 0,
+     "coverage_pct": null,
+     "precision_pct_on_covered": null,
+     "true_subunit_promotions": 0
+    },
+    "demotions": {
+     "total": 2035,
+     "with_curated_reference": 35,
+     "coverage_pct": 1.72,
+     "unlisted_demotion_pct_on_covered": 14.29,
+     "curated_subunit_demotions": 30
+    },
+    "unmapped_p": 0,
+    "unmapped_d": 0
+   },
+   "gated": {
+    "promotions": {
+     "total": 4847,
+     "with_curated_reference": 65,
+     "coverage_pct": 1.34,
+     "precision_pct_on_covered": 41.54,
+     "true_subunit_promotions": 27
+    },
+    "demotions": {
+     "total": 39,
+     "with_curated_reference": 1,
+     "coverage_pct": 2.56,
+     "unlisted_demotion_pct_on_covered": 0.0,
+     "curated_subunit_demotions": 1
+    },
+    "unmapped_p": 0,
+    "unmapped_d": 0
+   }
+  },
+  "uniprot_cp": {
+   "initial_singletons": 2017,
+   "outcome_promoted": 1978,
+   "outcome_demoted": 39,
+   "outcome_unresolved": 0,
+   "X_prom": 1978,
+   "X_prom_uni": 1104,
+   "X_prom_cp_assess": 34,
+   "X_prom_cp_listed": 27,
+   "X_dem": 39,
+   "X_dem_cp_assess": 1,
+   "X_dem_cp_listed": 1,
+   "X_dem_lone_uni": 23,
+   "prom_cx": 4168,
+   "prom_uni_any": 2466,
+   "prom_cp_assess": 65,
+   "prom_cp_listed": 27,
+   "dem_cx": 39,
+   "dem_cp_assess": 1,
+   "dem_cp_listed": 1,
+   "prom_test": 0,
+   "prom_test_inref": 0,
+   "dem_test": 0,
+   "dem_test_inref": 0,
+   "optimal": 50
+  }
+ },
+ "sprof-go": {
+  "rerun": {
+   "before": {
+    "complex_coherence": 0.9646876637552253,
+    "process_coherence": 0.8042939899343249,
+    "known_taxon_consistency": 0.0,
+    "gaef_taxon_consistency": 0.0,
+    "promotions": 0,
+    "demotions": 0,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.631550474571646,
+     "smin": 8.727552462467607,
+     "aupr": 0.6871465009079989,
+     "avg_auc": 0.8534382799831007
+    },
+    "modified_metrics": null
+   },
+   "stage1": {
+    "complex_coherence": 0.9699369936542754,
+    "process_coherence": 0.840868818627972,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 2040031,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 23,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.631550474571646,
+     "smin": 8.727552462467607,
+     "aupr": 0.6873908535507256,
+     "avg_auc": 0.8536980230822356
+    },
+    "modified_metrics": {
+     "fmax": 0.5984026206475905,
+     "smin": 8.429434950827048,
+     "aupr": 0.6186820135734714,
+     "avg_auc": 0.8294672400424397
+    }
+   },
+   "stage2_standard": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.840868818627972,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 262,
+    "demotions": 0,
+    "solver_status_counts": {
+     "OPTIMAL": 45,
+     "FEASIBLE": 5
+    },
+    "solver_objective_sum": 0.262,
+    "solver_bound_sum": 0.158,
+    "n_modified_test_proteins": 1,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.631550474571646,
+     "smin": 8.727552462467607,
+     "aupr": 0.6873908535507256,
+     "avg_auc": 0.8536980230822356
+    },
+    "modified_metrics": {
+     "fmax": 0.9375,
+     "smin": 2.8681845434139417,
+     "aupr": 0.9798858004740358,
+     "avg_auc": null
+    }
+   },
+   "stage2_demotion": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.8405239910417651,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 143,
+    "solver_status_counts": {
+     "OPTIMAL": 50
+    },
+    "solver_objective_sum": 5.848973,
+    "solver_bound_sum": 5.848973,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.631550474571646,
+     "smin": 8.727552462467607,
+     "aupr": 0.6873908535507256,
+     "avg_auc": 0.8536980230822356
+    },
+    "modified_metrics": null
+   },
+   "stage2_gated": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.840868818627972,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 75,
+    "demotions": 105,
+    "solver_status_counts": {
+     "OPTIMAL": 50
+    },
+    "solver_objective_sum": 4.52098,
+    "solver_bound_sum": 4.52098,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.631550474571646,
+     "smin": 8.727552462467607,
+     "aupr": 0.6873908535507256,
+     "avg_auc": 0.8536980230822356
+    },
+    "modified_metrics": null
+   }
+  },
+  "accepted": {
+   "before": {
+    "complex_coherence": 0.9646876637552253,
+    "process_coherence": 0.8042939899343249,
+    "known_taxon_consistency": 0.0,
+    "gaef_taxon_consistency": 0.0,
+    "promotions": 0,
+    "demotions": 0,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.631550474571646,
+     "smin": 8.727552462467607,
+     "aupr": 0.6871465009079989,
+     "avg_auc": 0.8534382799831007
+    },
+    "modified_metrics": null
+   },
+   "stage1": {
+    "complex_coherence": 0.9699369936542754,
+    "process_coherence": 0.840868818627972,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 2040031,
+    "solver_status_counts": {},
+    "solver_objective_sum": 0,
+    "solver_bound_sum": 0,
+    "n_modified_test_proteins": 23,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.631550474571646,
+     "smin": 8.727552462467607,
+     "aupr": 0.6873908535507256,
+     "avg_auc": 0.8536980230822356
+    },
+    "modified_metrics": {
+     "fmax": 0.5984026206475905,
+     "smin": 8.429434950827048,
+     "aupr": 0.6186820135734714,
+     "avg_auc": 0.8294672400424397
+    }
+   },
+   "stage2_standard": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.840868818627972,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 262,
+    "demotions": 0,
+    "solver_status_counts": {
+     "OPTIMAL": 45,
+     "FEASIBLE": 5
+    },
+    "solver_objective_sum": 0.262,
+    "solver_bound_sum": 0.158,
+    "n_modified_test_proteins": 1,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.631550474571646,
+     "smin": 8.727552462467607,
+     "aupr": 0.6873908535507256,
+     "avg_auc": 0.8536980230822356
+    },
+    "modified_metrics": {
+     "fmax": 0.9375,
+     "smin": 2.8681845434139417,
+     "aupr": 0.9798858004740358,
+     "avg_auc": null
+    }
+   },
+   "stage2_demotion": {
+    "complex_coherence": 1.0,
+    "process_coherence": 0.8405239910417651,
+    "known_taxon_consistency": 1.0,
+    "gaef_taxon_consistency": 1.0,
+    "promotions": 0,
+    "demotions": 143,
+    "solver_status_counts": {
+     "OPTIMAL": 50
+    },
+    "solver_objective_sum": 5.848973,
+    "solver_bound_sum": 5.848973,
+    "n_modified_test_proteins": 0,
+    "n_annotated_proteins": 68,
+    "metrics": {
+     "fmax": 0.631550474571646,
+     "smin": 8.727552462467607,
+     "aupr": 0.6873908535507256,
+     "avg_auc": 0.8536980230822356
+    },
+    "modified_metrics": null
+   }
+  },
+  "per_organism": {
+   "stage1": {
+    "seconds_sum": 118.45544230774976,
+    "seconds_max": 6.451444637961686
+   },
+   "stage2_standard": {
+    "organisms_with_edits": 26,
+    "status": {
+     "OPTIMAL": 45,
+     "FEASIBLE": 5
+    },
+    "formulation": {},
+    "solver_seconds_sum": 764.2251892089844,
+    "solver_seconds_median": 0.01094043254852295,
+    "solver_seconds_max": 120.05474424362183,
+    "organisms_with_singletons_after": 0,
+    "taxon_consistent_organisms": 50
+   },
+   "stage2_demotion": {
+    "organisms_with_edits": 26,
+    "status": {
+     "OPTIMAL": 50
+    },
+    "formulation": {},
+    "solver_seconds_sum": 0.05176496505737305,
+    "solver_seconds_median": 0.0009572505950927734,
+    "solver_seconds_max": 0.002935647964477539,
+    "organisms_with_singletons_after": 0,
+    "taxon_consistent_organisms": 50
+   },
+   "stage2_gated": {
+    "organisms_with_edits": 26,
+    "status": {
+     "OPTIMAL": 50
+    },
+    "formulation": {
+     "none": 24,
+     "hard": 26
+    },
+    "solver_seconds_sum": 0.17857694625854492,
+    "solver_seconds_median": 0.0055876970291137695,
+    "solver_seconds_max": 0.011017322540283203,
+    "organisms_with_singletons_after": 0,
+    "taxon_consistent_organisms": 50
+   }
+  },
+  "gated_counts": {
+   "singletons": 143,
+   "with_evidence": 38,
+   "outcome_demoted": 105,
+   "outcome_promoted": 38
+  },
+  "job_wall_seconds": {
+   "sum": 5488.379999999999,
+   "median": 109.16,
+   "max": 254.07
+  },
+  "membership": {
+   "standard": {
+    "promotions": {
+     "total": 262,
+     "with_curated_reference": 0,
+     "coverage_pct": 0.0,
+     "precision_pct_on_covered": null,
+     "true_subunit_promotions": 0
+    },
+    "demotions": {
+     "total": 0,
+     "with_curated_reference": 0,
+     "coverage_pct": null,
+     "unlisted_demotion_pct_on_covered": null,
+     "curated_subunit_demotions": 0
+    },
+    "unmapped_p": 0,
+    "unmapped_d": 0
+   },
+   "demotion": {
+    "promotions": {
+     "total": 0,
+     "with_curated_reference": 0,
+     "coverage_pct": null,
+     "precision_pct_on_covered": null,
+     "true_subunit_promotions": 0
+    },
+    "demotions": {
+     "total": 143,
+     "with_curated_reference": 0,
+     "coverage_pct": 0.0,
+     "unlisted_demotion_pct_on_covered": null,
+     "curated_subunit_demotions": 0
+    },
+    "unmapped_p": 0,
+    "unmapped_d": 0
+   },
+   "gated": {
+    "promotions": {
+     "total": 75,
+     "with_curated_reference": 0,
+     "coverage_pct": 0.0,
+     "precision_pct_on_covered": null,
+     "true_subunit_promotions": 0
+    },
+    "demotions": {
+     "total": 105,
+     "with_curated_reference": 0,
+     "coverage_pct": 0.0,
+     "unlisted_demotion_pct_on_covered": null,
+     "curated_subunit_demotions": 0
+    },
+    "unmapped_p": 0,
+    "unmapped_d": 0
+   }
+  },
+  "uniprot_cp": {
+   "initial_singletons": 143,
+   "outcome_promoted": 38,
+   "outcome_demoted": 105,
+   "outcome_unresolved": 0,
+   "X_prom": 38,
+   "X_prom_uni": 0,
+   "X_prom_cp_assess": 0,
+   "X_prom_cp_listed": 0,
+   "X_dem": 105,
+   "X_dem_cp_assess": 0,
+   "X_dem_cp_listed": 0,
+   "X_dem_lone_uni": 2,
+   "prom_cx": 67,
+   "prom_uni_any": 5,
+   "prom_cp_assess": 0,
+   "prom_cp_listed": 0,
+   "dem_cx": 105,
+   "dem_cp_assess": 0,
+   "dem_cp_listed": 0,
+   "prom_test": 0,
+   "prom_test_inref": 0,
+   "dem_test": 0,
+   "dem_test_inref": 0,
+   "optimal": 50
+  }
+ }
+}

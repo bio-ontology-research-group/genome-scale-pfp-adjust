@@ -1,0 +1,16 @@
+% C/W/U: joint siglogit inference correct prefix / wrong / unresolved; KTC: organisms whose repaired proteome is consistent with the true lineage
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Model & Sub & \multicolumn{3}{c}{Joint inference (C/W/U)} & \multicolumn{3}{c}{KTC (organisms)} & \multicolumn{2}{c}{Siglogit KTC by inference} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-10}
+& & C & W & U & Current & Siglogit & Per aspect & C & W/U \\
+\midrule
+Seq-Sim & CC & 125 & 93 & 1 & 15 & 99 & 72 & 93/125 & 6/94 \\
+ & MF & 125 & 93 & 1 & 53 & 130 & 69 & 108/125 & 22/94 \\
+ & BP & 125 & 93 & 1 & 25 & 101 & 75 & 101/125 & 0/94 \\
+\midrule
+MLP-ESM2 & CC & 182 & 37 & 0 & 77 & 131 & 127 & 131/182 & 0/37 \\
+ & MF & 182 & 37 & 0 & 25 & 63 & 25 & 54/182 & 9/37 \\
+ & BP & 182 & 37 & 0 & 83 & 134 & 125 & 134/182 & 0/37 \\
+\bottomrule
+\end{tabular}
