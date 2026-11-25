@@ -1,0 +1,2353 @@
+predictor	taxon	aspect	supported_deepest_correct_rank	supported_first_divergence_rank	supported_is_exact_prefix	supported_n_inferred_nodes	solver_assignment_deepest_correct_rank	solver_assignment_first_divergence_rank	solver_assignment_is_exact_prefix	solver_assignment_n_inferred_nodes	cross_aspect_constraints_compatible
+deepgo-se	3197	bp	phylum	none	True	2	phylum	none	False	18	
+deepgo-se	3197	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	3197	joint	phylum	none	True	2	phylum	none	False	18	True
+deepgo-se	3197	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	3218	bp	phylum	none	True	2	phylum	none	False	18	
+deepgo-se	3218	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	3218	joint	phylum	none	True	2	phylum	none	False	18	True
+deepgo-se	3218	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	3572	bp	class	none	True	3	class	none	True	19	
+deepgo-se	3572	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	3572	joint	class	none	True	3	class	none	True	19	False
+deepgo-se	3572	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	3750	bp	class	none	True	3	class	none	True	19	
+deepgo-se	3750	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	3750	joint	class	none	True	3	class	none	True	19	False
+deepgo-se	3750	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	3847	bp	class	none	True	3	class	none	True	19	
+deepgo-se	3847	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	3847	joint	class	none	True	3	class	none	True	19	False
+deepgo-se	3847	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	3871	bp	class	none	True	3	class	none	True	19	
+deepgo-se	3871	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	3871	joint	class	none	True	3	class	none	True	19	False
+deepgo-se	3871	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	3880	bp	class	none	True	3	class	none	True	19	
+deepgo-se	3880	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	3880	joint	class	none	True	3	class	none	True	19	False
+deepgo-se	3880	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	3983	bp	class	none	True	3	class	none	True	19	
+deepgo-se	3983	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	3983	joint	class	none	True	3	class	none	True	19	False
+deepgo-se	3983	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	4072	bp	class	none	True	3	class	none	True	19	
+deepgo-se	4072	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	4072	joint	class	none	True	3	class	none	True	19	False
+deepgo-se	4072	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	4081	bp	class	none	True	3	class	none	True	19	
+deepgo-se	4081	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	4081	joint	class	none	True	3	class	none	True	19	False
+deepgo-se	4081	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	5270	bp	domain	none	True	1	domain	none	True	11	
+deepgo-se	5270	cc	domain	none	True	1	domain	none	True	11	
+deepgo-se	5270	joint	domain	none	True	1	domain	none	True	11	True
+deepgo-se	5270	mf	domain	none	True	1	domain	phylum	False	13	
+deepgo-se	6239	bp	phylum	none	True	2	phylum	none	True	13	
+deepgo-se	6239	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	6239	joint	phylum	none	True	2	phylum	none	True	13	True
+deepgo-se	6239	mf	phylum	none	True	2	phylum	none	True	13	
+deepgo-se	7070	bp	class	none	True	3	class	none	True	20	
+deepgo-se	7070	cc	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	7070	joint	class	none	True	3	class	none	True	20	True
+deepgo-se	7070	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	7176	bp	class	none	True	3	class	none	True	20	
+deepgo-se	7176	cc	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	7176	joint	class	none	True	3	class	none	True	20	True
+deepgo-se	7176	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	7227	bp	class	none	True	3	class	none	True	25	
+deepgo-se	7227	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	7227	joint	class	none	True	3	class	none	True	25	True
+deepgo-se	7227	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	7757	bp	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	7757	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	7757	joint	domain	phylum	False	3	domain	phylum	False	20	False
+deepgo-se	7757	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	7868	bp	phylum	none	True	2	phylum	none	True	15	
+deepgo-se	7868	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	7868	joint	phylum	none	True	2	phylum	none	True	15	False
+deepgo-se	7868	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	7955	bp	phylum	none	True	2	phylum	none	True	15	
+deepgo-se	7955	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	7955	joint	phylum	none	True	2	phylum	none	True	15	False
+deepgo-se	7955	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	8090	bp	phylum	none	True	2	phylum	none	True	15	
+deepgo-se	8090	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	8090	joint	phylum	none	True	2	phylum	none	True	15	False
+deepgo-se	8090	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	8355	bp	phylum	none	True	2	phylum	none	True	15	
+deepgo-se	8355	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	8355	joint	phylum	none	True	2	phylum	none	True	13	False
+deepgo-se	8355	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	8364	bp	phylum	none	True	2	phylum	none	True	15	
+deepgo-se	8364	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	8364	joint	phylum	none	True	2	phylum	none	True	15	False
+deepgo-se	8364	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	9031	bp	phylum	none	True	2	phylum	none	True	15	
+deepgo-se	9031	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	9031	joint	phylum	none	True	2	phylum	none	True	15	False
+deepgo-se	9031	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	9913	bp	phylum	none	True	2	phylum	none	True	15	
+deepgo-se	9913	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	9913	joint	phylum	none	True	2	phylum	none	True	15	False
+deepgo-se	9913	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	9940	bp	phylum	none	True	2	phylum	none	True	15	
+deepgo-se	9940	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	9940	joint	class	none	True	3	class	none	True	22	False
+deepgo-se	9940	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	10116	bp	phylum	none	True	2	phylum	none	True	20	
+deepgo-se	10116	cc	domain	none	True	1	domain	none	True	10	
+deepgo-se	10116	joint	phylum	none	True	2	phylum	none	True	20	False
+deepgo-se	10116	mf	phylum	none	True	2	phylum	none	True	14	
+deepgo-se	39947	bp	class	none	True	3	class	none	True	19	
+deepgo-se	39947	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	39947	joint	class	none	True	3	class	none	True	19	False
+deepgo-se	39947	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	69014	bp	none	domain	False	1	none	domain	False	5	
+deepgo-se	69014	cc	none	domain	False	1	none	domain	False	7	
+deepgo-se	69014	joint	none	domain	False	1	none	domain	False	7	True
+deepgo-se	69014	mf	none	none	False	0	none	domain	False	5	
+deepgo-se	70601	bp	none	domain	False	1	none	domain	False	5	
+deepgo-se	70601	cc	none	domain	False	1	none	domain	False	7	
+deepgo-se	70601	joint	none	domain	False	1	none	domain	False	7	True
+deepgo-se	70601	mf	none	none	False	0	none	domain	False	5	
+deepgo-se	83332	bp	domain	none	True	1	domain	phylum	False	15	
+deepgo-se	83332	cc	none	domain	False	1	none	domain	False	5	
+deepgo-se	83332	joint	domain	none	True	1	domain	phylum	False	15	False
+deepgo-se	83332	mf	domain	none	True	1	domain	phylum	False	15	
+deepgo-se	85962	bp	none	domain	False	1	none	domain	False	5	
+deepgo-se	85962	cc	domain	none	True	1	domain	phylum	False	15	
+deepgo-se	85962	joint	domain	none	True	1	domain	phylum	False	15	False
+deepgo-se	85962	mf	none	none	False	0	none	domain	False	5	
+deepgo-se	88036	bp	phylum	none	True	2	phylum	none	False	18	
+deepgo-se	88036	cc	domain	none	True	1	phylum	none	True	14	
+deepgo-se	88036	joint	phylum	none	True	2	phylum	none	False	18	True
+deepgo-se	88036	mf	domain	none	True	1	domain	none	True	12	
+deepgo-se	187420	bp	none	domain	False	1	none	domain	False	5	
+deepgo-se	187420	cc	none	domain	False	1	none	domain	False	7	
+deepgo-se	187420	joint	none	domain	False	1	none	domain	False	7	True
+deepgo-se	187420	mf	none	none	False	0	none	domain	False	5	
+deepgo-se	208964	bp	domain	none	True	1	domain	phylum	False	15	
+deepgo-se	208964	cc	domain	none	True	1	domain	phylum	False	15	
+deepgo-se	208964	joint	domain	none	True	1	domain	phylum	False	15	True
+deepgo-se	208964	mf	domain	none	True	1	domain	phylum	False	15	
+deepgo-se	221103	bp	domain	none	True	1	domain	none	True	11	
+deepgo-se	221103	cc	domain	none	True	1	domain	phylum	False	14	
+deepgo-se	221103	joint	domain	none	True	1	domain	none	True	7	False
+deepgo-se	221103	mf	domain	none	True	1	domain	phylum	False	13	
+deepgo-se	227321	bp	domain	none	True	1	domain	none	True	11	
+deepgo-se	227321	cc	domain	none	True	1	domain	none	True	11	
+deepgo-se	227321	joint	domain	none	True	1	domain	none	True	11	True
+deepgo-se	227321	mf	domain	none	True	1	phylum	none	True	13	
+deepgo-se	229533	bp	domain	none	True	1	domain	none	True	11	
+deepgo-se	229533	cc	domain	none	True	1	domain	none	True	11	
+deepgo-se	229533	joint	domain	none	True	1	domain	none	True	11	True
+deepgo-se	229533	mf	domain	none	True	1	phylum	none	True	13	
+deepgo-se	237561	bp	domain	none	True	1	domain	none	True	11	
+deepgo-se	237561	cc	phylum	none	True	2	phylum	none	True	13	
+deepgo-se	237561	joint	domain	none	True	1	domain	none	True	11	False
+deepgo-se	237561	mf	domain	none	True	1	domain	none	True	7	
+deepgo-se	243274	bp	none	none	False	0	none	none	True	3	
+deepgo-se	243274	cc	none	domain	False	1	none	domain	False	7	
+deepgo-se	243274	joint	none	domain	False	1	none	domain	False	7	False
+deepgo-se	243274	mf	none	none	False	0	none	none	True	3	
+deepgo-se	267377	bp	none	domain	False	1	none	domain	False	5	
+deepgo-se	267377	cc	none	domain	False	2	none	domain	False	8	
+deepgo-se	267377	joint	none	domain	False	2	none	domain	False	8	False
+deepgo-se	267377	mf	none	none	False	0	none	none	True	3	
+deepgo-se	272844	bp	none	domain	False	1	none	domain	False	5	
+deepgo-se	272844	cc	none	domain	False	1	none	domain	False	8	
+deepgo-se	272844	joint	none	domain	False	1	none	domain	False	8	True
+deepgo-se	272844	mf	none	none	False	0	none	domain	False	5	
+deepgo-se	330879	bp	domain	none	True	1	domain	none	True	11	
+deepgo-se	330879	cc	domain	none	True	1	domain	none	True	11	
+deepgo-se	330879	joint	domain	none	True	1	domain	none	True	11	True
+deepgo-se	330879	mf	domain	none	True	1	phylum	none	True	13	
+deepgo-se	331117	bp	domain	none	True	1	domain	none	True	11	
+deepgo-se	331117	cc	domain	none	True	1	domain	none	True	11	
+deepgo-se	331117	joint	domain	none	True	1	domain	none	True	11	True
+deepgo-se	331117	mf	domain	none	True	1	phylum	none	True	13	
+deepgo-se	336722	bp	domain	phylum	False	2	domain	phylum	False	14	
+deepgo-se	336722	cc	domain	none	True	1	domain	none	True	11	
+deepgo-se	336722	joint	domain	none	True	1	domain	none	True	11	False
+deepgo-se	336722	mf	domain	none	True	1	phylum	none	True	13	
+deepgo-se	367110	bp	domain	none	True	1	domain	none	False	10	
+deepgo-se	367110	cc	domain	none	True	1	domain	none	True	11	
+deepgo-se	367110	joint	domain	none	True	1	domain	none	True	11	False
+deepgo-se	367110	mf	domain	none	True	1	phylum	none	True	13	
+deepgo-se	510516	bp	domain	none	True	1	domain	none	True	11	
+deepgo-se	510516	cc	domain	none	True	1	domain	none	True	11	
+deepgo-se	510516	joint	domain	none	True	1	domain	none	True	11	True
+deepgo-se	510516	mf	domain	none	True	1	phylum	none	True	13	
+deepgo-se	655827	bp	domain	none	True	1	domain	none	False	9	
+deepgo-se	655827	cc	domain	none	True	1	domain	none	True	11	
+deepgo-se	655827	joint	domain	none	True	1	domain	none	True	11	False
+deepgo-se	655827	mf	domain	none	True	1	phylum	none	True	13	
+deepgo-se	742740	bp	none	domain	False	1	none	domain	False	5	
+deepgo-se	742740	cc	none	domain	False	1	none	domain	False	7	
+deepgo-se	742740	joint	none	domain	False	1	none	domain	False	7	False
+deepgo-se	742740	mf	none	none	False	0	none	none	True	3	
+deepgo-se	759272	bp	domain	none	True	1	domain	none	False	10	
+deepgo-se	759272	cc	domain	none	True	1	domain	none	True	11	
+deepgo-se	759272	joint	domain	none	True	1	domain	none	True	11	False
+deepgo-se	759272	mf	domain	none	True	1	phylum	none	True	13	
+deepgo-se	1073375	bp	none	domain	False	1	none	domain	False	5	
+deepgo-se	1073375	cc	none	domain	False	1	none	domain	False	11	
+deepgo-se	1073375	joint	none	domain	False	1	none	domain	False	11	False
+deepgo-se	1073375	mf	none	none	False	0	none	none	True	3	
+deepgo-se	1220924	bp	domain	phylum	False	3	domain	phylum	False	20	
+deepgo-se	1220924	cc	domain	none	True	1	domain	none	True	11	
+deepgo-se	1220924	joint	domain	none	True	1	domain	none	True	11	False
+deepgo-se	1220924	mf	domain	none	True	1	phylum	none	True	13	
+mlp_heldout	623	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	623	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	623	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	623	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	882	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	882	cc	none	domain	False	3	none	domain	False	11	
+mlp_heldout	882	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	882	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	1901	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	1901	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	1901	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	1901	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	3469	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	3469	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	3469	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	3469	mf	domain	none	True	1	domain	none	True	12	
+mlp_heldout	3483	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	3483	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	3483	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	3483	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	3659	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	3659	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	3659	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	3659	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	3661	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	3661	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	3661	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	3661	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	3708	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	3708	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	3708	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	3708	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	3750	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	3750	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	3750	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	3750	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	3760	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	3760	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	3760	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	3760	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	3847	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	3847	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	3847	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	3847	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	3916	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	3916	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	3916	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	3916	mf	domain	none	True	1	domain	none	True	12	
+mlp_heldout	3988	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	3988	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	3988	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	3988	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	4072	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	4072	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	4072	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	4072	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	4097	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	4097	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	4097	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	4097	mf	domain	none	True	1	domain	none	True	12	
+mlp_heldout	4113	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	4113	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	4113	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	4113	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	4182	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	4182	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	4182	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	4182	mf	domain	none	True	1	domain	none	True	12	
+mlp_heldout	4232	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	4232	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	4232	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	4232	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	4536	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	4536	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	4536	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	4536	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	4577	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	4577	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	4577	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	4577	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	5823	bp	domain	phylum	False	3	domain	phylum	False	10	
+mlp_heldout	5823	cc	phylum	none	True	2	phylum	none	True	8	
+mlp_heldout	5823	joint	phylum	none	True	2	phylum	none	True	8	False
+mlp_heldout	5823	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	5888	bp	domain	phylum	False	3	domain	phylum	False	10	
+mlp_heldout	5888	cc	domain	phylum	False	2	domain	phylum	False	8	
+mlp_heldout	5888	joint	domain	phylum	False	3	domain	phylum	False	10	False
+mlp_heldout	5888	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	6183	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	6183	cc	domain	phylum	False	3	domain	phylum	False	20	
+mlp_heldout	6183	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	6183	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	6238	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	6238	cc	domain	phylum	False	3	domain	phylum	False	20	
+mlp_heldout	6238	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	6238	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	6500	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	6500	cc	domain	phylum	False	3	domain	phylum	False	22	
+mlp_heldout	6500	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	6500	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	6565	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	6565	cc	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	6565	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	6565	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	6669	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	6669	cc	phylum	class	False	3	phylum	class	False	20	
+mlp_heldout	6669	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	6669	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	6945	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	6945	cc	domain	phylum	False	2	domain	phylum	False	13	
+mlp_heldout	6945	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	6945	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7070	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	7070	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	7070	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	7070	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7091	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	7091	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	7091	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	7091	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7159	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	7159	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	7159	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	7159	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7165	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	7165	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	7165	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	7165	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7167	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	7167	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	7167	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	7167	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7225	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	7225	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	7225	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	7225	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7234	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	7234	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	7234	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	7234	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7245	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	7245	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	7245	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	7245	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7460	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	7460	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	7460	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	7460	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7739	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	7739	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	7739	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	7739	mf	phylum	none	True	2	phylum	none	False	14	
+mlp_heldout	7868	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	7868	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	7868	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	7868	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7962	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	7962	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	7962	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	7962	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	7998	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	7998	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	7998	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	7998	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	8022	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	8022	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	8022	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	8022	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	8355	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	8355	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	8355	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	8355	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	8364	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	8364	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	8364	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	8364	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	8845	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	8845	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	8845	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	8845	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	9103	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	9103	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	9103	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	9103	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	9483	bp	class	order	False	4	class	order	False	28	
+mlp_heldout	9483	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	9483	joint	class	order	False	4	class	order	False	28	False
+mlp_heldout	9483	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	9544	bp	class	order	False	4	class	order	False	28	
+mlp_heldout	9544	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	9544	joint	class	order	False	4	class	order	False	28	False
+mlp_heldout	9544	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	9555	bp	class	order	False	4	class	order	False	28	
+mlp_heldout	9555	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	9555	joint	class	order	False	4	class	order	False	28	False
+mlp_heldout	9555	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	9601	bp	class	order	False	4	class	order	False	28	
+mlp_heldout	9601	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	9601	joint	class	order	False	4	class	order	False	28	False
+mlp_heldout	9601	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	9739	bp	class	order	False	4	class	order	False	28	
+mlp_heldout	9739	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	9739	joint	class	order	False	4	class	order	False	28	False
+mlp_heldout	9739	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	9986	bp	class	order	False	4	class	order	False	28	
+mlp_heldout	9986	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	9986	joint	class	order	False	4	class	order	False	28	False
+mlp_heldout	9986	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	10103	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	10103	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	10103	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	10103	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	10116	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	10116	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	10116	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	10116	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	10141	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	10141	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	10141	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	10141	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	10224	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	10224	cc	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	10224	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	10224	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	13735	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	13735	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	13735	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	13735	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	27334	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	27334	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	27334	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	27334	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	31033	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	31033	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	31033	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	31033	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	34839	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	34839	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	34839	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	34839	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	35128	bp	domain	phylum	False	3	domain	phylum	False	19	
+mlp_heldout	35128	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	35128	joint	domain	phylum	False	2	domain	phylum	False	18	False
+mlp_heldout	35128	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	35570	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	35570	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	35570	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	35570	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	37546	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	37546	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	37546	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	37546	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	50429	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	50429	cc	domain	phylum	False	2	domain	phylum	False	13	
+mlp_heldout	50429	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	50429	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	51240	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	51240	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	51240	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	51240	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	51338	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	51338	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	51338	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	51338	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	55188	bp	class	none	True	3	class	none	True	19	
+mlp_heldout	55188	cc	domain	none	True	1	phylum	none	True	14	
+mlp_heldout	55188	joint	class	none	True	3	class	none	True	19	False
+mlp_heldout	55188	mf	domain	none	True	1	domain	none	True	12	
+mlp_heldout	55952	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	55952	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	55952	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	55952	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	63737	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	63737	cc	domain	none	True	1	phylum	none	True	15	
+mlp_heldout	63737	joint	phylum	none	True	2	phylum	none	True	15	False
+mlp_heldout	63737	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	66420	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	66420	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	66420	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	66420	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	69820	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	69820	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	69820	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	69820	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	73239	bp	domain	phylum	False	3	domain	phylum	False	10	
+mlp_heldout	73239	cc	phylum	none	True	2	phylum	none	True	8	
+mlp_heldout	73239	joint	phylum	none	True	2	phylum	none	True	8	False
+mlp_heldout	73239	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	74940	bp	phylum	class	False	4	phylum	class	False	28	
+mlp_heldout	74940	cc	phylum	class	False	3	phylum	class	False	22	
+mlp_heldout	74940	joint	phylum	class	False	4	phylum	class	False	28	False
+mlp_heldout	74940	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	76114	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	76114	cc	none	domain	False	3	none	domain	False	11	
+mlp_heldout	76114	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	76114	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	78245	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	78245	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	78245	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	78245	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	79782	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	79782	cc	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	79782	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	79782	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	83331	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	83331	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	83331	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	83331	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	83334	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	83334	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	83334	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	83334	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	88771	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	88771	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	88771	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	88771	mf	domain	none	True	1	domain	none	True	7	
+mlp_heldout	130081	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	130081	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	130081	joint	domain	phylum	False	2	domain	phylum	False	18	False
+mlp_heldout	130081	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	170187	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	170187	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	170187	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	170187	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	171101	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	171101	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	171101	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	171101	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	176299	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	176299	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	176299	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	176299	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	177437	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	177437	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	177437	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	177437	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	183190	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	183190	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	183190	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	183190	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	189518	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	189518	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	189518	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	189518	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	190192	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	190192	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	190192	joint	none	domain	False	2	none	domain	False	18	False
+mlp_heldout	190192	mf	domain	none	True	1	domain	none	True	9	
+mlp_heldout	190485	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	190485	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	190485	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	190485	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	195102	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	195102	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	195102	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	195102	mf	none	domain	False	2	none	domain	False	14	
+mlp_heldout	196627	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	196627	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	196627	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	196627	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	203119	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	203119	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	203119	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	203119	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	206672	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	206672	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	206672	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	206672	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	208435	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	208435	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	208435	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	208435	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	211586	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	211586	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	211586	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	211586	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	214684	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	214684	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	214684	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	214684	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	216591	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	216591	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	216591	joint	domain	phylum	False	2	domain	phylum	False	15	True
+mlp_heldout	216591	mf	domain	phylum	False	2	domain	phylum	False	15	
+mlp_heldout	216594	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	216594	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	216594	joint	domain	phylum	False	2	domain	phylum	False	15	True
+mlp_heldout	216594	mf	domain	phylum	False	2	domain	phylum	False	15	
+mlp_heldout	216596	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	216596	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	216596	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	216596	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	224326	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	224326	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	224326	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	224326	mf	none	domain	False	1	none	domain	False	7	
+mlp_heldout	224911	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	224911	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	224911	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	224911	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	226186	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	226186	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	226186	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	226186	mf	none	domain	False	2	none	domain	False	14	
+mlp_heldout	226900	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	226900	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	226900	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	226900	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	228410	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	228410	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	228410	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	228410	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	228908	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	228908	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	228908	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	228908	mf	domain	none	True	1	domain	none	True	9	
+mlp_heldout	229533	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	229533	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	229533	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	229533	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	233413	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	233413	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	233413	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	233413	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	242507	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	242507	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	242507	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	242507	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	243160	bp	none	domain	False	3	none	domain	False	25	
+mlp_heldout	243160	cc	none	domain	False	3	none	domain	False	11	
+mlp_heldout	243160	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	243160	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	243233	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	243233	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	243233	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	243233	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	243274	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	243274	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	243274	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	243274	mf	none	domain	False	1	none	domain	False	9	
+mlp_heldout	243277	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	243277	cc	none	domain	False	1	none	domain	False	11	
+mlp_heldout	243277	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	243277	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	243365	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	243365	cc	none	domain	False	1	none	domain	False	11	
+mlp_heldout	243365	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	243365	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	247156	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	247156	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	247156	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	247156	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	257309	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	257309	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	257309	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	257309	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	259536	bp	none	domain	False	3	none	domain	False	25	
+mlp_heldout	259536	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	259536	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	259536	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	262723	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	262723	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	262723	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	262723	mf	none	domain	False	2	none	domain	False	14	
+mlp_heldout	264203	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	264203	cc	none	domain	False	1	none	domain	False	11	
+mlp_heldout	264203	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	264203	mf	none	domain	False	1	none	domain	False	12	
+mlp_heldout	264951	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	264951	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	264951	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	264951	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	266117	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	266117	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	266117	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	266117	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	266264	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	266264	cc	none	domain	False	3	none	domain	False	11	
+mlp_heldout	266264	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	266264	mf	domain	phylum	False	2	domain	phylum	False	15	
+mlp_heldout	266834	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	266834	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	266834	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	266834	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	267608	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	267608	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	267608	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	267608	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	269798	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	269798	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	269798	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	269798	mf	none	domain	False	2	none	domain	False	14	
+mlp_heldout	269799	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	269799	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	269799	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	269799	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	272558	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	272558	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	272558	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	272558	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	272560	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	272560	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	272560	joint	domain	phylum	False	2	domain	phylum	False	15	True
+mlp_heldout	272560	mf	domain	phylum	False	2	domain	phylum	False	15	
+mlp_heldout	272561	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	272561	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	272561	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	272561	mf	none	domain	False	1	none	domain	False	12	
+mlp_heldout	272563	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	272563	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	272563	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	272563	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	272569	bp	none	domain	False	3	none	domain	False	25	
+mlp_heldout	272569	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	272569	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	272569	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	272621	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	272621	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	272621	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	272621	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	272624	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	272624	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	272624	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	272624	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	272942	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	272942	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	272942	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	272942	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	272947	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	272947	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	272947	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	272947	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	273057	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	273057	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	273057	joint	none	domain	False	2	none	domain	False	18	False
+mlp_heldout	273057	mf	domain	none	True	1	domain	none	True	9	
+mlp_heldout	273063	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	273063	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	273063	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	273063	mf	domain	none	True	1	domain	none	True	9	
+mlp_heldout	273068	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	273068	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	273068	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	273068	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	273075	bp	none	domain	False	3	none	domain	False	19	
+mlp_heldout	273075	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	273075	joint	none	domain	False	2	none	domain	False	18	False
+mlp_heldout	273075	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	273121	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	273121	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	273121	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	273121	mf	none	domain	False	2	none	domain	False	14	
+mlp_heldout	279010	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	279010	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	279010	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	279010	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	279238	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	279238	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	279238	joint	domain	phylum	False	2	domain	phylum	False	15	True
+mlp_heldout	279238	mf	domain	phylum	False	2	domain	phylum	False	15	
+mlp_heldout	284590	bp	phylum	none	True	2	phylum	none	True	15	
+mlp_heldout	284590	cc	domain	none	True	1	domain	none	True	11	
+mlp_heldout	284590	joint	phylum	none	True	2	phylum	none	True	15	False
+mlp_heldout	284590	mf	domain	none	True	1	domain	none	True	7	
+mlp_heldout	290633	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	290633	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	290633	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	290633	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	294747	bp	phylum	none	True	2	phylum	none	True	15	
+mlp_heldout	294747	cc	domain	none	True	1	domain	none	True	11	
+mlp_heldout	294747	joint	phylum	none	True	2	phylum	none	True	15	False
+mlp_heldout	294747	mf	domain	none	True	1	domain	none	True	7	
+mlp_heldout	300852	bp	none	domain	False	4	none	domain	False	28	
+mlp_heldout	300852	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	300852	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	300852	mf	none	domain	False	1	none	domain	False	9	
+mlp_heldout	309800	bp	none	domain	False	3	none	domain	False	25	
+mlp_heldout	309800	cc	none	domain	False	1	none	domain	False	15	
+mlp_heldout	309800	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	309800	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	312309	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	312309	cc	none	domain	False	1	none	domain	False	11	
+mlp_heldout	312309	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	312309	mf	none	domain	False	2	none	domain	False	14	
+mlp_heldout	314256	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	314256	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	314256	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	314256	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	324602	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	324602	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	324602	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	324602	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	330779	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	330779	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	330779	joint	none	domain	False	2	none	domain	False	18	False
+mlp_heldout	330779	mf	domain	none	True	1	domain	none	True	9	
+mlp_heldout	330879	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	330879	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	330879	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	330879	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	332648	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	332648	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	332648	joint	domain	phylum	False	2	domain	phylum	False	18	False
+mlp_heldout	332648	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	333849	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	333849	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	333849	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	333849	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	334819	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	334819	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	334819	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	334819	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	347257	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	347257	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	347257	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	347257	mf	none	domain	False	1	none	domain	False	12	
+mlp_heldout	348780	bp	none	domain	False	3	none	domain	False	20	
+mlp_heldout	348780	cc	none	domain	False	1	none	domain	False	15	
+mlp_heldout	348780	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	348780	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	353153	bp	domain	phylum	False	2	domain	phylum	False	13	
+mlp_heldout	353153	cc	class	none	True	3	class	none	True	11	
+mlp_heldout	353153	joint	class	none	True	3	class	none	True	11	False
+mlp_heldout	353153	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	357809	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	357809	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	357809	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	357809	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	367928	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	367928	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	367928	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	367928	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	369723	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	369723	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	369723	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	369723	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	376619	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	376619	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	376619	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	376619	mf	none	domain	False	1	none	domain	False	12	
+mlp_heldout	376686	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	376686	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	376686	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	376686	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	381666	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	381666	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	381666	joint	domain	phylum	False	2	domain	phylum	False	15	True
+mlp_heldout	381666	mf	domain	phylum	False	2	domain	phylum	False	15	
+mlp_heldout	393595	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	393595	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	393595	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	393595	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	401614	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	401614	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	401614	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	401614	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	405948	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	405948	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	405948	joint	domain	phylum	False	2	domain	phylum	False	15	True
+mlp_heldout	405948	mf	domain	phylum	False	2	domain	phylum	False	15	
+mlp_heldout	411684	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	411684	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	411684	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	411684	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	415426	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	415426	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	415426	joint	none	domain	False	3	none	domain	False	11	False
+mlp_heldout	415426	mf	domain	none	True	1	domain	none	True	9	
+mlp_heldout	431241	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	431241	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	431241	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	431241	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	431944	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	431944	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	431944	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	431944	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	432359	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	432359	cc	domain	phylum	False	3	domain	phylum	False	11	
+mlp_heldout	432359	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	432359	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	436308	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	436308	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	436308	joint	none	domain	False	2	none	domain	False	18	False
+mlp_heldout	436308	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	439375	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	439375	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	439375	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	439375	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	441771	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	441771	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	441771	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	441771	mf	none	domain	False	2	none	domain	False	14	
+mlp_heldout	443254	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	443254	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	443254	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	443254	mf	none	domain	False	1	none	domain	False	9	
+mlp_heldout	452652	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	452652	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	452652	joint	domain	phylum	False	2	domain	phylum	False	15	True
+mlp_heldout	452652	mf	domain	phylum	False	2	domain	phylum	False	15	
+mlp_heldout	452662	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	452662	cc	none	domain	False	3	none	domain	False	11	
+mlp_heldout	452662	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	452662	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	457429	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	457429	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	457429	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	457429	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	458233	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	458233	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	458233	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	458233	mf	none	domain	False	2	none	domain	False	14	
+mlp_heldout	479437	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	479437	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	479437	joint	none	domain	False	3	none	domain	False	11	False
+mlp_heldout	479437	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	485917	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	485917	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	485917	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	485917	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	498257	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	498257	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	498257	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	498257	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	502779	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	502779	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	502779	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	502779	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	502780	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	502780	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	502780	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	502780	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	508771	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	508771	cc	domain	phylum	False	3	domain	phylum	False	11	
+mlp_heldout	508771	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	508771	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	510516	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	510516	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	510516	joint	domain	phylum	False	2	domain	phylum	False	18	False
+mlp_heldout	510516	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	515849	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	515849	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	515849	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	515849	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	529507	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	529507	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	529507	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	529507	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	545693	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	545693	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	545693	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	545693	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	553175	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	553175	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	553175	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	553175	mf	none	domain	False	2	none	domain	False	13	
+mlp_heldout	555778	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	555778	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	555778	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	555778	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	559515	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	559515	cc	domain	phylum	False	3	domain	phylum	False	11	
+mlp_heldout	559515	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	559515	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	572477	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	572477	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	572477	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	572477	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	572478	bp	none	domain	False	1	none	domain	False	7	
+mlp_heldout	572478	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	572478	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	572478	mf	domain	none	True	1	domain	none	True	9	
+mlp_heldout	573826	bp	phylum	none	True	2	phylum	none	True	15	
+mlp_heldout	573826	cc	phylum	none	True	2	phylum	none	True	13	
+mlp_heldout	573826	joint	phylum	none	True	2	phylum	none	True	15	False
+mlp_heldout	573826	mf	domain	none	True	1	domain	none	True	7	
+mlp_heldout	578454	bp	phylum	none	True	2	phylum	none	True	15	
+mlp_heldout	578454	cc	domain	none	True	1	domain	none	True	11	
+mlp_heldout	578454	joint	phylum	none	True	2	phylum	none	True	15	False
+mlp_heldout	578454	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	580327	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	580327	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	580327	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	580327	mf	none	domain	False	1	none	domain	False	9	
+mlp_heldout	595528	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	595528	cc	domain	phylum	False	3	domain	phylum	False	11	
+mlp_heldout	595528	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	595528	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	602072	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	602072	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	602072	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	602072	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	610380	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	610380	cc	class	none	True	3	class	none	True	20	
+mlp_heldout	610380	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	610380	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	632518	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	632518	cc	none	domain	False	2	none	domain	False	8	
+mlp_heldout	632518	joint	none	domain	False	2	none	domain	False	8	False
+mlp_heldout	632518	mf	none	domain	False	1	none	domain	False	9	
+mlp_heldout	655819	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	655819	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	655819	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	655819	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	663331	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	663331	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	663331	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	663331	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	716541	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	716541	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	716541	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	716541	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	717774	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	717774	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	717774	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	717774	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	759272	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	759272	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	759272	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	759272	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	759273	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	759273	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	759273	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	759273	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	760192	bp	none	domain	False	3	none	domain	False	10	
+mlp_heldout	760192	cc	none	domain	False	1	none	domain	False	11	
+mlp_heldout	760192	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	760192	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	771870	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	771870	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	771870	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	771870	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	947166	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	947166	cc	domain	phylum	False	3	domain	phylum	False	20	
+mlp_heldout	947166	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	947166	mf	domain	phylum	False	2	domain	phylum	False	14	
+mlp_heldout	1026970	bp	order	none	True	4	order	none	True	28	
+mlp_heldout	1026970	cc	class	none	True	3	class	none	True	22	
+mlp_heldout	1026970	joint	order	none	True	4	order	none	True	28	False
+mlp_heldout	1026970	mf	phylum	none	True	2	phylum	none	True	14	
+mlp_heldout	1028307	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	1028307	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	1028307	joint	domain	phylum	False	2	domain	phylum	False	15	False
+mlp_heldout	1028307	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	1073375	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	1073375	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	1073375	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	1073375	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	1121448	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	1121448	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	1121448	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	1121448	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	1122247	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	1122247	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	1122247	joint	domain	phylum	False	2	domain	phylum	False	15	True
+mlp_heldout	1122247	mf	domain	phylum	False	2	domain	phylum	False	15	
+mlp_heldout	1214101	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	1214101	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	1214101	joint	domain	phylum	False	2	domain	phylum	False	15	True
+mlp_heldout	1214101	mf	domain	phylum	False	2	domain	phylum	False	15	
+mlp_heldout	1214242	bp	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	1214242	cc	domain	none	True	1	domain	phylum	False	15	
+mlp_heldout	1214242	joint	domain	phylum	False	2	domain	phylum	False	15	True
+mlp_heldout	1214242	mf	domain	phylum	False	2	domain	phylum	False	15	
+mlp_heldout	1221996	bp	none	domain	False	2	none	domain	False	13	
+mlp_heldout	1221996	cc	none	domain	False	1	none	domain	False	14	
+mlp_heldout	1221996	joint	none	domain	False	1	none	domain	False	7	False
+mlp_heldout	1221996	mf	none	none	False	0	none	none	True	3	
+mlp_heldout	1365484	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	1365484	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	1365484	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	1365484	mf	domain	none	True	1	domain	none	False	12	
+mlp_heldout	1392255	bp	domain	phylum	False	4	domain	phylum	False	28	
+mlp_heldout	1392255	cc	domain	none	True	1	domain	phylum	False	14	
+mlp_heldout	1392255	joint	domain	phylum	False	4	domain	phylum	False	28	False
+mlp_heldout	1392255	mf	domain	none	True	1	domain	none	False	12	
+seq_sim_heldout	623	bp	none	domain	False	2	none	domain	False	13	
+seq_sim_heldout	623	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	623	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	623	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	882	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	882	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	882	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	882	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	1901	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	1901	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	1901	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	1901	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	3469	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	3469	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	3469	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	3469	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	3483	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	3483	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	3483	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	3483	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	3659	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	3659	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	3659	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	3659	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	3661	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	3661	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	3661	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	3661	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	3708	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	3708	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	3708	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	3708	mf	domain	none	True	1	domain	none	False	9	
+seq_sim_heldout	3750	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	3750	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	3750	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	3750	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	3760	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	3760	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	3760	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	3760	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	3847	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	3847	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	3847	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	3847	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	3916	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	3916	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	3916	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	3916	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	3988	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	3988	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	3988	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	3988	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	4072	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	4072	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	4072	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	4072	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	4097	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	4097	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	4097	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	4097	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	4113	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	4113	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	4113	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	4113	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	4182	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	4182	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	4182	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	4182	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	4232	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	4232	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	4232	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	4232	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	4536	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	4536	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	4536	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	4536	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	4577	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	4577	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	4577	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	4577	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	5823	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	5823	cc	phylum	none	True	2	phylum	none	True	8	
+seq_sim_heldout	5823	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	5823	mf	domain	none	True	1	domain	none	False	9	
+seq_sim_heldout	5888	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	5888	cc	domain	phylum	False	3	domain	phylum	False	20	
+seq_sim_heldout	5888	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	5888	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	6183	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	6183	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	6183	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	6183	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_heldout	6238	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	6238	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	6238	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	6238	mf	phylum	none	True	2	phylum	none	True	13	
+seq_sim_heldout	6500	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	6500	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	6500	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	6500	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_heldout	6565	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	6565	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	6565	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	6565	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_heldout	6669	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	6669	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	6669	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	6669	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	6945	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	6945	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	6945	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	6945	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7070	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	7070	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	7070	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	7070	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7091	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	7091	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	7091	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	7091	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7159	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	7159	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	7159	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	7159	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7165	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	7165	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	7165	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	7165	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7167	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	7167	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	7167	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	7167	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7225	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	7225	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	7225	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	7225	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7234	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	7234	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	7234	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	7234	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7245	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	7245	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	7245	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	7245	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7460	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	7460	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	7460	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	7460	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7739	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	7739	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	7739	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	7739	mf	phylum	none	True	2	phylum	none	False	14	
+seq_sim_heldout	7868	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	7868	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	7868	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	7868	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7962	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	7962	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	7962	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	7962	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	7998	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	7998	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	7998	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	7998	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	8022	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	8022	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	8022	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	8022	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	8355	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	8355	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	8355	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	8355	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	8364	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	8364	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	8364	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	8364	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	8845	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	8845	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	8845	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	8845	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	9103	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	9103	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	9103	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	9103	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	9483	bp	class	order	False	4	class	order	False	28	
+seq_sim_heldout	9483	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	9483	joint	class	order	False	4	class	order	False	28	False
+seq_sim_heldout	9483	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	9544	bp	class	order	False	4	class	order	False	28	
+seq_sim_heldout	9544	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	9544	joint	class	order	False	4	class	order	False	28	False
+seq_sim_heldout	9544	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	9555	bp	class	order	False	4	class	order	False	28	
+seq_sim_heldout	9555	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	9555	joint	class	order	False	4	class	order	False	28	False
+seq_sim_heldout	9555	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	9601	bp	class	order	False	4	class	order	False	28	
+seq_sim_heldout	9601	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	9601	joint	class	order	False	4	class	order	False	28	False
+seq_sim_heldout	9601	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	9739	bp	class	order	False	4	class	order	False	28	
+seq_sim_heldout	9739	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	9739	joint	class	order	False	4	class	order	False	28	False
+seq_sim_heldout	9739	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	9986	bp	class	order	False	4	class	order	False	28	
+seq_sim_heldout	9986	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	9986	joint	class	order	False	4	class	order	False	28	False
+seq_sim_heldout	9986	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	10103	bp	order	none	True	4	order	none	True	28	
+seq_sim_heldout	10103	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	10103	joint	order	none	True	4	order	none	True	28	False
+seq_sim_heldout	10103	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	10116	bp	order	none	True	4	order	none	True	28	
+seq_sim_heldout	10116	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	10116	joint	order	none	True	4	order	none	True	28	False
+seq_sim_heldout	10116	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	10141	bp	order	none	True	4	order	none	True	28	
+seq_sim_heldout	10141	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	10141	joint	order	none	True	4	order	none	True	28	False
+seq_sim_heldout	10141	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	10224	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	10224	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	10224	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	10224	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_heldout	13735	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	13735	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	13735	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	13735	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	27334	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	27334	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	27334	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	27334	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	31033	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	31033	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	31033	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	31033	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	34839	bp	order	none	True	4	order	none	True	28	
+seq_sim_heldout	34839	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	34839	joint	order	none	True	4	order	none	True	28	False
+seq_sim_heldout	34839	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	35128	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	35128	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	35128	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	35128	mf	domain	none	True	1	domain	none	False	9	
+seq_sim_heldout	35570	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	35570	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	35570	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	35570	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	37546	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	37546	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	37546	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	37546	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	50429	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	50429	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	50429	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	50429	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_heldout	51240	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	51240	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	51240	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	51240	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	51338	bp	order	none	True	4	order	none	True	28	
+seq_sim_heldout	51338	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	51338	joint	order	none	True	4	order	none	True	28	False
+seq_sim_heldout	51338	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	55188	bp	class	none	True	3	class	none	True	19	
+seq_sim_heldout	55188	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_heldout	55188	joint	class	none	True	3	class	none	True	19	False
+seq_sim_heldout	55188	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_heldout	55952	bp	none	domain	False	4	none	domain	False	28	
+seq_sim_heldout	55952	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	55952	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	55952	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	63737	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	63737	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	63737	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	63737	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	66420	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	66420	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	66420	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	66420	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	69820	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	69820	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	69820	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	69820	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	73239	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	73239	cc	phylum	none	True	2	phylum	none	True	8	
+seq_sim_heldout	73239	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	73239	mf	domain	none	True	1	domain	none	False	9	
+seq_sim_heldout	74940	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_heldout	74940	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_heldout	74940	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_heldout	74940	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	76114	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	76114	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	76114	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	76114	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	78245	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	78245	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	78245	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	78245	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	79782	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	79782	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	79782	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	79782	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	83331	bp	none	domain	False	2	none	domain	False	13	
+seq_sim_heldout	83331	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	83331	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	83331	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	83334	bp	none	domain	False	2	none	domain	False	13	
+seq_sim_heldout	83334	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	83334	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	83334	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	88771	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	88771	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	88771	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	88771	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	130081	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	130081	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	130081	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	130081	mf	domain	none	True	1	domain	none	False	12	
+seq_sim_heldout	170187	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	170187	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	170187	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	170187	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	171101	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	171101	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	171101	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	171101	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	176299	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	176299	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	176299	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	176299	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	177437	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	177437	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	177437	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	177437	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	183190	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	183190	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	183190	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	183190	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	189518	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	189518	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	189518	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	189518	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	190192	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	190192	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	190192	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	190192	mf	domain	none	True	1	domain	none	True	9	
+seq_sim_heldout	190485	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	190485	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	190485	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	190485	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	195102	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	195102	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	195102	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	195102	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	196627	bp	none	domain	False	2	none	domain	False	13	
+seq_sim_heldout	196627	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	196627	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	196627	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	203119	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	203119	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	203119	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	203119	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	206672	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	206672	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	206672	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	206672	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	208435	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	208435	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	208435	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	208435	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	211586	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	211586	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	211586	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	211586	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	214684	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	214684	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	214684	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	214684	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	216591	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	216591	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	216591	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	216591	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	216594	bp	none	domain	False	2	none	domain	False	13	
+seq_sim_heldout	216594	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	216594	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	216594	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	216596	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	216596	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	216596	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	216596	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	224326	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	224326	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	224326	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	224326	mf	none	domain	False	1	none	domain	False	8	
+seq_sim_heldout	224911	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	224911	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	224911	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	224911	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	226186	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	226186	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	226186	joint	none	domain	False	3	none	domain	False	23	False
+seq_sim_heldout	226186	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	226900	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	226900	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	226900	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	226900	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	228410	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	228410	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	228410	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	228410	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	228908	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	228908	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	228908	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	228908	mf	none	none	False	0	none	none	True	3	
+seq_sim_heldout	229533	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	229533	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	229533	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	229533	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	233413	bp	none	domain	False	2	none	domain	False	13	
+seq_sim_heldout	233413	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	233413	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	233413	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	242507	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	242507	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	242507	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	242507	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	243160	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	243160	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	243160	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	243160	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	243233	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	243233	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	243233	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	243233	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	243274	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	243274	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	243274	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	243274	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	243277	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	243277	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	243277	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	243277	mf	none	none	False	0	none	none	True	3	
+seq_sim_heldout	243365	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	243365	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	243365	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	243365	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	247156	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	247156	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	247156	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	247156	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	257309	bp	none	domain	False	2	none	domain	False	13	
+seq_sim_heldout	257309	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	257309	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	257309	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	259536	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	259536	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	259536	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	259536	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	262723	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	262723	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	262723	joint	none	domain	False	3	none	domain	False	19	False
+seq_sim_heldout	262723	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	264203	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	264203	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	264203	joint	none	domain	False	3	none	domain	False	19	False
+seq_sim_heldout	264203	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	264951	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	264951	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	264951	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	264951	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	266117	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	266117	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	266117	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	266117	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	266264	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	266264	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	266264	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	266264	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	266834	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	266834	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	266834	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	266834	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	267608	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	267608	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	267608	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	267608	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	269798	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	269798	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	269798	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	269798	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	269799	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	269799	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	269799	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	269799	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	272558	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	272558	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	272558	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	272558	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	272560	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	272560	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	272560	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	272560	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	272561	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	272561	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	272561	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	272561	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	272563	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	272563	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	272563	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	272563	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	272569	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	272569	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	272569	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	272569	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	272621	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	272621	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	272621	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	272621	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	272624	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	272624	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	272624	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	272624	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	272942	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	272942	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	272942	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	272942	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	272947	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	272947	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	272947	joint	none	domain	False	3	none	domain	False	19	False
+seq_sim_heldout	272947	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	273057	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	273057	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	273057	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	273057	mf	none	domain	False	1	none	domain	False	10	
+seq_sim_heldout	273063	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	273063	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	273063	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	273063	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	273068	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	273068	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	273068	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	273068	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	273075	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	273075	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	273075	joint	none	domain	False	3	none	domain	False	23	False
+seq_sim_heldout	273075	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	273121	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	273121	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	273121	joint	none	domain	False	3	none	domain	False	19	False
+seq_sim_heldout	273121	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	279010	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	279010	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	279010	joint	none	domain	False	3	none	domain	False	19	False
+seq_sim_heldout	279010	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	279238	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	279238	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	279238	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	279238	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	284590	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	284590	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	284590	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	284590	mf	domain	none	True	1	domain	none	True	7	
+seq_sim_heldout	290633	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	290633	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	290633	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	290633	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	294747	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	294747	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	294747	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	294747	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	300852	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	300852	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	300852	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	300852	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	309800	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	309800	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	309800	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	309800	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	312309	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	312309	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	312309	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	312309	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	314256	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	314256	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	314256	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	314256	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	324602	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	324602	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	324602	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	324602	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	330779	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	330779	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	330779	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	330779	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	330879	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	330879	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	330879	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	330879	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	332648	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	332648	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	332648	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	332648	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	333849	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	333849	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	333849	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	333849	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	334819	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	334819	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	334819	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	334819	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	347257	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	347257	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	347257	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	347257	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	348780	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	348780	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	348780	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	348780	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	353153	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	353153	cc	class	none	True	3	class	none	True	11	
+seq_sim_heldout	353153	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	353153	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_heldout	357809	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	357809	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	357809	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	357809	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	367928	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	367928	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	367928	joint	none	domain	False	3	none	domain	False	19	False
+seq_sim_heldout	367928	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	369723	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	369723	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	369723	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	369723	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	376619	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	376619	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	376619	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	376619	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	376686	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	376686	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	376686	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	376686	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	381666	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	381666	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	381666	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	381666	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	393595	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	393595	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	393595	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	393595	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	401614	bp	none	domain	False	4	none	domain	False	28	
+seq_sim_heldout	401614	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	401614	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	401614	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	405948	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	405948	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	405948	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	405948	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	411684	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	411684	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	411684	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	411684	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	415426	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	415426	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	415426	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	415426	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	431241	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	431241	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	431241	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	431241	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	431944	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	431944	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	431944	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	431944	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	432359	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	432359	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	432359	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	432359	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_heldout	436308	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	436308	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	436308	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	436308	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	439375	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	439375	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	439375	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	439375	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	441771	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	441771	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	441771	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	441771	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	443254	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	443254	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	443254	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	443254	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	452652	bp	none	domain	False	4	none	domain	False	28	
+seq_sim_heldout	452652	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	452652	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	452652	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	452662	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	452662	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	452662	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	452662	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	457429	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	457429	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	457429	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	457429	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	458233	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	458233	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	458233	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	458233	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	479437	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	479437	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	479437	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	479437	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	485917	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	485917	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	485917	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	485917	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	498257	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	498257	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	498257	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	498257	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	502779	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	502779	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	502779	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	502779	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	502780	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	502780	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	502780	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	502780	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	508771	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	508771	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	508771	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	508771	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_heldout	510516	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	510516	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	510516	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	510516	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	515849	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	515849	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	515849	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	515849	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	529507	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	529507	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	529507	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	529507	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	545693	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	545693	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	545693	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	545693	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	553175	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	553175	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	553175	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	553175	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	555778	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	555778	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	555778	joint	none	domain	False	3	none	domain	False	19	False
+seq_sim_heldout	555778	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	559515	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	559515	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	559515	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	559515	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	572477	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	572477	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	572477	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	572477	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	572478	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_heldout	572478	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	572478	joint	none	domain	False	3	none	domain	False	23	False
+seq_sim_heldout	572478	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	573826	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	573826	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	573826	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	573826	mf	domain	none	True	1	domain	none	True	7	
+seq_sim_heldout	578454	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	578454	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	578454	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	578454	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	580327	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	580327	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	580327	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	580327	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	595528	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	595528	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	595528	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	595528	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_heldout	602072	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	602072	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	602072	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	602072	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	610380	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	610380	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	610380	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	610380	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	632518	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	632518	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	632518	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	632518	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	655819	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	655819	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	655819	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	655819	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	663331	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	663331	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	663331	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	663331	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	716541	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	716541	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	716541	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	716541	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	717774	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	717774	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	717774	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	717774	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	759272	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	759272	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	759272	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	759272	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	759273	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	759273	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	759273	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	759273	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	760192	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	760192	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	760192	joint	none	domain	False	3	none	domain	False	24	False
+seq_sim_heldout	760192	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	771870	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	771870	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	771870	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	771870	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	947166	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	947166	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_heldout	947166	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	947166	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_heldout	1026970	bp	order	none	True	4	order	none	True	28	
+seq_sim_heldout	1026970	cc	class	none	True	3	class	none	True	22	
+seq_sim_heldout	1026970	joint	order	none	True	4	order	none	True	28	False
+seq_sim_heldout	1026970	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_heldout	1028307	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	1028307	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	1028307	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	1028307	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_heldout	1073375	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	1073375	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	1073375	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	1073375	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	1121448	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	1121448	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	1121448	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	1121448	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	1122247	bp	none	domain	False	2	none	domain	False	13	
+seq_sim_heldout	1122247	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	1122247	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	1122247	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	1214101	bp	none	domain	False	4	none	domain	False	28	
+seq_sim_heldout	1214101	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	1214101	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	1214101	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	1214242	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	1214242	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	1214242	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_heldout	1214242	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_heldout	1221996	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_heldout	1221996	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_heldout	1221996	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_heldout	1221996	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_heldout	1365484	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	1365484	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	1365484	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	1365484	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_heldout	1392255	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_heldout	1392255	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_heldout	1392255	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_heldout	1392255	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	3197	bp	phylum	class	False	3	phylum	class	False	19	
+seq_sim_timeset	3197	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	3197	joint	phylum	class	False	3	phylum	class	False	19	False
+seq_sim_timeset	3197	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_timeset	3218	bp	phylum	class	False	3	phylum	class	False	19	
+seq_sim_timeset	3218	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	3218	joint	phylum	class	False	3	phylum	class	False	19	False
+seq_sim_timeset	3218	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_timeset	3572	bp	class	none	True	3	class	none	True	19	
+seq_sim_timeset	3572	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	3572	joint	class	none	True	3	class	none	True	19	False
+seq_sim_timeset	3572	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	3750	bp	class	none	True	3	class	none	True	19	
+seq_sim_timeset	3750	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	3750	joint	class	none	True	3	class	none	True	19	False
+seq_sim_timeset	3750	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_timeset	3847	bp	class	none	True	3	class	none	True	19	
+seq_sim_timeset	3847	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	3847	joint	class	none	True	3	class	none	True	19	False
+seq_sim_timeset	3847	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_timeset	3871	bp	class	none	True	3	class	none	True	19	
+seq_sim_timeset	3871	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	3871	joint	class	none	True	3	class	none	True	19	False
+seq_sim_timeset	3871	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_timeset	3880	bp	class	none	True	3	class	none	True	19	
+seq_sim_timeset	3880	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	3880	joint	class	none	True	3	class	none	True	19	False
+seq_sim_timeset	3880	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_timeset	3983	bp	class	none	True	3	class	none	True	19	
+seq_sim_timeset	3983	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	3983	joint	class	none	True	3	class	none	True	19	False
+seq_sim_timeset	3983	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_timeset	4072	bp	class	none	True	3	class	none	True	19	
+seq_sim_timeset	4072	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	4072	joint	class	none	True	3	class	none	True	19	False
+seq_sim_timeset	4072	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_timeset	4081	bp	class	none	True	3	class	none	True	19	
+seq_sim_timeset	4081	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	4081	joint	class	none	True	3	class	none	True	19	False
+seq_sim_timeset	4081	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_timeset	5270	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	5270	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	5270	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	5270	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	6239	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	6239	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_timeset	6239	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	6239	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_timeset	7070	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	7070	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_timeset	7070	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	7070	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_timeset	7176	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	7176	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_timeset	7176	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	7176	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_timeset	7227	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	7227	cc	domain	phylum	False	3	domain	phylum	False	22	
+seq_sim_timeset	7227	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	7227	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_timeset	7757	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_timeset	7757	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_timeset	7757	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_timeset	7757	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_timeset	7868	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_timeset	7868	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_timeset	7868	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_timeset	7868	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_timeset	7955	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_timeset	7955	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_timeset	7955	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_timeset	7955	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_timeset	8090	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_timeset	8090	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_timeset	8090	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_timeset	8090	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_timeset	8355	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_timeset	8355	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_timeset	8355	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_timeset	8355	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_timeset	8364	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_timeset	8364	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_timeset	8364	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_timeset	8364	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_timeset	9031	bp	phylum	class	False	4	phylum	class	False	28	
+seq_sim_timeset	9031	cc	phylum	class	False	3	phylum	class	False	22	
+seq_sim_timeset	9031	joint	phylum	class	False	4	phylum	class	False	28	False
+seq_sim_timeset	9031	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_timeset	9913	bp	class	order	False	4	class	order	False	28	
+seq_sim_timeset	9913	cc	class	none	True	3	class	none	True	22	
+seq_sim_timeset	9913	joint	class	order	False	4	class	order	False	28	False
+seq_sim_timeset	9913	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_timeset	9940	bp	class	order	False	4	class	order	False	28	
+seq_sim_timeset	9940	cc	class	none	True	3	class	none	True	22	
+seq_sim_timeset	9940	joint	class	order	False	4	class	order	False	28	False
+seq_sim_timeset	9940	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_timeset	10116	bp	order	none	True	4	order	none	True	28	
+seq_sim_timeset	10116	cc	class	none	True	3	class	none	True	22	
+seq_sim_timeset	10116	joint	order	none	True	4	order	none	True	28	False
+seq_sim_timeset	10116	mf	phylum	none	True	2	phylum	none	True	14	
+seq_sim_timeset	39947	bp	class	none	True	3	class	none	True	19	
+seq_sim_timeset	39947	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	39947	joint	class	none	True	3	class	none	True	19	False
+seq_sim_timeset	39947	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_timeset	69014	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_timeset	69014	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_timeset	69014	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_timeset	69014	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_timeset	70601	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_timeset	70601	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_timeset	70601	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_timeset	70601	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_timeset	83332	bp	none	domain	False	1	none	domain	False	7	
+seq_sim_timeset	83332	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_timeset	83332	joint	none	domain	False	1	none	domain	False	7	False
+seq_sim_timeset	83332	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_timeset	85962	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_timeset	85962	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_timeset	85962	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_timeset	85962	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_timeset	88036	bp	phylum	class	False	3	phylum	class	False	19	
+seq_sim_timeset	88036	cc	domain	none	True	1	phylum	none	True	14	
+seq_sim_timeset	88036	joint	phylum	class	False	3	phylum	class	False	19	False
+seq_sim_timeset	88036	mf	domain	none	True	1	domain	none	True	12	
+seq_sim_timeset	187420	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_timeset	187420	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_timeset	187420	joint	none	domain	False	3	none	domain	False	19	False
+seq_sim_timeset	187420	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_timeset	208964	bp	none	domain	False	3	none	domain	False	23	
+seq_sim_timeset	208964	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_timeset	208964	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_timeset	208964	mf	domain	none	True	1	domain	phylum	False	15	
+seq_sim_timeset	221103	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	221103	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	221103	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	221103	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_timeset	227321	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	227321	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	227321	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	227321	mf	domain	phylum	False	2	domain	phylum	False	14	
+seq_sim_timeset	229533	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	229533	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	229533	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	229533	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	237561	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	237561	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	237561	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	237561	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	243274	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_timeset	243274	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_timeset	243274	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_timeset	243274	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_timeset	267377	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_timeset	267377	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_timeset	267377	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_timeset	267377	mf	domain	none	True	1	domain	none	True	9	
+seq_sim_timeset	272844	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_timeset	272844	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_timeset	272844	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_timeset	272844	mf	none	domain	False	1	none	domain	False	9	
+seq_sim_timeset	330879	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	330879	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	330879	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	330879	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	331117	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	331117	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	331117	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	331117	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	336722	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	336722	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	336722	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	336722	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	367110	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	367110	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	367110	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	367110	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	510516	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	510516	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	510516	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	510516	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	655827	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	655827	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	655827	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	655827	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	742740	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_timeset	742740	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_timeset	742740	joint	none	domain	False	2	none	domain	False	18	False
+seq_sim_timeset	742740	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_timeset	759272	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	759272	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	759272	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	759272	mf	domain	none	True	1	domain	none	False	10	
+seq_sim_timeset	1073375	bp	none	domain	False	3	none	domain	False	24	
+seq_sim_timeset	1073375	cc	none	domain	False	1	none	domain	False	14	
+seq_sim_timeset	1073375	joint	none	domain	False	3	none	domain	False	19	False
+seq_sim_timeset	1073375	mf	none	domain	False	1	none	domain	False	12	
+seq_sim_timeset	1220924	bp	domain	phylum	False	4	domain	phylum	False	28	
+seq_sim_timeset	1220924	cc	domain	none	True	1	domain	phylum	False	14	
+seq_sim_timeset	1220924	joint	domain	phylum	False	4	domain	phylum	False	28	False
+seq_sim_timeset	1220924	mf	domain	none	True	1	domain	none	False	10	
+sprof-go	3197	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	3197	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	3197	joint	phylum	none	True	2	phylum	none	False	18	False
+sprof-go	3197	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	3218	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	3218	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	3218	joint	phylum	none	True	2	phylum	none	False	18	False
+sprof-go	3218	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	3572	bp	class	none	True	3	class	none	True	19	
+sprof-go	3572	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	3572	joint	class	none	True	3	class	none	True	19	False
+sprof-go	3572	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	3750	bp	class	none	True	3	class	none	True	19	
+sprof-go	3750	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	3750	joint	class	none	True	3	class	none	True	19	False
+sprof-go	3750	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	3847	bp	class	none	True	3	class	none	True	19	
+sprof-go	3847	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	3847	joint	class	none	True	3	class	none	True	19	False
+sprof-go	3847	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	3871	bp	class	none	True	3	class	none	True	19	
+sprof-go	3871	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	3871	joint	class	none	True	3	class	none	True	19	False
+sprof-go	3871	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	3880	bp	class	none	True	3	class	none	True	19	
+sprof-go	3880	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	3880	joint	class	none	True	3	class	none	True	19	False
+sprof-go	3880	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	3983	bp	class	none	True	3	class	none	True	19	
+sprof-go	3983	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	3983	joint	class	none	True	3	class	none	True	19	False
+sprof-go	3983	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	4072	bp	class	none	True	3	class	none	True	19	
+sprof-go	4072	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	4072	joint	class	none	True	3	class	none	True	19	False
+sprof-go	4072	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	4081	bp	class	none	True	3	class	none	True	19	
+sprof-go	4081	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	4081	joint	class	none	True	3	class	none	True	19	False
+sprof-go	4081	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	5270	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	5270	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	5270	joint	domain	phylum	False	3	domain	phylum	False	23	False
+sprof-go	5270	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	6239	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	6239	cc	domain	phylum	False	2	domain	phylum	False	14	
+sprof-go	6239	joint	domain	phylum	False	3	domain	phylum	False	25	False
+sprof-go	6239	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	7070	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	7070	cc	class	none	True	3	class	none	True	20	
+sprof-go	7070	joint	domain	phylum	False	3	domain	phylum	False	23	False
+sprof-go	7070	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	7176	bp	class	none	True	3	class	none	True	25	
+sprof-go	7176	cc	class	none	True	3	class	none	True	20	
+sprof-go	7176	joint	class	none	True	3	class	none	True	25	True
+sprof-go	7176	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	7227	bp	class	none	True	3	class	none	True	25	
+sprof-go	7227	cc	class	none	True	3	class	none	True	20	
+sprof-go	7227	joint	class	none	True	3	class	none	True	25	True
+sprof-go	7227	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	7757	bp	phylum	class	False	3	phylum	class	False	23	
+sprof-go	7757	cc	domain	phylum	False	2	domain	phylum	False	14	
+sprof-go	7757	joint	phylum	class	False	3	phylum	class	False	23	False
+sprof-go	7757	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	7868	bp	phylum	class	False	3	phylum	class	False	23	
+sprof-go	7868	cc	domain	phylum	False	3	domain	phylum	False	20	
+sprof-go	7868	joint	phylum	class	False	3	phylum	class	False	23	False
+sprof-go	7868	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	7955	bp	phylum	class	False	3	phylum	class	False	23	
+sprof-go	7955	cc	domain	phylum	False	2	domain	phylum	False	14	
+sprof-go	7955	joint	phylum	class	False	3	phylum	class	False	23	False
+sprof-go	7955	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	8090	bp	phylum	class	False	3	phylum	class	False	23	
+sprof-go	8090	cc	domain	phylum	False	2	domain	phylum	False	14	
+sprof-go	8090	joint	phylum	class	False	3	phylum	class	False	23	False
+sprof-go	8090	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	8355	bp	phylum	class	False	3	phylum	class	False	23	
+sprof-go	8355	cc	domain	phylum	False	2	domain	phylum	False	14	
+sprof-go	8355	joint	phylum	class	False	3	phylum	class	False	23	False
+sprof-go	8355	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	8364	bp	phylum	class	False	3	phylum	class	False	23	
+sprof-go	8364	cc	domain	phylum	False	2	domain	phylum	False	14	
+sprof-go	8364	joint	phylum	class	False	3	phylum	class	False	23	False
+sprof-go	8364	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	9031	bp	phylum	class	False	3	phylum	class	False	23	
+sprof-go	9031	cc	domain	phylum	False	2	domain	phylum	False	14	
+sprof-go	9031	joint	phylum	class	False	3	phylum	class	False	23	False
+sprof-go	9031	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	9913	bp	class	none	True	3	class	none	True	23	
+sprof-go	9913	cc	domain	phylum	False	2	domain	phylum	False	14	
+sprof-go	9913	joint	class	none	True	3	class	none	True	23	False
+sprof-go	9913	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	9940	bp	class	none	True	3	class	none	True	23	
+sprof-go	9940	cc	domain	phylum	False	2	domain	phylum	False	14	
+sprof-go	9940	joint	class	none	True	3	class	none	True	23	False
+sprof-go	9940	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	10116	bp	class	none	True	3	class	none	True	23	
+sprof-go	10116	cc	domain	phylum	False	2	domain	phylum	False	14	
+sprof-go	10116	joint	class	none	True	3	class	none	True	23	False
+sprof-go	10116	mf	domain	none	True	1	domain	none	True	9	
+sprof-go	39947	bp	class	none	True	3	class	none	True	19	
+sprof-go	39947	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	39947	joint	class	none	True	3	class	none	True	19	False
+sprof-go	39947	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	69014	bp	none	domain	False	3	none	domain	False	23	
+sprof-go	69014	cc	none	domain	False	1	none	domain	False	14	
+sprof-go	69014	joint	none	domain	False	2	none	domain	False	13	False
+sprof-go	69014	mf	none	domain	False	1	none	domain	False	9	
+sprof-go	70601	bp	none	domain	False	3	none	domain	False	23	
+sprof-go	70601	cc	none	domain	False	1	none	domain	False	14	
+sprof-go	70601	joint	none	domain	False	3	none	domain	False	25	False
+sprof-go	70601	mf	none	domain	False	1	none	domain	False	9	
+sprof-go	83332	bp	none	domain	False	2	none	domain	False	13	
+sprof-go	83332	cc	none	domain	False	1	none	domain	False	14	
+sprof-go	83332	joint	none	domain	False	1	none	domain	False	7	False
+sprof-go	83332	mf	none	domain	False	1	none	domain	False	9	
+sprof-go	85962	bp	none	domain	False	3	none	domain	False	25	
+sprof-go	85962	cc	none	domain	False	1	none	domain	False	14	
+sprof-go	85962	joint	none	domain	False	3	none	domain	False	25	False
+sprof-go	85962	mf	none	domain	False	1	none	domain	False	9	
+sprof-go	88036	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	88036	cc	domain	none	True	1	phylum	none	True	14	
+sprof-go	88036	joint	phylum	none	True	2	phylum	none	False	18	False
+sprof-go	88036	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	187420	bp	none	domain	False	2	none	domain	False	13	
+sprof-go	187420	cc	none	domain	False	1	none	domain	False	14	
+sprof-go	187420	joint	none	domain	False	2	none	domain	False	13	False
+sprof-go	187420	mf	none	domain	False	1	none	domain	False	9	
+sprof-go	208964	bp	none	domain	False	2	none	domain	False	13	
+sprof-go	208964	cc	domain	none	True	1	domain	phylum	False	15	
+sprof-go	208964	joint	none	domain	False	2	none	domain	False	13	False
+sprof-go	208964	mf	none	domain	False	1	none	domain	False	9	
+sprof-go	221103	bp	domain	phylum	False	3	domain	phylum	False	25	
+sprof-go	221103	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	221103	joint	domain	phylum	False	3	domain	phylum	False	25	False
+sprof-go	221103	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	227321	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	227321	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	227321	joint	domain	phylum	False	3	domain	phylum	False	23	False
+sprof-go	227321	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	229533	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	229533	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	229533	joint	domain	phylum	False	3	domain	phylum	False	25	False
+sprof-go	229533	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	237561	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	237561	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	237561	joint	domain	phylum	False	3	domain	phylum	False	25	False
+sprof-go	237561	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	243274	bp	none	domain	False	3	none	domain	False	23	
+sprof-go	243274	cc	none	domain	False	1	none	domain	False	14	
+sprof-go	243274	joint	none	domain	False	2	none	domain	False	13	False
+sprof-go	243274	mf	none	domain	False	1	none	domain	False	9	
+sprof-go	267377	bp	none	domain	False	2	none	domain	False	13	
+sprof-go	267377	cc	none	domain	False	1	none	domain	False	14	
+sprof-go	267377	joint	none	domain	False	2	none	domain	False	13	False
+sprof-go	267377	mf	none	domain	False	1	none	domain	False	9	
+sprof-go	272844	bp	none	domain	False	3	none	domain	False	23	
+sprof-go	272844	cc	none	domain	False	1	none	domain	False	14	
+sprof-go	272844	joint	none	domain	False	2	none	domain	False	13	False
+sprof-go	272844	mf	none	domain	False	1	none	domain	False	9	
+sprof-go	330879	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	330879	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	330879	joint	domain	phylum	False	3	domain	phylum	False	23	False
+sprof-go	330879	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	331117	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	331117	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	331117	joint	domain	phylum	False	3	domain	phylum	False	25	False
+sprof-go	331117	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	336722	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	336722	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	336722	joint	domain	phylum	False	3	domain	phylum	False	25	False
+sprof-go	336722	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	367110	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	367110	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	367110	joint	domain	phylum	False	3	domain	phylum	False	25	False
+sprof-go	367110	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	510516	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	510516	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	510516	joint	domain	phylum	False	3	domain	phylum	False	23	False
+sprof-go	510516	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	655827	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	655827	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	655827	joint	domain	phylum	False	3	domain	phylum	False	25	False
+sprof-go	655827	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	742740	bp	none	domain	False	2	none	domain	False	13	
+sprof-go	742740	cc	none	domain	False	1	none	domain	False	14	
+sprof-go	742740	joint	none	domain	False	2	none	domain	False	13	False
+sprof-go	742740	mf	none	domain	False	1	none	domain	False	9	
+sprof-go	759272	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	759272	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	759272	joint	domain	phylum	False	3	domain	phylum	False	23	False
+sprof-go	759272	mf	domain	none	True	1	domain	none	False	9	
+sprof-go	1073375	bp	none	domain	False	2	none	domain	False	13	
+sprof-go	1073375	cc	none	domain	False	1	none	domain	False	14	
+sprof-go	1073375	joint	none	domain	False	1	none	domain	False	7	False
+sprof-go	1073375	mf	none	domain	False	1	none	domain	False	9	
+sprof-go	1220924	bp	domain	phylum	False	3	domain	phylum	False	23	
+sprof-go	1220924	cc	domain	none	True	1	domain	phylum	False	14	
+sprof-go	1220924	joint	domain	phylum	False	3	domain	phylum	False	25	False
+sprof-go	1220924	mf	domain	none	True	1	domain	none	False	9	

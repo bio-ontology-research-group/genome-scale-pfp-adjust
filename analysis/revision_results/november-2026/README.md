@@ -15,6 +15,11 @@ manifest: `supp-accuracy.tex`, `supp-accuracy.tsv`, `supp-comparators.tex`,
 membership and solver tables received the rows of the evidence-gated Stage 2
 (from `reruns/rerun-gated/tables/`); their TSV versions do not contain them.
 
+## lineage-data/
+
+Per-organism lineage-inference results for the repair cost and the lineage
+objective; see [`lineage-data/README.md`](lineage-data/README.md).
+
 ## reruns/
 
 Scripts and outputs of the follow-up runs. The scripts import the solver and
