@@ -17,3 +17,8 @@ files a taxon counts as inferred only if every optimal solution requires it.
 (b) of Supplementary Table S15 from `lineage-outcomes-repair-cost.tsv` and the
 output of `../reruns/investigate-lineage/lineage_variants.py` (variant
 `siglogit`).
+
+`make_lineage_objective_table.py` writes Supplementary Table S13
+(`../paper-tables/supp-lineage.tex`), which reports the lineage objective, from
+the same records. `supp-lineage-repair-cost.tex` is the earlier version of that
+table for the repair cost.
